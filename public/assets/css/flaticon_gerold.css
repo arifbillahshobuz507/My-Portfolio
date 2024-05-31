@@ -1,0 +1,137 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_gerold";
+    src: url("../fonts/flaticon_gerold.woff2?9ece749f93b45dc5cc6e2c206d60c453") format("woff2"),
+       url("../fonts/flaticon_gerold.woff?9ece749f93b45dc5cc6e2c206d60c453") format("woff"),
+       url("../fonts/flaticon_gerold.eot?9ece749f93b45dc5cc6e2c206d60c453#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon_gerold.ttf?9ece749f93b45dc5cc6e2c206d60c453") format("truetype"),
+       url("../fonts/flaticon_gerold.svg?9ece749f93b45dc5cc6e2c206d60c453#flaticon_gerold") format("svg");
+ }
+
+ i[class^="flaticon-"]:before,
+ i[class*=" flaticon-"]:before {
+    font-family: flaticon_gerold !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+ }
+
+ .flaticon-smartphone:before {
+    content: "\f101";
+ }
+ .flaticon-browser:before {
+    content: "\f102";
+ }
+ .flaticon-bezier-tool:before {
+    content: "\f103";
+ }
+ .flaticon-code:before {
+    content: "\f104";
+ }
+ .flaticon-crown:before {
+    content: "\f105";
+ }
+ .flaticon-menu:before {
+    content: "\f106";
+ }
+ .flaticon-hand-bag:before {
+    content: "\f107";
+ }
+ .flaticon-trophy:before {
+    content: "\f108";
+ }
+ .flaticon-download:before {
+    content: "\f109";
+ }
+ .flaticon-graduation-cap:before {
+    content: "\f10a";
+ }
+ .flaticon-mortarboard:before {
+    content: "\f10b";
+ }
+ .flaticon-school:before {
+    content: "\f10c";
+ }
+ .flaticon-recommendation:before {
+    content: "\f10d";
+ }
+ .flaticon-certificate:before {
+    content: "\f10e";
+ }
+ .flaticon-experience:before {
+    content: "\f10f";
+ }
+ .flaticon-user-experience:before {
+    content: "\f110";
+ }
+ .flaticon-seo:before {
+    content: "\f111";
+ }
+ .flaticon-ui-design:before {
+    content: "\f112";
+ }
+ .flaticon-web-design:before {
+    content: "\f113";
+ }
+ .flaticon-ux-design:before {
+    content: "\f114";
+ }
+ .flaticon-3d-movie:before {
+    content: "\f115";
+ }
+ .flaticon-design:before {
+    content: "\f116";
+ }
+ .flaticon-communicate:before {
+    content: "\f117";
+ }
+ .flaticon-rating:before {
+    content: "\f118";
+ }
+ .flaticon-skill-development:before {
+    content: "\f119";
+ }
+ .flaticon-resume:before {
+    content: "\f11a";
+ }
+ .flaticon-suitcase:before {
+    content: "\f11b";
+ }
+ .flaticon-home-button:before {
+    content: "\f11c";
+ }
+ .flaticon-management-service:before {
+    content: "\f11d";
+ }
+ .flaticon-location:before {
+    content: "\f11e";
+ }
+ .flaticon-mail-inbox-app:before {
+    content: "\f11f";
+ }
+ .flaticon-phone-call:before {
+    content: "\f120";
+ }
+ .flaticon-calendar:before {
+    content: "\f121";
+ }
+ .flaticon-clock:before {
+    content: "\f122";
+ }
+ .flaticon-up-right-arrow:before {
+    content: "\f123";
+ }

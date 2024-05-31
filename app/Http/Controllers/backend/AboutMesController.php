@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class AboutMesController extends Controller
 {
    
-  
+  public function page(){
+    return view();
+  }
 
 }
