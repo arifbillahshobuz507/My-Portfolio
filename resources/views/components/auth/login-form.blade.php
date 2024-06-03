@@ -39,7 +39,10 @@
             });
             hideLoader();
             if (result.data['status'] === 'success') {
-                window.location.href = "/"
+                successToast(result.data['message']);
+                setTimeout(function (){
+                    window.location.href = "/"
+                },2000)
             }else if(result.data['message']==='unauthorized'){
                 console.log(result.data['message']);
                 errorToast(result.data['message']);

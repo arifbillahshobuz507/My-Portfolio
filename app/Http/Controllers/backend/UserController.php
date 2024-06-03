@@ -82,8 +82,8 @@ class UserController extends Controller
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8',
-                'title' => 'string',
-                'phone' => 'string|max:14|min:11',
+                'title' => 'nullable|string',
+                'phone' => 'nullable|string|max:14|min:11',
             ]);
             $password = $request->input('password');
             User::create([
