@@ -8,31 +8,46 @@ use App\Http\Controllers\backend\ProjectsController;
 use App\Http\Controllers\backend\ResumeController;
 use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SkillsController;
+use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\HomeControlller;
+use App\Http\Middleware\TokenVerificationMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeControlller::class, 'home'])->name('home');
-Route::get('/herosection', [HeroPropertiesController::class, 'pages'])->name('hero.page');
-Route::get('/services', [ServicesController::class, 'pages'])->name('services.page');
-Route::get('/projects', [ProjectsController::class, 'pages'])->name('project.page');
-Route::get('/skils', [SkillsController::class, 'pages'])->name('skils.page');
-Route::get('/contacts', [ContactsController::class, 'pages'])->name('contacts.page');
-Route::get('/resume', [ResumeController::class, 'pages'])->name('resume.page');
-Route::get('/about', [AboutMesController::class, 'pages'])->name('about.page');
+Route::get('/', [HomeControlller::class, 'home'])->name('home')->middleware('tokenverification');
+
+// user Routes
+
+    // API Routes
+    Route::post('/user-registration',[UserController::class,'userRegistration']);
+    Route::post('/user-login',[UserController::class,'userLogin']);
+    Route::post('/send-otp',[UserController::class,'userSendOTP']);
+    Route::post('/verify-otp',[UserController::class,'userVerifyOTP']);
+    Route::post('/reset-password',[UserController::class,'userResetPassword'])->middleware('tokenverification');
+
+    Route::get('/registration',[UserController::class,'userRegistrationPage']);
+    Route::get('/login',[UserController::class,'userLoginPage']);
+    Route::get('/send-otp',[UserController::class,'userSendOTPPage']);
+    Route::get('/verify-otp',[UserController::class,'userVerifyOTPPage']);
+    Route::get('/reset-password',[UserController::class,'userResetPasswordPage'])->middleware('tokenverification');
+
+// // rabbil vai work
+// Route::post('/user-registration',[UserController::class,'UserRegistration']);
+// Route::post('/user-login',[UserController::class,'UserLogin']);
+// Route::post('/send-otp',[UserController::class,'SendOTPCode']);
+// Route::post('/verify-otp',[UserController::class,'VerifyOTP']);
+// Route::post('/reset-password',[UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
+// Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
+// Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
 
 
 
-Route::get('/herosectionData', [HeroPropertiesController::class, 'herosection'])->name('herosection.data');
-Route::get('/resumeData', [HeroPropertiesController::class, 'resume'])->name('resume.data');
-Route::get('/socialData', [HeroPropertiesController::class, 'social'])->name('social.data');
-Route::get('/servicesData', [ServicesController::class, 'service'])->name('services.data');
-Route::get('/projectdata', [ProjectsController::class, 'project'])->name('project.data');
-Route::get('/educationData', [ResumeController::class, 'education'])->name('education.data');
-Route::get('/exprienceData', [ResumeController::class, 'exprience'])->name('exprience.data');
-Route::get('/skilData', [SkillsController::class, 'skil'])->name('skils.data');
-Route::get('/contactData', [ContactsController::class, 'contact'])->name('contacts.data');
-Route::get('/aboutmeData', [ContactsController::class, 'aboutme'])->name('aboutme.data');
 
-//Template
-Route::get('/template', [HomeController::class, 'template'])->name('template');
+    // Route::post('/update/{id}',[UserController::class, 'updateUser'])->name('user.update');
+    // Route::post('/delete',[UserController::class, 'deleteUser'])->name('user.delete');
+    //View Routes
+    // Route::get('/', [UserController::class, 'index'])->name('user');
+    // Route::get('/add', [UserController::class, 'addUser'])->name('user.add');
+    // Route::get('/edit/{id}', [UserController::class, 'editUser'])->name('user.edit');
+    // Route::get('/view/{id}', [UserController::class, 'viewUser'])->name('user.view');
+
