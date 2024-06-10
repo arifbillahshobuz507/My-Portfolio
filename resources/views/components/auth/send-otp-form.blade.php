@@ -4,38 +4,40 @@
             <div class="card animated fadeIn w-90  p-4">
                 <div class="card-body">
                     <h4>EMAIL ADDRESS</h4>
-                    <br/>
+                    <br />
                     <label>Your email address</label>
-                    <input id="email" placeholder="User Email" class="form-control" type="email"/>
-                    <br/>
-                    <button onclick="VerifyEmail()"  class="btn w-100 float-end bg-gradient-primary">Next</button>
+                    <input id="email" placeholder="User Email" class="form-control" type="email" />
+                    <br />
+                    <button onclick="VerifyEmail()" class="btn w-100 float-end bg-gradient-primary">Next</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-{{-- <script>
-   async function VerifyEmail() {
+<script>
+    async function VerifyEmail() {
         let email = document.getElementById('email').value;
-        if(email.length === 0){
-           errorToast('Please enter your email address')
-        }
-        else{
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(email.length === 0) {
+            errorToast('Please enter your email address');
+        } else if (!emailRegex.test(email)) {
+            errorToast('Please enter a valid email address.');
+        } else {
             showLoader();
-            let res = await axios.post('/send-otp', {email: email});
+            let result = await axios.post("/send-otp", {
+                email: email
+            });
             hideLoader();
-            if(res.status===200 && res.data['status']==='success'){
-                successToast(res.data['message'])
-                sessionStorage.setItem('email', email);
-                setTimeout(function (){
-                    window.location.href = '/verifyOtp';
-                }, 1000)
-            }
-            else{
-                errorToast(res.data['message'])
+            console.log(result.data['message']);
+            if (result.status === 200 && result.data['status'] === 'success') {
+                successToast(result.data['message']);
+                sessionStorage.setItem('email',email);
+                setTimeout(function() {
+                    window.location.href = '/verify-otp';
+                }, 1000);
+            } else {
+                errorToast(result.data['message']);
             }
         }
-
     }
-</script> --}}
+</script>

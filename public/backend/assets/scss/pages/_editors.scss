@@ -1,0 +1,113 @@
+/**=====================
+    3.48 Editors CSS Start
+==========================**/
+
+#editor6 {
+    &.ql-bubble {
+        .ql-tooltip {
+            background-color: var(--body-font-color);
+            padding: 12px;
+
+            &:not(.ql-flip) {
+                .ql-tooltip-arrow {
+                    border-bottom: 6px solid var(--body-font-color);
+                }
+            }
+        }
+
+        .ql-tooltip-editor {
+            input[type=text] {
+                color: var(--white);
+            }
+        }
+    }
+
+    #toolbar6 {
+        .ql-formats {
+            margin: 8px 8px 8px -3px;
+
+            .ql-stroke,
+            .ql-fill {
+                stroke: var(--white);
+            }
+        }
+    }
+}
+
+.ql-formats {
+    .ql-picker-label {
+        &::before {
+            color: $dark-body-background;
+
+        }
+
+        svg {
+            .ql-stroke {
+                stroke: var(--body-font-color);
+            }
+
+            [dir="rtl"] & {
+                right: unset !important;
+                left: 0;
+            }
+        }
+    }
+
+    .ql-script,
+    .ql-stroke {
+        stroke: var(--body-font-color);
+    }
+}
+
+.ql-editor {
+    ol {
+        [dir="rtl"] & {
+            padding-left: unset !important;
+            padding-right: 24px;
+        }
+
+        li {
+            &:not(.ql-direction-rtl)::before {
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: unset;
+                }
+            }
+        }
+    }
+
+    ul {
+        [dir="rtl"] & {
+            padding-left: unset !important;
+            padding-right: 24px;
+        }
+
+        li {
+            &:not(.ql-direction-rtl)::before {
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: unset;
+                }
+            }
+        }
+    }
+}
+
+.quill-paragraph {
+    p {
+        color: var(--body-font-color);
+    }
+
+    ol,
+    ul {
+        li {
+            color: var(--body-font-color);
+        }
+    }
+}
+
+
+
+/**=====================
+    3.48 Editors CSS End
+==========================**/

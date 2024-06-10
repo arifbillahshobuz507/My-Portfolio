@@ -1,0 +1,194 @@
+/**=====================
+  5.3 Header CSS Start
+==========================**/
+
+.left-header {
+  .d-flex {
+    align-items: center;
+  }
+
+  h6 {
+    line-height: 1.6;
+
+    @media (max-width: 1199px) {
+      width: 160px;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 991px) {
+      width: 120px;
+    }
+
+    @media (max-width: 767px) {
+      width: 66px;
+    }
+  }
+
+  @media (max-width: 755px) {
+    display: none;
+  }
+
+  img {
+    margin-top: -12px;
+    height: 26px;
+  }
+
+  i {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: -4px;
+  }
+}
+
+/*======= Page Header css ends  ======= */
+
+
+/**======Main Header css Start ======**/
+.offcanvas,
+.offcanvas-bookmark {
+  .page-wrapper {
+    .page-body-wrapper {
+      .page-body {
+        position: relative;
+        filter: blur(5px) grayscale(100%);
+      }
+    }
+  }
+}
+
+.offcanvas {
+  position: unset;
+  visibility: visible;
+  background: unset;
+  z-index: 2;
+}
+
+.toggle-sidebar {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+
+  svg {
+    width: $header-wrapper-nav-icon-size;
+    height: $header-wrapper-nav-icon-size;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: rgba($primary-color, 0.1);
+    border-radius: 100%;
+    left: -11px;
+    z-index: -2;
+    top: -8px;
+    transform: scale(0);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    &:before {
+      height: 40px;
+      width: 40px;
+      transform: scale(1);
+      transition: all 0.3s ease;
+    }
+
+    >svg {
+      color: var(--theme-deafult) !important;
+      stroke: var(--theme-deafult) !important;
+    }
+  }
+}
+
+.onhover-dropdown {
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    .onhover-show-div {
+      @extend %for-animated-hover-box;
+    }
+  }
+}
+
+.onhover-show-div {
+  top: 80px;
+  position: absolute;
+  z-index: 8;
+  background-color: $white;
+  transition: all linear 0.3s;
+  @extend %for-animated-hover;
+
+  li {
+    a {
+      svg {
+        margin-top: 0 !important;
+
+        path,
+        line {
+          color: $theme-body-font-color !important;
+        }
+      }
+    }
+  }
+}
+/**======Main Header css Ends ======**/
+
+/*=======Mega menu css start=======*/
+.mega-menu {
+  .default-according {
+    .card {
+      .btn-link {
+        font-weight: 500;
+        color: gray;
+      }
+      .card-body {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .onhover-show-div {
+    width: 1500px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  div {
+    >div {
+      a {
+        margin-bottom: 0px;
+        display: inline-block;
+        color: $theme-body-sub-title-color;
+      }
+    }
+  }
+
+  .list-unstyled {
+    div {
+      a {
+        padding: 8px 35px 8px 0;
+        transition: $sidebar-transition;
+
+        &:hover {
+          padding: 8px 35px 8px 10px;
+          transition: $sidebar-transition;
+        }
+      }
+    }
+  }
+}
+
+/*=======Mega menu css end=======*/
+
+/**=====================
+    5.3 Header CSS Ends
+==========================**/

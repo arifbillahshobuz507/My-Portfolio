@@ -1,0 +1,844 @@
+- var status_toggle = (sidebar_open ? undefined : 'checked');
+// Page Sidebar Start
+.sidebar-wrapper(sidebar-layout="stroke-svg")
+  div
+    .logo-wrapper
+      a(href='index.html')
+        img.img-fluid.for-light(src='../assets/images/logo/logo.png', alt='')
+        img.img-fluid.for-dark(src='../assets/images/logo/logo_dark.png', alt='')
+      .back-btn
+        i.fa.fa-angle-left
+      .toggle-sidebar
+        i.status_toggle.middle(data-feather='grid').sidebar-toggle 
+    .logo-icon-wrapper
+      a(href="index.html")
+        img.img-fluid(src='../assets/images/logo/logo-icon.png', alt='')
+    nav.sidebar-main
+      .left-arrow#left-arrow
+        i(data-feather='arrow-left')
+      #sidebar-menu
+        ul.sidebar-links#simple-bar
+          li.back-btn
+            a(href="index.html")
+              img.img-fluid(src='../assets/images/logo/logo-icon.png', alt='')
+            .mobile-back.text-end
+              span Back
+              i.fa.fa-angle-right.ps-2(aria-hidden='true')
+          li.pin-title.sidebar-main-title
+            div 
+              h6 Pinned
+          li.sidebar-main-title
+            div
+              h6.lan-1 General
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            label.badge.badge-light-primary 8
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-home')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-home')
+              span.lan-3 Dashboard          
+            ul.sidebar-submenu
+              li
+                a(href='index.html').lan-4
+                  | Default
+              li
+                a(href='dashboard-02.html').lan-5 Ecommerce
+              li
+                a(href='dashboard-03.html') Online course
+              li
+                a(href='dashboard-04.html') Crypto
+              li
+                a(href='dashboard-05.html') Social
+              li
+                a(href='dashboard-06.html') NFT
+              li 
+                a(href='dashboard-07.html') School management
+              li 
+                a(href='dashboard-08.html') POS
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-widget')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-widget')
+              span.lan-6 Widgets
+
+            ul.sidebar-submenu
+              li
+                a(href='general-widget.html') General
+              li
+                a(href='chart-widget.html') Chart
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-layout')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-layout')
+              span.lan-7 Page layout
+            
+            ul.sidebar-submenu
+              li
+                a(href='box-layout.html') Boxed
+              li
+                a(href='layout-rtl.html') RTL
+              li
+                a(href='layout-dark.html') Dark Layout
+              li
+                a(href='hide-on-scroll.html') Hide Nav Scroll
+              li
+                a(href='footer-light.html') Footer Light
+              li
+                a(href='footer-dark.html') Footer Dark
+              li
+                a(href='footer-fixed.html') Footer Fixed
+          li.sidebar-main-title
+            div
+              h6.lan-8 Applications
+          li.sidebar-list
+            i.fa.fa-thumb-tack     
+            label.badge.badge-light-secondary New
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-project')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-project')
+              span Project           
+            
+            ul.sidebar-submenu
+              li
+                a(href='projects.html') Project List
+              li
+                a(href='projectcreate.html') Create new
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='file-manager.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-file')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-file')
+              span File manager
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            label.badge.badge-light-danger Latest             
+            a.sidebar-link.sidebar-title.link-nav(href='kanban.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-board')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-board')
+              span kanban Board
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-ecommerce')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-ecommerce')
+              span Ecommerce
+            
+            ul.sidebar-submenu
+              li
+                a(href='add-products.html') Add Products
+              li
+                a(href='product.html') Product
+              li
+                a(href='category.html') Category page
+              li
+                a(href='product-page.html') Product page
+              li
+                a(href='list-products.html') Product list
+              li
+                a(href='payment-details.html') Payment Details
+              li
+                a(href='order-history.html') Order History
+              li
+                a.submenu-title(href='#')
+                  | Invoices
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='invoice-1.html') Invoice-1
+                  li
+                    a(href='invoice-2.html') Invoice-2
+                  li
+                    a(href='invoice-3.html') Invoice-3
+                  li
+                    a(href='invoice-4.html') Invoice-4
+                  li
+                    a(href='invoice-5.html') Invoice-5
+                  li
+                    a(href='invoice-template.html') Invoice-6
+              li
+                a(href='cart.html') Cart
+              li
+                a(href='list-wish.html') Wishlist
+              li
+                a(href='checkout.html') Checkout
+              li
+                a(href='pricing.html') Pricing          
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='letter-box.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-email')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-email')
+              span Letter Box
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-chat')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-chat')
+              span Chat
+            
+            ul.sidebar-submenu
+              li
+                a(href='private-chat.html') Private Chat
+              li
+                a(href='group-chat.html') Group Chat
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-user')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-user')
+              span Users
+            
+            ul.sidebar-submenu
+              li
+                a(href='user-profile.html') Users Profile
+              li
+                a(href='edit-profile.html') Users Edit
+              li
+                a(href='user-cards.html') Users Cards
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='bookmark.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-bookmark')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-bookmark') 
+              span Bookmarks
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='contacts.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-contact')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-contact') 
+              span Contacts
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='task.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-task')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-task') 
+              span Tasks
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='calendar-basic.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-calendar')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-calender')
+              span Calendar
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='social-app.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-social')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-social') 
+              span Social App
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='to-do.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-to-do')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-to-do') 
+              span To-Do
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='search.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-search')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-search') 
+              span Search Result
+            
+
+          li.sidebar-main-title
+            div
+              h6 Forms & Table
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-form')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-form') 
+              span Forms
+            
+            ul.sidebar-submenu
+              li
+                a.submenu-title(href='#')
+                  | Form Controls
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='form-validation.html') Form Validation
+                  li
+                    a(href='base-input.html') Base Inputs
+                  li
+                    a(href='radio-checkbox-control.html') Checkbox & Radio
+                  li
+                    a(href='input-group.html') Input Groups
+                  li 
+                    a(href='input-mask.html') Input Mask
+                  li
+                    a(href='megaoptions.html') Mega Options
+              li
+                a.submenu-title(href='#')
+                  | Form Widgets
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='datepicker.html') Datepicker
+                  li
+                    a(href='touchspin.html') Touchspin
+                  li
+                    a(href='select2.html') Select2
+                  li
+                    a(href='switch.html') Switch
+                  li
+                    a(href='typeahead.html') Typeahead
+                  li
+                    a(href='clipboard.html') Clipboard
+              li
+                a.submenu-title(href='#')
+                  | Form layout
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='form-wizard.html') Form Wizard 1
+                  li
+                    a(href='form-wizard-two.html') Form Wizard 2
+                  li
+                    a(href='two-factor.html') Two Factor
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-table')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-table')
+              span Tables
+            
+            ul.sidebar-submenu
+              li
+                a.submenu-title(href='#')
+                  | Bootstrap Tables
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='bootstrap-basic-table.html') Basic Tables
+                  li
+                    a(href='table-components.html') Table components
+              li
+                a.submenu-title(href='#')
+                  | Data Tables
+                  span.sub-arrow
+                    i.fa.fa-angle-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='datatable-basic-init.html') Basic Init
+                  li 
+                    a(href="datatable-advance.html") Advance Init 
+                  li
+                    a(href='datatable-API.html') API
+                  li
+                    a(href='datatable-data-source.html') Data Sources
+              li
+                a(href='datatable-ext-autofill.html')
+                  | Ex. Data Tables
+              li
+                a(href='jsgrid-table.html') Js Grid Table        
+
+
+          li.sidebar-main-title
+            div
+              h6 Components
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-ui-kits')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-ui-kits')
+              span Ui Kits
+            
+            ul.sidebar-submenu
+              li
+                a(href='typography.html') Typography
+              li
+                a(href='avatars.html') Avatars
+              li
+                a(href='helper-classes.html') helper classes
+              li
+                a(href='grid.html') Grid
+              li
+                a(href='tag-pills.html') Tag & pills
+              li
+                a(href='progress-bar.html') Progress
+              li
+                a(href='modal.html') Modal
+              li
+                a(href='alert.html') Alert
+              li
+                a(href='popover.html') Popover
+              li
+                a(href='tooltip.html') Tooltip
+              li
+                a(href='dropdown.html') Dropdown
+              li
+                a(href='according.html') Accordion
+              li
+                a(href='tab-bootstrap.html')
+                  | Tabs
+              li
+                a(href='list.html') Lists
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-bonus-kit')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-bonus-kit')
+              span Bonus Ui
+            
+            ul.sidebar-submenu
+              li
+                a(href='scrollable.html') Scrollable
+              li
+                a(href='tree.html') Tree view
+              li
+                a(href='toasts.html') Toasts
+              li
+                a(href='rating.html') Rating
+              li
+                a(href='dropzone.html') dropzone
+              li
+                a(href='tour.html') Tour
+              li
+                a(href='sweet-alert2.html') SweetAlert2
+              li
+                a(href='modal-animated.html') Animated Modal
+              li
+                a(href='owl-carousel.html') Owl Carousel
+              li
+                a(href='ribbons.html') Ribbons
+              li
+                a(href='pagination.html') Pagination
+              li
+                a(href='breadcrumb.html') Breadcrumb
+              li
+                a(href='range-slider.html') Range Slider
+              li
+                a(href='image-cropper.html') Image cropper
+              li
+                a(href='basic-card.html') Basic Card
+              li
+                a(href='creative-card.html') Creative Card
+              li
+                a(href='dragable-card.html') Draggable Card
+              li
+                a(href='timeline-v-1.html') Timeline 
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-animation')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-animation')
+              span Animation
+            
+            ul.sidebar-submenu
+              li
+                a(href='animate.html') Animate
+              li
+                a(href='scroll-reval.html') Scroll Reveal
+              li
+                a(href='AOS.html') AOS animation
+              li
+                a(href='tilt.html') Tilt Animation
+              li
+                a(href='wow.html') Wow Animation
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-icons')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-icons')
+              span Icons
+            
+            ul.sidebar-submenu
+              li
+                a(href='flag-icon.html') Flag icon
+              li
+                a(href='font-awesome.html') Fontawesome Icon
+              li
+                a(href='ico-icon.html') Ico Icon
+              li
+                a(href='themify-icon.html') Themify Icon
+              li
+                a(href='feather-icon.html') Feather icon
+              li
+                a(href='whether-icon.html') Whether Icon
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-button')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-botton')
+              span Buttons
+            
+            ul.sidebar-submenu
+              li
+                a(href='buttons.html') Default Style
+              li
+                a(href='buttons-flat.html') Flat Style
+              li
+                a(href='buttons-edge.html') Edge Style
+              li
+                a(href='raised-button.html') Raised Style
+              li
+                a(href='button-group.html') Button Group
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-charts')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-charts')
+              span Charts
+            
+            ul.sidebar-submenu
+              li
+                a(href='echarts.html') Echarts
+              li
+                a(href='chart-apex.html') Apex Chart
+              li
+                a(href='chart-google.html') Google Chart
+              li
+                a(href='chart-sparkline.html') Sparkline chart
+              li
+                a(href='chart-flot.html') Flot Chart
+              li
+                a(href='chart-knob.html') Knob Chart
+              li
+                a(href='chart-morris.html') Morris Chart
+              li
+                a(href='chartjs.html') Chatjs Chart
+              li
+                a(href='chartist.html') Chartist Chart
+              li
+                a(href='chart-peity.html') Peity Chart
+                
+          li.sidebar-main-title
+            div
+              h6 Pages
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='landing-page.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-landing-page')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-landing-page')
+              span Landing page
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='sample-page.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-sample-page')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-sample-page')
+              span Sample page
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='internationalization.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-internationalization')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-internationalization')
+              span Internationalization
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='../starter-kit/index.html' target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-starter-kit')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-starter-kit')
+              span Starter kit
+
+          li.mega-menu.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-others')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-others')
+              span Others
+            .mega-menu-container.menu-content
+              .container-fluid
+                .row
+                  .col.mega-box
+                    .link-section
+                      .submenu-title
+                        h5 Error Page
+                      ul.submenu-content.opensubmegamenu
+                        li
+                          a(href='error-400.html') Error 400
+                        li
+                          a(href='error-401.html') Error 401
+                        li
+                          a(href='error-403.html') Error 403
+                        li
+                          a(href='error-404.html') Error 404
+                        li
+                          a(href='error-500.html') Error 500
+                        li
+                          a(href='error-503.html') Error 503
+                  .col.mega-box
+                    .link-section
+                      .submenu-title
+                        h5  Authentication
+                      ul.submenu-content.opensubmegamenu
+                        li
+                          a(href='login.html' target="_blank") Login Simple
+                        li
+                          a(href='login_one.html' target="_blank") Login with bg image
+                        li
+                          a(href='login_two.html' target="_blank") Login with image two                      
+                        li
+                          a(href='login-bs-validation.html' target="_blank") Login With validation
+                        li
+                          a(href='login-bs-tt-validation.html' target="_blank") Login with tooltip
+                        li
+                          a(href='login-sa-validation.html' target="_blank") Login with sweetalert
+
+                        li
+                          a(href='sign-up.html' target="_blank") Register Simple
+                        li
+                          a(href='sign-up-one.html' target="_blank")
+                            | Register with Bg Image                              
+                        li
+                          a(href='sign-up-two.html' target="_blank") Register with image two
+                        li
+                          a(href='sign-up-wizard.html' target="_blank") Register wizard
+
+
+                        li
+                          a(href='unlock.html') Unlock User
+                        li
+                          a(href='forget-password.html') Forget Password
+                        li
+                          a(href='reset-password.html') Reset Password
+                        li
+                          a(href='maintenance.html') Maintenance
+                  .col.mega-box
+                    .link-section
+                      .submenu-title
+                        h5 Coming Soon
+                      ul.submenu-content.opensubmegamenu
+                        li
+                          a(href='comingsoon.html') Coming Simple
+                        li
+                          a(href='comingsoon-bg-video.html') Coming with Bg video
+                        li
+                          a(href='comingsoon-bg-img.html') Coming with Bg Image
+                  .col.mega-box
+                    .link-section
+                      .submenu-title
+                        h5 Email templates
+                      ul.submenu-content.opensubmegamenu
+                        li
+                          a(href='basic-template.html')
+                            | Basic Email
+                        li
+                          a(href='email-header.html')
+                            | Basic With Header
+                        li
+                          a(href='template-email.html')
+                            | Ecomerce Template
+                        li
+                          a(href='template-email-2.html')
+                            | Email Template 2
+                        li
+                          a(href='ecommerce-templates.html')
+                            | Ecommerce Email
+                        li
+                          a(href='email-order-success.html')
+                            | Order Success
+          li.sidebar-main-title
+            div
+              h6 Miscellaneous
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-gallery')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-gallery')
+              span Gallery
+            
+            ul.sidebar-submenu
+              li
+                a(href='gallery.html') Gallery Grid
+              li
+                a(href='gallery-with-description.html') Gallery Grid Desc
+              li
+                a(href='gallery-masonry.html') Masonry Gallery
+              li
+                a(href='masonry-gallery-with-disc.html') Masonry with Desc
+              li
+                a(href='gallery-hover.html') Hover Effects
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-blog')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-blog')
+              span Blog
+            
+            ul.sidebar-submenu
+              li
+                a(href='blog.html') Blog Details
+              li
+                a(href='blog-single.html') Blog Single
+              li
+                a(href='add-post.html') Add Post
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='faq.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-faq')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-faq')
+              span FAQ
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-job-search')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-job-search')
+              span Job Search
+            
+            ul.sidebar-submenu
+              li
+                a(href='job-cards-view.html') Cards view
+              li
+                a(href='job-list-view.html') List View
+              li
+                a(href='job-details.html') Job Details
+              li
+                a(href='job-apply.html') Apply
+
+
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-learning')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-learning')
+              span Learning
+            
+            ul.sidebar-submenu
+              li
+                a(href='learning-list-view.html') Learning List
+              li
+                a(href='learning-detailed.html') Detailed Course
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-maps')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-maps')
+              span Maps
+            
+            ul.sidebar-submenu
+              li
+                a(href='map-js.html') Maps JS
+              li
+                a(href='vector-map.html') Vector Maps
+                
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-editors')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-editors')
+              span Editors
+            
+            ul.sidebar-submenu
+              li
+                a(href='quilleditor.html') Quill editor
+              li
+                a(href='ace-code-editor.html') ACE code editor 
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='knowledgebase.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-knowledgebase')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-knowledgebase')
+              span Knowledgebase
+            
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title.link-nav(href='support-ticket.html')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-support-tickets')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-support-tickets')
+              span Support Ticket
+            
+      .right-arrow#right-arrow
+        i(data-feather='arrow-right')
+// Page Sidebar Ends

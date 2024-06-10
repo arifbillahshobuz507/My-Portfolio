@@ -1,0 +1,351 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h3
+                    | User Cards
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Users
+                    li.breadcrumb-item.active User Cards
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img(src="../assets/images/dashboard-5/profile.png", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Brooklyn Simmons
+                      span.f-light @brookly.simmons
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 1,908
+                          span.f-light Posts
+                        li
+                          h5.mb-0 34.0k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 897
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/avtar/3.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Mark Jecno
+                      span.f-light @mark.jeco
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 875
+                          span.f-light Posts
+                        li
+                          h5.mb-0 12.0k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 1400
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/avtar/11.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Dev John
+                      span.f-light @john.dev
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 1,274
+                          span.f-light Posts
+                        li
+                          h5.mb-0 15.0k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 1874
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/avtar/16.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Johan Deo
+                      span.f-light @deo.johan
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 500
+                          span.f-light Posts
+                        li
+                          h5.mb-0 8.0k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 570
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/user/7.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Douglas Reichel
+                      span.f-light @reichel.douglas
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 460
+                          span.f-light Posts
+                        li
+                          h5.mb-0 2k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 350
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/avtar/4.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Lisa lillian
+                      span.f-light @lisa.lillian
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 547
+                          span.f-light Posts
+                        li
+                          h5.mb-0 3.5k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 822
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/user/1.jpg", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Olivia rose
+                      span.f-light @rose.olivia
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 868
+                          span.f-light Posts
+                        li
+                          h5.mb-0 1k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 742
+                          span.f-light Following
+              .col-xl-4.col-sm-6.col-xxl-3.col-ed-4.box-col-4
+                .card.social-profile
+                  .card-body
+                    .social-img-wrap 
+                      .social-img
+                        img.img-fluid(src="../assets/images/user/2.png", alt="profile")
+                      .edit-icon
+                        svg
+                          use(href='../assets/svg/icon-sprite.svg#profile-check')
+                    .social-details
+                      h5.mb-1
+                        a(href="social-app.html") Sarah Karen
+                      span.f-light @karen.sarah
+                      ul.card-social
+                        li
+                          a(href='https://www.facebook.com/' target="_blank")
+                            i.fa.fa-facebook
+                        li
+                          a(href='https://accounts.google.com/' target="_blank")
+                            i.fa.fa-google-plus
+                        li
+                          a(href='https://twitter.com/' target="_blank")
+                            i.fa.fa-twitter
+                        li
+                          a(href='https://www.instagram.com/' target="_blank")
+                            i.fa.fa-instagram
+                        li
+                          a(href='https://rss.app/' target="_blank")
+                            i.fa.fa-rss
+                      ul.social-follow 
+                        li
+                          h5.mb-0 972
+                          span.f-light Posts
+                        li
+                          h5.mb-0 2.5k
+                          span.f-light Followers
+                        li
+                          h5.mb-0 864
+                          span.f-light Following
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

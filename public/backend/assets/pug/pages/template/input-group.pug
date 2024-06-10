@@ -1,0 +1,404 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Input Groups
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Form Controls
+                    li.breadcrumb-item.active  Input groups
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Button addons 
+                    p.f-m-light.mt-1 
+                      | Multiple add-ons are supported and can be mixed with buttons input versions.
+                  .card-body.card-wrapper.input-group-wrapper
+                    .input-group
+                      button#button-addon1.btn.btn-outline-secondary(type='button') $ 25
+                      input.form-control(type='text' placeholder='' aria-label='Example text with button addon' aria-describedby='button-addon1')
+                    .input-group
+                      input.form-control(type='text' placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby='button-addon2')
+                      button#button-addon2.btn.btn-outline-warning(type='button') Submit
+                    .input-group
+                      button.btn.btn-secondary(type='button')
+                        span &#8364; 
+                      button.btn.btn-warning(type='button') 0.0114419
+                      input.form-control(type='text' placeholder='' aria-label='Example text with two button addons')
+                    .input-group
+                      input.form-control(type='text' placeholder="Recipient's username" aria-label="Recipient's username with two button addons")
+                      button.btn.btn-secondary(type='button') 
+                        span &#8377;
+                      button.btn.btn-warning(type='button') 500
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Custom forms 
+                    p.f-m-light.mt-1 
+                      | Input groups include support for 
+                      code custom selects and custom file inputs
+                      | . Browser default versions of these are not supported.
+                  .card-body.common-flex.main-custom-form
+                    .input-group
+                      label.input-group-text(for='inputGroupSelect01') Options
+                      select#inputGroupSelect01.form-select
+                        option(selected='') Select Your Favorite Pixelstrap theme
+                        option(value='1') Tivo
+                        option(value='2') Cuba
+                        option(value='3') Roxo
+                    .input-group
+                      select#inputGroupSelect02.form-select
+                        option(selected='') Select Your Favorite Colors
+                        option(value='1') Yellow
+                        option(value='2') Red
+                        option(value='3') Orange
+                      label.input-group-text(for='inputGroupSelect02') Options
+                    .input-group
+                      button.btn.btn-outline-secondary(type='button') 
+                        i.icofont.icofont-credit-card
+                      select#inputGroupSelect03.form-select(aria-label='Example select with button addon')
+                        option(selected='') Select Your Favorite Chocolates
+                        option(value='1') Dark Chocolates
+                        option(value='2') Dairy Milk
+                        option(value='3') Kitkat
+                    .input-group
+                      select#inputGroupSelect04.form-select(aria-label='Example select with button addon')
+                        option(selected='') Select Your Favorite Theme
+                        option(value='1') Oslo
+                        option(value='2') Koho
+                        option(value='3') Voxo
+                      button.btn.btn-outline-secondary(type='button') Submit
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Custom file input 
+                    p.f-m-light.mt-1 
+                      | Input groups include support for custom selects and custom 
+                      code file uploads
+                      | . Browser default versions of these are not supported.
+                  .card-body.main-custom-form.input-group-wrapper
+                    .input-group
+                      label.input-group-text(for='inputGroupFile01') Upload
+                      input#inputGroupFile01.form-control(type='file')
+                    .input-group
+                      input#inputGroupFile02.form-control(type='file')
+                      label.input-group-text(for='inputGroupFile02') Verify
+                    .input-group
+                      button#inputGroupFileAddon03.btn.btn-outline-success(type='button')
+                        i.icofont.icofont-ui-copy
+                      input#inputGroupFile03.form-control(type='file' aria-describedby='inputGroupFileAddon03' aria-label='Upload')
+                    .input-group
+                      input#inputGroupFile04.form-control(type='file' aria-describedby='inputGroupFileAddon04' aria-label='Upload')
+                      button#inputGroupFileAddon04.btn.btn-outline-success(type='button') Submit
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Buttons with dropdowns 
+                    p.f-m-light.mt-1 
+                      | Use the
+                      code .input-group 
+                      | and 
+                      code [aria-label='']
+                      |  through buttons with dropdowns.
+                  .card-body.main-custom-form.card-wrapper.input-group-wrapper
+                    .input-group
+                      button.btn.btn-outline-info.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Dropdown
+                      ul.dropdown-menu.dropdown-block
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Ecommerce
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Email
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Users
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Bookmarks
+                      input.form-control(type='text' aria-label='Text input with dropdown button')
+                    .input-group
+                      input.form-control(type='text' aria-label='Text input with dropdown button')
+                      button.btn.btn-outline-danger.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Dropdown
+                      ul.dropdown-menu.dropdown-menu-end.dropdown-block
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Starter kit
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Gallery
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Blog
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Maps
+                    .input-group
+                      button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Dropdown
+                      ul.dropdown-menu.dropdown-block
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Widgets
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Project
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Contacts
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Tasks
+                      input.form-control(type='text' aria-label='Text input with 2 dropdown buttons')
+                      button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Dropdown
+                      ul.dropdown-menu.dropdown-menu-end.dropdown-block
+                        li
+                          a.dropdown-item(href='javascript:void(0)') To-Do
+                        li
+                          a.dropdown-item(href='javascript:void(0)') FAQ
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Knowledgebase
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='javascript:void(0)') Support Ticket
+              .col-md-6
+                .card.height-equal
+                  .card-header
+                    h4 Segmented buttons  
+                    p.f-m-light.mt-1 
+                      | Multiple add-ons are supported and can be mixed with
+                      code  dropdowns
+                      |  versions.
+                  .card-body.main-segment-btn.card-wrapper.input-group-wrapper
+                    .input-group
+                      button.btn.btn-outline-info(type='button') Info 
+                      button.btn.btn-info.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                        span.visually-hidden Toggle Dropdown
+                      ul.dropdown-menu.dropdown-block
+                        li
+                          a.dropdown-item(href='#') Learning
+                        li
+                          a.dropdown-item(href='#') Editors
+                        li
+                          a.dropdown-item(href='#') Users
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='#') Social App
+                      input.form-control(type='text' aria-label='Text input with segmented dropdown button')
+                    .input-group
+                      input.form-control(type='text' aria-label='Text input with segmented dropdown button')
+                      button.btn.btn-outline-secondary(type='button') Secondary
+                      button.btn.btn-secondary.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                        span.visually-hidden Toggle Dropdown
+                      ul.dropdown-menu.dropdown-menu-end.dropdown-block
+                        li
+                          a.dropdown-item(href='#') Search Result
+                        li
+                          a.dropdown-item(href='#') Tasks
+                        li
+                          a.dropdown-item(href='#') Projects
+                        li
+                          hr.dropdown-divider
+                        li
+                          a.dropdown-item(href='#') Animation
+              .col-md-6
+                .card.height-equal
+                  .card-header
+                    h4 Checkboxes and radios
+                    p.f-m-light.mt-1 
+                      | Place any checkbox or radio option within an input group's addon instead of text. We recommend adding 
+                      code .mt-0
+                      |  to the 
+                      code .form-check-input
+                      |  when there's no visible text next to the input.
+                  .card-body.checkbox-checked.card-wrapper.input-group-wrapper
+                    .input-group
+                      .input-group-text
+                        input.form-check-input.mt-0(type='checkbox' value='' aria-label='Checkbox for following text input')
+                      input.form-control(type='text' aria-label='Text input with checkbox')
+                    .input-group
+                      .input-group-text
+                        input.form-check-input.mt-0(type='radio' value='' aria-label='Radio button for following text input' checked='')
+                      input.form-control(type='text' aria-label='Text input with radio button')
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Sizing
+                    p.f-m-light.mt-1 
+                      | Add the relative form sizing classes to the
+                      code  .input-group
+                      |  itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
+                  .card-body.card-wrapper.input-group-wrapper
+                    .input-group.input-group-sm
+                      span#inputGroup-sizing-sm.input-group-text Small
+                      input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm')
+                    .input-group
+                      span#inputGroup-sizing-default.input-group-text Default
+                      input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+                    .input-group.input-group-lg
+                      span#inputGroup-sizing-lg.input-group-text Large
+                      input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-lg')
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Multiple inputs
+                    p.f-m-light.mt-1 
+                      | While multiple 
+                      code &lt;input&gt;
+                      | s are supported visually, validation styles are only available for input groups with a single 
+                      code &lt;input&gt;
+                      | .
+                  .card-body.common-flex.main-custom-form.card-wrapper
+                    .input-group
+                      span.input-group-text First and last name
+                      input.form-control(type='text' aria-label='First name')
+                      input.form-control(type='text' aria-label='Last name')
+                    .input-group
+                      span.input-group-text $
+                      span.input-group-text 0.00
+                      input.form-control(type='text' aria-label='Dollar amount (with dot and two decimal places)')
+                    .input-group
+                      input.form-control(type='text' aria-label='Dollar amount (with dot and two decimal places)')
+                      span.input-group-text $
+                      span.input-group-text 0.00
+              .col-xl-6
+                .card
+                  .card-header
+                    h4 Basic input groups
+                    p.f-m-light.mt-1 
+                      | Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place 
+                      code &lt;label&gt;
+                      | s outside the input group.
+                  .card-body
+                    .row.g-3
+                      .col-md-12
+                        .card-wrapper.border.rounded-3.main-custom-form.input-group-wrapper
+                          h6.sub-title.fw-bold Basic
+                          .input-group
+                            span#basic-addon1.input-group-text @
+                            input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1')
+                          .input-group
+                            input.form-control(type='text' placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby='basic-addon2')
+                            span#basic-addon2.input-group-text @example.com
+                          label.form-label(for='basic-url') Your vanity URL
+                          .input-group
+                            span#basic-addon3.input-group-text https://example.com/
+                            input#basic-url.form-control(type='text' aria-describedby='basic-addon3')
+                          .input-group
+                            span.input-group-text $
+                            input.form-control(type='text' aria-label='Amount (to the nearest dollar)')
+                            span.input-group-text .00
+                          .input-group
+                            input.form-control(type='text' placeholder='Username' aria-label='Username')
+                            span.input-group-text @
+                            input.form-control(type='text' placeholder='Server' aria-label='Server')
+                          .input-group
+                            span.input-group-text With textarea
+                            textarea.form-control(aria-label='With textarea')
+                      .col-12
+                        .card-wrapper.border.rounded-3.input-radius
+                          h6.sub-title.fw-bold Wrapping 
+                          p.f-m-light.mb-1
+                            | Input groups wrap by default via flex-wrap: wrap in order to accommodate custom form field validation within an input group. You may disable this with 
+                            code .flex-nowrap
+                            | .
+                          .input-group.flex-nowrap
+                            span#addon-wrapping.input-group-text @
+                            input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='addon-wrapping')
+                  .card-footer
+                    button.btn.btn-primary(type='submit').m-r-15 Submit
+                    button.btn.btn-light(type='submit') Cancel   
+              .col-xl-6
+                .card
+                  .card-header
+                    h4 Variation of addons
+                    p.f-m-light.mt-1 
+                      | Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place 
+                      code &lt;label&gt;
+                      | s outside the input group.
+                  .card-body.card-wrapper.input-radius
+                    .row
+                      .col
+                        form
+                          .mb-3.m-form__group
+                            label.form-label Left Addon
+                            .input-group
+                              span.input-group-text.list-light-primary
+                                i.icofont.icofont-pencil-alt-5.txt-primary
+                              input.form-control(type='text', placeholder='Email')
+                          .mb-3
+                            label.form-label Right Addon
+                            .input-group
+                              input.form-control(type='text', placeholder="Recipient's username", aria-label="Recipient's username")
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-ui-dial-phone.txt-danger  
+                          .mb-3
+                            label.form-label Joint Addon
+                            .input-group
+                              span.input-group-text.list-light-primary
+                                i.icofont.icofont-unlink.txt-primary
+                              span.input-group-text 0.00  
+                              input.form-control(type='text', aria-label='Amount (to the nearest dollar)')
+                          .mb-3
+                            label.form-label Left & Right Addon
+                            .input-group.mb-3
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-ui-zoom-out.txt-danger
+                              input.form-control(type='text', aria-label='Amount (to the nearest dollar)')
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-ui-zoom-in.txt-danger
+                          .mb-3.input-group-solid
+                            label.form-label Solid style
+                            .input-group
+                              span.input-group-text.list-light-primary
+                                i.icofont.icofont-users.txt-primary
+                              input.form-control(type='text', placeholder='999999')
+                          .mb-3.input-group-square
+                            label.form-label Flat style
+                            .input-group
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-credit-card.txt-danger
+                              input.form-control(type='text', placeholder='')
+                          .mb-3.input-group-square
+                            label.form-label Raise style
+                            .input-group
+                              span.input-group-text.list-light-primary
+                                i.icofont.icofont-download.txt-primary
+                              input.form-control.input-group-air(type='text', placeholder='https://www.example.com')
+                          div
+                            label.form-label Left & Right Addon
+                            .input-group.pill-input-group
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-ui-copy.txt-danger
+                              input.form-control(type='text', aria-label='Amount (to the nearest dollar)')
+                              span.input-group-text.list-light-danger
+                                i.icofont.icofont-stock-search.txt-danger
+                  .card-footer
+                    button.btn.btn-primary(type='submit').m-r-15 Submit
+                    button.btn.btn-light(type='submit') Cancel    
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

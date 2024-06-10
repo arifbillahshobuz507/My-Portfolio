@@ -1,0 +1,465 @@
+/**=====================
+  2.29 Tab CSS Start
+==========================**/
+.nav-pills {
+  .nav-link.active,
+  .show>.nav-link {
+    background-color: var(--theme-deafult);
+  }
+}
+
+.nav {
+  i {
+    margin-right: 10px;
+  }
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+$nav-name: theme,
+  primary,
+  secondary,
+  success,
+  danger,
+  info,
+  light,
+  dark,
+  warning;
+$nav-color: var(--theme-deafult),
+  var(--theme-deafult),
+  $secondary-color,
+  $success-color,
+  $danger-color,
+  $info-color,
+  $light-color,
+  $dark-color,
+  $warning-color;
+
+@each $var in $nav-name {
+  $i: index($label-name, $var);
+
+  .nav-#{$var},
+  .nav-pills.nav-#{$var} {
+    .nav-link {
+      color: nth($nav-color, $i);
+    }
+
+    .nav-link.active,
+    .show>.nav-link {
+      background-color: nth($nav-color, $i);
+      color: $white;
+    }
+  }
+}
+
+.nav-tabs.nav-bottom {
+  .nav-item {
+    .nav-link.active,
+    .nav-link.focus,
+    .nav-link.hover {
+      border-color: $white #dee2e6 #dee2e6;
+    }
+  }
+}
+
+.tab-content {
+  ~.nav-tabs {
+    &.border-tab {
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+  }
+}
+
+.border-tab.nav-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+
+  .nav-item {
+    .nav-link {
+      font-size: 16px;
+      color: $dark-color;
+      text-align: center;
+      padding: 10px 25px;
+      border: none;
+      border-bottom: none;
+      transition: 0.3s;
+
+      @media (min-width: 576px) and (max-width: 1920px) {
+        padding-top: 0;
+      }
+
+      &.active,
+      &.show,
+      &:focus,
+      &:hover {
+        color: var(--theme-deafult);
+      }
+
+      &.active,
+      &.show,
+      &:focus {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.border-tab.nav-left {
+  .nav-link {
+    transition: all 0.3s ease;
+    color: $dark-color;
+  }
+  .nav-link.active,
+  .show>.nav-link {
+    background-color: transparent;
+    border-left-color: var(--theme-deafult);
+    color: var(--theme-deafult);
+    border-radius: 0;
+    transition: all 0.3s ease;
+  }
+}
+
+.border-tab.nav-right {
+  .nav-link {
+    border-right: 2px solid transparent;
+    transition: all 0.3s ease;
+    color: $dark-color;
+    text-align: right;
+  }
+
+  .nav-link.active,
+  .show>.nav-link {
+    background-color: transparent;
+    border-right-color: var(--theme-deafult);
+    color: var(--theme-deafult);
+    border-radius: 0;
+    transition: all 0.3s ease;
+  }
+}
+
+$m-nav-name: theme,
+  primary,
+  secondary,
+  success,
+  danger,
+  info,
+  light,
+  dark,
+  warning;
+$nav-color: var(--theme-deafult),
+  var(--theme-deafult),
+  $secondary-color,
+  $success-color,
+  $danger-color,
+  $info-color,
+  $light-color,
+  $dark-color,
+  $warning-color;
+
+@each $var in $m-nav-name {
+  $i: index($label-name, $var);
+
+  .border-tab.nav-#{$var} {
+
+    .nav-link.active,
+    .nav-item.show,
+    .nav-link:focus,
+    .nav-link:hover {
+      color: nth($nav-color, $i);
+      background-color: transparent;
+    }
+
+    .nav-item {
+      .nav-link {
+        transition: 0.3s;
+
+        &.active,
+        &.show,
+        &:focus {
+          border-bottom: 2px solid nth($nav-color, $i);
+        }
+
+        &.active,
+        &.show,
+        &:focus,
+        &:hover {
+          color: nth($nav-color, $i);
+        }
+      }
+    }
+  }
+
+  .border-tab.nav-left.nav-#{$var} {
+    .nav-link.active,
+    .show>.nav-link {
+      border-left-color: nth($nav-color, $i);
+      color: nth($nav-color, $i);
+    }
+  }
+  .border-tab.nav-right.nav-#{$var} {
+    .nav-link.active,
+    .show>.nav-link {
+      border-right-color: nth($nav-color, $i);
+      color: nth($nav-color, $i);
+    }
+  }
+}
+
+.flex-space {
+  display: flex;
+  gap: 16px;
+  @media (max-width:576px) {
+    justify-content: center;
+  }
+}
+
+.tab-img {
+  height: 100px;
+}
+
+.nav-item {
+  .navlink-title {
+    background-color: unset;
+    padding: 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+  }
+}
+
+.simple-wrapper {
+  .dropdown-collection {
+    .dropdown-item {
+
+      &:hover,
+      &:active {
+        background-color: $gray-60 !important;
+      }
+    }
+  }
+}
+
+.blog-wrapper {
+  .blog-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.designer-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width:1400px) {
+    gap: calc(14px + (35 - 14) * ((100vw - 320px) / (1400 - 320)));
+  }
+
+  .designer-profile {
+    display: inline-block;
+
+    .designer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+
+      .designer-img {
+        height: 50px;
+        border-radius: 100%;
+      }
+
+      .designer-content {
+        h6 {
+          font-weight: 500;
+        }
+
+        p {
+          color: $light-text;
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  .nav-border {
+    color: $black;
+    border: none;
+  }
+}
+
+.ico-color {
+  color: $warning-color;
+  font-size: 16px;
+}
+
+.main-inbox {
+  .header-inbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $light-text;
+    padding-bottom: 8px;
+
+    .header-left-inbox {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      .inbox-img {
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    .header-right-inbox {
+      display: flex;
+      gap: 12px;
+
+      @media (max-width: 560px) {
+        display: none;
+      }
+    }
+  }
+
+  .body-inbox {
+    .body-h-wrapper {
+      display: flex;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--light-border);
+      align-items: center;
+
+      @media (max-width:630px) {
+        align-items: unset;
+      }
+    }
+  }
+}
+
+.tab-space {
+  font-size: 14px;
+}
+
+$tabs-name: primary,
+  secondary,
+  success,
+  danger,
+  warning,
+  info,
+  light,
+  dark;
+
+$tab-color : $primary-color,
+$secondary-color,
+$success-color,
+$danger-color,
+$warning-color,
+$info-color,
+$light-color,
+$dark-color;
+
+@each $var in $tabs-name {
+  $i: index($tabs-name, $var);
+
+  #bottom-tab {
+    .nav-border {
+      &.tab-#{$var} {
+        &:hover {
+          color: nth($tab-color, $i);
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          color: nth($tab-color, $i);
+          border-bottom: 2px solid nth($tab-color, $i);
+        }
+      }
+    }
+  }
+}
+
+#sideline-tab {
+  .nav-effect {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 14px;
+      width: 80%;
+      border-bottom: 1px solid;
+      margin-top: 10px;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      transform: scale(0, 1);
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.tabs-responsive-side {
+  .border-tab {
+    &.nav-secondary {
+      &.nav-left {
+        .nav-link {
+          &:hover,
+          &.active {
+            background-color: unset;
+            border-left: none;
+            border-radius: 0;
+            transition: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pills-blogger {
+  @media (max-width: 576px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.material-wrapper {
+  display: flex;
+  gap: 12px;
+
+  @media (max-width:576px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/**=====================
+    2.29 Tab CSS Ends
+==========================**/

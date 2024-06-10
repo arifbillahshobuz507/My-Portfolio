@@ -1,6 +1,6 @@
 <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
     <div class="popup_modal_img">
-        <img src="./assets/img/services/modal-img.jpg" alt="" />
+        <img src="./frontend/assets/img/services/modal-img.jpg" alt="" />
     </div>
 
     <div class="popup_modal_content">

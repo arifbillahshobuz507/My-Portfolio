@@ -1,0 +1,55 @@
+/**=====================
+   2.34 Tree CSS Start
+==========================**/
+.treejs {
+
+	.treejs-nodes {
+		[dir="rtl"] & {
+			padding-left: unset;
+			padding-right: 20px;
+		}
+
+	}
+
+	.treejs-node {
+		&.treejs-placeholder {
+			[dir="rtl"] & {
+
+				padding-right: 20px;
+				padding-left: unset;
+			}
+		}
+	}
+
+	.treejs-node__halfchecked {
+		>.treejs-checkbox:before {
+			background-color: $primary-color !important;
+			border-color: $primary-color !important;
+		}
+
+		>.treejs-checkbox:after {
+			[dir="rtl"] & {
+				right: 3px;
+				left: unset;
+			}
+		}
+	}
+
+	.treejs-node__checked {
+		>.treejs-checkbox:before {
+			background-color: $success-color !important;
+			border-color: $dark-color !important;
+		}
+
+		>.treejs-checkbox:after {
+			[dir="rtl"] & {
+				right: 5px;
+				left: unset;
+			}
+		}
+	}
+}
+
+/**=====================
+   2.34 Tree CSS Ends
+==========================**/

@@ -13,9 +13,9 @@
                     <hr />
                     <div class="float-end mt-3">
                         <span>
-                            <a class="text-center ms-3 h6" href="javascript:history.back()">Sign Up </a>
+                            <a class="text-center ms-3 h6" href="/registration">Sign Up </a>
                             <span class="ms-1">|</span>
-                            <a class="text-center ms-3 h6" href="javascript:history.back()">Forget Password</a>
+                            <a class="text-center ms-3 h6" href="/send-otp">Forget Password</a>
                         </span>
                     </div>
                 </div>
@@ -27,23 +27,32 @@
     async function SubmitLogin() {
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email.length === 0) {
             errorToast("Email is Requred");
         } else if (password.length === 0) {
             errorToast("Password is Requred");
+        } else if (password.length < 8 || password.length > 300) {
+            if (password.length < 8) {
+                errorToast('Password must be at least 8 characters long');
+            } else {
+                errorToast('Password must not exceed 300 characters');
+            }
+        }  else if (!emailRegex.test(email)) {
+            errorToast('Please enter a valid email address.');
         } else {
             showLoader();
             let result = await axios.post("/user-login", {
-                email:email,
-                password:password
+                email: email,
+                password: password
             });
             hideLoader();
             if (result.data['status'] === 'success') {
                 successToast(result.data['message']);
-                setTimeout(function (){
+                setTimeout(function() {
                     window.location.href = "/"
-                },2000)
-            }else if(result.data['message']==='unauthorized'){
+                }, 2000)
+            } else if (result.data['message'] === 'unauthorized') {
                 console.log(result.data['message']);
                 errorToast(result.data['message']);
             }

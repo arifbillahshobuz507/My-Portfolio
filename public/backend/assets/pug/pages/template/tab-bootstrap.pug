@@ -1,0 +1,596 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Bootstrap Tabs
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Tabs
+                    li.breadcrumb-item.active Bootstrap Tabs
+          // Container-fluid starts                    
+          .container-fluid
+            .row
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Simple tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link
+                        |  with 
+                        code .show 
+                        | class to jump particular tabs.
+                  .card-body
+                    ul.simple-wrapper#myTab.nav.nav-tabs(role='tablist')
+                      li.nav-item
+                          a#home-tab.nav-link.txt-primary(data-bs-toggle='tab' href='#home' role='tab' aria-controls='home' aria-selected='true') Home
+                      li.nav-item
+                          a#profile-tabs.nav-link.active.txt-primary(data-bs-toggle='tab' href='#profile' role='tab' aria-controls='profile' aria-selected='false') Profile
+                      li.nav-item
+                          a#contact-tab.nav-link.txt-primary(data-bs-toggle='tab' href='#contact' role='tab' aria-controls='contact' aria-selected='false') Contact
+                    #myTabContent.tab-content
+                      #home.tab-pane.fade(role='tabpanel' aria-labelledby='home-tab')
+                          p.pt-3
+                              | Tabs have long been used to show alternative views of the same group of information tabs in software. Known as
+                              em.txt-danger  “module tabs”
+                              | , these are still used today in web sites. For instance, airline companies such as Ryanair, easyJet and AirMalta use module tabs to enable the user to switch between bookings for flights, hotels and car hire.
+                      #profile.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='profile-tabs')
+                          div.pt-3.mb-0
+                              .flex-space.flex-wrap.align-items-center
+                                  img.tab-img(src="../assets/images/avtar/3.jpg", alt="profile") 
+                                  ul.d-flex.flex-column.gap-1
+                                    li 
+                                        strong Visit Us:
+                                        |  2600 Hollywood Blvd,Florida, United States-33020
+                                    li 
+                                        strong Mail Us:
+                                        |  contact@us@gmail.com
+                                    li
+                                        strong Contact Number: 
+                                        |  (954) 357-7760
+                      #contact.tab-pane.fade(role='tabpanel' aria-labelledby='contact-tab')
+                          ul.pt-3.d-flex.flex-column.gap-1
+                            li
+                                | Us Technology offers web & mobile development solutions for all industry verticals.Include a short form using fields that'll help your business understand who's contacting them.
+                            li 
+                                strong Visit Us: 
+                                |  2600 Hollywood Blvd,Florida, United States-	33020
+                            li 
+                                strong Mail Us:
+                                |  contact@us@gmail.com
+                            li 
+                                strong Contact Number: 
+                                |  (954) 357-7760
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Icons with tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link 
+                        | with feather icons. And 
+                        code .show
+                        |  class to tabs change.
+                  .card-body
+                    ul#icon-tab.nav.nav-tabs(role='tablist')
+                      li.nav-item
+                          a#icon-home-tab.nav-link.active.txt-secondary(data-bs-toggle='tab' href='#icon-home' role='tab' aria-controls='icon-home' aria-selected='true') 
+                              i.icofont.icofont-ui-home
+                              |Home
+                      li.nav-item
+                          a#profile-icon-tabs.nav-link.txt-secondary(data-bs-toggle='tab' href='#profile-icon' role='tab' aria-controls='profile-icon' aria-selected='false')
+                              i.icofont.icofont-man-in-glasses
+                              | Profile
+                      li.nav-item
+                          a#contact-icon-tab.nav-link.txt-secondary(data-bs-toggle='tab' href='#contact-icon' role='tab' aria-controls='contact-icon' aria-selected='false')
+                              i.icofont.icofont-contacts
+                              | Contact
+                    #icon-tabContent.tab-content
+                      #icon-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='icon-home-tab')
+                          p.pt-3
+                              |  Not limited to any states, boundaries. All over India providing cutting-edge design and website development services for over 12 years. We provide end to end digital solutions, right from designing your website/application development: Domain, Web Hosting, Email Hosting Registration, Search Engine Optimization and other Internet Marketing, Renewal of Services timely and effectively.
+                      #profile-icon.tab-pane.fade(role='tabpanel' aria-labelledby='profile-icon-tabs')
+                          div.pt-3.mb-0
+                              .flex-space.flex-wrap.align-items-center
+                                  img.tab-img(src="../assets/images/avtar/7.jpg", alt="profile") 
+                                  ul.d-flex.flex-column.gap-1
+                                    li 
+                                        strong Visit Us:  
+                                        |  278 Green Avenue Oakland, CA 94612
+                                    li
+                                        strong Mail Us:
+                                        |  MichaelMMcGowan@teleworm.us
+                                    li
+                                        strong Contact Number: 
+                                        |  510-767-0025
+                      #contact-icon.tab-pane.fade(role='tabpanel' aria-labelledby='contact-icon-tab')
+                        p.pt-3
+                            | Us Technology offers web & mobile development solutions for all industry verticals.Include a short form using fields that'll help your business understand who's contacting them. 
+                        label.form-label(for='exampleFormControlone') Email address
+                        input#exampleFormControlone.form-control(type='email' placeholder='youremail@gmail.com')
+              .col-sm-12.col-xxl-6
+                .card.height-equal
+                  .card-header
+                    h4 Vertical tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code #var-pills-tab
+                        |  id thorough change vertical tabs.
+                  .card-body
+                    .row     
+                        .col-md-4.col-xs-12
+                            #ver-pills-tab.nav.flex-column.nav-pills.nav-success(role='tablist' aria-orientation='vertical')
+                                a#ver-pills-home-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-home' role='tab' aria-controls='ver-pills-home' aria-selected='true') Home
+                                a#ver-pills-components-tab.nav-link.active(data-bs-toggle='pill' href='#ver-pills-components' role='tab' aria-controls='ver-pills-components' aria-selected='false') Components
+                                a#ver-pills-pages-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-pages' role='tab' aria-controls='ver-pills-pages' aria-selected='false') Pages
+                                a#ver-pills-settings-tab.nav-link(data-bs-toggle='pill' href='#ver-pills-settings' role='tab' aria-controls='ver-pills-settings' aria-selected='false') Settings
+                        .col-md-8.col-xs-12
+                            #ver-pills-tabContent.tab-content
+                                #ver-pills-home.tab-pane.fade(role='tabpanel' aria-labelledby='ver-pills-home-tab')
+                                    p
+                                        | It was an easy decision.an affordable expense! Absolutely! we got peace of mind. Now, my time is spent on the
+                                        em.txt-danger “Sale”
+                                        |  and not on technology. Create product Builder tool is also pre-bundled in this template so that you can let the audience configure the product by themselves before placing the order.We are a small yet highly-skilled group of creative brains with a vast experience. Our team of web designers, online marketing experts, content writers, graphic professionals have completed numerous projects.
+                                #ver-pills-components.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='ver-pills-components-tab')
+                                    ul.d-flex.flex-column.gap-1
+                                        li 
+                                            | If you are a business owner, your website is absolutely one of the most important tools you have in your arsenal to get more - and better - clients and customers or a good one from a great one? Here are 10 qualities that a great website will need. Whether or not you end up retaining makespace based web designers, you should find them helpful:
+                                        li 
+                                            | --> Navigation
+                                        li
+                                            | --> Visual Design
+                                        li
+                                            | --> Web Friendly
+                                        li
+                                            | --> Conversion
+                                #ver-pills-pages.tab-pane.fade(role='tabpanel' aria-labelledby='ver-pills-pages-tab')
+                                    ul.d-flex.flex-column.gap-1
+                                        li
+                                            | Available pages in Theme: 
+                                        li
+                                            strong  Typography: 
+                                            |  Typography is the art of arranging letters and text in a way that makes the copy legible, clear, and visually appealing to the reader.
+                                        li 
+                                            strong  Tooltip: 
+                                            |  A tooltip is a brief, informative message that appears when a user interacts with an element in a graphical user interface (GUI). 
+                                #ver-pills-settings.tab-pane.fade(role='tabpanel' aria-labelledby='ver-pills-settings-tab')
+                                    ul.d-flex.flex-column.gap-1.p-sm-0.pt-2
+                                        li
+                                            strong  Site purpose
+                                            |  Like a mission statement, a website's purpose gives the primary reason for the site's existence in the world. Whether for education, advocacy, service provision, community organizing, etc.
+                                        li
+                                            strong  Features
+                                            |  It's important to figure out as many of these in advance as you can for the sake of a more coherent design. 
+              .col-sm-12.col-xxl-6
+                .card.height-equal
+                  .card-header
+                    h4 Pills tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code data-bs-toggle="pill"
+                        |  to tabs pill shape. And mandatory for 
+                        code .active 
+                        |  class.
+                  .card-body
+                    ul#pills-tab.nav.nav-pills.nav-primary(role='tablist')
+                      li.nav-item
+                          a#pills-aboutus-tab.nav-link(data-bs-toggle='pill' href='#pills-aboutus' role='tab' aria-controls='pills-aboutus' aria-selected='true')
+                              | About us
+                      li.nav-item
+                          a#pills-contactus-tab.nav-link(data-bs-toggle='pill' href='#pills-contactus' role='tab' aria-controls='pills-contactus' aria-selected='false') Contact us
+                      li.nav-item
+                          a#pills-blog-tab.nav-link.active(data-bs-toggle='pill' href='#pills-blog' role='tab' aria-controls='pills-blog' aria-selected='false') Blog 
+                    #pills-tabContent.tab-content
+                      #pills-aboutus.tab-pane.fade(role='tabpanel' aria-labelledby='pills-aboutus-tab')
+                          p.pt-3
+                              | The ultimate goal of every web design is to create a site that will reach its audience and be useful to them. In order to achieve that, it is necessary to befriend Google's mechanisms and algorithms. There is no use of a pretty website, if it's displayed on a 10th page of search results, because this way no one will ever find it. That brings us to the topic of Google's Website Ranking.Generally speaking, it's a list of pages and their keywords, sorted in the order of search results. The higher your place in the ranking is, the more people are likely to see your page.
+                      #pills-contactus.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contactus-tab')
+                          ul.d-flex.flex-column.gap-1.pt-3
+                            li
+                                |  Create professional web page design. Responsive, fully customizable with easy Drag-n-Drop Nicepage editor. Adjust colors, fonts, header and footer, layout and other design elements, as well as content and images.
+                            li
+                                strong Visit Us: 
+                                |  4 Marigold Close, Glenmore Park, New South Wales, 2745 Australia- 2745
+                            li 
+                                strong Mail Us:
+                                |  SamuelMario@armyspy.com
+                            li 
+                                strong Contact Number: 
+                                |  (02) 4733 6337
+                      #pills-blog.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-blog-tab')
+                          .pt-3.d-flex.align-items-center.gap-3.pills-blogger 
+                              .blog-wrapper 
+                                  img.blog-img(src="../assets/images/dashboard-2/headphones.png", alt="head-phone")
+                              .blog-content 
+                                  p 
+                                  em.txt-danger.fw-bold Smart headphones
+                                  |   — also called smart earbuds or hearable — are high-tech in-ear devices that do more than transmit audio. These headphones are usually wireless, and they can sync up with your phone, tablet, computer or other Bluetooth-enabled device. The main appeal of hearables is convenience, as they allow you to complete common tasks without directly accessing your phone or computer. Smart wireless headphones sync up to other devices using Bluetooth technology, and many of their features rely on data from your smartphone or computer.
+              .col-xxl-6 
+                .card 
+                  .card-header
+                    h4 Justify tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link
+                        |  with 
+                        code .active 
+                        | class and set content using flex property.
+                  .card-body 
+                    .card-header.d-flex.justify-content-between.align-items-center.flex-wrap.gap-2.pb-2.p-0
+                      p 
+                        em.txt-danger CUBA Profiles For New Employees:
+                      ul#j-pills-tab.nav.nav-pills.nav-warning(role='tablist')
+                        li.nav-item
+                          a#j-pills-web-designer-tab.nav-link(data-bs-toggle='pill' href='#j-pills-web-designer' role='tab' aria-controls='j-pills-web-designer' aria-selected='true')  Web designer
+                        li.nav-item
+                          a#j-pills-UX-designer-tab.nav-link.active(data-bs-toggle='pill' href='#j-pills-UX-designer' role='tab' aria-controls='j-pills-UX-designer' aria-selected='false') UX designer
+                        li.nav-item
+                          a#j-pills-IOT-developer-tab.nav-link(data-bs-toggle='pill' href='#j-pills-IOT-developer' role='tab' aria-controls='j-pills-IOT-developer' aria-selected='false') IOT developer
+                    .card-body.px-0.pb-0 
+                      #j-pills-tabContent.tab-content
+                          #j-pills-web-designer.tab-pane.fade(role='tabpanel' aria-labelledby='j-pills-web-designer-tab')
+                              .designer-details
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/3.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Kathy M. Anderson
+                                              p  440-494-0729
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/4.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Lillian J. Goodfellow
+                                              p 239-664-7751
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/7.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Carolyn A. Sutton
+                                              p 218-793-6609
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/11.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Mary O. Miller
+                                              p 720-744-0921
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/16.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Patricia H. Hummel
+                                              p 314-445-1451
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/4.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Minnie F. Evans
+                                              p 718-740-8438
+                          #j-pills-UX-designer.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='j-pills-UX-designer-tab')
+                              .designer-details
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/9.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Thomas A. Leroy
+                                              p 305-539-6871
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/12.png", alt="profile")
+                                          .designer-content 
+                                              h6 Mark S. Ward
+                                              p 303-561-8880
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/14.png", alt="profile")
+                                          .designer-content 
+                                              h6 Emily T. Hooper
+                                              p 301-553-1836
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/comment.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Natasha W. Watson
+                                              p 267-605-4499
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/9.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Jennifer A. Camacho
+                                              p 770-527-7554
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/3.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Ann J. Strickland
+                                              p 469-218-4678
+                          #j-pills-IOT-developer.tab-pane.fade(role='tabpanel' aria-labelledby='j-pills-IOT-developer-tab')
+                              .designer-details
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/11.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Jaclyn T. Duncan
+                                              p 413-618-9222
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/16.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Christine H. Lin
+                                              p 909-219-0342
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/avtar/3.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Ronnie S. Mountain
+                                              p 978-426-9732
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/12.png", alt="profile")
+                                          .designer-content 
+                                              h6 Louise A. Hilliard
+                                              p 502-262-5600
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/comment.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Kayla Hutt
+                                              p 312-456-8275
+                                  .designer-profile 
+                                      .designer-wrap
+                                          img.designer-img(src="../assets/images/blog/4.jpg", alt="profile")
+                                          .designer-content 
+                                              h6 Amber Cecil
+                                              p 802-662-2407
+              .col-xxl-6 
+                .card 
+                  .card-header
+                    h4 Material style left tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link 
+                        | with 
+                        code .active 
+                        | class through jump another tabs.And 
+                        code aria-orientation='vertical'
+                        | through change vertical tabs.
+                  .card-body
+                        .tabs-responsive-side
+                            .material-wrapper
+                                .d-flex
+                                    #sideline-tab.nav.flex-column.nav-secondary.border-tab.nav-left(role='tablist' aria-orientation='vertical')
+                                        a#sideline-home-tab.nav-link.nav-effect.active(data-bs-toggle='pill' href='#sideline-home' role='tab' aria-controls='sideline-home' aria-selected='true') Home
+                                        a#sideline-profile-tab.nav-link.nav-effect(data-bs-toggle='pill' href='#sideline-profile' role='tab' aria-controls='sideline-profile' aria-selected='false') Profile
+                                        a#sideline-messages-tab.nav-link.nav-effect(data-bs-toggle='pill' href='#sideline-messages' role='tab' aria-controls='sideline-messages' aria-selected='false') Inbox
+                                        a#sideline-settings-tab.nav-link.nav-effect.pb-0(data-bs-toggle='pill' href='#sideline-settings' role='tab' aria-controls='sideline-settings' aria-selected='false') Settings
+                                .material-content
+                                    #sideline-tabContent.tab-content
+                                        #sideline-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='sideline-home-tab')
+                                            p
+                                                | This product is meant for educational purposes only. Any resemblance to real persons, living or dead is purely coincidental. Void where prohibited. Some assembly required. List each check separately by bank number. Batteries not included.Google Web Designer gives you the power to create beautiful and compelling videos, images and HTML5 ads. Use animation and interactive elements to build out your creative vision, then scale your content for different sizes or audiences with responsive and dynamic workflows.
+                                        #sideline-profile.tab-pane.fade(role='tabpanel' aria-labelledby='sideline-profile-tab')
+                                            p.mb-0
+                                            .flex-space.flex-wrap.align-items-center
+                                                img.tab-img(src="../assets/images/ecommerce/08.jpg", alt="profile") 
+                                                ul.d-flex.flex-column.gap-1
+                                                    li 
+                                                        strong  Name: 
+                                                        |  Jully Catlin
+                                                    li
+                                                        strong Visit Us: 
+                                                        |  50006 Ehrenberg/Parker,Arkansas-85334
+                                                    li
+                                                        strong Mail Us:
+                                                        |  hello.@gmail.com
+                                                    li
+                                                        strong Contact Number: 
+                                                        |  (928) 923-7940
+                                        #sideline-messages.tab-pane.fade(role='tabpanel' aria-labelledby='sideline-messages-tab')
+                                            .card-body.p-0
+                                                .main-inbox 
+                                                    .header-inbox.justify-content-start.gap-2
+                                                        .header-left-inbox
+                                                            .inbox-img
+                                                                img(src="../assets/images/ecommerce/07.jpg", alt="profile")
+                                                        .inbox-content 
+                                                            h6 Dalbult Caslin 
+                                                            p.text-muted stroman.rogers@gmail.com
+                                                    .body-inbox.mt-2
+                                                        .body-h-wrapper
+                                                            i.me-2.tab-space.icofont.icofont-star
+                                                            em Compare Prices Find the Best Computer Assessors Fronted Issue.
+                                                        p.pt-2 Site speed and design are two of the most important ranking factors Google takes into consideration, as they have the biggest effect of customer staying on site as the website respond faster.
+                                        #sideline-settings.tab-pane.fade(role='tabpanel' aria-labelledby='sideline-settings-tab')
+                                            p
+                                                strong  In this situation, you would probably do two things:
+                                                |  exit the page, or look for the trusty search bar. If you decide to stick around, a proper search function should take your query and send you to your destination. Problem solved. It's not a perfect experience, but it's a hard one to avoid on larger websites that simply can't link to every piece of content from the homepage.
+              .col-xxl-6 
+                .card 
+                  .card-header
+                    h4 Material style tabs
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link 
+                        | with 
+                        code .active 
+                        | class through access new tabs. And icons of design for attractive webpage.
+                  .card-body 
+                    ul#topline-tab.nav.nav-tabs.border-tab.border-0.mb-0.nav-danger(role='tablist')
+                      li.nav-item
+                          a#topline-top-user-tab.nav-link.active.nav-border.pt-0.txt-danger.nav-danger(data-bs-toggle='tab' href='#topline-top-user' role='tab' aria-controls='topline-top-user' aria-selected='true')
+                              i.icofont.icofont-man-in-glasses
+                              | User
+                      li.nav-item
+                          a#topline-top-description-tab.nav-link.nav-border.txt-danger.nav-danger(data-bs-toggle='tab' href='#topline-top-description' role='tab' aria-controls='topline-top-description' aria-selected='false')
+                              i.icofont.icofont-file-document
+                              | Description
+                      li.nav-item
+                          a#topline-top-review-tab.nav-link.nav-border.txt-danger.nav-danger(data-bs-toggle='tab' href='#topline-top-review' role='tab' aria-controls='topline-top-review' aria-selected='false')
+                              i.icofont.icofont-star
+                              | Review
+                    #topline-tabContent.tab-content
+                      #topline-top-user.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='topline-top-user-tab')
+                          .card-body.px-0.pb-0   
+                              .user-header.pb-2 
+                                  h6.fw-bold User Details:
+                              .user-content 
+                                .table-responsive
+                                    table.table.mb-0
+                                        thead
+                                            tr
+                                                th(scope='col') #
+                                                th(scope='col') Name
+                                                th(scope='col') Country
+                                                th(scope='col') Contact No
+                                        tbody
+                                            tr
+                                                th(scope='row') 1
+                                                td Neha
+                                                td India 
+                                                td 5698741236
+                                            tr
+                                                th(scope='row') 2
+                                                td Jacklin
+                                                td Thailand
+                                                td 7800030320
+                      #topline-top-description.tab-pane.fade(role='tabpanel' aria-labelledby='topline-top-description-tab')
+                          .card-body.px-0.pb-0 
+                              .user-header.pb-2 
+                                  h6.fw-bold Description:
+                              .user-content 
+                                .table-responsive
+                                    table.table.mb-0
+                                        thead
+                                            tr
+                                                th(scope='col') Technology
+                                                th(scope='col') Interest 
+                                                th(scope='col') Salary Expected 
+                                        tbody
+                                            tr
+                                                td Web Designer
+                                                td HTML,CSS,JS,SCSS
+                                                td 45000
+                                            tr
+                                                td UX Designer
+                                                td Figma,Photoshop,craft
+                                                td 20000
+                      #topline-top-review.tab-pane.fade(role='tabpanel' aria-labelledby='topline-top-review-tab')
+                          .card-body.px-0.pb-0
+                              .user-header.pb-2 
+                                  h6.fw-bold Review:
+                              .user-content 
+                                .table-responsive
+                                    table.table.mb-0
+                                        thead
+                                            tr
+                                                th(scope='col') #
+                                                th(scope='col') Name
+                                                th(scope='col') Country
+                                                th(scope='col') Rating 
+                                        tbody
+                                            tr
+                                                th(scope='row') 1
+                                                td Neha
+                                                td India 
+                                                td 
+                                                    i.ico-color.icofont.icofont-star
+                                                    i.ico-color.icofont.icofont-star
+                                                    i.ico-color.icofont.icofont-star
+                                                    i.ico-color.icofont.icofont-star
+                                            tr
+                                                th(scope='row') 2
+                                                td Irfan
+                                                td India
+                                                td 
+                                                    i.ico-color.icofont.icofont-star
+                                                    i.ico-color.icofont.icofont-star
+                                                    i.ico-color.icofont.icofont-star
+              .col-xxl-6 
+                .card 
+                  .card-header
+                    h4 Border tabs 
+                    p.mt-1.f-m-light
+                        | Use the 
+                        code .nav-link 
+                        | with 
+                        code .active 
+                        | class. And hover effect added on bottom border styles.
+                  .card-body 
+                    ul#bottom-tab.nav.nav-tabs.border-tab.mb-0(role='tablist')
+                      li.nav-item
+                          a#bottom-home-tab.nav-link.nav-border.txt-info.tab-info.pt-0(data-bs-toggle='tab' href='#bottom-home' role='tab' aria-controls='bottom-home' aria-selected='true')
+                              i.icofont.icofont-ui-home 
+                              | Home
+                      li.nav-item
+                          a#bottom-inbox-tab.nav-link.nav-border.txt-info.tab-info.active(data-bs-toggle='tab' href='#bottom-inbox' role='tab' aria-controls='bottom-inbox' aria-selected='false')
+                              i.icofont.icofont-ui-message
+                              | Inbox
+                      li.nav-item
+                          a#bottom-contact-tab.nav-link.nav-border.txt-info.tab-info(data-bs-toggle='tab' href='#bottom-contact' role='tab' aria-controls='bottom-contact' aria-selected='false')
+                              i.icofont.icofont-man-in-glasses
+                              | Contact
+                    #bottom-tabContent.tab-content
+                      #bottom-home.tab-pane.fade(role='tabpanel' aria-labelledby='bottom-home-tab')
+                          p.pt-3
+                              | A navigation bar is a particularly important feature because it allows visitors to quickly and easily find 
+                              em.txt-danger important pages on your website,
+                              |  like your blog, product pages, pricing, contact info, and documentation. This improves the chances of visitors browsing your site longer, which can boost your page views and reduce your bounce rate.Create product Builder tool is also pre-bundled in this template so that you can let the audience configure the product by themselves before placing the order.
+                      #bottom-inbox.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='bottom-inbox-tab')
+                          .card-body.pb-0
+                              .main-inbox 
+                                  .header-inbox 
+                                      .header-left-inbox
+                                          .inbox-img
+                                              img(src="../assets/images/ecommerce/06.jpg", alt="profile")
+                                          .inbox-content 
+                                              h6 Dalbult Caslin 
+                                              p.text-muted stroman.rogers@gmail.com
+                                      ul.header-right-inbox
+                                          li 
+                                              p 8 JAN 11:30PM
+                                          li 
+                                              i.txt-danger.icofont.icofont-ui-delete
+                                          li 
+                                              i.icofont.icofont-telegram
+                                  .body-inbox.mt-2
+                                      .body-h-wrapper
+                                          i.me-2.tab-space.icofont.icofont-star
+                                          em Compare Prices Find the Best Computer Assessors Fronted Issue.
+                                      p.pt-2 Site speed and design are two of the most important ranking factors Google takes into consideration, as they have the biggest effect of customer staying on site as the website respond faster.
+                      #bottom-contact.tab-pane.fade(role='tabpanel' aria-labelledby='bottom-contact-tab')
+                          .card-body.px-0.pb-0 
+                              .form 
+                                  .mb-3
+                                      label.form-label(for='exampleFormControltwo') Email address
+                                      input#exampleFormControltwo.form-control(type='email' placeholder='youremail@gmail.com')
+                                  .mb-0
+                                      label.form-label(for='exampleFormControlTextarea1') Example textarea
+                                      textarea#exampleFormControlTextarea1.form-control(rows='3')
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files   

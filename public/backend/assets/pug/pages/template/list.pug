@@ -1,0 +1,468 @@
+- var theme_customizer      = true;
+- var counter               = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Lists
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Ui Kits
+                    li.breadcrumb-item.active Lists
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-xl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Default lists 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .list-group 
+                      | define the list of items. and used 
+                      code .list-group-item 
+                      | to indicate the current content.
+                  .card-body
+                    ul.list-group
+                      li.list-group-item 
+                        i.icofont.icofont-arrow-right
+                        | Logo Design
+                      li.list-group-item 
+                        i.icofont.icofont-arrow-right
+                        | Web Design & Development 
+                      li.list-group-item 
+                        i.icofont.icofont-arrow-right
+                        | E-Commerce
+                      li.list-group-item 
+                        i.icofont.icofont-arrow-right
+                        | SEO
+              .col-xl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Active lists 
+                    p.f-m-light.mt-1 
+                      | Use
+                      code .active 
+                      | to a
+                      code .list-group-item
+                      |  to indicate the current active.
+                  .card-body 
+                    ul.list-group
+                      li.list-group-item.active.bg-warning-light(aria-current='true')
+                        i.icofont.icofont-arrow-right 
+                        | UI Kits
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | Wow Animations
+                      li.list-group-item 
+                        i.icofont.icofont-arrow-right 
+                        |Apex Charts
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | Starter Kits
+              .col-xl-4.col-md-12
+                .card
+                  .card-header
+                    h4 Flush lists
+                    p.f-m-light.mt-1 
+                      | Use 
+                      code  .list-group-flush
+                      |  to remove some borders and rounded corners to render list group items.
+                  .card-body 
+                    ul.list-group.list-group-flush
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | PRODUCT
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | PRODUCT DETAILS 
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | CART 
+                      li.list-group-item
+                        i.icofont.icofont-arrow-right 
+                        | CHECKOUT
+              .col-xxl-6.col-sm-12.box-col-12
+                .card.height-equal
+                  .card-header
+                    h4 Contextual classes
+                    p.f-m-light.mt-1
+                      | Use contextual classes to style list items with a stateful background and color.
+                      code .list-light-*
+                      |  and 
+                      code txt-*
+                      | .
+                  .card-body 
+                    .list-group
+                      a.list-group-item.list-group-item-action.list-light-primary(href='#') This is Primary bg you can use 
+                        em.txt-primary.fw-bold .list-light-primary
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-secondary(href='#') This is Secondary bg you can use 
+                        em.txt-secondary.fw-bold .list-light-secondary
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-success(href='#') This is Success bg you can use 
+                        em.txt-success.fw-bold .list-light-success
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-danger(href='#') This is Danger bg you can use
+                        em.txt-danger.fw-bold .list-light-danger
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-warning(href='#') This is Warning bg you can use 
+                        em.txt-warning.fw-bold .list-light-warning
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-info(href='#') This is Info bg you can use 
+                        em.txt-info.fw-bold .list-light-info
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-white(href='#') This is White bg you can use 
+                        em.txt-white.fw-bold .list-light-white
+                        |   class.
+                      a.list-group-item.list-group-item-action.list-light-dark(href='#') This is White bg you can use 
+                        em.txt-white.fw-bold .list-light-dark
+                        |   class.
+              .col-xxl-6.col-12.box-col-12
+                .card.height-equal
+                  .card-header
+                    h4 Horizontal lists
+                    p.f-m-light.mt-1
+                      | Use 
+                      code .list-group-horizontal
+                      | to change the layout of list group items from vertical to horizontal across all breakpoints.
+                      code .list-group-horizontal-[sm/md/lg/xl/xxl]
+                      | .
+                  .card-body 
+                    .horizontal-list-wrapper.dark-list
+                      ul.fw-bold.list-group.list-group-horizontal-sm.pb-2
+                        li.list-group-item.border-left-primary Product 
+                        li.list-group-item Product details
+                        li.list-group-item Pricing
+                        li.list-group-item Payment details
+                        li.list-group-item Checkout 
+                        li.list-group-item Mega options 
+                      ul.fw-bold.list-group.list-group-horizontal-md.pb-2
+                        li.list-group-item.border-left-secondary Basic table
+                        li.list-group-item Sizing table 
+                        li.list-group-item Border table
+                        li.list-group-item Basic inputs 
+                        li.list-group-item Form validations
+                      ul.fw-bold.list-group.list-group-horizontal-lg.pb-2
+                        li.list-group-item.border-left-warning Flat style 
+                        li.list-group-item Edge style 
+                        li.list-group-item Button group
+                        li.list-group-item Rating
+                        li.list-group-item Crypto
+                      ul.fw-bold.list-group.list-group-horizontal-xl.pb-2
+                        li.list-group-item.border-left-success Blog 
+                        li.list-group-item Blog details 
+                        li.list-group-item Blog single 
+                        li.list-group-item Order history 
+                      ul.fw-bold.list-group.list-group-horizontal-xxl
+                        li.list-group-item.border-left-info Gallery grid 
+                        li.list-group-item Gallery desc
+                        li.list-group-item Masonry Desc
+              .col-md-12
+                .card
+                  .card-header
+                    h4 Custom content lists
+                    p.f-m-light.mt-1
+                      | Use the 
+                      code .list-group-item
+                      |  through make custom design of all lists.
+                  .card-body 
+                    .list-group.main-lists-content
+                        a.list-group-item.list-group-item-action.active.bg-primary(href='#' aria-current='true')
+                          .d-flex.w-100.justify-content-between.align-items-center
+                            .list-wrapper
+                                img.list-img(src="../assets/images/user/1.jpg", alt="profile")
+                                .list-content 
+                                  h6 Molly Boake
+                                  p MollyBoake@rhyta.com
+                            small 5 days ago
+                          p.mb-1 Next step is to choose a tone of voice for your content type. From casual to convincing, pick one from 20+ tones in the dropdown.Why did we say “snag eyeballs” instead of “get attention?” Why do we say “brick-and-mortar words” instead of “concrete words?” Because, in your email subject lines, it’s better to use words that people can picture.
+                          small.text-black 20K Followers
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                          .d-flex.w-100.justify-content-between.align-items-center
+                            .list-wrapper
+                                img.list-img(src="../assets/images/user/3.png", alt="profile")
+                                .list-content 
+                                  h6 Gabrielle Fahey
+                                  p GabrielleFahey@dayrep.com
+                            small.text-muted 10 days ago
+                          p.mb-1 Your aim with this blog is to advertise yourself and your services in blog design. That means it's vital to create content about just that: blog design. Anything else on your page may act as a distraction to your potential customers, and you don't want that!
+                          small.text-muted 100 Followers
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                          .d-flex.w-100.justify-content-between.align-items-center
+                            .list-wrapper
+                                img.list-img(src="../assets/images/user/2.jpg", alt="profile")
+                                .list-content 
+                                  h6 Lucinda Moseley
+                                  p LucindaMoseley@teleworm.us
+                            small.text-muted 3 days ago
+                          p.mb-1 People who are looking to hire a web designer may not know what to look out for. This will give you a chance to prove your trustworthiness by providing potential customers with advice and will let you sell your services by highlighting their best qualities.
+                          small.text-muted 23M Followers      
+              .col-xl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Lists with checkbox
+                    p.f-m-light.mt-1
+                      | Use the 
+                      code .form-check-input 
+                      | to check your checkbox.
+                  .card-body.dark-list
+                    ul.list-group
+                      li.list-group-item
+                        input#firstCheckbox.form-check-input.me-1.checkbox-primary.active(type='checkbox' value='')
+                        label.form-check-label.txt-primary.mb-0(for='firstCheckbox') Auto Start
+                      li.list-group-item
+                        input#secondCheckbox.form-check-input.me-1.checkbox-secondary(type='checkbox' value='')
+                        label.form-check-label.txt-secondary.mb-0(for='secondCheckbox') Auto Update
+                      li.list-group-item
+                        input#thirdCheckbox.form-check-input.me-1.checkbox-success(type='checkbox' value='')
+                        label.form-check-.txt-success.mb-0(for='thirdCheckbox') Don't check auth key
+                      li.list-group-item
+                        input#fourCheckbox.form-check-input.me-1.checkbox-warning(type='checkbox' value='')
+                        label.form-check-label.txt-warning.mb-0(for='fourCheckbox') Success all
+              .col-xl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Lists with radios
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | to check your radio buttons.
+                  .card-body 
+                    ul.list-group
+                      li.list-group-item
+                        input#firstRadio.form-check-input.me-1.active.checkbox-danger(type='radio' name='listGroupRadio' value='' checked='')
+                        label.form-check-label.mb-0(for='firstRadio') Meditations
+                      li.list-group-item
+                        input#secondRadio.form-check-input.me-1.checkbox-primary(type='radio' name='listGroupRadio' value='')
+                        label.form-check-label.mb-0(for='secondRadio') Read a book
+                      li.list-group-item
+                        input#thirdRadio.form-check-input.me-1.checkbox-success(type='radio' name='listGroupRadio' value='')
+                        label.form-check-label.mb-0(for='thirdRadio') Learn to code 
+                      li.list-group-item
+                        input#fourRadio.form-check-input.me-1.checkbox-info(type='radio' name='listGroupRadio' value='')
+                        label.form-check-label.mb-0(for='fourRadio') Drink more water
+              .col-xl-4.col-12
+                .card
+                  .card-header
+                    h4 Lists with numbers
+                    p.f-m-light.mt-1
+                      | Use the 
+                      code .list-group-numbered
+                      |  to ordered wise print numbers.
+                  .card-body 
+                    ol.list-group.list-group-numbered
+                      li.list-group-item.txt-primary.fw-bold known for delivery of useful and usable solutions
+                      li.list-group-item.txt-danger.fw-bold Solve your problem with us
+                      li.list-group-item.txt-success.fw-bold Certified Professionals
+                      li.list-group-item.txt-warning.fw-bold Growth-Driven 
+              .col-sm-12.col-xl-12
+                .card
+                  .card-header
+                    h4 JavaScript behavior
+                    p.f-m-light.mt-1 
+                      | Use the tab JavaScript plugin—include it individually or through the compiled
+                      code  bootstrap.js 
+                      | file to extend our list group to create table panes of local content.
+                  .card-body
+                    .row
+                      .col-sm-4
+                        #list-tab.list-group(role='tablist')
+                          a#list-home-list.list-group-item.list-group-item-action.bg-primary.active(data-bs-toggle='list', href='#list-home', role='tab', aria-controls='list-home') Home
+                          a#list-profile-list.list-group-item.list-group-item-action.list-hover-primary(data-bs-toggle='list', href='#list-profile', role='tab', aria-controls='list-profile') Profile
+                          a#list-messages-list.list-group-item.list-group-item-action.list-hover-primary(data-bs-toggle='list', href='#list-messages', role='tab', aria-controls='list-messages') Contact Us
+                          a#list-settings-list.list-group-item.list-group-item-action.list-hover-primary(data-bs-toggle='list', href='#list-settings', role='tab', aria-controls='list-settings') Settings
+                      .col-sm-8
+                        #nav-tabContent.tab-content
+                          #list-home.tab-pane.fade.show.active.list-behaviors(role='tabpanel', aria-labelledby='list-home-list')
+                            .d-flex.mb-xl-4.list-behavior-1
+                              .flex-shrink-0
+                                img.tab-img.img-fluid(src="../assets/images/blog/img.png", alt="home") 
+                              .flex-grow-1
+                                p.mb-xl-0.mb-sm-4
+                                  | We provide end to end digital solutions, right from designing your website/application development: Domain, Web Hosting, Email Hosting Registration, Search Engine Optimization and other Internet Marketing, Renewal of Services timely and effectively.
+                            .d-flex.list-behavior-1.mb-xl-4
+                              .flex-shrink-0
+                                img.tab-img.img-fluid(src="../assets/images/blog/blog.jpg", alt="home")
+                              .flex-grow-1 
+                                p.mb-0
+                                  | When someone visits your homepage, your design should inspire them to stay. Therefore, your value proposition should be established on the homepage for visitors to select to stay on your website.Building trust, expressing value, and guiding visitors to the next step all depend on a page's design.
+                          #list-profile.tab-pane.fade.dark-list(role='tabpanel', aria-labelledby='list-profile-list')
+                              .flex-space.align-items-center.list-light-dark.contact-profile
+                                  img.tab-img(src="../assets/images/avtar/3.jpg", alt="profile") 
+                                  ul.d-flex.flex-column.gap-2
+                                    li 
+                                      strong Visit Us: 
+                                      | 	2600 Hollywood Blvd,Florida, United States-	33020
+                                    li
+                                      strong Mail Us:
+                                      | contact@us@gmail.com
+                                    li
+                                      strong Contact Number: 
+                                      | (954) 357-7760
+                          #list-messages.tab-pane.fade(role='tabpanel', aria-labelledby='list-messages-list')
+                            ul.d-flex.flex-column.gap-1
+                              li
+                                | Us Technology offers web & mobile development solutions for all industry verticals.Include a short form using fields that'll help your business understand who's contacting them.
+                              li 
+                                strong Visit Us: 
+                                | 	2600 Hollywood Blvd,Florida, United States-	33020
+                              li 
+                                strong Mail Us:
+                                | contact@us@gmail.com
+                              li
+                                strong Contact Number: 
+                                | (954) 357-7760
+                          #list-settings.tab-pane.fade(role='tabpanel', aria-labelledby='list-settings-list')
+                            ul.d-flex.flex-column.gap-2
+                              li
+                                strong Available pages in Theme: 
+                              li
+                                | --> Typography: 
+                                | Typography is the art of arranging letters and text in a way that makes the copy legible, clear, and visually appealing to the reader.
+                              li
+                                | --> Tooltip: 
+                                | A tooltip is a brief, informative message that appears when a user interacts with an element in a graphical user interface (GUI). 
+              .col-xxl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Numbered & badge lists
+                    p.f-m-light.mt-1 
+                      | Use the
+                      code  .list-group-numbered
+                      |  modifier class to  numbered list group items.Numbers are generated via CSS for better placement inside list group items.
+                  .card-body 
+                    ol.list-group.list-group-numbered.badge-list
+                        li.list-group-item
+                          div
+                            | Stella Nowland
+                          span.badge.badge-warning.rounded-pill.p-2 Freelance
+                        li.list-group-item
+                          div
+                            | Lola Stanford
+                          span.badge.badge-danger.text-white.rounded-pill.p-2 Issue
+                        li.list-group-item
+                          div
+                            | Caitlin Coungeau
+                          span.badge.badge-primary.text-white.rounded-pill.p-2 Social
+                        li.list-group-item
+                          div
+                            | Graciela W. McClaran
+                          span.badge.badge-danger.text-white.rounded-pill.p-2 Issue
+              .col-xxl-4.col-md-6
+                .card
+                  .card-header
+                    h4 Disabled lists 
+                    p.f-m-light.mt-1 
+                      | Use
+                      code  .disabled 
+                      | to a 
+                      code .list-group-item
+                      |  to make it appear disabled.
+                  .card-body 
+                    .list-group
+                      a.list-group-item.list-group-item-action.list-hover-primary.active(href='javascript:void(0)')
+                        img.rounded-circle(src='../assets/images/user/1.jpg', alt='user')
+                        | Teresa J. Mosteller
+                      a.list-group-item.list-group-item-action.list-hover-primary(href='javascript:void(0)')
+                        img.rounded-circle(src='../assets/images/user/3.png', alt='user')
+                        | Gloria D. Acheson
+                      a.list-group-item.list-group-item-action.disabled(href='javascript:void(0)')
+                        img.rounded-circle(src='../assets/images/user/2.jpg', alt='user')
+                        | Sharon C. Obrien
+                      a.list-group-item.list-group-item-action.disabled(href='javascript:void(0)')
+                        img.rounded-circle(src='../assets/images/user/5.jpg', alt='user')
+                        | Bryan A. Owens
+              .col-xxl-4
+                .card
+                  .card-header
+                    h4 Scrollable lists 
+                    p.f-m-light.mt-1 
+                      | Use the property 
+                      code overflow:auto 
+                      | through scrollable lists.
+                  .card-body 
+                    .list-group.main-lists-content.scrollbar-wrapper
+                        a.list-group-item.list-group-item-action.active.list-hover-primary(href='#' aria-current='true')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/9.jpg", alt="profile")
+                                .list-content 
+                                  h6 Molly Boake
+                                  p MollyBoake@rhyta.com
+                                  small 5 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/10.jpg", alt="profile")
+                                .list-content 
+                                  h6 Gabrielle Fahey
+                                  p GabrielleFahey@dayrep.com
+                                  small.text-muted 10 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/2.jpg", alt="profile")
+                                .list-content 
+                                  h6 Lucinda Moseley
+                                  p LucindaMoseley@teleworm.us
+                                  small.text-muted 3 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/12.png", alt="profile")
+                                .list-content 
+                                  h6 Francis K. Henriques
+                                  p FrancisKHenriques@teleworm.us
+                                  small.text-muted 2 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/14.png", alt="profile")
+                                .list-content 
+                                  h6 Jose A. Seay
+                                  p JoseASeay@rhyta.com
+                                  small.text-muted 15 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/3.jpg", alt="profile")
+                                .list-content 
+                                  h6 Phil F. Cunningham
+                                  p PhilFCunningham@dayrep.com
+                                  small.text-muted 6 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/7.jpg", alt="profile")
+                                .list-content 
+                                  h6 Richard E. Johnson
+                                  p RichardEJohnson@teleworm.us
+                                  small.text-muted 20 days ago
+                        a.list-group-item.list-group-item-action.list-hover-primary(href='#')
+                            .list-wrapper.gap-0
+                                img.list-img(src="../assets/images/user/2.png", alt="profile")
+                                .list-content 
+                                  h6 Lawrence L. Nash
+                                  p LawrenceLNash@jourrapide.com
+                                  small.text-muted 8 days ago
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

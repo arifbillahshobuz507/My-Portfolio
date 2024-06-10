@@ -30,7 +30,7 @@
                     <div class="gutter-sizer"></div>
                     <div class="portfolio-item branding">
                         <div class="image-box">
-                            <img src="assets/img/portfolio/2.jpg" alt="" />
+                            <img src="frontend/assets/img/portfolio/2.jpg" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Deloitte</h3>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="portfolio-item uxui">
                         <div class="image-box">
-                            <img src="assets/img/portfolio/1.jpg" alt="" />
+                            <img src="frontend/assets/img/portfolio/1.jpg" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">New Age</h3>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="portfolio-item mobile-app">
                         <div class="image-box">
-                            <img src="assets/img/portfolio/3.jpg" alt="" />
+                            <img src="frontend/assets/img/portfolio/3.jpg" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Sebastian</h3>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="portfolio-item branding">
                         <div class="image-box">
-                            <img src="assets/img/portfolio/4.jpg" alt="" />
+                            <img src="frontend/assets/img/portfolio/4.jpg" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Mochnix</h3>

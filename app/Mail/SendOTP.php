@@ -38,7 +38,7 @@ class SendOTP extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'frontend.pages.sendOTP',
+            view: 'email.sendOTP',
         );
     }
 

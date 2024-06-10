@@ -1,0 +1,99 @@
+// Page Sidebar Start
+- var status_toggle = (sidebar_open ? undefined : 'checked');
+.sidebar-wrapper(sidebar-layout="stroke-svg")
+  div
+    .logo-wrapper
+      a(href='index.html')
+        img.img-fluid.for-light(src='../assets/images/logo/logo.png', alt='')
+        img.img-fluid.for-dark(src='../assets/images/logo/logo_dark.png', alt='')
+      .back-btn
+        i.fa.fa-angle-left
+      .toggle-sidebar
+        i.status_toggle.middle(data-feather='grid').sidebar-toggle 
+    .logo-icon-wrapper
+      a(href="index.html")
+        img.img-fluid(src='../assets/images/logo/logo-icon.png', alt='')
+
+    nav.sidebar-main
+      .left-arrow#left-arrow
+        i(data-feather='arrow-left')
+      #sidebar-menu
+        ul.sidebar-links#simple-bar
+          li.back-btn
+            .mobile-back.text-end
+              span Back
+              i.fa.fa-angle-right.ps-2(aria-hidden='true')
+          li.pin-title.sidebar-main-title
+            div 
+              h6 Pinned
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='../theme/index.html', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-home')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-home')
+              span Dashboard
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='#')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-starter-kit')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-starter-kit')
+              span Starter kit
+            ul.sidebar-submenu
+              li
+                a.submenu-title(href='#')
+                  | color version
+                  span.sub-arrow
+                    i.fa.fa-chevron-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='index.html') Layout Light
+                  li
+                    a(href='layout-dark.html') Layout Dark
+              li      
+                a.submenu-title(href='#')
+                  | Page layout
+                  span.sub-arrow
+                    i.fa.fa-chevron-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='boxed.html') Boxed
+                  li
+                    a(href='layout-rtl.html') RTL
+              li
+                a(href='hide-on-scroll.html')
+                  span Hide menu on Scroll
+              li      
+                a.submenu-title(href='#')
+                  | Footers
+                  span.sub-arrow
+                    i.fa.fa-chevron-right
+                ul.nav-sub-childmenu.submenu-content
+                  li
+                    a(href='footer-light.html') Footer Light
+                  li
+                    a(href='footer-dark.html') Footer Dark
+                  li
+                    a(href='footer-fixed.html') Footer Fixed
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='https://support.pixelstrap.com/portal/en/signin', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-social')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-social')
+              span Raise Support
+          li.sidebar-list
+            i.fa.fa-thumb-tack
+            a.sidebar-link.sidebar-title(href='https://docs.pixelstrap.com/cuba/html/document/', target='_blank')
+              svg.stroke-icon
+                use(href='../assets/svg/icon-sprite.svg#stroke-form')
+              svg.fill-icon
+                use(href='../assets/svg/icon-sprite.svg#fill-form')
+              span Documentation                                    
+      .right-arrow#right-arrow
+        i(data-feather='arrow-right')
+// Page Sidebar Ends

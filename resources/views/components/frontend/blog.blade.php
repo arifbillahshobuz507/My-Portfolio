@@ -17,7 +17,7 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/1.jpg" alt="" />
+                            <img src="frontend/assets/img/blog/1.jpg" alt="" />
                         </a>
                         <a href="#" class="category">Tutorial</a>
                     </div>
@@ -38,7 +38,7 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/2.jpg" alt="" />
+                            <img src="frontend/assets/img/blog/2.jpg" alt="" />
                         </a>
                         <a href="#" class="category">TIPS</a>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".7s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/3.jpg" alt="" />
+                            <img src="frontend/assets/img/blog/3.jpg" alt="" />
                         </a>
                         <a href="#" class="category">FREEBIES</a>
                     </div>

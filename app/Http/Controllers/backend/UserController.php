@@ -18,19 +18,19 @@ class UserController extends Controller
 {
     // Auth View
     public function userRegistrationPage(){
-        return view('frontend.pages.auth.registration-page');
+        return view('auth.content.registration-page');
     }
     public function userLoginPage(){
-        return view('frontend.pages.auth.login-page');
+        return view('auth.content.login-page');
     }
     public function userSendOTPPage(){
-        return view('frontend.pages.auth.send-otp-page');
+        return view('auth.content.send-otp-page');
     }
     public function userVerifyOTPPage(){
-        return view('frontend.pages.auth.verify-otp-page');
+        return view('auth.content.verify-otp-page');
     }
     public function userResetPasswordPage(){
-        return view('frontend.pages.auth.reset-pass-page');
+        return view('auth.content.reset-pass-page');
     }
 
     public function index()
@@ -119,21 +119,31 @@ class UserController extends Controller
                 return response()->json(["message" => "unauthorized"]);
             }
         } catch (Exception $e) {
-            return response()->json(["status" => "fail", "message" =>"unauthorized"], 401);
+            return response()->json(["status" => "fail", "message" =>"unauthorized"], 200);
         }
     }
     public function userSendOTP(Request $request)
     {
-        $otp = rand(100000, 999999);
-        $user = User::where('email', '=', $request->input('email'))->count();
-        if ($user == 1) {
-            // send opp
-            Mail::to($request->input('email'))->send(new SendOTP($otp));
-            //set Database otp
-            User::where('email', '=', $request->input('email'))->update(['otp' => $otp]);
-            return response()->json(["status" => "success", "message" => "Otp Send successfully"], 200);
-        } else {
-            return response()->json(["status" => "Fail", "message" => "unauthorized"], 401);
+        try{
+            $request->validate([
+                'email' => 'required|string|email'
+            ]);
+            $otp = rand(100000, 999999);
+            $user = User::where('email', '=', $request->input('email'))->count();
+            if ($user == 1) {
+                // send opp
+                Mail::to($request->input('email'))->send(new SendOTP($otp));
+                //set Database otp
+                User::where('email', '=', $request->input('email'))->update(['otp' => $otp]);
+                return response()->json(["status" => "success", "message" => "Otp Send successfully"], 200);
+            } else {
+                return response()->json(["status" => "Fail", "message" => "unauthorized"], 200);
+            }
+        }catch(ValidationException $e){
+            return response()->json(["status" => "fail", "message" => $e->getMessage()], 200);
+        }
+         catch(Exception $e){
+            return response()->json(["status" => "fail", "message" => $e->getMessage()], 200);
         }
     }
 
@@ -155,7 +165,7 @@ class UserController extends Controller
                 $resetToken = JWTToken::CreateTokenForResetPassword($email,$id);
                 return response()->json(["status" => "success", "message" => "Otp Verify successfully"], 200)->cookie('token', $resetToken,60*60);
             } else {
-                return response()->json(["status" => "Fail", "message" => "unauthorized"], 401);
+                return response()->json(["status" => "Fail", "message" => "unauthorized"],200);
             }
         } catch (Exception $e) {
             return response()->json(["status" => "Fail", "message" => $e->getMessage()], 401);
@@ -165,12 +175,16 @@ class UserController extends Controller
     public function userResetPassword(Request $request)
     {
         try {
+            $request->validate([
+                'email' => 'required|string|email',
+                'password' => 'required|string|max:50|min:8'
+            ]);
             $email = $request->header('email');
             $password = $request->input('password');
             User::where('email', '=', $email)->update(["password" => $password]);
             return response()->json(["status" => "success", "message" => "Password Set Successfully"], 200);
         } catch (Exception $e) {
-            return response()->json(["status" => "Fail", "message" => "sdfs"], 401);
+            return response()->json(["status" => "Fail", "message" => "unauthorized"], 200);
         }
     }
 
@@ -203,5 +217,9 @@ class UserController extends Controller
         } catch (Exception $exception) {
             return redirect()->back()->with('error', $exception->getMessage())->withInput();
         }
+    }
+    public function userLogout(Request $request, $id)
+    {
+        return redirect('login')->cookie('token','',-1);
     }
 }

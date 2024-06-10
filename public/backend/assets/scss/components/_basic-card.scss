@@ -1,0 +1,26 @@
+/**=====================
+    2.7 Basic-card CSS Start
+==========================**/
+
+.dark-color-header {
+    background-color: unset !important;
+    color: $primary-color;
+    ul {
+        li {
+            &:first-child,
+            &:last-child {
+                i {
+                    color: $primary-color !important;
+                }
+            }
+
+            i {
+                color: $light-color !important;
+            }
+        }
+    }
+}
+
+/**=====================
+  2.7 Basic-card CSS Ends
+==========================**/

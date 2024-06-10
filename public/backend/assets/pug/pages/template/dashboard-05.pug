@@ -1,0 +1,346 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var apex                  = true;
+- var dashboard_5           = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Social
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Social
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-xxl-3.col-ed-4.col-xl-4.box-col-4
+                .row 
+                  .col-xl-12.col-md-6 
+                    .card.social-profile
+                      .card-body
+                        .social-img-wrap 
+                          .social-img
+                            img(src="../assets/images/dashboard-5/profile.png", alt="profile")
+                          .edit-icon
+                            svg
+                              use(href='../assets/svg/icon-sprite.svg#profile-check')
+                        .social-details
+                          h5.mb-1
+                            a(href="social-app.html") Brooklyn Simmons
+                          span.f-light @brookly.simmons
+                          ul.social-follow
+                            li
+                              h5.mb-0 1,908
+                              span.f-light Posts
+                            li
+                              h5.mb-0 34.0k
+                              span.f-light Followers
+                            li
+                              h5.mb-0 897
+                              span.f-light Following
+                  .col-xl-12.col-md-6 
+                    .card.mobile-app-card
+                      .card-header.card-no-border.pb-0 
+                        h5.mb-3 
+                          span.f-16.f-light Have you Tried Our 
+                          | Mobile Application?
+                        button.purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500(type="button") Try Now
+                      .card-body.p-0.text-end
+                        img.wavy(src="../assets/images/dashboard-5/wave.png", alt="")
+                        img(src="../assets/images/dashboard-5/mobile-img.png", alt="")
+              .col-xxl-6.col-ed-8.col-xl-8.box-col-8e 
+                .row 
+                  .col-md-4.col-sm-6 
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/1.png", alt="facebook icon")
+                            span Facebook
+                          span.font-success.f-12.d-xxl-block.d-xl-none +22.9%
+                        .social-content
+                          div 
+                            h5.mb-1 12,098
+                            span.f-light Followers
+                          .social-chart
+                            #radial-facebook
+                  .col-md-4.col-sm-6 
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/2.png", alt="instagram icon")
+                            span Instagram
+                          span.font-success.f-12.d-xxl-block.d-xl-none +27.4%
+                        .social-content
+                          div 
+                            h5.mb-1 15,080
+                            span.f-light Followers
+                          .social-chart
+                            #radial-instagram
+                  .col-md-4 
+                    .card.social-widget.widget-hover
+                      .card-body
+                        .d-flex.align-items-center.justify-content-between
+                          div.d-flex.align-items-center.gap-2
+                            .social-icons
+                              img(src="../assets/images/dashboard-5/social/3.png", alt="twitter icon")
+                            span Twitter
+                          span.font-success.f-12.d-xxl-block.d-xl-none +14.09%
+                        .social-content
+                          div 
+                            h5.mb-1 12,564
+                            span.f-light Followers
+                          .social-chart
+                            #radial-twitter
+                  .col-md-8 
+                    .card 
+                      .card-header.card-no-border
+                        .header-top
+                          h5.m-0 Instagram Subscribers
+                            span.f-14.f-w-500.ms-1.f-light
+                              | (75% activity growth)
+                          .card-header-right-icon
+                            .dropdown.icon-dropdown
+                              button#subscribeButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='subscribeButton')
+                                a.dropdown-item(href='#') Today
+                                a.dropdown-item(href='#') Tomorrow
+                                a.dropdown-item(href='#') Yesterday
+                      .card-body.pt-0
+                        .subscriber-chart-container
+                          #subscriber-chart
+                  .col-md-4 
+                    .row 
+                      .col-md-12.col-sm-6
+                        .card.click-widgets.widget-hover
+                          .card-body 
+                            .dropdown.icon-dropdown.text-end
+                              button#photoButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='photoButton')
+                                a.dropdown-item(href='#') Today
+                                a.dropdown-item(href='#') Tomorrow
+                                a.dropdown-item(href='#') Yesterday
+                            .d-flex.justify-content-around
+                              .click-chart
+                                #photo-click 
+                              div 
+                                h4.mb-0 %76
+                                span.f-light.d-block.my-1 Photo Clicks
+                                span.font-success +72.9%
+                      .col-md-12.col-sm-6
+                        .card.click-widgets.widget-hover
+                          .card-body 
+                            .dropdown.icon-dropdown.text-end
+                              button#clickButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                i.icon-more-alt
+                              .dropdown-menu.dropdown-menu-end(aria-labelledby='clickButton')
+                                a.dropdown-item(href='#') Today
+                                a.dropdown-item(href='#') Tomorrow
+                                a.dropdown-item(href='#') Yesterday
+                            .d-flex.justify-content-around
+                              .click-chart
+                                #link-click 
+                              div 
+                                h4.mb-0 %89
+                                span.f-light.d-block.my-1 Link Clicks
+                                span.font-secondary 79.9%
+              .col-xl-3.col-ed-none.d-xxl-block.d-lg-none.box-col-none
+                .row
+                  .col-lg-12.col-sm-6
+                    .card
+                      .card-header.card-no-border
+                        .header-top.gap-1
+                          h5 Follower Gender
+                          .dropdown.icon-dropdown
+                            button#followerdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='followerdropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.pt-0 
+                        .follower-chart 
+                          #followerchart
+                  .col-lg-12.col-sm-6 
+                    .card.follower-wrap
+                      .card-header.card-no-border
+                        h5.mb-1 Facebook Campaign
+                        div.d-inline-block.badge.badge-light-success.rounded-pill Active
+                      .card-body.pt-0.papernote-wrap
+                        ul.campaign-list 
+                          li 
+                            .campaign-box 
+                              h5.mb-1 1,897
+                              span.f-light Followers today
+                          li 
+                            .campaign-box 
+                              h5.mb-1 50,000
+                              span.f-light Followers goals
+                        .customers
+                          ul 
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/6.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/7.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/8.jpg", alt="user")
+                            li.d-inline-block
+                              .light-card
+                                span.f-w-500 +5
+              .col-xl-7 
+                .card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 All Campaigns
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#allcampButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='allcampButton')
+                            a.dropdown-item(href='#') Today
+                            a.dropdown-item(href='#') Tomorrow
+                            a.dropdown-item(href='#') Yesterday
+                  .card-body.pt-0.campaign-table
+                    .recent-table.table-responsive.currency-table 
+                      table.table 
+                        thead 
+                          tr 
+                            th.f-light AD Platform
+                            th.f-light Campaign
+                            th.f-light GEO
+                            th.f-light Profitability
+                            th.f-light Max Participation Avai.
+                            th.f-light Status
+                            th.f-light Create
+                        tbody 
+                          tr 
+                            td.border-icon.facebook
+                              div
+                                .social-circle
+                                  i.fa.fa-facebook
+                            td Jane Cooper
+                            td UK
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 45.6%
+                            td $9,786
+                            td 
+                              button.btn.button-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.instagram
+                              div
+                                .social-circle
+                                  i.fa.fa-instagram
+                            td Floyd Miles
+                            td DE
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 12.3%
+                            td $19,7098
+                            td 
+                              button.btn.button-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.pinterest
+                              div
+                                .social-circle
+                                  i.fa.fa-pinterest
+                            td Guy Hawkins
+                            td ES
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 65.6%
+                            td $90,986
+                            td 
+                              button.btn.button-primary Active
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.twitter
+                              div
+                                .social-circle
+                                  i.fa.fa-twitter
+                            td 	Travis Wright
+                            td ES
+                            td
+                              .change-currency
+                                i.font-danger.me-1(data-feather="trending-down")
+                                | 35.6%
+                            td $23,654
+                            td 
+                              button.btn.badge-light-light.disabled Inactive
+                            td
+                              button.plus-btn + 
+                          tr 
+                            td.border-icon.you-tube
+                              div
+                                .social-circle
+                                  i.fa.fa-youtube-play
+                            td Mark Green
+                            td UK
+                            td
+                              .change-currency
+                                i.font-success.me-1(data-feather="trending-up")
+                                | 45.6%
+                            td $12,796
+                            td 
+                              button(type="button").btn.badge-light-light.disabled Inactive
+                            td
+                              button(type="button").plus-btn + 
+              .col-xl-5 
+                .card 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Views
+                      .card-header-right-icon
+                        .dropdown
+                          button#viewButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            | Today
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='viewButton')
+                            a.dropdown-item(href='#') Today
+                            a.dropdown-item(href='#') Tomorrow
+                            a.dropdown-item(href='#') Yesterday
+                  .card-body.pt-0
+                    .view-container
+                      #view 
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

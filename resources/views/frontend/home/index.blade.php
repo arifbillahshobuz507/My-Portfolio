@@ -1,51 +1,51 @@
-@extends('frontend.layout.frontend.app')
+@extends('frontend.layout.app')
 
 @section('content')
  <!-- HERO SECTION START -->
-    @include('frontend.pages.frontend.hero')
+    @include('frontend.content.hero')
  <!-- HERO SECTION END -->
 
  <!-- SERVICES SECTION START -->
- @include('frontend.pages.frontend.services')
+ @include('frontend.content.services')
  <!-- SERVICES SECTION END -->
 
  <!-- start: Service Popup -->
- @include('frontend.pages.frontend.servicesPopup')
+ @include('frontend.content.servicesPopup')
  <!-- end: Service Popup -->
 
  <!-- PORTFOLIO SECTION START -->
- @include('frontend.pages.frontend.portfolio')
+ @include('frontend.content.portfolio')
  <!-- PORTFOLIO SECTION END -->
 
  <!-- start: Portfolio Popup -->
-@include('frontend.pages.frontend.portfolioPopup')
+@include('frontend.content.portfolioPopup')
  <!-- end: Portfolio Popup -->
 
  <!-- RESUME SECTION START -->
-@include('frontend.pages.frontend.resume')
+@include('frontend.content.resume')
  <!-- RESUME SECTION END -->
 
  <!-- SKILLS SECTION START -->
-@include('frontend.pages.frontend.skills')
+@include('frontend.content.skills')
  <!-- SKILLS SECTION END -->
 
  <!-- TESTIMONIAL SECTION START -->
-@include('frontend.pages.frontend.testimonial')
+@include('frontend.content.testimonial')
  <!-- TESTIMONIAL SECTION END -->
 
  <!-- BLOG SECTION STAR -->
-@include('frontend.pages.frontend.blog')
+@include('frontend.content.blog')
  <!-- BLOG SECTION END -->
 
  <!-- CONTACT SECTION START -->
-@include('frontend.pages.frontend.contact')
+@include('frontend.content.contact')
  <!-- CONTACT SECTION END -->
 
  <!-- BEGIN: Contact Form Success Modal Message -->
-@include('frontend.pages.frontend.contactFormSuccessModal')
+@include('frontend.content.contactFormSuccessModal')
  <!-- END: Contact Form Success Modal Message -->
 
  <!-- BEGIN: Contact Form Fail Modal Message -->
-@include('frontend.pages.frontend.contactFormFailModal')
+@include('frontend.content.contactFormFailModal')
  <!-- END: Contact Form Fail Modal Message End -->
 @endsection

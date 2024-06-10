@@ -1,0 +1,275 @@
+- var datatable             = true;
+- var theme_customizer      = true;
+- var page_datatable1       = true;
+- var datatable_advance     = true;
+- var tooltip               = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Advance Init
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Data Tables
+                    li.breadcrumb-item.active Advance Init
+          // Container-fluid starts                   
+          .container-fluid
+            .row
+                // Stock result 
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h4 Stock Result
+                            span
+                                | Data within DataTables can be easily rendered to add graphics or colour to your tables, as demonstrated in the example on this page. These examples make use of columns.render and drawCallback to customise the cells in three ways:
+                            span
+                                | 1. the colour of the cell is determine by the relative price of the stock.
+                            span 
+                                | 2. a 'sparkline' class is added to the numeric array in the 'last' column.
+                            span 
+                                | 3. the jQuery Sparklines plugin is called to turn that array into a line graph.
+                        .card-body
+                            .table-responsive.theme-scrollbar
+                                table#stock.display.nowrap(style='width:100%')
+                                    thead
+                                        tr
+                                            th Name
+                                            th Symbol
+                                            th Price
+                                            th Difference
+                                            th Last
+                                    tfoot
+                                        tr
+                                            th Name
+                                            th Symbol
+                                            th Price
+                                            th Difference
+                                            th Last
+                .col-sm-12
+                    .card
+                        .card-header.pb-0.card-no-border
+                            h4 Row Create Callback
+                            span 
+                                | For each row that is generated for display, the createdRow function is called once and once only. It is passed the create row node which can then be modified.
+                            span
+                                | the 'salary' column Primary and bold by adding a CSS class to the container cell if the salary is greater than $150,000.
+                            span
+                                | the 'salary' column danger and bold by adding a CSS class to the container cell if the salary is less than $40,000.
+                        .card-body 
+                            .table-responsive.theme-scrollbar
+                                table#row_create.display(style='width:100%')
+                                    thead
+                                        tr
+                                            th Employee Name
+                                            th Email
+                                            th Experience
+                                            th Sex
+                                            th Contact No.
+                                            th Salary
+                                    tbody 
+                                        tr
+                                            td Elana Robbert	
+                                            td ElanaRob@gmail.com	
+                                            td 1 Year	
+                                            td Male	
+                                            td +91 9789887777
+                                            td 28,000
+                                        tr
+                                            td Stiphen Deo
+                                            td Stiphen@yahoo.com
+                                            td 6 Month		
+                                            td Female
+                                            td +91 9874563210		
+                                            td 22,000
+                                        tr
+                                            td Genelia Ottre	
+                                            td Genelia@gmail.com
+                                            td 2 Days
+                                            td Male
+                                            td +91 8794562135
+                                            td 24,120
+                                        tr
+                                            td Michael Silva
+                                            td Michael@yahoo.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 1234567891
+                                            td $1,98,500
+                                            
+                                        tr
+                                            td Paul Byrd
+                                            td Paul@gmail.com
+                                            td 2 Day
+                                            td Male
+                                            td +91 3124567894
+                                            td $7,25,000
+                                            
+                                        tr
+                                            td Gloria Little
+                                            td Gloria@yahoo.com
+                                            td 4 Year
+                                            td Male
+                                            td +91 9876541230
+                                            td $2,37,500
+                                            
+                                        tr
+                                            td Bradley Greer
+                                            td Bradley@gmail.com
+                                            td 6 Year
+                                            td Male
+                                            td +91 8794561230
+                                            td $1,32,000
+                                            
+                                        tr
+                                            td Dai Rios
+                                            td Rios@gmail.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 7418529630
+                                            td $2,17,500
+                                            
+                                        tr
+                                            td Jenette Caldwell
+                                            td Jenette@yahoo.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 4569871230
+                                            td $3,45,000
+                                            
+                                        tr
+                                            td Yuri Berry
+                                            td Berry@gmail.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 7894561230
+                                            td $6,75,000
+                                            
+                                        tr
+                                            td Caesar Vance
+                                            td Vance@yahoo.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 8596741230
+                                            td $14,500
+                                            
+                                        tr
+                                            td Doris Wilder
+                                            td Wilder@gmail.com
+                                            td 6 Month
+                                            td Male
+                                            td +91 6541239870
+                                            td $85,600
+                                            
+                                        tr
+                                            td Angelica Ramos
+                                            td Angelica@gmail.com
+                                            td 4 Month
+                                            td Female
+                                            td +91 8745963210
+                                            td $12,00,000
+                                            
+                                        tr
+                                            td Gavin Joyce
+                                            td Gavin@yahoo.com
+                                            td 8 Month
+                                            td Male
+                                            td +91 8596741230
+                                            td $92,575
+                                            
+                                        tr
+                                            td Jennifer Chang
+                                            td Jennifer@yahoo.com
+                                            td 1 Year
+                                            td Female
+                                            td +91 7412589630
+                                            td $3,57,650
+                                            
+                                        tr
+                                            td Brenden Wagner
+                                            td Brenden@gmail.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 6589742301
+                                            td $2,06,850
+                                            
+                                        tr
+                                            td Fiona Green
+                                            td Fiona@yahoo.com
+                                            td 3 Month
+                                            td Female
+                                            td +91 6985321470
+                                            td $8,50,000
+                                            
+                                        tr
+                                            td Shou Itou
+                                            td Shou@gmail.com
+                                            td 2 Year
+                                            td Female
+                                            td +91 3256897414
+                                            td $1,63,000
+                                            
+                                        tr
+                                            td Michelle House
+                                            td Michelle@gmail.com
+                                            td 1 Year
+                                            td Male
+                                            td +91 8745961235
+                                            td $95,400
+                                            
+                                        tr
+                                            td Suki Burks
+                                            td Burks@gmail.com
+                                            td 3 Year
+                                            td Female
+                                            td +91 4785961230
+                                            td $1,14,500
+                                            
+                                        tr
+                                            td Prescott Bartlett
+                                            td Prescott@gmail.com
+                                            td 8 Year
+                                            td Male
+                                            td +91 4578961231
+                                            td $1,45,000
+                                            
+                                        tr
+                                            td Gavin Cortez
+                                            td Gavin@gmail.com
+                                            td 9 Year
+                                            td Male
+                                            td +91 748521369
+                                            td $2,35,500
+                                    tfoot
+                                        tr
+                                            th Employee Name
+                                            th Email
+                                            th Experience
+                                            th Sex
+                                            th Contact No.
+                                            th Salary
+            // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

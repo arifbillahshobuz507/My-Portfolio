@@ -1,0 +1,3390 @@
+- var datatable             = true;
+- var page_datatable        = true;
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Basic DataTables
+
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Data Tables
+                    li.breadcrumb-item.active Basic DataTables
+          // Container-fluid starts
+          .container-fluid
+            .row
+              // Zero Configuration  Starts
+              .col-sm-12
+                .card
+                  .card-header.pb-0.card-no-border
+                    h4 Zero Configuration
+                    span
+                      | DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:
+                      code $().DataTable();
+                      | .
+                    span
+                      | Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.
+                  .card-body
+                    .table-responsive
+                      table#basic-1.display
+                        thead
+                          tr
+                            th Name
+                            th Position
+                            th Office
+                            th Age
+                            th Start date
+                            th Salary
+                            th Action
+
+
+                        tbody
+                          tr
+                            td Tiger Nixon
+                            td System Architect
+                            td Edinburgh
+                            td 61
+                            td 2011/04/25
+                            td $320,800
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Garrett Winters
+                            td Accountant
+                            td Tokyo
+                            td 63
+                            td 2011/07/25
+                            td $170,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Ashton Cox
+                            td Junior Technical Author
+                            td San Francisco
+                            td 66
+                            td 2009/01/12
+                            td $86,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Cedric Kelly
+                            td Senior Javascript Developer
+                            td Edinburgh
+                            td 22
+                            td 2012/03/29
+                            td $433,060
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Airi Satou
+                            td Accountant
+                            td Tokyo
+                            td 33
+                            td 2008/11/28
+                            td $162,700
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Brielle Williamson
+                            td Integration Specialist
+                            td New York
+                            td 61
+                            td 2012/12/02
+                            td $372,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Herrod Chandler
+                            td Sales Assistant
+                            td San Francisco
+                            td 59
+                            td 2012/08/06
+                            td $137,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Rhona Davidson
+                            td Integration Specialist
+                            td Tokyo
+                            td 55
+                            td 2010/10/14
+                            td $327,900
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Colleen Hurst
+                            td Javascript Developer
+                            td San Francisco
+                            td 39
+                            td 2009/09/15
+                            td $205,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Sonya Frost
+                            td Software Engineer
+                            td Edinburgh
+                            td 23
+                            td 2008/12/13
+                            td $103,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jena Gaines
+                            td Office Manager
+                            td London
+                            td 30
+                            td 2008/12/19
+                            td $90,560
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Quinn Flynn
+                            td Support Lead
+                            td Edinburgh
+                            td 22
+                            td 2013/03/03
+                            td $342,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Charde Marshall
+                            td Regional Director
+                            td San Francisco
+                            td 36
+                            td 2008/10/16
+                            td $470,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          
+                          tr
+                            td Donna Snider
+                            td Customer Support
+                            td New York
+                            td 27
+                            td 2011/01/25
+                            td $112,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+
+              // Zero Configuration  Ends
+
+
+              // Complex headers (rowspan and colspan) Starts
+              .col-sm-12
+                .card
+                  .card-header.pb-0.card-no-border
+                    h4 Complex headers (rowspan and colspan)                                
+                    span
+                      | When using tables to display data, you will often wish to display column information in groups. DataTables fully supports 
+                      code colspan
+                      |  and
+                      code rowspan
+                      |  in the table's header, assigning the required order listeners to the TH element suitable for that column.
+                    span
+                      | Each column must have one TH cell which is unique to it for the listeners to be added. By default DataTables will use the bottom unique cell for the column
+                      | to attach the order listener, if more than one cell for a column if found. The 
+                      code.option(title='DataTables initialisation option') orderCellsTop:option
+                      | option can be used to tell DataTables to use the top cell if you prefer.
+                    span
+                      | The example shown below has two sets of grouped information, grouped by colspan in the header.
+                  .card-body
+                    .table-responsive
+                      table#basic-6.display
+                        thead
+                          tr
+                            th(rowspan='2') Name
+                            th(colspan='2') HR Information
+                            th(colspan='3') Contact
+                          tr
+                            th Position
+                            th Salary
+                            th Office
+                            th CV
+                            th Status
+                            th E-mail
+                            th Action
+                        tbody
+                          tr
+                            td Tiger Nixon
+                            td System Architect
+                            td $320,800
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td t.nixon@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Garrett Winters
+                            td Accountant
+                            td $170,750
+                            td Tokyo
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td g.winters@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Ashton Cox
+                            td Junior Technical Author
+                            td $86,000
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td a.cox@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Cedric Kelly
+                            td Senior Javascript Developer
+                            td $433,060
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td c.kelly@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Airi Satou
+                            td Accountant
+                            td $162,700
+                            td Tokyo
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td a.satou@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Brielle Williamson
+                            td Integration Specialist
+                            td $372,000
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td b.williamson@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Herrod Chandler
+                            td Sales Assistant
+                            td $137,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td h.chandler@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Rhona Davidson
+                            td Integration Specialist
+                            td $327,900
+                            td Tokyo
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td r.davidson@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Colleen Hurst
+                            td Javascript Developer
+                            td $205,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td c.hurst@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Sonya Frost
+                            td Software Engineer
+                            td $103,600
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td s.frost@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jena Gaines
+                            td Office Manager
+                            td $90,560
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td j.gaines@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Quinn Flynn
+                            td Support Lead
+                            td $342,000
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td q.flynn@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Charde Marshall
+                            td Regional Director
+                            td $470,600
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td c.marshall@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Haley Kennedy
+                            td Senior Marketing Designer
+                            td $313,500
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td h.kennedy@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Tatyana Fitzpatrick
+                            td Regional Director
+                            td $385,750
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td t.fitzpatrick@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michael Silva
+                            td Marketing Designer
+                            td $198,500
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td m.silva@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Paul Byrd
+                            td Chief Financial Officer (CFO)
+                            td $725,000
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td p.byrd@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gloria Little
+                            td Systems Administrator
+                            td $237,500
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td g.little@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Bradley Greer
+                            td Software Engineer
+                            td $132,000
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td b.greer@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Dai Rios
+                            td Personnel Lead
+                            td $217,500
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td d.rios@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jenette Caldwell
+                            td Development Lead
+                            td $345,000
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td j.caldwell@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Yuri Berry
+                            td Chief Marketing Officer (CMO)
+                            td $675,000
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td y.berry@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Caesar Vance
+                            td Pre-Sales Support
+                            td $106,450
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td c.vance@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Doris Wilder
+                            td Sales Assistant
+                            td $85,600
+                            td Sidney
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td d.wilder@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Angelica Ramos
+                            td Chief Executive Officer (CEO)
+                            td $1,200,000
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td a.ramos@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gavin Joyce
+                            td Developer
+                            td $92,575
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td g.joyce@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jennifer Chang
+                            td Regional Director
+                            td $357,650
+                            td Singapore
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td j.chang@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Brenden Wagner
+                            td Software Engineer
+                            td $206,850
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td b.wagner@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Fiona Green
+                            td Chief Operating Officer (COO)
+                            td $850,000
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td f.green@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Shou Itou
+                            td Regional Marketing
+                            td $163,000
+                            td Tokyo
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td s.itou@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michelle House
+                            td Integration Specialist
+                            td $95,400
+                            td Sidney
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td m.house@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Suki Burks
+                            td Developer
+                            td $114,500
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td s.burks@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Prescott Bartlett
+                            td Technical Author
+                            td $145,000
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td p.bartlett@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gavin Cortez
+                            td Team Leader
+                            td $235,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td g.cortez@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Martena Mccray
+                            td Post-Sales support
+                            td $324,050
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td m.mccray@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Unity Butler
+                            td Marketing Designer
+                            td $85,675
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td u.butler@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Howard Hatfield
+                            td Office Manager
+                            td $164,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td h.hatfield@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Hope Fuentes
+                            td Secretary
+                            td $109,850
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td h.fuentes@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Vivian Harrell
+                            td Financial Controller
+                            td $452,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td v.harrell@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Timothy Mooney
+                            td Office Manager
+                            td $136,200
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td t.mooney@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jackson Bradshaw
+                            td Director
+                            td $645,750
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td j.bradshaw@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Olivia Liang
+                            td Support Engineer
+                            td $234,500
+                            td Singapore
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td o.liang@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Bruno Nash
+                            td Software Engineer
+                            td $163,500
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td b.nash@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Sakura Yamamoto
+                            td Support Engineer
+                            td $139,575
+                            td Tokyo
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td s.yamamoto@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Thor Walton
+                            td Developer
+                            td $98,540
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td t.walton@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Finn Camacho
+                            td Support Engineer
+                            td $87,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td f.camacho@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Serge Baldwin
+                            td Data Coordinator
+                            td $138,575
+                            td Singapore
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td s.baldwin@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Zenaida Frank
+                            td Software Engineer
+                            td $125,250
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td z.frank@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Zorita Serrano
+                            td Software Engineer
+                            td $115,000
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td z.serrano@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jennifer Acosta
+                            td Junior Javascript Developer
+                            td $75,650
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td j.acosta@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Cara Stevens
+                            td Sales Assistant
+                            td $145,600
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td c.stevens@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Hermione Butler
+                            td Regional Director
+                            td $356,250
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td h.butler@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Lael Greer
+                            td Systems Administrator
+                            td $103,500
+                            td London
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-danger Pending
+                            td l.greer@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jonas Alexander
+                            td Developer
+                            td $86,500
+                            td San Francisco
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-warning  in process
+                            td j.alexander@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Shad Decker
+                            td Regional Director
+                            td $183,000
+                            td Edinburgh
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td s.decker@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michael Bruce
+                            td Javascript Developer
+                            td $183,000
+                            td Singapore
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td m.bruce@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Donna Snider
+                            td Customer Support
+                            td $112,000
+                            td New York
+                            td.action                                   
+                              a.pdf(href="../assets/pdf/sample.pdf" target="_blank")
+                                i.icofont.icofont-file-pdf 
+                            td 
+                              span.badge.rounded-pill.badge-success hired
+                            td d.snider@datatables.net
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                        tfoot
+                          tr
+                            th Name
+                            th Position
+                            th Salary
+                            th Office
+                            th CV 
+                            th Status
+                            th E-mail
+                            th Action
+              // Complex headers (rowspan and colspan) Ends
+
+
+              // State saving Starts
+              .col-sm-12
+                .card
+                  .card-header.pb-0.card-no-border
+                    h4 State saving
+                    span
+                      | DataTables has the option of being able to save the state of a table (its paging position, ordering state etc) so that is can be restored when the user
+                      | reloads a page, or comes back to the page after visiting a sub-page. This state saving ability is enabled by the 
+                      code.option(title='DataTables initialisation option') stateSave
+                      |  option.
+                    span
+                      | The built in state saving method uses the HTML5 
+                      code localStorage
+                      |  and 
+                      code sessionStorage
+                      |  APIs for efficient storage of the data. Please
+                      |                                         note that this means that the built in state saving option 
+                      strong will not work with IE6/7
+                      |  as these browsers do not support these APIs. Alternative
+                      |                                         options of using cookies or saving the state on the server through Ajax can be used through the 
+                      code.option(title='DataTables initialisation option') stateSaveCallback
+                      |  and 
+                      a(href='//datatables.net/reference/option/stateLoadCallback')
+                        code.option(title='DataTables initialisation option') stateLoadCallback
+                      |  options.
+                    span
+                      | The duration for which the saved state is valid and can be used to restore the table state can be set using the 
+                      code.option(title='DataTables initialisation option') stateDuration
+                      |  initialisation
+                      |                                         parameter (2 hours by default). This parameter also controls if 
+                      code localStorage
+                      |  (0 or greater) or 
+                      code sessionStorage
+                      |  (-1) is used to store
+                      |                                         the data.
+                    span
+                      | The example below simply shows state saving enabled in DataTables with the 
+                      code.option(title='DataTables initialisation option') stateSave
+                      |  option.
+                  .card-body
+                    .table-responsive
+                      table#basic-9.display
+                        thead
+                          tr
+                            th Name
+                            th Position
+                            th Office
+                            th Age
+                            th Start date
+                            th Salary
+                            th Action
+                        tbody
+                          tr
+                            td Tiger Nixon
+                            td
+                              span.badge.rounded-pill.badge-light-primary System Architect
+                            td Edinburgh
+                            td 61
+                            td 2011/04/25
+                            td $320,800
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Garrett Winters
+                            td
+                              span.badge.rounded-pill.badge-light-secondary Accountant
+                            td Tokyo
+                            td 63
+                            td 2011/07/25
+                            td $170,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Ashton Cox
+                            td
+                              span.badge.rounded-pill.badge-light-primary Junior Technical Author
+                            td San Francisco
+                            td 66
+                            td 2009/01/12
+                            td $86,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Cedric Kelly
+                            td
+                              span.badge.rounded-pill.badge-light-primary Senior Javascript Developer
+                            td Edinburgh
+                            td 22
+                            td 2012/03/29
+                            td $433,060
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Airi Satou
+                            td
+                              span.badge.rounded-pill.badge-light-secondary Accountant
+                            td Tokyo
+                            td 33
+                            td 2008/11/28
+                            td $162,700
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Brielle Williamson
+                            td
+                              span.badge.rounded-pill.badge-light-info Integration Specialist
+                            td New York
+                            td 61
+                            td 2012/12/02
+                            td $372,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Herrod Chandler
+                            td
+                              span.badge.rounded-pill.badge-light-primary Sales Assistant
+                            td San Francisco
+                            td 59
+                            td 2012/08/06
+                            td $137,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Rhona Davidson
+                            td
+                              span.badge.rounded-pill.badge-light-info Integration Specialist
+                            td Tokyo
+                            td 55
+                            td 2010/10/14
+                            td $327,900
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Colleen Hurst
+                            td
+                              span.badge.rounded-pill.badge-light-danger Javascript Developer
+                            td San Francisco
+                            td 39
+                            td 2009/09/15
+                            td $205,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Sonya Frost
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td Edinburgh
+                            td 23
+                            td 2008/12/13
+                            td $103,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jena Gaines
+                            td
+                              span.badge.rounded-pill.badge-light-primary Office Manager
+                            td London
+                            td 30
+                            td 2008/12/19
+                            td $90,560
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Quinn Flynn
+                            td
+                              span.badge.rounded-pill.badge-light-primary Support Lead
+                            td Edinburgh
+                            td 22
+                            td 2013/03/03
+                            td $342,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Charde Marshall
+                            td
+                              span.badge.rounded-pill.badge-light-info Regional Director
+                            td San Francisco
+                            td 36
+                            td 2008/10/16
+                            td $470,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Haley Kennedy
+                            td
+                              span.badge.rounded-pill.badge-light-primary Senior Marketing Designer
+                            td London
+                            td 43
+                            td 2012/12/18
+                            td $313,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Tatyana Fitzpatrick
+                            td
+                              span.badge.rounded-pill.badge-light-info Regional Director
+                            td London
+                            td 19
+                            td 2010/03/17
+                            td $385,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michael Silva
+                            td
+                              span.badge.rounded-pill.badge-light-primary Marketing Designer
+                            td London
+                            td 66
+                            td 2012/11/27
+                            td $198,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Paul Byrd
+                            td
+                              span.badge.rounded-pill.badge-light-primary Chief Financial Officer (CFO)
+                            td New York
+                            td 64
+                            td 2010/06/09
+                            td $725,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gloria Little
+                            td
+                              span.badge.rounded-pill.badge-light-primary Systems Administrator
+                            td New York
+                            td 59
+                            td 2009/04/10
+                            td $237,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Bradley Greer
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td London
+                            td 41
+                            td 2012/10/13
+                            td $132,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Dai Rios
+                            td
+                              span.badge.rounded-pill.badge-light-primary Personnel Lead
+                            td Edinburgh
+                            td 35
+                            td 2012/09/26
+                            td $217,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jenette Caldwell
+                            td
+                              span.badge.rounded-pill.badge-light-primary Development Lead
+                            td New York
+                            td 30
+                            td 2011/09/03
+                            td $345,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Yuri Berry
+                            td
+                              span.badge.rounded-pill.badge-light-primary Chief Marketing Officer (CMO)
+                            td New York
+                            td 40
+                            td 2009/06/25
+                            td $675,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Caesar Vance
+                            td
+                              span.badge.rounded-pill.badge-light-primary Pre-Sales Support
+                            td New York
+                            td 21
+                            td 2011/12/12
+                            td $106,450
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Doris Wilder
+                            td
+                              span.badge.rounded-pill.badge-light-primary Sales Assistant
+                            td Sidney
+                            td 23
+                            td 2010/09/20
+                            td $85,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Angelica Ramos
+                            td
+                              span.badge.rounded-pill.badge-light-primary Chief Executive Officer (CEO)
+                            td London
+                            td 47
+                            td 2009/10/09
+                            td $1,200,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gavin Joyce
+                            td
+                              span.badge.rounded-pill.badge-light-success Developer
+                            td Edinburgh
+                            td 42
+                            td 2010/12/22
+                            td $92,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jennifer Chang
+                            td
+                              span.badge.rounded-pill.badge-light-info Regional Director
+                            td Singapore
+                            td 28
+                            td 2010/11/14
+                            td $357,650
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Brenden Wagner
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td San Francisco
+                            td 28
+                            td 2011/06/07
+                            td $206,850
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Fiona Green
+                            td
+                              span.badge.rounded-pill.badge-light-primary Chief Operating Officer (COO)
+                            td San Francisco
+                            td 48
+                            td 2010/03/11
+                            td $850,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Shou Itou
+                            td
+                              span.badge.rounded-pill.badge-light-primary Regional Marketing
+                            td Tokyo
+                            td 20
+                            td 2011/08/14
+                            td $163,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michelle House
+                            td
+                              span.badge.rounded-pill.badge-light-info Integration Specialist
+                            td Sidney
+                            td 37
+                            td 2011/06/02
+                            td $95,400
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Suki Burks
+                            td
+                              span.badge.rounded-pill.badge-light-success Developer
+                            td London
+                            td 53
+                            td 2009/10/22
+                            td $114,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Prescott Bartlett
+                            td
+                              span.badge.rounded-pill.badge-light-primary Technical Author
+                            td London
+                            td 27
+                            td 2011/05/07
+                            td $145,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Gavin Cortez
+                            td
+                              span.badge.rounded-pill.badge-light-primary Team Leader
+                            td San Francisco
+                            td 22
+                            td 2008/10/26
+                            td $235,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Martena Mccray
+                            td
+                              span.badge.rounded-pill.badge-light-primary Post-Sales support
+                            td Edinburgh
+                            td 46
+                            td 2011/03/09
+                            td $324,050
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Unity Butler
+                            td
+                              span.badge.rounded-pill.badge-light-primary Marketing Designer
+                            td San Francisco
+                            td 47
+                            td 2009/12/09
+                            td $85,675
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Howard Hatfield
+                            td
+                              span.badge.rounded-pill.badge-light-primary Office Manager
+                            td San Francisco
+                            td 51
+                            td 2008/12/16
+                            td $164,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Hope Fuentes
+                            td
+                              span.badge.rounded-pill.badge-light-primary Secretary
+                            td San Francisco
+                            td 41
+                            td 2010/02/12
+                            td $109,850
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Vivian Harrell
+                            td
+                              span.badge.rounded-pill.badge-light-primary Financial Controller
+                            td San Francisco
+                            td 62
+                            td 2009/02/14
+                            td $452,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Timothy Mooney
+                            td
+                              span.badge.rounded-pill.badge-light-primary Office Manager
+                            td London
+                            td 37
+                            td 2008/12/11
+                            td $136,200
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jackson Bradshaw
+                            td
+                              span.badge.rounded-pill.badge-light-primary Director
+                            td New York
+                            td 65
+                            td 2008/09/26
+                            td $645,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Olivia Liang
+                            td
+                              span.badge.rounded-pill.badge-light-primary Support Engineer
+                            td Singapore
+                            td 64
+                            td 2011/02/03
+                            td $234,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Bruno Nash
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td London
+                            td 38
+                            td 2011/05/03
+                            td $163,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Sakura Yamamoto
+                            td
+                              span.badge.rounded-pill.badge-light-primary Support Engineer
+                            td Tokyo
+                            td 37
+                            td 2009/08/19
+                            td $139,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Thor Walton
+                            td
+                              span.badge.rounded-pill.badge-light-success Developer
+                            td New York
+                            td 61
+                            td 2013/08/11
+                            td $98,540
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Finn Camacho
+                            td
+                              span.badge.rounded-pill.badge-light-primary Support Engineer
+                            td San Francisco
+                            td 47
+                            td 2009/07/07
+                            td $87,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Serge Baldwin
+                            td
+                              span.badge.rounded-pill.badge-light-primary Data Coordinator
+                            td Singapore
+                            td 64
+                            td 2012/04/09
+                            td $138,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Zenaida Frank
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td New York
+                            td 63
+                            td 2010/01/04
+                            td $125,250
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Zorita Serrano
+                            td
+                              span.badge.rounded-pill.badge-light-success Software Engineer
+                            td San Francisco
+                            td 56
+                            td 2012/06/01
+                            td $115,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jennifer Acosta
+                            td
+                              span.badge.rounded-pill.badge-light-primary Junior Javascript Developer
+                            td Edinburgh
+                            td 43
+                            td 2013/02/01
+                            td $75,650
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Cara Stevens
+                            td
+                              span.badge.rounded-pill.badge-light-primary Sales Assistant
+                            td New York
+                            td 46
+                            td 2011/12/06
+                            td $145,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Hermione Butler
+                            td
+                              span.badge.rounded-pill.badge-light-info Regional Director
+                            td London
+                            td 47
+                            td 2011/03/21
+                            td $356,250
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Lael Greer
+                            td
+                              span.badge.rounded-pill.badge-light-primary Systems Administrator
+                            td London
+                            td 21
+                            td 2009/02/27
+                            td $103,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Jonas Alexander
+                            td
+                              span.badge.rounded-pill.badge-light-success Developer
+                            td San Francisco
+                            td 30
+                            td 2010/07/14
+                            td $86,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Shad Decker
+                            td
+                              span.badge.rounded-pill.badge-light-info Regional Director
+                            td Edinburgh
+                            td 51
+                            td 2008/11/13
+                            td $183,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Michael Bruce
+                            td
+                              span.badge.rounded-pill.badge-light-danger Javascript Developer
+                            td Singapore
+                            td 29
+                            td 2011/06/27
+                            td $183,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td Donna Snider
+                            td
+                              span.badge.rounded-pill.badge-light-primary Customer Support
+                            td New York
+                            td 27
+                            td 2011/01/25
+                            td $112,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                        tfoot
+                          tr
+                            th Name
+                            th Position
+                            th Office
+                            th Age
+                            th Start date
+                            th Salary
+                            td Action 
+                              
+              // State saving Ends
+
+              // Scroll - vertical dynamic Starts
+              .col-sm-12
+                .card
+                  .card-header.pb-0.card-no-border
+                    h4 Scroll - vertical, dynamic height
+                    span
+                      | This example shows a vertically scrolling DataTable that makes use of the CSS3 vh unit in order to dynamically resize the viewport based on the browser window height. The vh unit is effectively a percentage of the browser window height. So the 50vh used in this example is 50% of the window height. The viewport size will update dynamically as the window is resized.
+                    span
+                      | A relatively modern browser is required for vh units to operate correctly. IE9+ supports the vh unit and all other evergreen browsers.
+                  .card-body
+                    .table-responsive.user-datatable
+                      table#basic-12.display
+                        thead
+                          tr
+                            th Name
+                            th Position
+                            th Office
+                            th Age
+                            th Start date
+                            th Salary
+                            th Action
+                        tbody
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Tiger Nixon
+                            td System Architect
+                            td Edinburgh
+                            td 61
+                            td 2011/04/25
+                            td $320,800
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Garrett Winters
+                            td Accountant
+                            td Tokyo
+                            td 63
+                            td 2011/07/25
+                            td $170,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Ashton Cox
+                            td Junior Technical Author
+                            td San Francisco
+                            td 66
+                            td 2009/01/12
+                            td $86,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Cedric Kelly
+                            td Senior Javascript Developer
+                            td Edinburgh
+                            td 22
+                            td 2012/03/29
+                            td $433,060
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Airi Satou
+                            td Accountant
+                            td Tokyo
+                            td 33
+                            td 2008/11/28
+                            td $162,700
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Brielle Williamson
+                            td Integration Specialist
+                            td New York
+                            td 61
+                            td 2012/12/02
+                            td $372,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Herrod Chandler
+                            td Sales Assistant
+                            td San Francisco
+                            td 59
+                            td 2012/08/06
+                            td $137,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Rhona Davidson
+                            td Integration Specialist
+                            td Tokyo
+                            td 55
+                            td 2010/10/14
+                            td $327,900
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Colleen Hurst
+                            td Javascript Developer
+                            td San Francisco
+                            td 39
+                            td 2009/09/15
+                            td $205,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Sonya Frost
+                            td Software Engineer
+                            td Edinburgh
+                            td 23
+                            td 2008/12/13
+                            td $103,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Jena Gaines
+                            td Office Manager
+                            td London
+                            td 30
+                            td 2008/12/19
+                            td $90,560
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Quinn Flynn
+                            td Support Lead
+                            td Edinburgh
+                            td 22
+                            td 2013/03/03
+                            td $342,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Charde Marshall
+                            td Regional Director
+                            td San Francisco
+                            td 36
+                            td 2008/10/16
+                            td $470,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Haley Kennedy
+                            td Senior Marketing Designer
+                            td London
+                            td 43
+                            td 2012/12/18
+                            td $313,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Tatyana Fitzpatrick
+                            td Regional Director
+                            td London
+                            td 19
+                            td 2010/03/17
+                            td $385,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Michael Silva
+                            td Marketing Designer
+                            td London
+                            td 66
+                            td 2012/11/27
+                            td $198,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Paul Byrd
+                            td Chief Financial Officer (CFO)
+                            td New York
+                            td 64
+                            td 2010/06/09
+                            td $725,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Gloria Little
+                            td Systems Administrator
+                            td New York
+                            td 59
+                            td 2009/04/10
+                            td $237,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Bradley Greer
+                            td Software Engineer
+                            td London
+                            td 41
+                            td 2012/10/13
+                            td $132,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Dai Rios
+                            td Personnel Lead
+                            td Edinburgh
+                            td 35
+                            td 2012/09/26
+                            td $217,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Jenette Caldwell
+                            td Development Lead
+                            td New York
+                            td 30
+                            td 2011/09/03
+                            td $345,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Yuri Berry
+                            td Chief Marketing Officer (CMO)
+                            td New York
+                            td 40
+                            td 2009/06/25
+                            td $675,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Caesar Vance
+                            td Pre-Sales Support
+                            td New York
+                            td 21
+                            td 2011/12/12
+                            td $106,450
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Doris Wilder
+                            td Sales Assistant
+                            td Sidney
+                            td 23
+                            td 2010/09/20
+                            td $85,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Angelica Ramos
+                            td Chief Executive Officer (CEO)
+                            td London
+                            td 47
+                            td 2009/10/09
+                            td $1,200,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Gavin Joyce
+                            td Developer
+                            td Edinburgh
+                            td 42
+                            td 2010/12/22
+                            td $92,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Jennifer Chang
+                            td Regional Director
+                            td Singapore
+                            td 28
+                            td 2010/11/14
+                            td $357,650
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Brenden Wagner
+                            td Software Engineer
+                            td San Francisco
+                            td 28
+                            td 2011/06/07
+                            td $206,850
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Fiona Green
+                            td Chief Operating Officer (COO)
+                            td San Francisco
+                            td 48
+                            td 2010/03/11
+                            td $850,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Shou Itou
+                            td Regional Marketing
+                            td Tokyo
+                            td 20
+                            td 2011/08/14
+                            td $163,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Michelle House
+                            td Integration Specialist
+                            td Sidney
+                            td 37
+                            td 2011/06/02
+                            td $95,400
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Suki Burks
+                            td Developer
+                            td London
+                            td 53
+                            td 2009/10/22
+                            td $114,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Prescott Bartlett
+                            td Technical Author
+                            td London
+                            td 27
+                            td 2011/05/07
+                            td $145,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Gavin Cortez
+                            td Team Leader
+                            td San Francisco
+                            td 22
+                            td 2008/10/26
+                            td $235,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Martena Mccray
+                            td Post-Sales support
+                            td Edinburgh
+                            td 46
+                            td 2011/03/09
+                            td $324,050
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Unity Butler
+                            td Marketing Designer
+                            td San Francisco
+                            td 47
+                            td 2009/12/09
+                            td $85,675
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Howard Hatfield
+                            td Office Manager
+                            td San Francisco
+                            td 51
+                            td 2008/12/16
+                            td $164,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Hope Fuentes
+                            td Secretary
+                            td San Francisco
+                            td 41
+                            td 2010/02/12
+                            td $109,850
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Vivian Harrell
+                            td Financial Controller
+                            td San Francisco
+                            td 62
+                            td 2009/02/14
+                            td $452,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Timothy Mooney
+                            td Office Manager
+                            td London
+                            td 37
+                            td 2008/12/11
+                            td $136,200
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Jackson Bradshaw
+                            td Director
+                            td New York
+                            td 65
+                            td 2008/09/26
+                            td $645,750
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Olivia Liang
+                            td Support Engineer
+                            td Singapore
+                            td 64
+                            td 2011/02/03
+                            td $234,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Bruno Nash
+                            td Software Engineer
+                            td London
+                            td 38
+                            td 2011/05/03
+                            td $163,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Sakura Yamamoto
+                            td Support Engineer
+                            td Tokyo
+                            td 37
+                            td 2009/08/19
+                            td $139,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Thor Walton
+                            td Developer
+                            td New York
+                            td 61
+                            td 2013/08/11
+                            td $98,540
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Finn Camacho
+                            td Support Engineer
+                            td San Francisco
+                            td 47
+                            td 2009/07/07
+                            td $87,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Serge Baldwin
+                            td Data Coordinator
+                            td Singapore
+                            td 64
+                            td 2012/04/09
+                            td $138,575
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Zenaida Frank
+                            td Software Engineer
+                            td New York
+                            td 63
+                            td 2010/01/04
+                            td $125,250
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Zorita Serrano
+                            td Software Engineer
+                            td San Francisco
+                            td 56
+                            td 2012/06/01
+                            td $115,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Jennifer Acosta
+                            td Junior Javascript Developer
+                            td Edinburgh
+                            td 43
+                            td 2013/02/01
+                            td $75,650
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Cara Stevens
+                            td Sales Assistant
+                            td New York
+                            td 46
+                            td 2011/12/06
+                            td $145,600
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Hermione Butler
+                            td Regional Director
+                            td London
+                            td 47
+                            td 2011/03/21
+                            td $356,250
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/1.jpg" alt="")
+                              | Lael Greer
+                            td Systems Administrator
+                            td London
+                            td 21
+                            td 2009/02/27
+                            td $103,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Jonas Alexander
+                            td Developer
+                            td San Francisco
+                            td 30
+                            td 2010/07/14
+                            td $86,500
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.jpg" alt="")
+                              | Shad Decker
+                            td Regional Director
+                            td Edinburgh
+                            td 51
+                            td 2008/11/13
+                            td $183,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/12.png" alt="")
+                              | Michael Bruce
+                            td Javascript Developer
+                            td Singapore
+                            td 29
+                            td 2011/06/27
+                            td $183,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                          tr
+                            td 
+                              img.img-fluid.table-avtar(src="../assets/images/user/2.png" alt="")
+                              | Donna Snider
+                            td Customer Support
+                            td New York
+                            td 27
+                            td 2011/01/25
+                            td $112,000
+                            td 
+                              ul.action  
+                                li.edit 
+                                  a(href="#")
+                                    i.icon-pencil-alt
+                                li.delete
+                                  a(href="#")
+                                    i.icon-trash
+                        tfoot
+                          tr
+                            th Name
+                            th Position
+                            th Office
+                            th Age
+                            th Start date
+                            th Salary
+              // Scroll - vertical dynamic Ends
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

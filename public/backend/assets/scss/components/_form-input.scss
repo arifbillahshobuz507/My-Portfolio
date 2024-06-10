@@ -1,0 +1,219 @@
+/**=====================
+    2.16 Form-input CSS Start
+==========================**/
+%input-mixin1 {
+	position: absolute;
+	z-index: 2;
+	left: 10px;
+	font-size: 14px;
+	width: 20px;
+	margin-left: -2.5px;
+	text-align: center;
+	padding: 10px 0;
+	top: 1px;
+}
+
+%input-mixin2 {
+	position: absolute;
+	z-index: 2;
+	left: 10px;
+	font-size: 14px;
+	width: 20px;
+	margin-left: -2.5px;
+	text-align: center;
+	padding: 10px 0;
+	top: 1px;
+}
+
+.input-group-square {
+
+	.input-group-text,
+	.form-control {
+		border-radius: 0;
+	}
+}
+
+.input-group-air {
+	box-shadow: 0 3px 20px 0 $light-semi-gray;
+}
+
+.icon-addon {
+	position: relative;
+	color: $color-scarpa;
+	display: block;
+
+	&:after {
+		display: table;
+		content: "";
+		clear: both;
+	}
+
+	&:before {
+		display: table;
+		content: "";
+	}
+
+	.addon-md {
+		.form-control {
+			padding-left: 30px;
+			float: left;
+			font-weight: normal;
+		}
+
+		.glyphicon {
+			@extend %input-mixin1;
+		}
+
+		.fa {
+			@extend %input-mixin1;
+		}
+	}
+
+	.form-control {
+		padding-left: 30px;
+		float: left;
+		font-weight: normal;
+	}
+
+	.glyphicon,
+	.fa {
+		@extend %input-mixin2;
+	}
+}
+
+// Input-groups
+
+.input-group-wrapper {
+	.input-group {
+		margin-bottom: 16px;
+
+		.form-control {
+			font-size: 16px;
+
+			&:focus {
+				border-color: var(--recent-border);
+				box-shadow: unset;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.main-custom-form {
+	label {
+		margin-bottom: 0;
+	}
+
+	.form-select {
+		&:focus {
+			box-shadow: unset;
+			border-color: var(--recent-border);
+		}
+	}
+
+	.dropdown-menu {
+		z-index: 3;
+	}
+
+	.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.form-select,
+	.form-control {
+		font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	.input-group-text {
+		font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	.dropdown-toggle {
+		&.btn {
+			@media (max-width: 338px) {
+				padding: 6px 11px;
+			}
+		}
+	}
+}
+
+// Segmented Buttons
+.main-segment-btn {
+	.dropdown-toggle {
+		&::after {
+			content: '';
+			margin-left: 0;
+			border-top: 6px solid;
+			border-right: 6px solid transparent;
+			border-left: 6px solid transparent;
+			vertical-align: 2px;
+		}
+	}
+
+	.dropdown-menu {
+		z-index: 3;
+	}
+}
+
+#exampleDataList {
+	&::-webkit-calendar-picker-indicator {
+
+		&:hover,
+		&:focus {
+			display: none;
+		}
+	}
+}
+
+// base-input file
+.form-control-color {
+	max-width: 70rem;
+}
+
+// Raise input style
+.theme-form {
+	select {
+		&.form-select {
+			option {
+				padding: 8px 10px;
+				border-radius: 100px;
+			}
+		}
+	}
+}
+
+.input-radius {
+
+	.form-control {
+		&:focus {
+			box-shadow: unset;
+			border-color: var(--recent-border);
+		}
+	}
+
+	.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.floating-wrapper {
+	.form-floating {
+		.form-control {
+			height: 54px;
+		}
+	}
+}
+
+/**=====================
+    2.16 Form-input CSS Ends
+	==========================**/

@@ -1,6 +1,6 @@
 <div id="portfolio-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
     <div class="popup_modal_img">
-        <img src="./assets/img/portfolio/modal-img.jpg" alt="" />
+        <img src="./frontend/assets/img/portfolio/modal-img.jpg" alt="" />
     </div>
 
     <div class="popup_modal_content">
@@ -40,16 +40,16 @@
 
         <div class="portfolio_gallery owl-carousel">
             <div class="gallery_item">
-                <img src="./assets/img/portfolio-gallery/p-gallery-1.jpg" alt="" />
+                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-1.jpg" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./assets/img/portfolio-gallery/p-gallery-2.jpg" alt="" />
+                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-2.jpg" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./assets/img/portfolio-gallery/p-gallery-3.jpg" alt="" />
+                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-3.jpg" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./assets/img/portfolio-gallery/p-gallery-4.jpg" alt="" />
+                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-4.jpg" alt="" />
             </div>
         </div>
 

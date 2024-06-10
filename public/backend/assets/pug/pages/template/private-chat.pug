@@ -1,0 +1,494 @@
+- var theme_customizer      = true;
+- var common_chat           = true;
+- var sidebar               = true;
+- var emoji_bar             = true;
+//- - var email_pagination      = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Private Chat
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Chat
+                    li.breadcrumb-item.active  Private Chat
+          // Container-fluid starts
+          .container-fluid
+            .row.g-0
+              .col-xxl-3.col-xl-4.col-md-5.box-col-5
+                .left-sidebar-wrapper.card
+                  .left-sidebar-chat
+                    .input-group
+                      span.input-group-text
+                        i.search-icon.text-gray(data-feather='search')
+                      input.form-control(type='text' placeholder='Search here..')  
+                  .advance-options 
+                    ul#chat-options-tab.nav.border-tab(role='tablist')
+                      li.nav-item
+                        a#chats-tab.nav-link.active(data-bs-toggle='tab' href='#chats' role='tab' aria-controls='chats' aria-selected='true') Chats
+                      li.nav-item
+                        a#contacts-tab.nav-link(data-bs-toggle='tab' href='#contacts' role='tab' aria-controls='contacts' aria-selected='false') Contacts
+                    #chat-options-tabContent.tab-content 
+                      #chats.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='chats-tab')
+                        .common-space 
+                          p Recent chats
+                          .header-top
+                            a.btn.badge-light-primary.f-w-500(href="#!")
+                              i.fa.fa-plus
+                        ul.chats-user
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                .status.bg-success
+                              div 
+                                span Cameron Williamson
+                                p Hey, How are you?
+                            div
+                              p 2 min 
+                              .badge.badge-light-success 15
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/11.jpg", alt="user")
+                                .status.bg-success
+                              div 
+                                span Esther Howard
+                                p Thanks for reply
+                            div
+                              p 7:30 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/7.jpg", alt="user")
+                                .status.bg-success
+                              div 
+                                span Jane Cooper
+                                p Hey, What's up?
+                            div
+                              p 1:10 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/16.jpg", alt="user")
+                                .status.bg-success
+                              div 
+                                span Ronald Richards
+                                p I'm ready
+                            div
+                              p 13:10 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/4.jpg", alt="user")
+                                .status.bg-warning
+                              div 
+                                span Darlene Robertson
+                                p Hey, How are you?
+                            div
+                              p 1:30 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/comment.jpg", alt="user")
+                                .status.bg-warning
+                              div 
+                                span Darrell Steward
+                                p What's going on?
+                            div
+                              p 2:10 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/4.jpg", alt="user")
+                                .status.bg-success
+                              div 
+                                span Theresa Webb
+                                p What's up?
+                            div
+                              p 1:50 AM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/12.png", alt="user")
+                                .status.bg-warning
+                              div 
+                                span Floyd Miles
+                                p Are you sure?
+                            div
+                              p 5:14 PM
+                          li.common-space
+                            .chat-time
+                              .active-profile
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/9.jpg", alt="user")
+                                .status.bg-warning
+                              div 
+                                span Annette Black
+                                p Thanks
+                            div
+                              p 1:50 PM
+                      #contacts.tab-pane.fade(role='tabpanel' aria-labelledby='contacts-tab')
+                        .common-space 
+                          p Contacts
+                          .header-top
+                            a.btn.badge-light-primary.f-w-500(href="#!")
+                              i.fa.fa-plus
+                        .search-contacts
+                          input.form-control(type="text" placeholder="Name and phone number")
+                          svg 
+                            use(href='../assets/svg/icon-sprite.svg#stroke-search')
+                          i.mic-search(data-feather='mic')
+                        .contact-wrapper
+                          p A 
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/avtar/3.jpg", alt="user")
+                                div 
+                                  span Andres Williamson
+                                  p 191-900-5689
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p B
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/comment.jpg", alt="user")
+                                div 
+                                  span Britlin Weed
+                                  p 698-781-5581
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                            li.common-space
+                              .chat-time
+                                .custom-name.bg-light-secondary
+                                  p.txt-secondary.f-w-500 BD
+                                div 
+                                  span Brendra Dixit
+                                  p 589-789-2563
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p C 
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/14.png", alt="user")
+                                div 
+                                  span Cody Fisher
+                                  p 983-333-4545
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                            li.common-space
+                              .chat-time
+                                .position-relative.custom-name.bg-light-success
+                                  p.txt-success.f-w-500 CE
+                                div 
+                                  span Clifford Evans
+                                  p 321-456-7878
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites  
+                            li.common-space
+                              .chat-time
+                                .custom-name.bg-light-warning
+                                  p.txt-warning.f-w-500 CW 
+                                div 
+                                  span Cameron Williamson
+                                  p 369-852-7417
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p D
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/blog/12.png", alt="user")
+                                div 
+                                  span Darlene Robertson
+                                  p 231-279-1001
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/user/3.png", alt="user")
+                                div 
+                                  span Dianne Russell
+                                  p 569-789-1002
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/user/6.jpg", alt="user")
+                                div 
+                                  span Darrell Steward
+                                  p 200-300-1030
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p E 
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/user/1.jpg", alt="user")
+                                div 
+                                  span Emily Collins
+                                  p 100-555-7032
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p F 
+                          ul.border-0
+                            li.common-space
+                              .chat-time
+                                img.img-fluid.rounded-circle(src="../assets/images/user/2.jpg", alt="user")
+                                div 
+                                  span Fiona Cooper
+                                  p 362-778-1919
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                            li.common-space
+                              .chat-time
+                                .custom-name.bg-light-danger
+                                  p.txt-danger.f-w-500 FG
+                                div 
+                                  span Freya Grayson
+                                  p 589-789-2563
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites
+                          p G
+                          ul.border-0  
+                            li.common-space
+                              .chat-time
+                                .custom-name.bg-light-warning
+                                  p.txt-warning.f-w-500 GE
+                                div 
+                                  span Gabriel Evans
+                                  p 963-147-5024
+                              .contact-edit
+                                svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                                  use(href='../assets/svg/icon-sprite.svg#menubar')
+                                .dropdown-menu.dropdown-menu-end
+                                  a.dropdown-item(href='#!')
+                                    | View details
+                                  a.dropdown-item(href='#!') 
+                                    | Send messages
+                                  a.dropdown-item(href='#!') 
+                                    | Add to favorites   
+              .col-xxl-9.col-xl-8.col-md-7.box-col-7
+                .card.right-sidebar-chat
+                  .right-sidebar-title
+                    .common-space 
+                      .chat-time 
+                        .active-profile
+                          img.img-fluid.rounded-circle(src="../assets/images/blog/comment.jpg", alt="user")
+                          .status.bg-success
+                        div 
+                          span Darrell Steward
+                          p Online 
+                      .d-flex.gap-2
+                        .contact-edit.chat-alert
+                          i.icon-info-alt
+                        .contact-edit.chat-alert
+                          svg.dropdown-toggle(role="menu" data-bs-toggle="dropdown" aria-expanded="false")
+                            use(href='../assets/svg/icon-sprite.svg#menubar')
+                          .dropdown-menu.dropdown-menu-end
+                            a.dropdown-item(href='#!')
+                              | View details
+                            a.dropdown-item(href='#!') 
+                              | Send messages
+                            a.dropdown-item(href='#!') 
+                              | Add to favorites
+                  .right-sidebar-Chats  
+                    .msger
+                      .msger-chat
+                        .msg.left-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Theresa Webb
+                              .msg-info-time 01:14 PM
+                            .msg-text
+                              | Hey, I'm looking to redesign my website. Can you help me? &#x1F604;
+                        .msg.right-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Darrell Steward
+                              .msg-info-time 12:14 PM
+                            .msg-text
+                              |  Absolutely! I'd be happy to assist you.
+                        .msg.right-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Darrell Steward
+                              .msg-info-time 12:14 PM
+                            .msg-text
+                              | What kind of design aesthetic are you aiming for?
+                              
+                        .msg.left-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Theresa Webb
+                              .msg-info-time 01:14 PM
+                            .msg-text
+                              | I want a clean and modern look with a focus on user experience.
+                        .msg.right-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Darrell Steward
+                              .msg-info-time 12:14 PM
+                            .msg-text
+                              | Great!  Do you have any specific color schemes in mind?
+                        .msg.left-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Theresa Webb
+                              .msg-info-time 01:14 PM
+                            .msg-text
+                              | I'm thinking of using a combination of blues and grays.
+                        .msg.right-msg
+                          .msg-img
+                          .msg-bubble
+                            .msg-info
+                              .msg-info-name Darrell Steward
+                              .msg-info-time 12:14 PM
+                            .msg-text
+                              | Excellent choice! Those colors can definitely create a professional.
+                      form.msger-inputarea
+                        .dropdown-form.dropdown-toggle(role='main' data-bs-toggle="dropdown" aria-expanded="false")
+                          i.icon-plus
+                          .chat-icon.dropdown-menu.dropdown-menu-start
+                            div.dropdown-item.mb-2
+                                svg 
+                                  use(href='../assets/svg/icon-sprite.svg#camera')
+                            div.dropdown-item
+                              svg 
+                                use(href='../assets/svg/icon-sprite.svg#attchment')
+
+                        input.msger-input.two.uk-textarea(type='text' placeholder='Type Message here..')
+                        .open-emoji
+                          .second-btn.uk-button
+                        button.msger-send-btn(type='submit')
+                          i.fa.fa-location-arrow
+            
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files
+    

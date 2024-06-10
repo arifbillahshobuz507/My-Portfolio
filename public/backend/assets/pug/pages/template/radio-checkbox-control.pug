@@ -1,0 +1,623 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Checkbox & Radio
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Form Controls
+                    li.breadcrumb-item.active  Checkbox & Radio
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-12
+                .card
+                  .card-header
+                    h4 Default checkbox
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for checkbox.
+                  .card-body
+                    .row.g-3
+                      .col-sm-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Default Checks
+                          .form-check
+                            input#flexCheckDefault.form-check-input(type='checkbox' value='')
+                            label.form-check-label(for='flexCheckDefault')
+                              | Default checkbox
+                          .form-check
+                            input#flexCheckChecked.form-check-input(type='checkbox' value='' checked='')
+                            label.form-check-label(for='flexCheckChecked')
+                              | Checked checkbox
+                      .col-sm-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Disabled Checks
+                          .form-check
+                            input#flexCheckDisabled.form-check-input(type='checkbox' value='' disabled='')
+                            label.form-check-label(for='flexCheckDisabled')
+                              | Disabled checkbox
+                          .form-check
+                            input#flexCheckCheckedDisabled.form-check-input(type='checkbox' value='' checked='' disabled='')
+                            label.form-check-label(for='flexCheckCheckedDisabled')
+                              | Disabled checked checkbox
+                      .col-sm-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Right Checks   
+                          .form-check.form-check-reverse
+                            input#reverseCheck1.form-check-input(type='checkbox' value='')
+                            label.form-check-label(for='reverseCheck1')
+                              | Reverse checkbox
+                          .form-check.form-check-reverse
+                            input#reverseCheck2.form-check-input(type='checkbox' value='' disabled='' checked='')
+                            label.form-check-label(for='reverseCheck2')
+                              | Disabled reverse checkbox
+                      .col-xl-12.col-sm-6
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Indeterminate 
+                          .form-check
+                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                            label.form-check-label(for='flexCheckIndeterminate')
+                              | Indeterminate checkbox
+              .col-12
+                .card
+                  .card-header
+                    h4 Custom checkbox
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for checkbox. And filled checkbox used 
+                      code .checkbox-solid-*
+                      |  and bordered checkbox used 
+                      code .checkbox-*
+                      | .
+                  .card-body
+                    .row.g-3
+                      .col-xl-4.col-sm-6
+                        .card-wrapper.border.rounded-3.h-100.checkbox-checked
+                          h6.sub-title Bordered Checkbox 
+                          .form-check.checkbox.checkbox-primary.mb-0
+                            input#checkbox-primary-1.form-check-input(type='checkbox', checked='')
+                            label.form-check-label(for='checkbox-primary-1') Primary - checkbox-primary
+                          .form-check.checkbox.checkbox-secondary.mb-0
+                            input#checkbox-secondary.form-check-input(type='checkbox')
+                            label.form-check-label(for='checkbox-secondary') Secondary - checkbox-secondary 
+                          .form-check.checkbox.checkbox-success.mb-0
+                            input#checkbox-primary.form-check-input(type='checkbox') 
+                            label.form-check-label(for='checkbox-primary') Success - checkbox-success
+                      .col-xl-4.col-sm-12.order-xl-0.order-sm-1
+                        .card-wrapper.border.rounded-3.h-100.checkbox-checked
+                          h6.sub-title Icon Checkbox 
+                          .form-check.checkbox.checkbox-primary.ps-0.main-icon-checkbox
+                            ul.checkbox-wrapper
+                              li 
+                                input#checkbox-icon.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon')
+                                  i.fa.fa-sliders
+                                  span Sliders
+                              li 
+                                input#checkbox-icon1.form-check-input.checkbox-shadow(type='checkbox' checked='')
+                                label.form-check-label(for='checkbox-icon1')
+                                  i.fa.fa-user 
+                                  span User 
+                              li 
+                                input#checkbox-icon2.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon2')
+                                  i.fa.fa-tags 
+                                  span Tags
+                              li 
+                                input#checkbox-icon3.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon3')
+                                  i.fa.fa-android
+                                  span Android 
+                              li 
+                                input#checkbox-icon4.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon4')
+                                  i.fa.fa-eye-slash
+                                  span Hidden
+                              li 
+                                input#checkbox-icon5.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon5')
+                                  i.fa.fa-folder-open
+                                  span Folder
+                              li 
+                                input#checkbox-icon6.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon6')
+                                  i.fa.fa-paper-plane
+                                  span Send
+                              li 
+                                input#checkbox-icon7.form-check-input.checkbox-shadow(type='checkbox')
+                                label.form-check-label(for='checkbox-icon7')
+                                  i.fa.fa-cloud-upload
+                                  span Upload
+                      .col-xl-4.col-sm-6
+                        .card-wrapper.border.rounded-3.h-100.checkbox-checked
+                          h6.sub-title Filled Checkbox 
+                          .form-check.checkbox.checkbox-solid-warning
+                            input#solid4.form-check-input(type='checkbox', checked='')
+                            label.form-check-label(for='solid4') Warning - checkbox-solid-warning 
+                          .form-check.checkbox.checkbox-solid-danger
+                            input#solid5.form-check-input(type='checkbox')
+                            label.form-check-label(for='solid5') Danger - checkbox-solid-danger 
+                          .form-check.checkbox.checkbox-solid-info
+                            input#solid6.form-check-input(type='checkbox')
+                            label.form-check-label(for='solid6') Info - checkbox-solid-info 
+              .col-12
+                .card
+                  .card-header
+                    h4 Default radio
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for radios.
+                  .card-body
+                    .row.g-3
+                      .col-sm-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Custom Radios 
+                          .form-check
+                            input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault')
+                            label.form-check-label(for='flexRadioDefault1')
+                              | Default radio
+                          .form-check
+                            input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault' checked='')
+                            label.form-check-label(for='flexRadioDefault2')
+                              | Default checked radio
+                      .col-sm-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Disabled Radios 
+                          .form-check
+                            input#flexRadioDisabled.form-check-input(type='radio' name='flexRadioDisabled' disabled='')
+                            label.form-check-label(for='flexRadioDisabled')
+                              | Disabled radio
+                          .form-check
+                            input#flexRadioCheckedDisabled.form-check-input(type='radio' name='flexRadioDisabled' checked='' disabled='')
+                            label.form-check-label(for='flexRadioCheckedDisabled')
+                              | Disabled checked radio
+                      .col-sm-12.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Right Radios 
+                          .form-check.form-check-reverse
+                            input#flexRadioDefault3.form-check-input(type='radio' name='flexRadioDefault')
+                            label.form-check-label(for='flexRadioDefault3')
+                              | Default radio
+                          .form-check.form-check-reverse
+                            input#flexRadioCheckedDisabled1.form-check-input(type='radio' name='flexRadioDisabled' checked='' disabled='')
+                            label.form-check-label(for='flexRadioCheckedDisabled1')
+                              | Disabled checked radio
+              .col-12
+                .card
+                  .card-header
+                    h4 Images with checkbox
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for image checkbox.
+                  .card-body
+                    .main-img-checkbox
+                      .row.g-3
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Custom
+                            .img-checkbox
+                              input#img-check-1.main-img-cover.form-check-input(type="checkbox")
+                              label.form-check-label.mb-0(for="img-check-1") 
+                                img(src="../assets/images/switch/1.jpg", alt="coffee-beans")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Checked Image
+                            .img-checkbox
+                              input#img-check-2.main-img-cover.form-check-input(type="checkbox" checked='')
+                              label.form-check-label.mb-0(for="img-check-2") 
+                                img(src="../assets/images/switch/2.jpg", alt="tree")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Disable Image
+                            .img-checkbox
+                              input#img-check-3.main-img-cover.form-check-input(type="checkbox" disabled='')
+                              label.form-check-label.mb-0(for="img-check-3") 
+                                img(src="../assets/images/switch/3.jpg", alt="flowers")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Disable Checked Image
+                            .img-checkbox
+                              input#img-check-4.main-img-cover.form-check-input(type="checkbox" disabled='' checked='')
+                              label.form-check-label.mb-0(for="img-check-4") 
+                                img(src="../assets/images/switch/4.jpg", alt="rose-tea")
+              .col-12
+                .card
+                  .card-header
+                    h4 Images with radio
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for image radio.
+                  .card-body
+                    .main-img-checkbox
+                      .row.g-3
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Custom
+                            .img-checkbox
+                              input#img-radio-1.main-img-cover.form-check-input(type="radio"  name='radio6')
+                              label.form-check-label.mb-0(for="img-radio-1") 
+                                img(src="../assets/images/switch/5.jpg", alt="coffee-beans")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Checked Image
+                            .img-checkbox
+                              input#img-radio-2.main-img-cover.form-check-input(type="radio"  name='radio6' checked='')
+                              label.form-check-label.mb-0(for="img-radio-2") 
+                                img(src="../assets/images/switch/6.jpg", alt="tree")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Disable Image
+                            .img-checkbox
+                              input#img-radio-3.main-img-cover.form-check-input(type="radio"  name='radio6' disabled='')
+                              label.form-check-label.mb-0(for="img-radio-3") 
+                                img(src="../assets/images/switch/7.jpg", alt="flowers")
+                        .col-xxl-3.col-sm-6
+                          .card-wrapper.border.rounded-3.checkbox-checked
+                            h6.sub-title Disable Checked Image
+                            .img-checkbox
+                              input#img-radio-4.main-img-cover.form-check-input(type="radio"  name='radio6' disabled='' checked='')
+                              label.form-check-label.mb-0(for="img-radio-4") 
+                                img(src="../assets/images/switch/8.jpg", alt="rose-tea")
+
+              .col-12
+                .card
+                  .card-header
+                    h4 Custom radio 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-input 
+                      | and 
+                      code .form-check-label 
+                      | for radios.
+                  .card-body
+                    .row.g-3
+                      .col-xl-4.col-sm-6
+                        .card-wrapper.border.rounded-3.h-100.checkbox-checked
+                          h6.sub-title Bordered Radio
+                          .form-check.radio.radio-secondary
+                            input#radio22.form-check-input(type='radio' name='radio1' value='option1' checked='')
+                            label.form-check-label(for='radio22')
+                              | Koho Theme 
+                          .form-check.radio.radio-success
+                            input#radio55.form-check-input(type='radio', name='radio1', value='option1')
+                            label.form-check-label(for='radio55')
+                              | Roxo Theme 
+                          .form-check.radio.radio-warning
+                            input#radio33.form-check-input(type='radio', name='radio1', value='option1')
+                            label.form-check-label(for='radio33')
+                              | Voxo Theme 
+                          .form-check.radio.radio-info
+                            input#radio66.form-check-input(type='radio', name='radio1', value='option1')
+                            label.form-check-label(for='radio66')
+                              | Zeta Theme
+                      .col-xl-4.col-sm-12.order-xl-0.order-sm-1
+                        .card-wrapper.border.rounded-3.h-100.checkbox-checked
+                          h6.sub-title Icons Radio
+                          .form-check.radio.radio-primary.ps-0
+                            ul.radio-wrapper
+                              li 
+                                input#radio-icon.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon')
+                                  i.fa.fa-sliders
+                                  span Sliders
+                              li 
+                                input#radio-icon4.form-check-input(type='radio', name='radio2', value='option2' checked='')
+                                label.form-check-label(for='radio-icon4')
+                                  i.fa.fa-eye-slash
+                                  span Hidden
+                              li 
+                                input#radio-icon5.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon5')
+                                  i.fa.fa-folder-open
+                                  span Folder
+                              li 
+                                input#radio-icon7.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon7')
+                                  i.fa.fa-paper-plane
+                                  span Send
+                              li 
+                                input#radio-icon8.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon8')
+                                  i.fa.fa-user
+                                  span Users
+                              li 
+                                input#radio-icon9.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon9')
+                                  i.fa.fa-trash-o
+                                  span Trash
+                              li 
+                                input#radio-icon10.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon10')
+                                  i.fa.fa-github
+                                  span github
+                              li 
+                                input#radio-icon11.form-check-input(type='radio', name='radio2', value='option2')
+                                label.form-check-label(for='radio-icon11')
+                                  i.fa.fa-play-circle
+                                  span Play
+                      .col-xl-4.col-sm-6
+                        .card-wrapper.border.rounded-3.fill-radios.h-100.checkbox-checked
+                          h6.sub-title Filled Radio
+                          .form-check.radio.radio-primary
+                            input#radio111.form-check-input(type='radio', name='radio3', value='option1' checked='')
+                            label.form-check-label(for='radio111')
+                              | Product
+                          .form-check.radio.radio-warning
+                            input#radio333.form-check-input(type='radio', name='radio3', value='option3')
+                            label.form-check-label(for='radio333')
+                              | Order history 
+                          .form-check.radio.radio-danger
+                            input#radio444.form-check-input(type='radio', name='radio3', value='option3')
+                            label.form-check-label(for='radio444')
+                              | Invoice 
+                          .form-check.radio.radio-info
+                            input#radio666.form-check-input(type='radio', name='radio3', value='option3')
+                            label.form-check-label(for='radio666')
+                              | Wishlist
+              .col-12
+                .card
+                  .card-header
+                    h4 Default switches
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-switch
+                      |  and 
+                      code .form-check-label 
+                      | for switches.
+                  .card-body
+                    .row.g-3
+                      .col-md-6.col-xl-4
+                        .card-wrapper.border.rounded-3.rtl-input.checkbox-checked
+                          h6.sub-title Custom Switches 
+                          .form-check.form-switch
+                            input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
+                            label.form-check-label(for='flexSwitchCheckDefault') Default switch checkbox input
+                          .form-check.form-switch
+                            input#flexSwitchCheckChecked.form-check-input(type='checkbox' role='switch' checked='')
+                            label.form-check-label(for='flexSwitchCheckChecked') Checked switch checkbox input
+                      .col-md-6.col-xl-4
+                        .card-wrapper.border.rounded-3.rtl-input.checkbox-checked
+                          h6.sub-title Disabled Switches
+                          .form-check.form-switch
+                            input#flexSwitchCheckDisabled.form-check-input(type='checkbox' role='switch' disabled='')
+                            label.form-check-label(for='flexSwitchCheckDisabled') Disabled switch checkbox input
+                          .form-check.form-switch
+                            input#flexSwitchCheckCheckedDisabled.form-check-input(type='checkbox' role='switch' checked='' disabled='')
+                            label.form-check-label(for='flexSwitchCheckCheckedDisabled') Disabled checked switch checkbox input
+                      .col-md-12.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Right Switches 
+                          .form-check.form-switch.form-check-reverse
+                            input#flexSwitchCheckReverse.form-check-input.ms-2(type='checkbox')
+                            label.form-check-label(for='flexSwitchCheckReverse') Reverse switch checkbox input
+                          .form-check.form-switch.form-check-reverse
+                            input#flexSwitchCheckDisabled1.form-check-input.ms-2(type='checkbox' role='switch' disabled='')
+                            label.form-check-label(for='flexSwitchCheckDisabled1') Disabled switch checkbox input
+              .col-12
+                .card
+                  .card-header
+                    h4 Inline input-types
+                    p.f-m-light.mt-1 
+                      | Group checkboxes or radios on the same horizontal row by adding 
+                      code .form-check-inline 
+                      | to any
+                      code .form-check
+                      | .
+                  .card-body
+                    .row.g-3
+                      .col-md-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Inline Checkbox
+                          .form-check-size.rtl-input
+                            .form-check.form-check-inline
+                              input#inlineCheckbox1.form-check-input.me-2(type='checkbox' value='option1' checked='')
+                              label.form-check-label(for='inlineCheckbox1') I
+                            .form-check.form-check-inline
+                              input#inlineCheckbox2.form-check-input.me-2(type='checkbox' value='option2')
+                              label.form-check-label(for='inlineCheckbox2') II
+                            .form-check.form-check-inline
+                              input#inlineCheckbox3.form-check-input.me-2(type='checkbox' value='option3' disabled='')
+                              label.form-check-label(for='inlineCheckbox3') III (disabled)
+                      .col-md-6.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Inline Radios
+                          .form-check-size.rtl-input
+                            .form-check.form-check-inline
+                              input#inlineRadio1.form-check-input.me-2(type='radio' name='inlineRadioOptions' value='option1' checked='')
+                              label.form-check-label(for='inlineRadio1') 1
+                            .form-check.form-check-inline
+                              input#inlineRadio2.form-check-input.me-2(type='radio' name='inlineRadioOptions' value='option2')
+                              label.form-check-label(for='inlineRadio2') 2
+                            .form-check.form-check-inline
+                              input#inlineRadio3.form-check-input.me-2(type='radio' name='inlineRadioOptions' value='option3' disabled='')
+                              label.form-check-label(for='inlineRadio3') 3 (disabled)
+                      .col-md-12.col-xl-4
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Inline Switches
+                          .form-check-size
+                            .form-check.form-switch.form-check-inline
+                              input#flexSwitchCheckDefault2.form-check-input.check-size(type='checkbox' role='switch' checked='') 
+                            .form-check.form-switch.form-check-inline
+                              input#flexSwitchCheckDefault3.form-check-input.check-size(type='checkbox' role='switch')
+                            .form-check.form-switch.form-check-inline
+                              input#flexSwitchCheckDisabled3.form-check-input.check-size(type='checkbox' role='switch' disabled='')
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Animated buttons
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .radio_animated 
+                      | through animated checkbox and radios.
+                  .card-body
+                    .row.g-3
+                      .col-sm-6
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Select your payment method
+                          label.d-block(for='edo-ani')
+                          input#edo-ani.radio_animated(type='radio', name='rdo-ani')
+                          | Visa
+                          label.d-block(for='edo-ani1')
+                          input#edo-ani1.radio_animated(type='radio', name='rdo-ani')
+                          | MasterCard
+                          label.d-block(for='edo-ani2')
+                          input#edo-ani2.radio_animated(type='radio', name='rdo-ani', checked='')
+                          | Paypal
+                          label.d-block(for='edo-ani13')
+                          input#edo-ani13.radio_animated(type='radio', name='rdo-ani')
+                          | G-pay 
+                          label.d-block(for='edo-ani6')
+                          input#edo-ani6.radio_animated(type='radio', name='rdo-ani')
+                          | Bitpay
+                      .col-sm-6
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title What is your favorite social media? 
+                          label.d-block(for='chk-ani')
+                          input#chk-ani.checkbox_animated(type='checkbox')
+                          | Instagram
+                          label.d-block(for='chk-ani1')
+                          input#chk-ani1.checkbox_animated(type='checkbox')
+                          | Facebook
+                          label.d-block(for='chk-ani2')
+                          input#chk-ani2.checkbox_animated(type='checkbox', checked='')
+                          | Whatsapp
+                          label.d-block(for='chk-ani4')
+                          input#chk-ani4.checkbox_animated(type='checkbox')
+                          | Twitter  
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Basic radio and checkbox
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .form-check-inline 
+                      | through display inline.
+                  .card-body
+                    .row.g-3
+                      .col-md-12
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Simple Checkbox
+                          .form-check-size
+                            .form-check.form-check-inline.checkbox.checkbox-dark.mb-0
+                              input#inline-1.form-check-input(type='checkbox')
+                              label.form-check-label(for='inline-1')
+                                | Blog
+                            .form-check.form-check-inline.checkbox.checkbox-dark.mb-0
+                              input#inline-2.form-check-input(type='checkbox' checked='')
+                              label.form-check-label(for='inline-2')
+                                | Gallery
+                            .form-check.form-check-inline.checkbox.checkbox-dark.mb-0
+                              input#inline-3.form-check-input(type='checkbox')
+                              label.form-check-label(for='inline-3')
+                                | Faq
+                            .form-check.form-check-inline.checkbox.checkbox-dark.mb-0
+                              input#inline-4.form-check-input(type='checkbox')
+                              label.form-check-label(for='inline-4')
+                                | Email
+                            .form-check.form-check-inline.checkbox.checkbox-dark.mb-0
+                              input#inline-5.form-check-input(type='checkbox')
+                              label.form-check-label(for='inline-5')
+                                | Icons
+                      .col-md-12
+                        .card-wrapper.border.rounded-3.checkbox-checked
+                          h6.sub-title Simple Radios
+                          .form-check-size
+                            .form-check.form-check-inline.radio.radio-primary
+                              input#radioinline1.form-check-input(type='radio', name='radio5', value='option5' checked='')
+                              label.form-check-label.mb-0(for='radioinline1')
+                                | Maps
+                            .form-check.form-check-inline.radio.radio-primary
+                              input#radioinline2.form-check-input(type='radio', name='radio5', value='option5')
+                              label.form-check-label.mb-0(for='radioinline2')
+                                | Tasks
+                            .form-check.form-check-inline.radio.radio-primary
+                              input#radioinline3.form-check-input(type='radio', name='radio5', value='option5')
+                              label.form-check-label.mb-0(for='radioinline3')
+                                | To-do
+                            .form-check.form-check-inline.radio.radio-primary
+                              input#radioinline4.form-check-input(type='radio', name='radio5', value='option5')
+                              label.form-check-label.mb-0(for='radioinline4')
+                                | Forms
+                            .form-check.form-check-inline.radio.radio-primary
+                              input#radioinline5.form-check-input(type='radio', name='radio5', value='option5')
+                              label.form-check-label.mb-0(for='radioinline5')
+                                | Login
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Radio toggle buttons
+                    p.f-m-light.mt-1 
+                      | The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the toggle will make sense to users when announced as a checkbox or as an actual button. 
+                      code [any one selected]
+                      | .
+                  .card-body.common-flex.main-radio-toggle
+                    input#option1.btn-check.radio-light-secondary(type='radio' name='options' checked='')
+                    label.btn.list-light-secondary(for='option1') Checked
+                    input#option2.btn-check.radio-light-secondary(type='radio' name='options')
+                    label.btn.list-light-secondary(for='option2') Radio
+                    input#option3.btn-check.radio-light-secondary(type='radio' name='options' disabled='')
+                    label.btn.list-light-secondary(for='option3') Disabled
+                    input#option4.btn-check.radio-light-secondary(type='radio' name='options')
+                    label.btn.list-light-secondary(for='option4') Radio
+              .col-md-6
+                .card
+                  .card-header
+                    h4 Outlined checkbox styles
+                    p.f-m-light.mt-1 
+                      | The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the toggle will make sense to users when announced as a checkbox or as an actual button. 
+                      code [multiple selected]
+                      | .
+                  .card-body.common-flex.main-checkbox-toggle
+                    input#btn-check-outlined.btn-check(type='checkbox')
+                    label.btn.btn-outline-info(for='btn-check-outlined') Single toggle
+                    input#btn-check-2-outlined.btn-check(type='checkbox' checked='')
+                    label.btn.btn-outline-danger(for='btn-check-2-outlined') Checked
+                    input#success-outlined.btn-check(type='radio' name='options-outlined' checked='')
+                    label.btn.btn-outline-success(for='success-outlined') Checked success radio
+                    input#danger-outlined.btn-check(type='radio' name='options-outlined')
+                    label.btn.btn-outline-dark(for='danger-outlined') Dark radio
+              
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

@@ -1,0 +1,142 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Breadcrumb
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Bonus Ui
+                    li.breadcrumb-item.active Breadcrumb
+          // Container-fluid starts
+          .container-fluid
+            .row
+              // Basic Breadcrumb
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h4 Default Breadcrumb
+                    p.f-m-light.mt-1
+                      | You can set breadcrumb using 
+                      code .breadcrumb 
+                      |  class.
+                  .card-body
+                    nav.breadcrumb
+                      a.breadcrumb-item(href='javascript:void(0)') Home
+                      span.breadcrumb-item.active Ui Kits
+                    nav.breadcrumb.m-0
+                      a.breadcrumb-item(href='javascript:void(0)') Home
+                      a.breadcrumb-item(href='javascript:void(0)') Ui Kits
+                      span.breadcrumb-item.active Alert
+              // default breadcrumb ends
+              // Dividers Breadcrumbs
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h4 Divider Breadcrumb
+                    p.f-m-light.mt-1
+                      | You can set breadcrumb using 
+                      code .breadcrumb-icon
+                      |  class.
+                  .card-body
+                    nav.breadcrumb.breadcrumb-icon
+                      a.breadcrumb-item(href='javascript:void(0)') Home
+                      span.breadcrumb-item.active Ui Kits
+                    nav.breadcrumb.breadcrumb-icon.m-0
+                      a.breadcrumb-item(href='javascript:void(0)') Home
+                      a.breadcrumb-item(href='javascript:void(0)') Ui Kits
+                      span.breadcrumb-item.active Progress
+              // Icons breadcrumb start
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h4 With Icons Breadcrumb
+                    p.f-m-light.mt-1
+                      | You can set icons breadcrumb using 
+                      code .breadcrumb 
+                      | class.
+                  .card-body
+                    ol.breadcrumb.bg-white.p-l-0
+                      li.breadcrumb-item
+                        a(href='javascript:void(0)')
+                          i.fa.fa-home
+                      li.breadcrumb-item.active Bonus Ui
+                    ol.breadcrumb.bg-white.m-b-0.p-b-0.p-l-0
+                      li.breadcrumb-item
+                        a(href='javascript:void(0)')
+                          i.fa.fa-home
+                      li.breadcrumb-item Bonus Ui
+                      li.breadcrumb-item.active Breadcrumb
+              // Nav breadcrumb start
+              .col-sm-6
+                .card.height-equal
+                  .card-header
+                    h4 Variation Of Breadcrumb
+                    p.f-m-light.mt-1
+                      | You can set variations breadcrumb using 
+                      code .breadcrumb 
+                      | class through any icons sets.
+                  .card-body.breadcrumb-space
+                    nav.breadcrumb.breadcrumb-no-divider.mb-0.gap-2
+                      a.breadcrumb-item.mb-1.mb-xl-0(href='javascript:void(0)') Home ->
+                      a.breadcrumb-item.ps-0.mb-1.mb-xl-0(href='javascript:void(0)') Tables ->
+                      a.breadcrumb-item.ps-0.mb-1.mb-xl-0(href='javascript:void(0)') Bootstrap Tables ->
+                      span.breadcrumb-item.active.ps-0 Basic Tables
+              // Nav breadcrumb ends
+              // colored navigation start
+              .col-sm-12
+                .card
+                  .card-header
+                    h4 Colored Breadcrumb
+                    p.f-m-light.mt-1
+                      | You can set breadcrumb using 
+                      code .breadcrumb 
+                      |  class and set background colors like 
+                      code [.bg-*]
+                      |  .
+                  .card-body
+                    ol.breadcrumb.breadcrumb-colored.m-b-30.bg-info
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Bonus Ui
+                      li.breadcrumb-item.active.fw-bold Breadcrumb
+                    ol.breadcrumb.breadcrumb-colored.m-b-30.bg-warning
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Icons
+                      li.breadcrumb-item.active.fw-bold Flag-icon
+                    ol.breadcrumb.breadcrumb-colored.m-0.bg-danger
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Home
+                      li.breadcrumb-item
+                        a.fw-bold(href='javascript:void(0)') Gallery
+                      li.breadcrumb-item.active.fw-bold Gallery-grid
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

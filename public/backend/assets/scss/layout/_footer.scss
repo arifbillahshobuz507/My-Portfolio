@@ -1,0 +1,29 @@
+/**=====================
+    5.1 Footer CSS Start
+==========================**/
+.footer {
+  background-color: $footer_bg_color;
+  box-shadow: $footer_box_shadow;
+  padding: 15px;
+  bottom: 0;
+  left: 0;
+  margin-left: $sidebar-compact-width;
+  transition: 0.5s;
+
+  &.footer-dark {
+    background-color: $footer_dark_color;
+
+    p {
+      color: $white;
+    }
+  }
+}
+
+.footer-fix {
+  width: calc(100% - $sidebar-compact-width);
+  position: fixed;
+}
+
+/**=====================
+    5.1 Footer CSS Ends
+==========================**/

@@ -1,0 +1,781 @@
+- var theme_customizer      = true;
+- var form_wizard           = true;
+- var sidebar               = true;
+- var image_upload          = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var height_equal          = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Form Wizard
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Form Layout
+                    li.breadcrumb-item.active  Form Wizard
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Numbering wizard 
+                    p.f-m-light.mt-1 
+                      | Fill up your details and proceed next steps.
+                  .card-body.basic-wizard.important-validation
+                    #stepper1.stepper-horizontal
+                      .stepper-one.stepper.step.editing.active
+                        .step-circle
+                          span 1
+                        .step-title Basic Info
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-two.step
+                        .step-circle
+                          span 2
+                        .step-title Cart Info
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-three.step
+                        .step-circle
+                          span 3
+                        .step-title Feedback
+                        .step-bar-left
+                        .step-bar-right
+                      .stepper-four.step
+                        .step-circle
+                          span 4
+                        .step-title Finish
+                        .step-bar-left
+                        .step-bar-right
+                    #msform
+                      //- .custom-input used as dark mode 
+                      form.stepper-one.row.g-3.needs-validation.custom-input(novalidate='')
+                        .col-sm-6
+                          label.form-label(for='email-basic-wizard') Email
+                            span.txt-danger *
+                          input#email-basic-wizard.form-control(type='email' required='' placeholder='cuba@gmail.com')
+                        .col-sm-6
+                          label.form-label(for='firstnamewizard') First Name
+                            span.txt-danger *
+                          input#firstnamewizard.form-control(type='text' required='' placeholder='Enter your name')
+                        .col-12
+                          label.col-sm-12.form-label(for='passwordwizard') Password
+                            span.txt-danger *
+                          input#passwordwizard.form-control(type='password' placeholder='Enter password' required='')      
+                        .col-12
+                          label.col-sm-12.form-label(for='confirmpasswordwizard') Confirm Password
+                            span.txt-danger *
+                          input#confirmpasswordwizard.form-control(type='password' placeholder='Enter confirm password' required='')         
+                        .col-12
+                          .form-check
+                            input#inputcheckwizard.form-check-input(type='checkbox' value='' required='')
+                            label.form-check-label.mb-0(for='inputcheckwizard')
+                              | Agree to terms and conditions
+                      form.stepper-two.row.g-3.needs-validation.custom-input(novalidate='')
+                        .col-md-12 
+                          label.form-label(for='placeholdername1') Placeholder Name 
+                          input#placeholdername1.form-control(type="text" required='' placeholder='Placeholder name')
+                        .col-xxl-4.col-sm-6
+                          label.form-label(for='cardNumber01') Card Number
+                          input#cardNumber01.form-control(type='text' required='' placeholder='xxxx xxxx xxxx xxxx')
+                        .col-xxl-4.col-sm-6
+                          label.form-label(for='expirationDates01') Expiration(MM/YY)
+                          input#expirationDates01.form-control(type='number' required='' placeholder='xx/xx')
+                        .col-xxl-4
+                          label.form-label(for='cvvNumber-a') CVV Number
+                          input#cvvNumber-a.form-control(type='text' required='')
+                        .col-12 
+                          label.form-label(for='formFileDocument') Upload Documentation
+                          input#formFileDocument.form-control(type='file' aria-label='file example' required='')
+                        .col-12
+                          .form-check
+                            input#invalidCheck-a.form-check-input(type='checkbox' value='' required='')
+                            label.form-check-label(for='invalidCheck-a')
+                              | All the above information is correct
+                      form.stepper-three.row.g-3.needs-validation.custom-input(novalidate='')
+                        .col-sm-6
+                          label.form-label(for='email-basic') LinkedIn
+                            span.txt-danger *
+                          input#email-basic.form-control(type='url' required='' placeholder='https://linkedIn.com/cuba')
+                          .invalid-feedback
+                            | Please enter your valid link
+                          .valid-feedback 
+                            | Looks's Good!
+                        .col-sm-6
+                          label.form-label(for='validationCustom996') Github
+                            span.txt-danger *
+                          input#validationCustom996.form-control(type='url' required='' placeholder='https://github.com/cuba')
+                          .invalid-feedback
+                            | Please enter your valid link
+                          .valid-feedback 
+                            | Looks's Good!     
+                        .col-12 
+                          label.form-label(for='validationCustom09') Select State
+                            span.txt-danger *
+                          select#validationCustom09.form-select(required='')
+                            option(selected='' disabled='' value='') Choose...
+                            option U.K 
+                            option U.S 
+                            option India
+                          .invalid-feedback
+                            | Please select a valid state.
+                        .col-12 
+                          label.form-label(for='givefeedback') Give Feedback
+                          textarea#givefeedback.form-control(required='')
+                          .invalid-feedback
+                            | Please enter a message in the textarea.
+                        .col-12
+                          .form-check
+                            input#invalidCheck46.form-check-input(type='checkbox' value='' required='')
+                            label.form-check-label.mb-0(for='invalidCheck46')
+                              | Agree to terms and conditions
+                            .invalid-feedback
+                              | You must agree before submitting.
+                      form.stepper-four.row.g-3.needs-validation(novalidate='')
+                        .col-12.m-0
+                          .successful-form
+                            img.img-fluid(src="../assets/images/gif/dashboard-8/successful.gif", alt="successful")
+                            h6 Congratulations 
+                            p Well done! You have successfully completed. 
+                    .wizard-footer.d-flex.gap-2.justify-content-end
+                      button#backbtn.btn.alert-light-primary(onclick='backStep()')  Back
+                      button#nextbtn.btn.btn-primary(onclick='nextStep()') Next
+              .col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Student validation form
+                    p.f-m-light.mt-1 
+                      |  Please make sure fill all the filed before click on next button.
+                  //- .custom-input used as dark mode 
+                  .card-body.custom-input
+                    form#regForm.form-wizard(action='#', method='POST')
+                      .tab
+                        .row.g-3
+                          .col-sm-6
+                            label(for='name') Name
+                            input#name.form-control(type='text', placeholder='Enter your name', required='required')
+                          .col-sm-6
+                            label.form-label(for='student-email-wizard') Email
+                              span.txt-danger *
+                            input#student-email-wizard.form-control(type='email' required='' placeholder='cuba@gmail.com')
+                          .col-12
+                            label.col-sm-12.form-label(for='password-wizard') Password
+                              span.txt-danger *
+                            input#password-wizard.form-control(type='password' placeholder='Enter password' required='')
+                          .col-12
+                            label.col-sm-12.form-label(for='confirmpassowrd') Confirm Password
+                              span.txt-danger *
+                            input#confirmpassowrd.form-control(type='password' placeholder='Enter confirm password' required='')
+                      .tab
+                        .row.g-3.avatar-upload
+                          .col-12
+                            div
+                              .avatar-edit
+                                input#imageUpload(type="file" accept='.png, .jpg, .jpeg')
+                                label(for='imageUpload')
+                              .avatar-preview
+                                #image
+                            h6 Add Profile
+                          .col-12
+                            label.form-label(for='exampleFormControlInput1') Portfolio URL
+                            input#exampleFormControlInput1.form-control(type='url' placeholder='https://cuba')
+                          .col-12 
+                            label.form-label(for='projectDescription') Project Description
+                            textarea#projectDescription.form-control(rows='2')
+                      .tab
+                        h5.mb-2 Social Links 
+                        .row.g-3
+                          .col-sm-6
+                            label.form-label(for='twitterControlInput') Twitter
+                            input#twitterControlInput.form-control(type='url' placeholder='https://twitter.com')
+                          .col-sm-6
+                            label.form-label(for='githubControlInput') Github
+                            input#githubControlInput.form-control(type='url' placeholder='https:/github.com')
+                          .col-12 
+                            .input-group
+                              input#inputGroupFile04.form-control(type='file' aria-describedby='inputGroupFileAddon04' aria-label='Upload') 
+                              button#inputGroupFileAddon04.btn.btn-outline-secondary(type='button') Submit
+                          .col-12
+                            select.form-select(aria-label='Default select example')
+                              option(selected='') Positions
+                              option(value='1') Web Designer
+                              option(value='2') Software Engineer
+                              option(value='3') UI/UX Designer 
+                              option(value='3') Web Developer
+                          .col-12 
+                            label.form-label(for='quationsTextarea') Why do you want to take this position?
+                            textarea#quationsTextarea.form-control(rows='2')
+                      div
+                        .text-end.pt-3
+                          button#prevBtn.btn.btn-secondary(type='button', onclick='nextPrev(-1)') Previous
+                          button#nextBtn.btn.btn-primary(type='button', onclick='nextPrev(1)') Next
+                      // Circles which indicates the steps of the form:
+                      .text-center
+                        span.step
+                        span.step
+                        span.step
+                        span.step
+              .col-md-12
+                .card
+                  .card-header
+                    h4 Vertical validation wizard 
+                    p.f-m-light.mt-1 
+                      | Fill up your true details and next proceed.
+                  //- .custom-input used as dark mode 
+                  .card-body
+                    .vertical-main-wizard
+                      .row.g-3     
+                        .col-xxl-3.col-xl-4.col-12
+                            #wizard-tab.nav.flex-column.header-vertical-wizard(role='tablist' aria-orientation='vertical')
+                              a#wizard-contact-tab.nav-link(data-bs-toggle='pill' href='#wizard-contact' role='tab' aria-controls='wizard-contact' aria-selected='true') 
+                                .vertical-wizard
+                                  .stroke-icon-wizard
+                                    i.fa.fa-user
+                                  .vertical-wizard-content 
+                                    h6 Your Info
+                                    p Add your details 
+                              a#wizard-cart-tab.nav-link(data-bs-toggle='pill' href='#wizard-cart' role='tab' aria-controls='wizard-cart' aria-selected='false') 
+                                .vertical-wizard
+                                  .stroke-icon-wizard
+                                    i.fa.fa-chain-broken
+                                  .vertical-wizard-content 
+                                    h6 Cart Info
+                                    p Add your a/c details
+                              a#wizard-banking-tab.nav-link(data-bs-toggle='pill' href='#wizard-banking' role='tab' aria-controls='wizard-banking' aria-selected='false') 
+                                .vertical-wizard
+                                  .stroke-icon-wizard
+                                    i.fa.fa-group
+                                  .vertical-wizard-content 
+                                    h6 Net Banking
+                                    p Choose your bank
+                        .col-xxl-9.col-xl-8.col-12
+                            #wizard-tabContent.tab-content
+                              #wizard-contact.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='wizard-contact-tab')
+                                form.row.g-3.needs-validation.custom-input(novalidate='')
+                                  .col-xxl-4.col-sm-6
+                                    label.form-label(for='validationCustom0-a') First name
+                                      span.txt-danger *
+                                    input#validationCustom0-a.form-control(type='text' placeholder="Enter first name" required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-xxl-4.col-sm-6
+                                    label.form-label(for='validationCustom-b') Last name
+                                      span.txt-danger *
+                                    input#validationCustom-b.form-control(type='text' placeholder='Enter last name' required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-xxl-4.col-sm-6
+                                    label.form-label(for='validationemail-b') Email
+                                      span.txt-danger *
+                                    input#validationemail-b.form-control(type='email' required='' placeholder='cuba@example.com')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-xxl-5.col-sm-6
+                                    label.form-label(for='validationCustom04') State
+                                    select#validationCustom04.form-select(required='')
+                                      option(selected='' disabled='' value='') Choose...
+                                      option USA 
+                                      option U.K 
+                                      option U.S
+                                    .invalid-feedback
+                                      | Please select a valid state.
+                                  .col-xxl-3.col-sm-6
+                                    label.form-label(for='validationCustom05') Zip Code
+                                    input#validationCustom05.form-control(type='text' required='')
+                                    .invalid-feedback
+                                      | Please provide a valid zip.
+                                  .col-xxl-4.col-sm-6
+                                    label.form-label(for='contactnumber') Contact Number
+                                    input#contactnumber.form-control(type='number' placeholder='Enter number' required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-12
+                                    .form-check
+                                      input#invalidCheck-n.form-check-input(type='checkbox' value='' required='')
+                                      label.form-check-label(for='invalidCheck-n')
+                                        | Agree to terms and conditions
+                                      .invalid-feedback
+                                        | You must agree before submitting.
+                                  .col-12.text-end 
+                                    button.btn.btn-primary Next
+                              #wizard-cart.tab-pane.fade(role='tabpanel' aria-labelledby='wizard-cart-tab')
+                                form.row.g-3.needs-validation.custom-input(novalidate='')
+                                  .col-xxl-6
+                                    .card-wrapper.border.rounded-3.checkbox-checked
+                                      h6.sub-title Select your payment method
+                                      .radio-form
+                                        .form-check
+                                          input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault-a')
+                                          label.form-check-label(for='flexRadioDefault1')
+                                            | Visa
+                                        .form-check
+                                          input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault-a' checked='')
+                                          label.form-check-label(for='flexRadioDefault2')
+                                            | MasterCard
+                                        .form-check
+                                          input#flexRadioDefault3.form-check-input(type='radio' name='flexRadioDefault-a' checked='')
+                                          label.form-check-label(for='flexRadioDefault3')
+                                            | Paypal
+                                  .col-xxl-6 
+                                    .row 
+                                      .col-12
+                                        .input-group.mb-3
+                                          input.form-control(type='text' placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby='button-addon2')
+                                          button#button-addon2.btn.btn-outline-secondary(type='button') Submit
+                                      .col-12 
+                                        .input-group
+                                          span#basic-addon1.input-group-text @
+                                          input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1')
+                                  .col-md-4.col-sm-6
+                                    label.form-label(for='txtCardNumber1') Card Number
+                                    input#txtCardNumber1.form-control(type='text' required='' placeholder='xxxx xxxx xxxx xxxx')
+                                    .invalid-feedback
+                                      | Please enter your valid number
+                                    .valid-feedback 
+                                      | Looks's Good!
+                                  .col-md-4.col-sm-6
+                                    label.form-label(for='validationDates') Expiration(MM/YY)
+                                    input#validationDates.form-control(type='number' required='' placeholder='xx/xx')
+                                    .invalid-feedback
+                                      | Please enter your valid number
+                                    .valid-feedback 
+                                      | Looks's Good!
+                                  .col-md-4.col-sm-6
+                                    label.form-label(for='cvvNumber-b') CVV
+                                    input#cvvNumber-b.form-control(type='text' required='')
+                                    .invalid-feedback
+                                      | Please enter your valid number
+                                    .valid-feedback 
+                                      | Looks's Good!
+                                  .col-md-12.col-sm-6
+                                    label.form-label(for='formFile2') Upload Documentation
+                                    input#formFile2.form-control(type='file' aria-label='file example' required='')
+                                    .invalid-feedback Invalid form file selected
+                                  .col-12
+                                    .form-check.mb-0
+                                      input#invalidCheck-b.form-check-input(type='checkbox' value='' required='')
+                                      label.form-check-label(for='invalidCheck-b')
+                                        | All the above information is correct
+                                      .invalid-feedback
+                                        | You must agree before submitting.
+                                  .col-12.text-end 
+                                    button.btn.btn-primary Previous
+                                    button.btn.btn-primary Next
+                              #wizard-banking.tab-pane.fade.custom-input(role='tabpanel' aria-labelledby='wizard-banking-tab')
+                                form.row.g-3.mb-3.needs-validation(novalidate='')
+                                  .col-md-12 
+                                    #accordionExample-a.accordion.dark-accordion
+                                      .accordion-item
+                                        h2#headingOne-a.accordion-header
+                                          button.accordion-button.collapsed.accordion-light-primary.txt-primary(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne-a' aria-expanded='true' aria-controls='collapseOne-a')
+                                            | NET BANKING
+                                            i.svg-color(data-feather='chevron-down')
+                                        #collapseOne-a.accordion-collapse.collapse(aria-labelledby='headingOne-a' data-bs-parent='#accordionExample-a')
+                                          .accordion-body.weight-title.card-wrapper
+                                            h6.sub-title.f-14 SELECT YOUR BANK
+                                            .row.choose-bank
+                                              .col-sm-6
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-z.form-check-input(type='radio' name='flexRadioDefault-v')
+                                                  label.form-check-label(for='flexRadioDefault-z')
+                                                    | Industrial & Commercial Bank
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-y.form-check-input(type='radio' name='flexRadioDefault-v')
+                                                  label.form-check-label(for='flexRadioDefault-y')
+                                                    | Agricultural Bank
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-x.form-check-input(type='radio' name='flexRadioDefault-v' checked='')
+                                                  label.form-check-label(for='flexRadioDefault-x')
+                                                    | JPMorgan Chase & Co.
+                                              .col-sm-6 
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-w.form-check-input(type='radio' name='flexRadioDefault-v')
+                                                  label.form-check-label(for='flexRadioDefault-w')
+                                                    | Construction Bank Corp.
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-v.form-check-input(type='radio' name='flexRadioDefault-v')
+                                                  label.form-check-label(for='flexRadioDefault-v')
+                                                    | Bank of America
+                                                .form-check.radio.radio-primary
+                                                  input#flexRadioDefault-u.form-check-input(type='radio' name='flexRadioDefault-v')
+                                                  label.form-check-label(for='flexRadioDefault-u')
+                                                    | HDFC Bank
+                                  .col-12 
+                                    textarea#validationTextarea24.form-control(placeholder='Your Feedback' required='')
+                                    .invalid-feedback
+                                      | Please enter a message in the textarea.
+                                  .col-12
+                                    .form-check.mb-0
+                                      input#invalidCheck67.form-check-input(type='checkbox' value='' required='')
+                                      label.form-check-label.mb-0(for='invalidCheck67')
+                                        | Agree to terms and conditions
+                                      .invalid-feedback
+                                        | You must agree before submitting.
+                                  .col-12.text-end 
+                                    button.btn.btn-success Finish
+              .col-md-12
+                .card
+                  .card-header
+                    h4 Shipping form
+                    p.f-m-light.mt-1 
+                      | Fill up your true details and next proceed.
+                  .card-body
+                    .row.shopping-wizard
+                      .col-12 
+                        .row.shipping-form.g-5
+                          .col-xl-8.shipping-border
+                            #cart-options-tab.nav.nav-pills.horizontal-options.shipping-options(role='tablist' aria-orientation='vertical')
+                                a#bill-wizard-tab.nav-link.b-r-0.active(data-bs-toggle='pill' href='#bill-wizard' role='tab' aria-controls='bill-wizard' aria-selected='true') 
+                                  .cart-options
+                                    .stroke-icon-wizard
+                                      i.fa.fa-user
+                                    .cart-options-content 
+                                      h6 Billing
+                                a#ship-wizard-tab.nav-link.b-r-0(data-bs-toggle='pill' href='#ship-wizard' role='tab' aria-controls='ship-wizard' aria-selected='false') 
+                                  .cart-options
+                                    .stroke-icon-wizard
+                                      i.fa.fa-truck
+                                    .cart-options-content 
+                                      h6 Shipping
+                                a#payment-wizard-tab.nav-link.b-r-0(data-bs-toggle='pill' href='#payment-wizard' role='tab' aria-controls='payment-wizard' aria-selected='false') 
+                                  .cart-options
+                                    .stroke-icon-wizard
+                                      i.fa.fa-money
+                                    .cart-options-content 
+                                      h6 Payment
+                                a#finish-wizard-tab.nav-link.b-r-0(data-bs-toggle='pill' href='#finish-wizard' role='tab' aria-controls='finish-wizard' aria-selected='false') 
+                                  .cart-options
+                                    .stroke-icon-wizard
+                                      i.fa.fa-check-square
+                                    .cart-options-content 
+                                      h6 Finish
+                            #cart-options-tabContent.tab-content.dark-field.shipping-content
+                              #bill-wizard.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='bill-wizard-tab')
+                                h6 Billing Information 
+                                p.f-light
+                                  | Fill up the following information 
+                                form.row.g-3.needs-validation(novalidate='')
+                                  .col-sm-6
+                                    label.form-label(for='customFirstname') First Name
+                                      span.txt-danger *
+                                    input#customFirstname.form-control(type='text' placeholder="Enter first name" required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-sm-6
+                                    label.form-label(for='customLastname') Last Name
+                                      span.txt-danger *
+                                    input#customLastname.form-control(type='text' placeholder='Enter last name' required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-sm-6
+                                    label.form-label(for='customContact') Contact Number
+                                    input#customContact.form-control(type='number' placeholder='Enter number' required='')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-sm-6
+                                    label.form-label(for='customEmail') Email
+                                      span.txt-danger *
+                                    input#customEmail.form-control(type='email' required='' placeholder='cuba@example.com')
+                                    .valid-feedback
+                                      | Looks good!
+                                  .col-12 
+                                      label.form-label(for='exampleFormControlTextarea1') Address 
+                                      textarea#exampleFormControlTextarea1.form-control(rows='3')
+                                  .col-sm-4
+                                    label.form-label(for='customState-wizard') Country
+                                    select#customState-wizard.form-select(required='')
+                                      option(selected='' disabled='' value='') Select Country
+                                      option Africa 
+                                      option India
+                                      option Indonesia 
+                                      option Netherlands
+                                      option U.K 
+                                      option U.S
+                                    .invalid-feedback
+                                      | Please select a valid state.
+                                  .col-sm-4 
+                                    label.form-label(for='customstate') State
+                                    input#customstate.form-control(type='text' placeholder='Enter state' required='')
+                                  .col-sm-4
+                                    label.form-label(for='custom-zipcode') Zip Code
+                                    input#custom-zipcode.form-control(type='text' required='')
+                                    .invalid-feedback
+                                      | Please provide a valid zip.
+                                  .col-12
+                                    .form-check
+                                      input#invalid-check-wizard.form-check-input(type='checkbox' value='' required='')
+                                      label.form-check-label.mb-0.d-block(for='invalid-check-wizard')
+                                        | Remember me for next time
+                                      .invalid-feedback
+                                        | You must agree before submitting.
+                                  .col-12 
+                                    label.form-label(for='exampleFormControlTextarea-01') Other Notes
+                                    textarea#exampleFormControlTextarea-01.form-control(rows='3' placeholder='Enter your queries...')
+                                  .col-12.text-end
+                                    button.btn.btn-primary Proceed to Next
+                                      i.fa.fa-truck.proceed-next.pe-2
+                              #ship-wizard.tab-pane.fade.shipping-wizard(role='tabpanel' aria-labelledby='ship-wizard-tab')
+                                h6 Shipping Information
+                                p.f-light
+                                  | Fill up the following information to send you the order
+                                .shipping-title
+                                  h6.mb-2 Saved Address
+                                  button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModalgetbootstrap', data-whatever='@getbootstrap') 
+                                    i.fa.fa-plus-square.f-20
+                                  #exampleModalgetbootstrap.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalgetbootstrap', aria-hidden='true')
+                                    .modal-dialog(role='document')
+                                      .modal-content
+                                        .modal-header
+                                          h5 Information
+                                          button.btn-close.py-0(type='button', data-bs-dismiss='modal', aria-label='Close')
+                                        .modal-body
+                                          form.row.g-3.needs-validation(novalidate='')
+                                            .col-12
+                                              label.form-label(for='validationCustom01') Name
+                                              input#validationCustom01.form-control(type='text' placeholder='Enter your name' required='')
+                                              .valid-feedback
+                                                | Looks good!
+                                            .col-12
+                                              label.form-label(for='validationAddress-a') Address
+                                              textarea#validationAddress-a.form-control(rows='3' placeholder='Enter your address...')
+                                              .valid-feedback
+                                                | Looks good!
+                                            .col-12 
+                                              label.form-label.w-100(for='addressType-a') Address Type
+                                                select#addressType-a.form-select(required='')
+                                                  option(selected='' value='') Home
+                                                  option Office
+                                            .col-12
+                                              label(for='contact') Contact No
+                                              input#contact.form-control(type='number', placeholder='123456789')
+                                        .modal-footer
+                                          button.btn.m-0(type='button', data-bs-dismiss='modal') Close
+                                          button.btn.btn-primary.m-0(type='button') Save
+                                .row.g-3
+                                  .col-xxl-4.col-sm-6 
+                                    .card-wrapper.border.rounded-3.h-100.light-card
+                                      div.collect-address
+                                        .d-flex.gap-2.align-items-center
+                                          .form-check.radio.radio-primary
+                                            input#shipping-choose1.form-check-input(type='radio' name='radio1' value='option1' checked='')
+                                            label.form-check-label.mb-0(for='shipping-choose1')
+                                              | Home
+                                        .card-icon
+                                            i.fa.fa-pencil
+                                            i.fa.fa-trash-o
+                                      .shipping-address
+                                        h6 Filomena Green 
+                                        span Address: 
+                                          | 2211 Fruitville Rd, Sarasota, Florida, US 34237
+                                        span Contact: 
+                                          | (941) 321-5643
+                                  .col-xxl-4.col-sm-6 
+                                    .card-wrapper.border.rounded-3.h-100.light-card
+                                      div.collect-address
+                                        .d-flex.gap-2.align-items-center
+                                          .form-check.radio.radio-primary
+                                            input#shipping-choose2.form-check-input(type='radio' name='radio1' value='option1' checked='')
+                                            label.form-check-label.mb-0(for='shipping-choose2')
+                                              | Work
+                                        .card-icon
+                                            i.fa.fa-pencil
+                                            i.fa.fa-trash-o
+                                      .shipping-address
+                                        h6 Ms. Ila Runte DDS
+                                        span Address: 
+                                          | 1531 E 23rd St S, Independence, Mississippi, US 64055
+                                        span Contact: 
+                                          | (816) 252-4500
+                                h6.mt-4.mb-2 Shipping Method
+                                .row.shipping-method.g-3
+                                  .col-sm-6
+                                    .card-wrapper.border.rounded-3.h-100.light-card
+                                      .form-check.radio.radio-primary
+                                        input#shipping-choose3.form-check-input(type='radio' name='radio2' value='option1' checked='')
+                                        label.form-check-label.mb-0(for='shipping-choose3')
+                                          | Standard Delivery - Free
+                                      p Estimated 5-7 days shipping
+
+                                  .col-sm-6
+                                    .card-wrapper.border.rounded-3.h-100.light-card
+                                      .form-check.radio.radio-primary
+                                        input#shipping-choose4.form-check-input(type='radio' name='radio2' value='option1' checked='')
+                                        label.form-check-label.mb-0(for='shipping-choose4')
+                                          | Express Delivery - $24
+                                      P Estimated 1-2 days shipping
+                                  .col-12.text-end
+                                    button.btn.btn-primary Proceed to Next
+                                      i.fa.fa-truck.proceed-next.pe-2
+                              #payment-wizard.tab-pane.fade.shipping-wizard(role='tabpanel' aria-labelledby='payment-wizard-tab')
+                                h6 Payment Information
+                                p.f-light
+                                  | Fill up the following information to send you the order
+                                .payment-info-wrapper
+                                  .row.shipping-method.g-3
+                                    .col-12
+                                      .card-wrapper.border.rounded-3.light-card
+                                        div
+                                          .form-check.radio.radio-primary
+                                            input#shipping-choose5.form-check-input(type='radio' name='radio3' value='option1' checked='')
+                                            label.form-check-label.mb-0.f-w-500(for='shipping-choose5')
+                                              | Paypal
+                                          p You will be taken to the paypal website to finish your transaction safely
+                                        div 
+                                          img(src="../assets/images/checkout/paypal.png", alt="paypal")
+
+                                    .col-12
+                                      .card-wrapper.border.rounded-3.pay-info.light-card
+                                        div
+                                          div
+                                            .form-check.radio.radio-primary
+                                              input#shipping-choose6.form-check-input(type='radio' name='radio3' value='option1')
+                                              label.form-check-label.mb-0.f-w-500(for='shipping-choose6')
+                                                | Credit Card
+                                            P Transferring money securely through your bank account. Mastercard, Visa, Discover, and Stripe are all accepted
+                                          div 
+                                            img(src="../assets/images/forms/credit-card.png", alt="card")
+                                        form.row.g-3.needs-validation(novalidate='')
+                                          .col-md-12 
+                                            label.form-label(for='placeholdername') Card Holder
+                                            input#placeholdername.form-control(type="text" required='' placeholder='Enter card holder name')
+                                          .col-md-4
+                                            label.form-label(for='holdernumber') Card Number
+                                            input#holdernumber.form-control(type='text' required='' placeholder='xxxx xxxx xxxx xxxx')
+                                            .invalid-feedback
+                                              | Please enter your valid number
+                                            .valid-feedback 
+                                              | Looks's Good!
+                                          .col-md-4
+                                            label.form-label(for='expirationdates') Expiration(MM/YY)
+                                            input#expirationdates.form-control(type='number' required='' placeholder='xx/xx')
+                                            .invalid-feedback
+                                              | Please enter your valid number
+                                            .valid-feedback 
+                                              | Looks's Good!
+                                          .col-md-4
+                                            label.form-label(for='cvvNumber-c') CVV
+                                            input#cvvNumber-c.form-control(type='text' required='')
+                                            .invalid-feedback
+                                              | Please enter your valid number
+                                            .valid-feedback 
+                                              | Looks's Good!
+                                          .col-12 
+                                            label.form-label(for='formFile3') Upload Documentation
+                                            input#formFile3.form-control(type='file' aria-label='file example' required='')
+                                            .invalid-feedback Invalid form file selected
+                                          .col-12
+                                            .form-check
+                                              input#invalidCheck-c.form-check-input(type='checkbox' value='' required='')
+                                              label.form-check-label(for='invalidCheck-c')
+                                                | All the above information is correct
+                                              .invalid-feedback
+                                                | You must agree before submitting.
+                                    .col-12
+                                      .card-wrapper.border.rounded-3.light-card
+                                        div
+                                          .form-check.radio.radio-primary
+                                            input#shipping-choose7.form-check-input(type='radio' name='radio3' value='option1')
+                                            label.form-check-label.mb-0.f-w-500(for='shipping-choose7')
+                                              | Cash On Delivery
+                                          p After your order is delivered, make a cash payment
+                                        div 
+                                          img(src="../assets/images/forms/delivery.png", alt="delivery")
+                                    .col-12.text-end
+                                      button.btn.btn-primary Proceed to Next
+                                        i.fa.fa-truck.proceed-next.pe-2
+                              #finish-wizard.tab-pane.fade.shipping-wizard.finish-wizard1(role='tabpanel' aria-labelledby='finish-wizard-tab')
+                                .order-confirm
+                                  img(src="../assets/images/gif/dashboard-8/successful.gif", alt="popper")
+                                  h5 Thank you! Your order is confirmed.
+                                  p.mb-0 An email with your order's specifics will be sent to you as order confirmation.
+                                  p.text-center.f-w-500.mt-2 Order ID: 
+                                    a.text-decoration-underline(href="javascript:void(0)") GE34598 
+                          .col-xl-4 
+                            .shipping-info
+                              h5 Current Cart 
+                              .overflow-auto
+                                table.table.table-striped
+                                  thead
+                                    tr
+                                      th(scope='col') Product
+                                      th(scope='col') Product Detail 
+                                      th(scope='col') Price 
+                                  tbody
+                                    tr
+                                      td 
+                                         img(src="../assets/images/product/13.png", alt="t-shirt")
+                                      td 
+                                        div 
+                                          h6 T-shirt 
+                                          span $98 * 2
+                                      td
+                                        p $400
+                                    tr
+                                      td 
+                                         img(src="../assets/images/email-template/4.png", alt="headphone")
+                                      td 
+                                        div 
+                                          h6 Headphone
+                                          span $4*2
+                                      td 
+                                        p $450
+                                    tr
+                                      td 
+                                         img(src="../assets/images/product/2.png", alt="headphone")
+                                      td 
+                                        div 
+                                          h6 T-shirt 
+                                          span $10 * 2
+                                      td 
+                                        p $234
+                                    tr
+                                      td 
+                                         img(src="../assets/images/dashboard-2/product/2.png", alt="headphone")
+                                      td 
+                                        div 
+                                          h6 Chairs
+                                          span $98 * 2
+                                      td 
+                                        p $200
+                                  tfoot
+                                    tr 
+                                      td Sub Total :
+                                      td(colspan='2') $1284.00 
+                                    tr 
+                                      td Discount :
+                                      td(colspan='2') $20.00
+                                    tr 
+                                      td Shipping Charge :
+                                      td(colspan='2') $100.78
+                                    tr 
+                                      td Tax :
+                                      td(colspan='2') $205.34
+                                    tr 
+                                      td Total (USD) :
+                                      td(colspan='2') $1569.7
+                              
+                      // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

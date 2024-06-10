@@ -1,0 +1,74 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var calendar              = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h3
+                    | Calender Basic
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item.active Calender
+          // Container-fluid starts
+          .container-fluid.calendar-basic
+            .card
+              .card-body
+                #wrap.row
+                  .col-xxl-3.box-col-12
+                    .md-sidebar.mb-3
+                      a.btn.btn-primary.md-sidebar-toggle(href='javascript:void(0)') calendar filter
+                      .md-sidebar-aside.job-left-aside.custom-scrollbar
+                        #external-events
+                          h4 Draggable Events
+                          #external-events-list
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa.fa-birthday-cake.me-2
+                                | Birthday Party
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa.fa-user.me-2
+                                | Meeting With Team.
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa.fa-plane.me-2
+                                | Tour & Picnic
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa.fa-file-text.me-2
+                                | Reporting Schedule
+                            .fc-event.fc-h-event.fc-daygrid-event.fc-daygrid-block-event
+                              .fc-event-main 
+                                i.fa.fa-briefcase.me-2
+                                | Lunch & Break
+                          p
+                            input#drop-remove.checkbox_animated(type='checkbox')
+                            label(for='drop-remove') remove after drop
+                  .col-xxl-9.box-col-12
+                    #calendar-container.calendar-default
+                      #calendar
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

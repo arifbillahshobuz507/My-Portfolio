@@ -1,0 +1,145 @@
+- var theme_customizer      = true;
+- var tooltip               = true;
+- var sidebar               = true;
+- var verification_code     = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Two Factor
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Form Layout
+                    li.breadcrumb-item.active  Two Factor
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-12
+                .card
+                  .card-body.authentication-body
+                    .authentication-wrapper
+                      h4 Two-factor authentication
+                      p Click on the authentication button below and scan the QR code
+                      img(src="../assets/images/forms/qr-scan.png", alt="qr-scan")
+                    #exampleModalToggle.modal.fade(aria-hidden='true' aria-labelledby='exampleModalToggle' tabindex='-1')
+                      .modal-dialog.modal-dialog-centered
+                        .modal-content
+                          .modal-header
+                            h5#exampleModalLongTitle.modal-title Two-factor authentication
+                            button.btn-close.py-0(type='button', data-bs-dismiss='modal', aria-label='Close')
+                          .modal-body
+                            .modal-toggle-wrapper
+                              p To log into your account, you'll also need to enter your username, password, and a code that was sent
+                                |  to you through SMS or an app.
+                              .authentication-options
+                                .form-check.radio.radio-primary.ps-0
+                                  ul.radio-wrapper
+                                    li 
+                                      input#radioOptionWizard1.form-check-input(type='radio', name='radio2', value='option2')
+                                      label.form-check-label.mb-0(for='radioOptionWizard1')
+                                        i.fa.fa-spin.fa-cog
+                                        span.d-flex.flex-column
+                                          span 2FA Authenticator
+                                          span Obtain codes from a authy/google authenticator/ios 15 etc.
+                                    li 
+                                      input#radioOptionWizard2.form-check-input(type='radio', name='radio2', value='option2' checked='')
+                                      label.form-check-label.mb-0(for='radioOptionWizard2')
+                                        i.fa.fa-comments
+                                        span.d-flex.flex-column
+                                          span SMS
+                                          span The backup login method will be sent to you via SMS if you require it.
+                              button.btn.btn-dark.rounded-pill.w-100.mt-3(data-bs-target='#exampleModalToggle2' data-bs-toggle='modal' data-bs-dismiss='modal') Next
+                              button.btn.rounded-pill.w-100.pb-0.dark-toggle-btn(type='button', data-bs-dismiss='modal') Cancel
+                    #exampleModalToggle2.modal.fade(aria-hidden='true' aria-labelledby='exampleModalToggle2' tabindex='-1' )
+                      .modal-dialog.modal-dialog-centered
+                        .modal-content
+                          .modal-header
+                            h5#exampleModalLongTitle1.modal-title Scan QR code
+                            button.btn-close.py-0(type='button', data-bs-dismiss='modal', aria-label='Close')
+                          .modal-body.main-qr-code
+                            .modal-toggle-wrapper
+                              p Scan the QR code using an authenticator app and website such as abc 
+                                | authenticator, OTP xyz, or pqr authenticator. You must input the six-digit code it generates below.
+                              .modal-img 
+                                div.qr-img
+                                  img(src="../assets/images/forms/qr-code.png", alt="qr-code")
+                                .qr-content
+                                  .alert.alert-light-dark.light.alert-dismissible.fade.show.text-dark.border-left-wrapper(role='alert')
+                                    i.fa.fa-exclamation-triangle
+                                    div
+                                      span If your qr code is not working then enter this code in your input field.
+                                      span.f-w-500 TYU78DE29OLAAWCVNTYFGESWQ31098QW
+                                    button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+                              form.needs-validation(novalidate='')
+                                input#AccountName.form-control(type='text' required='' placeholder="Enter QR Code")
+                                .valid-feedback
+                                  | Looks good!
+                              button.btn.btn-primary Submit
+                    a.btn.btn-primary.mt-5(data-bs-toggle='modal' href='#exampleModalToggle' role='button') 2 factor authentication
+              .col-sm-12
+                .card
+                  .card-body.email-verify
+                    .row.g-3
+                      .col-md-6
+                        .card-wrapper.border.rounded-3.h-100
+                          .row.g-1 
+                            .col-xxl-4.box-col-5
+                              .authenticate
+                                img.img-fluid(src="../assets/images/forms/email.png", alt="")
+                            .col-xxl-8.box-col-7
+                              h4 Email verification
+                              p A verification code has been sent to your email. This code will be valid for 15 minutes.
+                              .input-group.mb-3
+                                input.form-control(type='text' placeholder="Please enter the code here" aria-label="basic-addon2" aria-describedby='basic-addon2')
+                                span#basic-addon2.input-group-text.bg-primary Verify
+                      .col-md-6
+                        .card-wrapper.border.rounded-3.h-100
+                          .authenticate
+                            h4 Verification code
+                            img.img-fluid(src="../assets/images/forms/authenticate.png", alt="authenticate")
+                            span We've sent a verification code to
+                            span +91********70
+                            form.row
+                              .col 
+                                h5 Your OTP Code here:
+                              .col.otp-generate
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                                input.form-control.code-input(type="text" maxlength="1" pattern="[0-9]" required)
+                              .col 
+                                button.btn.btn-primary.w-100(type="submit") Verify
+                              div 
+                                span Not received your code?
+                                span
+                                  a(href="javascript:void(0)") Resend 
+                                  | OR 
+                                  a(href="javascript:void(0)") Call  
+          
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

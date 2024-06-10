@@ -1,0 +1,465 @@
+- var height_equal          = true;
+- var theme_customizer      = true;
+- var date_picker           = true;
+- var apex                  = true;
+- var general_widget        = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h3
+                    | General
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Widgets
+                    li.breadcrumb-item.active General
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-4.col-xxl-2 
+                .currency-widget.warning.height-equal.widget-currency
+                  .d-flex
+                    .currency-icon-widget 
+                      svg
+                        use(href='../assets/svg/icon-sprite.svg#beta')
+                    div 
+                      h6 Bitcoin 
+                        span.f-light BTC
+                  .card 
+                    .card-body.d-flex
+                      .currency-chart-wrap
+                        #currency-chart 
+                      .bg-light-warning.text-center 
+                        h5.mb-sm-0 $21,43
+                        span.f-12.f-w-500.font-warning
+                          i.me-1(data-feather="trending-up")
+                          | +50%
+              .col-sm-4.col-xxl-2 
+                .currency-widget.primary.height-equal.widget-currency
+                  .d-flex
+                    .currency-icon-widget 
+                      svg
+                        use(href='../assets/svg/icon-sprite.svg#eth')
+                    div 
+                      h6 Ethereum 
+                        span.f-light ETC
+                  .card 
+                    .card-body.d-flex
+                      .currency-chart-wrap
+                        #currency-chart2
+                      .bg-light-primary.text-center 
+                        h5.mb-0 $7,450
+                        span.f-12.f-w-500.font-primary
+                          i.me-1(data-feather="trending-up") 
+                          | +35%
+              .col-sm-4.col-xxl-2 
+                .currency-widget.success.height-equal.widget-currency
+                  .d-flex
+                    .currency-icon-widget 
+                      svg
+                        use(href='../assets/svg/icon-sprite.svg#ltc')
+                    div 
+                      h6 Leave Travel 
+                        span.f-light LTC
+                  .card 
+                    .card-body.d-flex
+                      .currency-chart-wrap
+                        #currency-chart3
+                      .bg-light-success.text-center 
+                        h5.mb-0 $2,198
+                        span.f-12.f-w-500.font-success
+                          i.me-1(data-feather="trending-up") 
+                          | +73%
+              .col-xxl-3.col-sm-6 
+                .card.height-equal.radial-height
+                  .card-body.radial-progress-card 
+                    div 
+                      h6.mb-0 Average Sales Per Day
+                      .sale-details 
+                        h5.font-primary.mb-0 45,908
+                        span.f-12.f-light.f-w-500
+                          i(data-feather="arrow-up")
+                          | +5.7%
+                      p.f-light  The point of using Lorem Ipsum
+                    .radial-chart-wrap 
+                      #radial-chart 
+              .col-xxl-3.col-sm-6 
+                .card.height-equal.radial-height
+                  .card-body.radial-progress-card 
+                    div 
+                      h6.mb-0 Average Profit Per Day
+                      .sale-details 
+                        h5.font-primary.mb-0 89.6%
+                        span.f-12.f-light.f-w-500
+                          i(data-feather="arrow-up")
+                          | +2.7%
+                      p.f-light  The point of using Lorem Ipsum
+                    .radial-chart-wrap 
+                      #radial-chart1
+              .col-sm-6.col-xl-3.col-lg-6.box-col-6 
+                .card.widget-1
+                  .card-body 
+                    .widget-content
+                      .widget-round.secondary
+                        .bg-round
+                          svg.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#cart') 
+                          svg.half-circle.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                      div 
+                        h4 10,000
+                        span.f-light Purchase
+                    div.font-secondary.f-w-500
+                      i.icon-arrow-up.icon-rotate.me-1
+                      span +50%
+              .col-sm-6.col-xl-3.col-lg-6.box-col-6 
+                .card.widget-1
+                  .card-body 
+                    .widget-content
+                      .widget-round.primary
+                        .bg-round
+                          svg.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#tag') 
+                          svg.half-circle.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                      div 
+                        h4 4,200
+                        span.f-light Sales
+                    div.font-primary.f-w-500
+                      i.icon-arrow-up.icon-rotate.me-1
+                      span +70%
+              .col-sm-6.col-xl-3.col-lg-6.box-col-6 
+                .card.widget-1
+                  .card-body 
+                    .widget-content
+                      .widget-round.warning
+                        .bg-round
+                          svg.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#return-box') 
+                          svg.half-circle.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                      div 
+                        h4 7000
+                        span.f-light Sales return
+                    div.font-warning.f-w-500
+                      i.icon-arrow-down.icon-rotate.me-1
+                      span -20%
+              .col-sm-6.col-xl-3.col-lg-6.box-col-6 
+                .card.widget-1
+                  .card-body 
+                    .widget-content
+                      .widget-round.success
+                        .bg-round
+                          svg.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#rate') 
+                          svg.half-circle.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                      div 
+                        h4 5700
+                        span.f-light Purchase rate
+                    div.font-success.f-w-500
+                      i.icon-arrow-up.icon-rotate.me-1
+                      span +70%
+              .col-xxl-3.col-xl-4.col-md-6.box-col-6
+                .row 
+                  .col-sm-12
+                    .card.course-box.widget-course
+                      .card-body 
+                        .course-widget 
+                          .course-icon 
+                            svg.fill-icon
+                              use(href='../assets/svg/icon-sprite.svg#course-1')
+                          div 
+                            h4.mb-0 100+
+                            span.f-light Completed Courses
+                            a.btn.btn-light(href="learning-list-view.html").f-light View course
+                              span.ms-2 
+                                svg.fill-icon.f-light
+                                  use(href='../assets/svg/icon-sprite.svg#arrowright')
+                      ul.square-group
+                        li.square-1.warning
+                        li.square-1.primary
+                        li.square-2.warning1
+                        li.square-3.danger
+                        li.square-4.light
+                        li.square-5.warning
+                        li.square-6.success
+                        li.square-7.success
+                  .col-sm-12
+                    .card.course-box.widget-course 
+                      .card-body 
+                        .course-widget 
+                          .course-icon.warning 
+                            svg.fill-icon
+                              use(href='../assets/svg/icon-sprite.svg#course-2')
+                          div 
+                            h4.mb-0 50+
+                            span.f-light In Progress Courses
+                            a.btn.btn-light(href="learning-list-view.html").f-light View course
+                              span.ms-2 
+                                svg.fill-icon.f-light
+                                  use(href='../assets/svg/icon-sprite.svg#arrowright')
+                      ul.square-group
+                        li.square-1.warning
+                        li.square-1.primary
+                        li.square-2.warning1
+                        li.square-3.danger
+                        li.square-4.light
+                        li.square-5.warning
+                        li.square-6.success
+                        li.square-7.success
+              .col-xxl-4.col-xl-5.col-md-6.box-col-6
+                .row 
+                  .col-xl-12 
+                    .card
+                      .card-header.card-no-border.pb-0
+                        .header-top
+                          h5 Total Users
+                          .dropdown.icon-dropdown
+                            button#userdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.py-lg-3
+                        ul.user-list
+                          li 
+                            .user-icon.primary
+                              .user-box
+                                i.font-primary(data-feather="user-plus")
+                            div 
+                              h5.mb-1 178,098
+                              span.font-primary.d-flex.align-items-center
+                                i.icon-arrow-up.icon-rotate.me-1  
+                                span.f-w-500 +30.89
+                          li 
+                            .user-icon.success
+                              .user-box
+                                i.font-success(data-feather="user-minus")
+                            div 
+                              h5.mb-1 178,098
+                              span.font-danger.d-flex.align-items-center
+                                i.icon-arrow-down.icon-rotate.me-1
+                                span.f-w-500 -08.89
+                  .col-xl-12 
+                    .card.growth-wrap
+                      .card-header.card-no-border.pb-0
+                        .header-top
+                          h5 Followers Growth
+                          .dropdown.icon-dropdown
+                            button#growthdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='growthdropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body
+                        .growth-wrapper
+                          #growthchart
+              .col-xxl-5.col-xl-3.col-md-12.box-col-12
+                .card.visitor-card 
+                  .card-header.card-no-border.pb-0
+                    .header-top
+                      h5.m-0 Visitors
+                        span.f-14.font-primary.f-w-500.ms-1
+                          svg.svg-fill.me-1
+                            use(href='../assets/svg/icon-sprite.svg#user-visitor')
+                          | (+2.8)
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#visitorButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='visitorButton')
+                            a.dropdown-item(href='#') Today
+                            a.dropdown-item(href='#') Tomorrow
+                            a.dropdown-item(href='#') Yesterday
+                  .card-body.pt-3
+                    .visitors-container
+                      #visitor-chart
+              .col-xl-3.col-sm-6 
+                .card.social-widget
+                  .card-body
+                    .d-flex.align-items-center.justify-content-between
+                      div.d-flex.align-items-center.gap-2
+                        .social-icons
+                          img(src="../assets/images/dashboard-5/social/1.png", alt="facebook icon")
+                        span Facebook
+                      span.font-success.f-12.d-xxl-block.d-xl-none +22.9%
+                    .social-content
+                      div 
+                        h5.mb-1 12,098
+                        span.f-light Followers
+                      .social-chart
+                        #radial-facebook
+              .col-xl-3.col-sm-6 
+                .card.social-widget
+                  .card-body
+                    .d-flex.align-items-center.justify-content-between
+                      div.d-flex.align-items-center.gap-2
+                        .social-icons
+                          img(src="../assets/images/dashboard-5/social/3.png", alt="twitter icon")
+                        span Twitter
+                      span.font-success.f-12.d-xxl-block.d-xl-none +14.09%
+                    .social-content
+                      div 
+                        h5.mb-1 12,564
+                        span.f-light Followers
+                      .social-chart
+                        #radial-twitter
+              .col-xl-3.col-sm-6  
+                .card.social-widget
+                  .card-body
+                    .d-flex.align-items-center.justify-content-between
+                      div.d-flex.align-items-center.gap-2
+                        .social-icons
+                          img(src="../assets/images/dashboard-5/social/2.png", alt="instagram icon")
+                        span Instagram
+                      span.font-success.f-12.d-xxl-block.d-xl-none +27.4%
+                    .social-content
+                      div 
+                        h5.mb-1 15,080
+                        span.f-light Followers
+                      .social-chart
+                        #radial-instagram
+              .col-xl-3.col-sm-6 
+                .card.social-widget
+                  .card-body
+                    .d-flex.align-items-center.justify-content-between
+                      div.d-flex.align-items-center.gap-2
+                        .social-icons
+                          img(src="../assets/images/dashboard-5/social/4.png", alt="you tube icon")
+                        span Youtube
+                      span.font-success.f-12.d-xxl-block.d-xl-none +22.9%
+                    .social-content
+                      div 
+                        h5.mb-1 68,954
+                        span.f-light Followers
+                      .social-chart
+                        #radial-youtube 
+              .col-xxl-5.col-xl-8.box-col-12
+                .row.g-sm-3.height-equal-2.widget-charts
+                  .col-sm-6  
+                    .card.small-widget.mb-sm-0
+                      .card-body.primary 
+                        span.f-light New Orders
+                        .d-flex.align-items-end.gap-1
+                          h4 2,435
+                          span.font-primary.f-12.f-w-500
+                            i.icon-arrow-up
+                            span +50%
+                        .bg-gradient 
+                          svg.stroke-icon.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#new-order')
+                  .col-sm-6  
+                    .card.small-widget.mb-sm-0 
+                      .card-body.warning
+                        span.f-light New Customers
+                        .d-flex.align-items-end.gap-1
+                          h4 2,908
+                          span.font-warning.f-12.f-w-500
+                            i.icon-arrow-up
+                            span +20%
+                        .bg-gradient 
+                          svg.stroke-icon.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#customers')
+                  .col-sm-6 
+                    .card.small-widget.mb-sm-0 
+                      .card-body.secondary
+                        span.f-light Average Sale
+                        .d-flex.align-items-end.gap-1
+                          h4 $389k
+                          span.font-secondary.f-12.f-w-500
+                            i.icon-arrow-down
+                            span -10%
+                        .bg-gradient 
+                          svg.stroke-icon.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#sale')
+                  .col-sm-6 
+                    .card.small-widget.mb-sm-0 
+                      .card-body.success
+                        span.f-light Gross Profit
+                        .d-flex.align-items-end.gap-1
+                          h4 $3,908
+                          span.font-success.f-12.f-w-500
+                            i.icon-arrow-up
+                            span +80%
+                        .bg-gradient 
+                          svg.stroke-icon.svg-fill
+                            use(href='../assets/svg/icon-sprite.svg#profit')
+                  .col-sm-6 
+                    .card.widget-1.widget-with-chart.mb-xl-0
+                      .card-body 
+                        div 
+                          h4.mb-1 1,80k
+                          span.f-light Orders
+                        .order-chart 
+                          #orderchart
+                  .col-sm-6 
+                    .card.widget-1.widget-with-chart.mb-xl-0
+                      .card-body 
+                        div 
+                          h4.mb-1 6,90k
+                          span.f-light Profit
+                        .profit-chart 
+                          #profitchart
+              .col-xxl-3.col-xl-4.col-sm-6.box-col-6 
+                .card.balance-box.height-equal-2
+                  .card-body.d-flex.align-items-center.justify-content-center
+                    .balance-profile
+                      .balance-img
+                        img(src="../assets/images/dashboard-4/user.png", alt="user vector")
+                        a(href="user-profile.html").edit-icon
+                          svg
+                            use(href='../assets/svg/icon-sprite.svg#pencil')
+                      span.f-light.d-block Your Balance 
+                      h5.mt-1 $768,987.90
+                      ul 
+                        li
+                          .balance-item.danger 
+                            .balance-icon-wrap  
+                              .balance-icon
+                                i(data-feather="arrow-down-right")
+                            div 
+                              span.f-12.f-light Investment  
+                              h5 78.8K
+                              span.badge.badge-light-danger.rounded-pill -11.67%
+                        li
+                          .balance-item.success
+                            .balance-icon-wrap  
+                              .balance-icon
+                                i(data-feather="arrow-up-right")
+                            div 
+                              span.f-12.f-light Cash Back
+                              h5 19.7K
+                              span.badge.badge-light-success.rounded-pill +10.67%
+              .col-xl-4.d-xxl-block.d-xl-none.col-sm-6.box-col-6   
+                .card.height-equal-2 
+                  .card-body
+                    .default-datepicker
+                      .datepicker-here(data-language='en')
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

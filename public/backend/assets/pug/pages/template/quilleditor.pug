@@ -1,0 +1,184 @@
+- var theme_customizer      = true;
+- var editors               = true;
+- var editors3              = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var Bubble_editor         = true;
+- var scrollbar             = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h3
+                    | Quill Editor
+
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Editors
+                    li.breadcrumb-item.active Quill Editor
+          // Container-fluid starts
+          .container-fluid
+            .row 
+              .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Standard Editor
+                  .card-body
+                    .toolbar-box
+                      #toolbar7
+                        span.ql-formats
+                          select.ql-size
+                            option(value='small') Small
+                            option(selected='') Normal
+                            option(value='large') Large
+                            option(value='huge') Huge
+                        span.ql-formats
+                          button.ql-bold Bold
+                          button.ql-italic Italic
+                          button.ql-underline Underline
+                          button.ql-strike Strike
+                          button.ql-script(value='sub')
+                          button.ql-script(value='super')
+                        span.ql-formats
+                          button.ql-header(value='1')
+                          button.ql-header(value='2')
+                        span.ql-formats
+                          button.ql-list(value='ordered') List
+                          button.ql-list(value='bullet') Bullet
+                          button.ql-indent(value='-1')
+                          button.ql-indent(value='+1')
+                        span.ql-formats
+                          button.ql-link Link
+                          button.ql-image Image
+                          button.ql-video Video
+                          select.ql-color
+                          select.ql-background
+                        // Add more options here
+                        span.ql-formats
+                          button.ql-blockquote Blockquote
+                          button.ql-code-block
+                        span.ql-formats
+                          button.ql-align(value='')
+                          button.ql-align(value='center')
+                          button.ql-align(value='right')
+                          button.ql-align(value='justify')
+                        span.ql-formats 
+                          button.ql-clean
+                      #editor7.quill-paragraph
+                        p There was a road along with that open place. When the tiger saw any man passing by he said to him, “Brother, here is a good bangle. I wish to give it to you. Don’t fear. lam old and infirm now. I now pray to God five times a day and doing it will be useful to you. Don’t fear, come to me and take other religious acts. This bangle is useless to me. It will be useful to you. Don’t fear, come to me and take this.”
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Snow Theme
+                  .card-body
+                    .toolbar-box
+                      #toolbar5
+                        span.ql-formats
+                          select.ql-size
+                            option(value='small') Small
+                            option(selected='') Normal
+                            option(value='large') Large
+                            option(value='huge') Huge
+                          span.ql-formats
+                            button.ql-bold Bold
+                            button.ql-italic Italic
+                            button.ql-underline Underline
+                            button.ql-strike Strike
+                            button.ql-script(value='sub')
+                            button.ql-script(value='super')
+                          span.ql-formats
+                            button.ql-list(value='ordered') List
+                            button.ql-list(value='bullet') Bullet
+                            button.ql-indent(value='-1')
+                            button.ql-indent(value='+1')
+                          span.ql-formats
+                            button.ql-link Link
+                            button.ql-image Image
+                            button.ql-video Video
+                            select.ql-color
+                          // Add more options here
+                          span.ql-formats
+                            button.ql-blockquote Blockquote
+                            button.ql-code-block
+                          span.ql-formats
+                            button.ql-align(value='')
+                            button.ql-align(value='center')
+                            button.ql-align(value='right')
+                            button.ql-align(value='justify')
+                      #editor5.quill-paragraph
+                        p As a 
+                          strong web designer
+                          | , your role is crucial in creating visually appealing and user-friendly websites. You are responsible for designing the layout, selecting color schemes, and creating an intuitive user interface. You work closely with clients to understand their requirements and translate them into stunning website designs. Your expertise lies in using HTML, CSS, and JavaScript to bring these designs to life. You pay attention to detail, ensuring that every element is pixel-perfect and responsive across different devices.
+                        ol
+                          li Artist 
+                          li Developer  
+                          li Musician
+                        ul 
+                          li Web-designer 
+                          li UI-UX designer 
+                          li Software engineer
+            .row
+              .col-sm-12
+                .card
+                  .card-header
+                    h5 Bubble Theme
+                  .card-body
+                    .toolbar-box
+                      #toolbar6
+                        span.ql-formats
+                          button.ql-bold Bold
+                          button.ql-italic Italic
+                          button.ql-underline Underline
+                          button.ql-strike Strike
+                          button.ql-script(value='sub')
+                          button.ql-script(value='super')
+                        span.ql-formats
+                          button.ql-list(value='ordered') List
+                          button.ql-list(value='bullet') Bullet
+                          button.ql-indent(value='-1')
+                          button.ql-indent(value='+1')
+                        span.ql-formats
+                          button.ql-link Link
+                          button.ql-image Image
+                          button.ql-video Video
+                          select.ql-color
+                        // Add more options here
+                        span.ql-formats
+                          button.ql-blockquote Blockquote
+                          button.ql-code-block.ql-active
+                        span.ql-formats
+                          button.ql-align(value='')
+                          button.ql-align(value='center')
+                          button.ql-align(value='right')
+                          button.ql-align(value='justify')
+                      #editor6.quill-paragraph
+                        p Being the best designer requires a combination of exceptional creativity, technical expertise, and a deep understanding of user experience. I pride myself on my ability to think outside the box and create visually stunning designs that captivate and inspire. With a keen eye for detail, I carefully craft every element of a design, ensuring that it is not only aesthetically pleasing but also functional and user-friendly. I stay up to date with the latest design trends and constantly push myself to explore new techniques and technologies. My passion for design goes beyond aesthetics; I strive to create meaningful experiences that evoke emotion and leave a lasting impression. Collaboration is key, and I value open communication with clients to truly understand their vision and bring it to life. As the best designer, I am committed to delivering excellence and surpassing expectations on every project.
+                        ul 
+                          li Navigation
+                          li Web Friendly
+                          li Turnaround Time 
+                          li Conversion
+          // Container-fluid Ends
+        include ../../components/footer
+    include ../../components/footer-files

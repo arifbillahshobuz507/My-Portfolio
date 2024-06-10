@@ -1,0 +1,517 @@
+/**=====================
+  4.3 Update CSS Start
+==========================**/
+
+
+@import "utils/variables";
+
+// jsgrid css
+.jsgrid-filter-row {
+
+    select,
+    input {
+        padding: 6px 10px;
+        border: 1px solid $horizontal-border-color;
+        background: $white;
+    }
+}
+
+// popover
+.popover {
+    background-color: $white;
+    border: none;
+    -webkit-box-shadow: 0 0 20px rgba($primary-color, 0.1);
+    box-shadow: 0 0 20px rgba($primary-color, 0.1);
+
+    .popover-header {
+        background-color: $theme-medium-color;
+        color: $primary-color;
+        border-bottom: none;
+    }
+
+    .popover-body {
+        color: rgba(43, 43, 43, 0.7);
+    }
+}
+
+// tooltip css start
+.tooltip {
+    &.bs-tooltip-top {
+        .tooltip-arrow {
+            &:before {
+                border-top-color: $theme-medium-color;
+            }
+        }
+    }
+
+    &.bs-tooltip-bottom {
+        .tooltip-arrow {
+            &:before {
+                border-bottom-color: $theme-medium-color;
+                border-top-color: transparent;
+            }
+        }
+    }
+
+    &.bs-tooltip-start {
+        .tooltip-arrow {
+            &:before {
+                border-left-color: $theme-medium-color;
+                border-top-color: transparent;
+            }
+        }
+    }
+
+    &.bs-tooltip-end {
+        .tooltip-arrow {
+            &:before {
+                border-right-color: $theme-medium-color;
+                border-top-color: transparent;
+            }
+        }
+    }
+
+    .tooltip-inner {
+        background-color: $theme-medium-color;
+        color: $primary-color;
+    }
+
+    .tooltip-arrow {
+        &:before {
+            border-top-color: $theme-medium-color;
+        }
+    }
+}
+
+// tooltip css end
+
+// dropdown css start
+.dropdown-basic {
+    .dropdown {
+        .dropdown-content {
+            a {
+                padding: 6px 16px;
+                color: $dark-editor-document;
+                opacity: 0.6;
+                font-size: 13px;
+                border-top: 1px solid $light-semi-gray;
+                background: $white;
+
+                &:hover {
+                    background-color: $white;
+                }
+            }
+
+            .dropdown-header {
+                padding: 8px 16px;
+                font-weight: 400;
+                color: $dark-color;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .dropup {
+        .dropup-content {
+            top: auto;
+        }
+    }
+}
+
+// dropdown css end
+// accordian css start
+.default-according {
+    .card {
+        .card-header {
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            &.bg-primary,
+            &.bg-secondary {
+                .btn {
+                    border-color: $transparent-color;
+                }
+            }
+
+            i {
+                position: initial;
+                font-size: 20px;
+                display: inline-block;
+                vertical-align: text-bottom;
+                margin-right: 5px;
+
+                [dir="rtl"] & {
+                    margin-right: unset;
+                    margin-left: 5px;
+                }
+            }
+
+            h5 {
+                margin-top: 0;
+            }
+
+            .btn-link {
+                padding: 12px 20px;
+                width: 100%;
+                text-align: left;
+                letter-spacing: 0.7px;
+                font-family: Roboto;
+                border: 1px solid $light-semi-gray;
+                border-radius: 0;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+
+                [dir="rtl"] & {
+                    text-align: right;
+                }
+
+                @media (max-width: 575px) {
+                    padding: 12px 15px;
+                }
+            }
+        }
+
+        .card-body {
+            padding: 15px 20px;
+            line-height: 22px;
+            font-size: 13px;
+            border-color: $light-semi-gray;
+            border-radius: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: $dark-color;
+        }
+    }
+}
+
+// accordian css end
+
+// tab-bootstrap css start
+.nav-tabs {
+    border-bottom-color: $light-semi-gray;
+
+    .nav-bottom {
+        .nav-item {
+            .nav-link.active {
+                border-color: $light-semi-gray;
+            }
+        }
+    }
+}
+
+.nav-tabs {
+    .nav-item {
+        &.show {
+            .nav-link {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .nav-link {
+        color: $dark-color;
+
+        &.active {
+            font-weight: 500;
+        }
+    }
+
+    &.nav-bottom {
+        .nav-item {
+            .nav-link {
+                &.active {
+                    border-color: $light-gray $light-gray #fff;
+                }
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    -webkit-box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+    box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+    border: none;
+    padding: 0;
+    z-index: 1;
+
+    .dropdown-item {
+        color: #2b2b2b;
+        opacity: 0.6;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-top: 1px solid $light-semi-gray;
+        background: $white;
+
+        &:hover {
+            background-color: $white;
+        }
+    }
+
+    .dropdown-divider {
+        margin: 0;
+        border-top: 1px solid #cccccc;
+    }
+}
+
+// tab-bootstrap css end
+
+.border-tab {
+    .nav-tabs {
+        .nav-item {
+            .nav-link {
+                &.active {
+                    border-bottom: 2px solid $primary-color;
+                }
+
+                &.show {
+                    border-bottom: 2px solid $primary-color;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.timeliny {
+    .timeliny-dot::before {
+        font-size: $btn-lg-font-size;
+    }
+}
+
+.component {
+    .input-group {
+        .btn {
+            line-height: 32px;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.login-card {
+    .login-main {
+        .theme-form {
+            label {
+                font-size: $body-font-size;
+            }
+
+            .show-hide {
+                top: 50%;
+            }
+        }
+    }
+}
+
+// faq css start
+.faq-accordion {
+    .card {
+        .btn-link {
+            svg {
+                margin-left: 20px;
+
+                @media (max-width: 575.98px) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+// faq css end
+.job-filter {
+    .faq-form {
+        .form-control {
+            font-size: 14px;
+        }
+
+        .search-icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+// editor css
+.note-btn-group {
+    .dropdown-toggle {
+        &.show {
+            ~.dropdown-menu {
+                display: block;
+                top: 30px;
+            }
+        }
+    }
+
+}
+
+
+// owl-carousel css
+
+.carousel {
+    .carousel-indicators {
+        margin-bottom: 3px;
+    }
+}
+
+.mouse-wheel {
+    .owl-stage-outer {
+        .owl-stage {
+            width: 5600px !important;
+
+            .owl-item {
+                width: 225.333px !important;
+            }
+        }
+    }
+}
+
+.carousel-item {
+    .carousel-caption {
+        width: 100%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 26px 10px;
+        background-color: rgba($dark-card-background, 0.51);
+    }
+
+    .carousel-opacity {
+        background-color: rgba($light-color, 0.51);
+    }
+}
+
+.carousel {
+    .carousel-control-prev-icon {
+        width: calc(23px + (32 - 23) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(23px + (32 - 23) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .carousel-control-next-icon {
+        width: calc(23px + (32 - 23) * ((100vw - 320px) / (1920 - 320)));
+        height: calc(23px + (32 - 23) * ((100vw - 320px) / (1920 - 320)));
+
+    }
+}
+
+
+// Rating 
+.rating-header {
+    h4 {
+        [dir="rtl"] & {
+            direction: ltr;
+        }
+    }
+}
+
+// Animated modal
+.animate-img {
+    .animate-widget {
+        img {
+            width: 100%;
+            height: 350px;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+    }
+}
+
+.modal-popup {
+    &.modal {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        .modal-dialog {
+            .theme-close {
+                width: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+                height: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+    }
+}
+
+.animated-modal {
+    .form-select {
+        @media (max-width:442px) {
+            width: 100% !important;
+        }
+    }
+}
+
+// TO-DO scss
+.task-container {
+    .badge {
+        line-height: 13px;
+    }
+}
+
+// Add-post scss
+.add-post {
+    form {
+        .form-control {
+            &:focus {
+                border: 1px solid var(--recent-dashed-border);
+                box-shadow: unset;
+            }
+        }
+    }
+}
+
+// starter kit
+.starter-main {
+    .alert-primary {
+        &.inverse {
+            padding: 13px 20px 13px 65px;
+            border-color: $primary-color;
+            color: $dark-color;
+
+            [dir="rtl"] & {
+                padding: 13px 65px 13px 20px;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 54px;
+                width: 0;
+                height: 0;
+                border-left: 7px solid $primary-color;
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid transparent;
+
+                [dir="rtl"] & {
+                    border-right: 7px solid $primary-color;
+                    border-left: unset;
+                }
+            }
+
+            i {
+                padding: 17px 20px;
+                display: flex;
+                align-items: center;
+                background-color: $primary-color;
+                color: $white;
+                border-radius: 3px 0 0 3px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+
+                [dir="rtl"] & {
+                    right: 0;
+                    left: unset;
+                }
+            }
+        }
+    }
+}
+
+/**=====================
+    4.3 Update CSS Ends
+==========================**/

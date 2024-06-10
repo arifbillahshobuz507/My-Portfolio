@@ -1,0 +1,489 @@
+- var theme_customizer      = true;
+- var apex                  = true;
+- var apexmoment            = true;
+- var dashboard_default     = true;
+- var notify                = true;
+- var animate               = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var sidebar               = true;
+- var scrollbar             = true;
+- var wow                   = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var clock                 = true;
+- var height_equal          = true;
+
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body(onload='startTime()')
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid         
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Default 
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Dashboard
+                    li.breadcrumb-item.active Default      
+          // Container-fluid starts
+          .container-fluid
+            .row.widget-grid
+              .col-xxl-4.col-sm-6.box-col-6 
+                .card.profile-box
+                  .card-body
+                    .media.media-wrapper.justify-content-between
+                      .media-body 
+                        .greeting-user
+                          h4.f-w-600 Welcome to cuba
+                          p Here whats happing in your account today
+                          .whatsnew-btn
+                            a.btn.btn-outline-white Whats New !
+                      div   
+                        .clockbox
+                          svg#clock(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600')
+                            g#face
+                              circle.circle(cx='300' cy='300' r='253.9')
+                              path.hour-marks(d='M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6')
+                              circle.mid-circle(cx='300' cy='300' r='16.2')
+                            g#hour
+                              path.hour-hand(d='M300.5 298V142')
+                              circle.sizing-box(cx='300' cy='300' r='253.9')
+                            g#minute
+                              path.minute-hand(d='M300.5 298V67')    
+                              circle.sizing-box(cx='300' cy='300' r='253.9')
+                            g#second
+                              path.second-hand(d='M300.5 350V55')
+                              circle.sizing-box(cx='300' cy='300' r='253.9')    
+                        .badge.f-10.p-0#txt
+                    .cartoon
+                      img.img-fluid(src="../assets/images/dashboard/cartoon.svg" alt="vector women with leptop") 
+              .col-xxl-auto.col-xl-3.col-sm-6.box-col-6 
+                .row  
+                  .col-xl-12 
+                    .card.widget-1 
+                      .card-body 
+                        .widget-content
+                          .widget-round.secondary
+                            .bg-round
+                              svg.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#cart') 
+                              svg.half-circle.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                          div 
+                            h4 10,000
+                            span.f-light Purchase
+                        div.font-secondary.f-w-500
+                          i.icon-arrow-up.icon-rotate.me-1
+                          span +50%
+                    .col-xl-12 
+                      .card.widget-1
+                        .card-body 
+                          .widget-content
+                            .widget-round.primary
+                              .bg-round
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#tag') 
+                                svg.half-circle.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                            div 
+                              h4 4,200
+                              span.f-light Sales
+                          div.font-primary.f-w-500
+                            i.icon-arrow-up.icon-rotate.me-1
+                            span +70%
+              .col-xxl-auto.col-xl-3.col-sm-6.box-col-6 
+                .row 
+                  .col-xl-12 
+                    .card.widget-1
+                      .card-body 
+                        .widget-content
+                          .widget-round.warning
+                            .bg-round
+                              svg.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#return-box') 
+                              svg.half-circle.svg-fill
+                                use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                          div 
+                            h4 7000
+                            span.f-light Sales return
+                        div.font-warning.f-w-500
+                          i.icon-arrow-down.icon-rotate.me-1
+                          span -20%
+                    .col-xl-12 
+                      .card.widget-1
+                        .card-body 
+                          .widget-content
+                            .widget-round.success
+                              .bg-round
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#rate') 
+                                svg.half-circle.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#halfcircle')
+                            div 
+                              h4 5700
+                              span.f-light Purchase rate
+                          div.font-success.f-w-500
+                            i.icon-arrow-up.icon-rotate.me-1
+                            span +70%
+              .col-xxl-auto.col-xl-12.col-sm-6.box-col-6
+                .row 
+                  .col-xxl-12.col-xl-6.box-col-12
+                    .card.widget-1.widget-with-chart
+                      .card-body 
+                        div 
+                          h4.mb-1 1,80k
+                          span.f-light Orders
+                        .order-chart 
+                          #orderchart
+                  .col-xxl-12.col-xl-6.box-col-12
+                    .card.widget-1.widget-with-chart
+                      .card-body 
+                        div 
+                          h4.mb-1 6,90k
+                          span.f-light Profit
+                        .profit-chart 
+                          #profitchart
+              .col-xxl-8.col-lg-12.box-col-12
+                .card
+                  .card-header.card-no-border 
+                    h5 Overall balance
+                  .card-body.pt-0
+                    .row.m-0.overall-card
+                      .col-xl-9.col-md-12.col-sm-7.p-0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        .chart-right
+                          .row
+                            .col-xl-12
+                              .card-body.p-0
+                                ul.balance-data 
+                                  li
+                                    span.circle.bg-warning 
+                                    span.f-light.ms-1 Earning
+                                  li
+                                    span.circle.bg-primary 
+                                    span.f-light.ms-1 Expense
+                                .current-sale-container
+                                  #chart-currently
+                      .col-xl-3.col-md-12.col-sm-5.p-0
+                        .row.g-sm-4.g-2
+                          .col-xl-12.col-md-4
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#income')
+                              div 
+                                span.f-light Income
+                                h6.mt-1.mb-0 $22,678
+                              .ms-auto.text-end
+                                .dropdown.icon-dropdown
+                                  button#incomedropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                    i.icon-more-alt
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='incomedropdown')
+                                    a.dropdown-item(href='#') Today
+                                    a.dropdown-item(href='#') Tomorrow
+                                    a.dropdown-item(href='#') Yesterday 
+                                span.font-success +$456
+                          .col-xl-12.col-md-4
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#expense')
+                              div 
+                                span.f-light Expense
+                                h6.mt-1.mb-0 $12,057
+                              .ms-auto.text-end
+                                .dropdown.icon-dropdown
+                                  button#expensedropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                    i.icon-more-alt
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='expensedropdown')
+                                    a.dropdown-item(href='#') Today
+                                    a.dropdown-item(href='#') Tomorrow
+                                    a.dropdown-item(href='#') Yesterday 
+                                span.font-danger +$256
+                          .col-xl-12.col-md-4
+                            .light-card.balance-card.widget-hover
+                              .svg-box
+                                svg.svg-fill
+                                  use(href='../assets/svg/icon-sprite.svg#doller-return')
+                              div 
+                                span.f-light Cashback
+                                h6.mt-1.mb-0 8,475
+                              .ms-auto.text-end
+                                .dropdown.icon-dropdown
+                                  button#cashbackdropdown.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                    i.icon-more-alt
+                                  .dropdown-menu.dropdown-menu-end(aria-labelledby='cashbackdropdown')
+                                    a.dropdown-item(href='#') Today
+                                    a.dropdown-item(href='#') Tomorrow
+                                    a.dropdown-item(href='#') Yesterday 
+              .col-xxl-4.col-xl-7.col-md-6.col-sm-5.box-col-6
+                .card.height-equal 
+                  .card-header.card-no-border 
+                    .header-top
+                      h5 Recent Orders
+                      .card-header-right-icon
+                        .dropdown.icon-dropdown
+                          button#recentdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                            i.icon-more-alt
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='recentdropdown')
+                            a.dropdown-item(href='#') Weekly
+                            a.dropdown-item(href='#') Monthly
+                            a.dropdown-item(href='#') Yearly
+                  .card-body.pt-0
+                    .row.recent-wrapper
+                      .col-xl-6
+                        .recent-chart 
+                          #recentchart
+                      .col-xl-6 
+                        ul.order-content
+                          li 
+                            span.recent-circle.bg-primary 
+                            div 
+                              span.f-light.f-w-500 Cancelled 
+                              h4.mt-1.mb-0 2,302
+                                span.f-light.f-14.f-w-400.ms-1 (Last 6 Month) 
+                          li 
+                            span.recent-circle.bg-info
+                            div 
+                              span.f-light.f-w-500 Delivered
+                              h4.mt-1.mb-0 9,302
+                                span.f-light.f-14.f-w-400.ms-1 (Last 6 Month) 
+              .col-xxl-4.col-xl-5.col-md-6.col-sm-7.notification.box-col-6
+                .card.height-equal 
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Activity
+                      .card-header-right-icon
+                        .dropdown
+                          button#dropdownMenuButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            | Today
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='dropdownMenuButton')
+                            a.dropdown-item(href='#') Today
+                            a.dropdown-item(href='#') Tomorrow
+                            a.dropdown-item(href='#') Yesterday  
+                  .card-body.pt-0
+                    ul 
+                      li.d-flex
+                        .activity-dot-primary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 8th March, 2022 
+                            span 1 day ago
+                          h6 Updated Product
+                            span.dot-notification
+                          p.f-light Quisque a consequat ante sit amet magna...
+                      li.d-flex
+                        .activity-dot-warning
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 15th Oct, 2022 
+                            span Today
+                          h6 Tello just like your product
+                            span.dot-notification
+                          p Quisque a consequat ante sit amet magna... 
+                      li.d-flex
+                        .activity-dot-secondary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 20th Sep, 2022 
+                            span 12:00 PM
+                          h6 Tello just like your product
+                            span.dot-notification
+                          p Quisque a consequat ante sit amet magna... 
+              .col-xxl-4.col-md-6.appointment-sec.box-col-6
+                .appointment
+                  .card
+                    .card-header.card-no-border
+                      .header-top
+                        h5.m-0 Recent Sales
+                        .card-header-right-icon
+                          .dropdown
+                            button#recentButton.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                              | Today
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='recentButton')
+                              a.dropdown-item(href='#') Today
+                              a.dropdown-item(href='#') Tomorrow
+                              a.dropdown-item(href='#') Yesterday
+                    .card-body.pt-0
+                      .appointment-table.table-responsive
+                        table.table.table-bordernone
+                          tbody
+                            tr
+                              td
+                                img.img-fluid.img-40.rounded-circle(src='../assets/images/dashboard/user/1.jpg',alt='user')
+                              td.img-content-box
+                                a(href="user-profile.html").d-block.f-w-500 Jane Cooper
+                                span.f-light 10 minutes ago
+                              td.text-end
+                                p.m-0.font-success $200.00
+                            tr
+                              td
+                                img.img-fluid.img-40.rounded-circle(src='../assets/images/dashboard/user/2.jpg',alt='user')
+                              td.img-content-box
+                                a(href="user-profile.html").d-block.f-w-500 Brooklyn Simmons
+                                span.f-light 19 minutes ago
+                              td.text-end
+                                p.m-0.font-success $970.00
+                            tr
+                              td
+                                img.img-fluid.img-40.rounded-circle(src='../assets/images/dashboard/user/3.jpg',alt='user')
+                              td.img-content-box
+                                a(href="user-profile.html").d-block.f-w-500 Leslie Alexander
+                                span.f-light 2 hours ago
+                              td.text-end
+                                p.m-0.font-success $300.00
+                            tr
+                              td
+                                img.img-fluid.img-40.rounded-circle(src='../assets/images/dashboard/user/4.jpg',alt='user')
+                              td.img-content-box
+                                a(href="user-profile.html").d-block.f-w-500 Travis Wright
+                                span.f-light 8 hours ago
+                              td.text-end
+                                p.m-0.font-success $450.00
+                            tr
+                              td
+                                img.img-fluid.img-40.rounded-circle(src='../assets/images/dashboard/user/5.jpg',alt='user')
+                              td.img-content-box
+                                a(href="user-profile.html").d-block.f-w-500 Mark Green
+                                span.f-light 1 day ago
+                              td.text-end
+                                p.m-0.font-success $768.00
+              .col-xxl-4.col-md-6.box-col-6
+                .card
+                  .card-header.card-no-border
+                    .header-top
+                      h5.m-0 Timeline
+                      .card-header-right-icon
+                        .dropdown
+                          button#dropdownschedules.btn.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            | Today
+                          .dropdown-menu.dropdown-menu-end(aria-labelledby='dropdownschedules')
+                            a.dropdown-item(href='#') Today
+                            a.dropdown-item(href='#') Tomorrow
+                            a.dropdown-item(href='#') Yesterday
+                  .card-body.pt-0
+                    .schedule-container 
+                      #schedulechart
+              .col-xxl-3.col-md-6.box-col-6.col-ed-none.wow.zoomIn
+                .card.purchase-card
+                  img.img-fluid(src="../assets/images/dashboard/purchase.png", alt="vector mens with leptop")
+                  .card-body.pt-3 
+                    h6.mb-3 Buy 
+                      a(href="#") Pro Account 
+                      | to Explore Primium Features
+                    a.purchase-btn.btn.btn-primary.btn-hover-effect.f-w-500(href="https://1.envato.market/3GVzd" target="_blank") Purchase Now
+              .col-xxl-4.col-md-6.box-col-6.col-ed-6 
+                .row 
+                  .col-xl-12 
+                    .card
+                      .card-header.card-no-border
+                        .header-top
+                          h5 Total Users
+                          .dropdown.icon-dropdown
+                            button#userdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='userdropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.pt-0
+                        ul.user-list
+                          li 
+                            .user-icon.primary
+                              .user-box
+                                i.font-primary(data-feather="user-plus")
+                            div 
+                              h5.mb-1 178,098
+                              span.font-primary.d-flex.align-items-center
+                                i.icon-arrow-up.icon-rotate.me-1  
+                                span.f-w-500 +30.89
+                          li 
+                            .user-icon.success
+                              .user-box
+                                i.font-success(data-feather="user-minus")
+                            div 
+                              h5.mb-1 178,098
+                              span.font-danger.d-flex.align-items-center
+                                i.icon-arrow-down.icon-rotate.me-1
+                                span.f-w-500 -08.89
+                  .col-xl-12 
+                    .card.growth-wrap
+                      .card-header.card-no-border
+                        .header-top
+                          h5 Followers Growth
+                          .dropdown.icon-dropdown
+                            button#growthdropdown.btn.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.icon-more-alt
+                            .dropdown-menu.dropdown-menu-end(aria-labelledby='growthdropdown')
+                              a.dropdown-item(href='#') Weekly
+                              a.dropdown-item(href='#') Monthly
+                              a.dropdown-item(href='#') Yearly
+                      .card-body.pt-0
+                        .growth-wrapper
+                          #growthchart
+              .col-xxl-5.col-lg-8.col-md-11.box-col-8.col-ed-6 
+                .card.papernote-wrap
+                  .card-header.card-no-border
+                    .header-top 
+                      h5 PaperNote
+                      a.f-light.d-flex.align-items-center(href="#") View project 
+                        i.f-w-700(class="icon-arrow-top-right")
+                  .card-body.pt-0 
+                    img.banner-img.img-fluid(src="../assets/images/dashboard/papernote.jpg", alt="multicolor background")
+                    .note-content.mt-sm-4.mt-2
+                      p Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                      .note-labels
+                        ul
+                          li 
+                            span.badge.badge-light-primary SAAS
+                          li 
+                            span.badge.badge-light-success E-Commerce
+                          li 
+                            span.badge.badge-light-warning Crypto
+                          li 
+                            span.badge.badge-light-info Project
+                          li 
+                            span.badge.badge-light-secondary NFT
+                          li 
+                            span.badge.badge-light-light +9
+                        div.last-label 
+                          span.badge.badge-light-success Inprogress
+                      .mt-sm-4.mt-2.user-details
+                        .customers
+                          ul 
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/1.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/6.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/7.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/3.jpg", alt="user")
+                            li.d-inline-block
+                              img.img-40.rounded-circle(src="../assets/images/dashboard/user/8.jpg", alt="user")
+                            li.d-inline-block
+                              .light-card
+                                span.f-w-500 +5
+                        div.d-flex.align-items-center 
+                          h5.mb-0.font-primary.f-18.me-1 $239,098
+                          span.f-light.f-w-500 (Budget)
+          // Container-fluid Ends
+        include ../../components/footer        
+    include ../../components/footer-files
+    script. 
+      new WOW().init();

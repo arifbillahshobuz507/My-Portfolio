@@ -1,0 +1,402 @@
+- var timeline_1            = true;
+- var animate               = true;
+- var modernizr             = true;
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Timeline
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item Timeline
+                    li.breadcrumb-item.active Timeline 1
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-xl-6.box-col-6.notification.main-timeline
+                .card.height-equal
+                  .card-header 
+                    h4 Basic Timeline 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .main-basic-timeline 
+                      | class through made basic timeline.
+                  .card-body.dark-timeline
+                    ul 
+                      li.d-flex
+                        .timeline-dot-primary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 2 Feb 2023
+                            span 7:00 AM 
+                          h6 CONFERENCE WITH CLIENT
+                            span.dot-notification
+                          p.f-light At noon today, there will be a meeting with a UK client.
+                      li.d-flex
+                        .timeline-dot-secondary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 22 March 2023
+                            span 3:45 PM
+                          h6 DISCUSSION WITH MARKETING TEAM
+                            span.dot-notification
+                          p.f-light discussion with the marketing staff on the success of the most recent project
+                      li.d-flex
+                        .timeline-dot-success
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 16 May 2023
+                            span 1:22 AM
+                          h6 INVEST IN A NEW HOSTING PLAN
+                            span.dot-notification
+                          p.f-light today at 2 pm AM, purchase a new hosting package as agreed upon with the management team.
+                      li.d-flex
+                        .timeline-dot-warning
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 23 Nov 2023
+                            span 6:56 AM
+                          h6 DISCUSSION WITH DESIGNER TEAM
+                            span.dot-notification
+                          p.f-light discussion with the designer employee on the success of the most recent project.
+                      li.d-flex
+                        .timeline-dot-info
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 12 Dec 2023
+                            span 12:05 AM
+                          h6 DISCUSSION WITH NEW THEME LAUNCH 
+                            span.dot-notification
+                          p.f-light discussion with the how many themes made in our portfolio.
+                      li.d-flex
+                        .timeline-dot-danger
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 02 Jan 2024
+                            span 6:56 AM
+                          h6 PURCHASE NEW CHAIRS FOR OFFICE 
+                            span.dot-notification
+                          p.f-light online purchase new chairs for office                       
+              .col-xl-6 
+                .card.height-equal
+                  .card-header 
+                    h4 Hovering Timeline 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .square-timeline
+                      |  main class through create new variations of timeline.
+                  .card-body
+                    ul.square-timeline
+                      li.timeline-event
+                        label.timeline-event-icon
+                        .timeline-event-wrapper
+                          p.timeline-thumbnail
+                            | January 2022- Annual Function
+                          h5 Location
+                          .text-muted Largo Febo,10225012-Calvisano BS
+                          p.pt-3.mb-4
+                            | What a dynamic performance by the eighth-grade students, Let's welcome the ninth-grade kid to the stage.
+                      li.timeline-event
+                        label.timeline-event-icon
+                        .timeline-event-wrapper
+                          p.timeline-thumbnail
+                            | March 2022 - Fresher Interview
+                          h5 Ofwrrior Company
+                          .text-muted A fresher's interview is to be conducted
+                            .list-group.main-lists-content
+                              a.list-group-item.list-group-item-action.border-0.p-0.mb-4(href='#' aria-current='true')
+                                .d-flex.w-100.justify-content-between.align-items-center
+                                  .list-wrapper
+                                      img.list-img(src="../assets/images/user/1.jpg", alt="profile")
+                                      .list-content 
+                                        h6 Molly Boake
+                                        p MollyBoake@rhyta.com
+                                  .timeline-icon
+                                    i.icon-facebook
+                                    i.icon-google 
+                                    i.icon-twitter-alt
+                                p.mb-1 Next step is to choose a tone of voice for your content type.
+                      li.timeline-event
+                        label.timeline-event-icon
+                        .timeline-event-wrapper
+                          p.timeline-thumbnail
+                            | December 2022 - Meetup
+                          h5 US Meeting
+                          .text-muted 2209 Leverton Cove RoadSpringfield, MA 01109
+                            .designer-details
+                              .designer-profile 
+                                .designer-wrap
+                                    img.designer-img(src="../assets/images/avtar/4.jpg", alt="profile")
+                                    .designer-content 
+                                        h6 Lillian J. Goodfellow
+                                        p 239-664-7751
+                              .designer-profile 
+                                .designer-wrap
+                                    img.designer-img(src="../assets/images/avtar/7.jpg", alt="profile")
+                                    .designer-content 
+                                        h6 Carolyn A. Sutton
+                                        p 218-793-6609
+              .col-xxl-4.col-xl-5.notification.box-col-12
+                .card
+                  .card-header
+                    h4 Variation Timeline 
+                    p.f-m-light.mt-1  
+                      | Use the 
+                      code .activity-dot-primary 
+                      | through rounded animations.
+                  .card-body.dark-timeline
+                    ul 
+                      li.d-flex
+                        .activity-dot-primary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 8th March, 2022 
+                            span 1 day ago
+                          h6 Updated Product
+                            span.dot-notification
+                          p.f-light Quisque a consequat ante sit amet magna...
+                      li.d-flex
+                        .activity-dot-warning
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 5th Feb, 2023 
+                            span Today
+                          h6 Added Bew Items
+                            span.dot-notification
+                          span.f-light Quisque a consequat ante sit amet magna...
+                          .recent-images  
+                            ul 
+                              li 
+                                .recent-img-wrap
+                                  img(src="../assets/images/dashboard-2/product/1.png", alt="chair")
+                              li 
+                                .recent-img-wrap
+                                  img(src="../assets/images/dashboard-2/product/2.png", alt="chair")
+                              li 
+                                .recent-img-wrap
+                                  img(src="../assets/images/dashboard-2/product/3.png", alt="men t-shirt")
+                      li.d-flex.pb-0
+                        .activity-dot-secondary
+                        .w-100.ms-3
+                          p.d-flex.justify-content-between.mb-2
+                            span.date-content.light-background 20th Sep, 2022 
+                            span 12:00 PM
+                          h6 Tello just like your product
+                            span.dot-notification
+                          p Quisque a consequat ante sit amet magna...
+              .col-xxl-8.col-xl-7.box-col-12
+                .card
+                  .card-header 
+                    h4 Horizontal Timeline 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .square-timeline
+                      |  main class through create new variations of timeline.
+                  .card-body
+                    .list-inline.events.timeline-list.timeline-border.row
+                      .col-xxl-4.col-sm-6
+                        div
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-primary.txt-primary 1 Jan
+                              h5 Conference 
+                              p.text-muted
+                                | Conferences are intended to bring individuals with similar interests together to discuss problems.
+                              div.read-more-btn
+                                a.btn.btn-primary.px-3(href='#') Read more
+                          .vertical-line
+                      .col-xxl-4.col-sm-6
+                        div
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-success.txt-success 4 Feb
+                              h5 Meet-up
+                              p.text-muted You may connect with males from all around the world using the friend-forward.
+                              div.read-more-btn
+                                a.btn.btn-primary.px-3(href='#') Read more
+                          .vertical-line
+                      .col-xxl-4.horizontal-timeline
+                        div
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-danger.txt-danger 22 March
+                              h5 Meeting
+                              p.text-muted If several languages coalesce the grammar of the resulting simple and regular social networking platform.
+                              div.read-more-btn
+                                a.btn.btn-primary.px-3(href='#') Read more
+                          .vertical-line
+                    .list-inline.events.border-0.timeline-list.row
+                      .col-xxl-4.col-sm-6
+                        div 
+                          .vertical-line
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-primary.txt-primary 1 Jan
+                              h5 Conference 
+                              p.text-muted
+                                | A gathering of two or more people to talk about issues of interest.
+                              div
+                                a.btn.btn-primary.px-3(href='#') Read more
+                      .col-xxl-4.col-sm-6
+                        div
+                          .vertical-line  
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-danger.txt-danger 22 March
+                              h5 Meeting
+                              p.text-muted If several languages coalesce the grammar of the resulting simple and regular social networking platform.
+                              div
+                                a.btn.btn-primary.px-3(href='#') Read more
+                      .col-xxl-4.horizontal-timeline
+                        div
+                          .vertical-line  
+                          .list-inline-item.event-list
+                            .px-4
+                              .event-date.alert-light-warning.txt-warning 7 Dec
+                              h5 Launch Theme
+                              p.text-muted Responsive Website is the approach that suggests website design and development should respond.
+                              div
+                                a.btn.btn-primary.px-3(href='#') Read more
+              .col-sm-12.box-col-12
+                .card
+                  .card-header
+                    h4 Timeline
+                    p.f-m-light.mt-1 
+                      | This is a cuba timeline chart.
+                  .card-body
+                    // cd-timeline Start
+                    section#cd-timeline.cd-container
+                      .cd-timeline-block
+                        .cd-timeline-img.cd-picture.bg-primary
+                          i.icon-pencil-alt
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-warning app-ideas
+                          h5.m-0
+                            | Established new the app-ideas repository.
+                          p.mb-0   
+                            | developers who are just beginning their learning process. those who often concentrate on developing programmes with a user interface.
+                          .time-content.pt-2
+                            i.icon-github
+                            h6 View it on Github      
+                          span.cd-date
+                            | February 02 2022
+                      .cd-timeline-block
+                        .cd-timeline-img.bg-danger 
+                          i.icon-youtube
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-danger Blog
+                          h5.m-0
+                            | Implemented the program for weekly code challenges.
+                          p.mb-0   
+                            | Challenges 
+                            em.txt-danger help you build problem-solving skills, better understand the programming. 
+                            | If you want to improve your skills in programming.           
+                          .ratio.ratio-21x9.m-t-20
+                            iframe(src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0', allowfullscreen='')
+                          span.cd-date
+                            | March 12 2022
+                      .cd-timeline-block
+                        .cd-timeline-img.cd-picture.bg-success
+                          i.icon-image
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-info Designer
+                          h5.m-0
+                            | Research about most recent design trends.
+                          p.mb-0   
+                            | Spend some time looking up current design trend.         
+                          #carouselExampleIndicators.carousel.slide(data-bs-ride='true')
+                            .carousel-indicators
+                              button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                              button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+                              button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3')
+                            .carousel-inner
+                              .carousel-item.active
+                                img.d-block.w-100(src='../assets/images/banner/2.jpg' alt='office-work')
+                              .carousel-item
+                                img.d-block.w-100(src='../assets/images/banner/1.jpg' alt='office-work')
+                              .carousel-item
+                                img.d-block.w-100(src='../assets/images/banner/3.jpg' alt='office-work')
+                            button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+                              span.carousel-control-prev-icon(aria-hidden='true')
+                              span.visually-hidden Previous
+                            button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+                              span.carousel-control-next-icon(aria-hidden='true')
+                              span.visually-hidden Next
+                          span.cd-date
+                            | April 23 2022
+                      .cd-timeline-block
+                        .cd-timeline-img.cd-location.bg-info
+                          i.icon-pulse
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-primary Audio testing
+                          h5.m-0
+                            | Musical trends and predictability
+                          p.mb-0   
+                            | So, the next time you listen to music, you might or might not consider how it's actively altering your mood.
+                          audio(controls='')
+                            source(src='../assets/audio/horse.ogg', type='audio/ogg')
+                          span.cd-date
+                            | June 12 2022
+                      .cd-timeline-block
+                        .cd-timeline-img.cd-location.bg-secondary
+                          i.icon-pin-alt
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-success Meet-up
+                          h5.m-0
+                            | Web-designer's meet-up
+                          p.mb-0   
+                            | Find nearby web designers to network with! A Web Design Meetup is a place where you can discuss tools.                        
+                          .time-content.pt-2
+                            i.icon-android
+                            h6 Please! Meet-up
+                          span.cd-date
+                            | November 04 2022
+                      .cd-timeline-block
+                        .cd-timeline-img.cd-movie.bg-danger
+                          i.icon-agenda
+                        .cd-timeline-content
+                          .timeline-wrapper
+                            .badge.bg-warning Resolutions
+                          h5.m-0
+                            | My Resolutions for 2023
+                          p.mb-0   
+                            | I'm determined to streamline, organism, systematism, realign, and embrace life in 2023.                          
+                          .time-content.pt-2
+                            i.icon-write
+                            h6 My Resolutions    
+                          span.cd-date
+                            | December 31 2022
+                    // cd-timeline Ends
+                    // Container-fluid ends  
+        include ../../components/footer
+    include ../../components/footer-files

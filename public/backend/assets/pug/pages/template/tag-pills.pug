@@ -1,0 +1,455 @@
+- var theme_customizer      = true;
+- var sidebar               = true;
+- var slick                 = true;
+- var header_slider         = true;
+- var animate               = true;
+- var scrollbar             = true;
+- var height_equal          = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+doctype html
+html(lang='en')
+  include ../../components/header-files
+  body
+    include ../../components/loader
+    include ../../components/taptop
+    // page-wrapper Start
+    #pageWrapper.page-wrapper.compact-wrapper
+      include ../../components/header
+      // Page Body Start
+      .page-body-wrapper
+        include ../../components/sidebar
+        .page-body
+          .container-fluid
+            .page-title
+              .row
+                .col-6
+                  h4
+                    | Tag & Pills
+                .col-6
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html')                                        
+                        svg.stroke-icon
+                          use(href='../assets/svg/icon-sprite.svg#stroke-home')
+                    li.breadcrumb-item  Ui Kits
+                    li.breadcrumb-item.active Tag & Pills
+          // Container-fluid starts
+          .container-fluid
+            .row
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Badges contextual variations
+                    p.f-m-light.mt-1 
+                      | Use the
+                      code .badge 
+                      | utility class to make more badges.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card  
+                  .card-body
+                    .badge-spacing
+                      span.badge.badge-primary Primary
+                      span.badge.badge-secondary Secondary
+                      span.badge.badge-success Success
+                      span.badge.badge-info Info
+                      span.badge.badge-warning.text-dark Warning
+                      span.badge.badge-danger Danger
+                      span.badge.badge-light.text-dark Light
+                      span.badge.badge-dark.tag-pills-sm-mb Dark
+                      .code-box-copy
+                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#badge-variations', title='Copy')
+                          i.icofont.icofont-copy-alt
+                        pre
+                          code.language-html#badge-variations
+                            | &lt;!--You can use badge-* class through change the colors of badges (primary/secondary/success...).--&gt;
+                            | &lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+                            | &lt;span class="badge badge-secondary"&gt;Secondary&lt;/span&gt;
+                            | &lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+                            | &lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+                            | &lt;span class="badge badge-warning text-dark"&gt;Warning&lt;/span&gt;
+                            | &lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+                            | &lt;span class="badge badge-light text-dark"&gt;Light&lt;/span&gt;
+                            | &lt;span class="badge badge-dark tag-pills-sm-mb"&gt;Dark&lt;/span&gt;
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Pills contextual variations
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .rounded-pill
+                      |  utility class to make badges more rounded with a larger 
+                      code border-radius
+                      |.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing
+                      span.badge.rounded-pill.badge-primary Primary
+                      span.badge.rounded-pill.badge-secondary Secondary
+                      span.badge.rounded-pill.badge-success Success
+                      span.badge.rounded-pill.badge-info Info
+                      span.badge.rounded-pill.badge-warning.text-dark Warning
+                      span.badge.rounded-pill.badge-danger Danger
+                      span.badge.rounded-pill.badge-light.text-dark Light
+                      span.badge.rounded-pill.badge-dark.tag-pills-sm-mb Dark
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#pills-variations', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#pills-variations
+                              | &lt;!--You can use .rounded-pill class through change the rounded badges (rounded-pill).--&gt;
+                              | &lt;span class="badge rounded-pill badge-primary"&gt;Primary&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-secondary"&gt;Secondary&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-success"&gt;Success&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-info"&gt;Info&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-warning text-dark"&gt;Warning&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-danger"&gt;Danger&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-light text-dark"&gt;Light&lt;/span&gt;
+                              | &lt;span class="badge rounded-pill badge-dark tag-pills-sm-mb"&gt;Dark&lt;/span&gt;
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Number of badge 
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .badge
+                      |  utility class to make number of more badges.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing
+                      a.badge.badge-primary(href='#') 1
+                      a.badge.badge-secondary(href='#') 2
+                      a.badge.badge-success(href='#') 3
+                      a.badge.badge-info(href='#') 4
+                      a.badge.badge-warning.text-dark(href='#') 5
+                      a.badge.badge-danger(href='#') 6
+                      a.badge.badge-light.text-dark(href='#') 7
+                      a.badge.badge-dark(href='#') 8
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#number-of-badge', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#number-of-badge
+                              | &lt;!--You can use badge-* class through make badges (Numbered Badges).--&gt;
+                              | &lt;a class="badge badge-primary" href="#"&gt;1&lt;/a&gt;
+                              | &lt;a class="badge badge-secondary" href="#"&gt;2&lt;/a&gt;
+                              | &lt;a class="badge badge-success" href="#"&gt;3&lt;/a&gt;
+                              | &lt;a class="badge badge-info" href="#"&gt;4&lt;/a&gt;
+                              | &lt;a class="badge badge-warning text-dark" href="#"&gt;5&lt;/a&gt;
+                              | &lt;a class="badge badge-danger" href="#"&gt;6&lt;/a&gt;
+                              | &lt;a class="badge badge-light text-dark" href="#"&gt;7&lt;/a&gt;
+                              | &lt;a class="badge badge-dark" href="#"&gt;8&lt;/a&gt;
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Number of pills tags
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .rounded-circle
+                      |  utility class to make badges more rounded with a larger 
+                      code border-radius
+                      |.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing
+                      span.badge.rounded-circle.badge-p-space.badge-primary 1
+                      span.badge.rounded-circle.badge-p-space.badge-secondary 2
+                      span.badge.rounded-circle.badge-p-space.badge-success 3
+                      span.badge.rounded-circle.badge-p-space.badge-info 4
+                      span.badge.rounded-circle.badge-p-space.badge-warning.text-dark 5
+                      span.badge.rounded-circle.badge-p-space.badge-danger 6
+                      span.badge.rounded-circle.badge-p-space.badge-light.text-dark 7
+                      span.badge.rounded-circle.badge-p-space.badge-dark 8
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#number-of-pills', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#number-of-pills
+                              | &lt;!--You can use .rounded-circle class through change the circled badges (rounded-circle).--&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-primary"&gt;1&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-secondary"&gt;2&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-success"&gt;3&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-info"&gt;4&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-warning text-dark"&gt;5&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-danger"&gt;6&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-light text-dark"&gt;7&lt;/span&gt;
+                              | &lt;span class="badge rounded-circle badge-p-space badge-dark"&gt;8&lt;/span&gt;
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Badge tags with icons
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .badge 
+                      | utility class to make more icons.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing
+                      a.badge.b-ln-height.badge-primary(href='#')
+                        i(data-feather='dollar-sign')
+                      a.badge.b-ln-height.badge-secondary(href='#')
+                        i(data-feather='headphones')
+                      a.badge.b-ln-height.badge-success(href='#')
+                        i(data-feather='link')
+                      a.badge.b-ln-height.badge-info(href='#')
+                        i(data-feather='github')
+                      a.badge.b-ln-height.badge-warning.text-dark(href='#')
+                        i(data-feather='award')
+                      a.badge.b-ln-height.badge-danger(href='#')
+                        i(data-feather='activity')
+                      a.badge.b-ln-height.badge-light.text-dark(href='#')
+                        i(data-feather='heart')
+                      a.badge.badge-dark(href='#')
+                        i(data-feather='mail')
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#badge-icons', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#badge-icons
+                              | &lt;!--You can use data-feather icons through change the icons badges.--&gt;
+                              | &lt;a class="badge badge-primary" href="#"&gt;&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-secondary" href="#"&gt;&lt;i data-feather="headphones"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-success" href="#"&gt;&lt;i data-feather="link"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-info" href="#"&gt;&lt;i data-feather="github"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-warning text-dark" href="#"&gt;&lt;i data-feather="award"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-danger" href="#"&gt;&lt;i data-feather="activity"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-light text-dark" href="#"&gt;&lt;i data-feather="heart"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge badge-dark" href="#"&gt;&lt;i data-feather="mail"&gt;&lt;/i&gt;&lt;/a&gt;
+              .col-sm-12.col-xl-6
+                .card
+                  .card-header
+                    h4 Rounded pills with icons
+                    p.f-m-light.mt-1 
+                      | Use the 
+                      code .rounded-pill
+                      |  utility class to make icons badges more rounded with a larger 
+                      code border-radius
+                      |.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing
+                      a.badge.rounded-circle.p-2.badge-primary(href='#')
+                        i(data-feather='dollar-sign')
+                      a.badge.rounded-circle.p-2.badge-secondary(href='#')
+                        i(data-feather='headphones')
+                      a.badge.rounded-circle.p-2.badge-success(href='#')
+                        i(data-feather='link')
+                      a.badge.rounded-circle.p-2.badge-info(href='#')
+                        i(data-feather='github')
+                      a.badge.rounded-circle.p-2.badge-warning.text-dark(href='#')
+                        i(data-feather='award')
+                      a.badge.rounded-circle.p-2.badge-danger(href='#')
+                        i(data-feather='activity')
+                      a.badge.rounded-circle.p-2.badge-light.text-dark(href='#')
+                        i(data-feather='heart')
+                      a.badge.rounded-circle.p-2.badge-dark(href='#')
+                        i(data-feather='mail')
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#rounded-icons', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#rounded-icons
+                              | &lt;!--You can use .rounded-circle class through change the icons badge.--&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-primary" href="#"&gt;&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-secondary" href="#"&gt;&lt;i data-feather="headphones"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-success" href="#"&gt;&lt;i data-feather="link"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-info" href="#"&gt;&lt;i data-feather="github"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-warning text-dark" href="#"&gt;&lt;i data-feather="award"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-danger" href="#"&gt;&lt;i data-feather="activity"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-light text-dark" href="#"&gt;&lt;i data-feather="heart"&gt;&lt;/i&gt;&lt;/a&gt;
+                              | &lt;a class="badge rounded-circle p-2 badge-dark" href="#"&gt;&lt;i data-feather="mail"&gt;&lt;/i&gt;&lt;/a&gt;
+              .col-sm-12.col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Badge headings example
+                    p.f-m-light.mt-1 
+                      | All html headings, 
+                      code &lt;h1&gt;
+                      |  through 
+                      code &lt;h6&gt;
+                      |  , are available in 
+                      code .badge 
+                      | tags.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                      h1.badge-heading
+                        | Badge Heading 1
+                        span.badge.badge-primary Latest
+                      h2.badge-heading
+                        | Badge Heading 2
+                        span.badge.badge-secondary Trending
+                      h3.badge-heading
+                        | Badge Heading 3
+                        span.badge.badge-success Checkout
+                      h4.badge-heading
+                        | Badge Heading 4
+                        span.badge.badge-warning Inbox
+                      h5.badge-heading
+                        | Badge Heading 5
+                        span.badge.badge-danger Login
+                      h6.badge-heading.pb-0
+                        | Badge Heading 6
+                        span.badge.badge-dark Logout
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#badge-headings', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#badge-headings
+                              | &lt;!--You can use headings with .badge class.--&gt;
+                              | &lt;h1 class="badge-heading"&gt;Badge Heading 1&lt;span class="badge badge-primary"&gt;Latest&lt;/span&gt;&lt;/h1&gt;
+                              | &lt;h2 class="badge-heading"&gt;Badge Heading 2&lt;span class="badge badge-secondary"&gt;Trending&lt;/span&gt;&lt;/h2&gt;
+                              | &lt;h3 class="badge-heading"&gt;Badge Heading 3&lt;span class="badge badge-success"&gt;Checkout&lt;/span&gt;&lt;/h3&gt;
+                              | &lt;h4 class="badge-heading"&gt;Badge Heading 4&lt;span class="badge badge-warning"&gt;Inbox&lt;/span&gt;&lt;/h4&gt;
+                              | &lt;h5 class="badge-heading"&gt;Badge Heading 5&lt;span class="badge badge-danger"&gt;Login&lt;/span&gt;&lt;/h5&gt;
+                              | &lt;h6 class="badge-heading pb-0"&gt;Badge Heading 6&lt;span class="badge badge-dark"&gt;Logout&lt;/span&gt;&lt;/h6&gt;
+              .col-sm-12.col-xl-6
+                .card.height-equal
+                  .card-header
+                    h4 Badges as part buttons
+                    p.f-m-light.mt-1 
+                      code .badge
+                      |  can be used as part of 
+                      code .btn
+                      |  to provide a icons.
+                    .card-header-right
+                      ul.list-unstyled.card-option
+                        li
+                          i.fa.fa-spin.fa-cog
+                        li
+                          i.view-html.fa.fa-code
+                        li
+                          i.icofont.icofont-maximize.full-card
+                        li
+                          i.icofont.icofont-minus.minimize-card
+                        li
+                          i.icofont.icofont-refresh.reload-card
+                        li
+                          i.icofont.icofont-error.close-card
+                  .card-body
+                    .badge-spacing.flex-column.align-items-start
+                      button.btn.btn-primary.d-flex.align-items-center(type='button')
+                        | Messages 
+                        span.badge.rounded-circle.btn-p-space.badge-light.text-dark.ms-2
+                          i(data-feather='mail')
+                      button.btn.btn-secondary.d-flex.align-items-center(type='button')
+                        | Notifications 
+                        span.badge.rounded-circle.btn-p-space.badge-light.text-dark.ms-2
+                          i(data-feather='bell')
+                      button.btn.btn-success.d-flex.align-items-center(type='button')
+                        | Update available 
+                        span.badge.rounded-circle.btn-p-space.badge-light.text-dark.ms-2
+                          i(data-feather='settings')
+                      button.btn.btn-info.d-flex.align-items-center(type='button')
+                        | Playing Now 
+                        span.badge.rounded-circle.btn-p-space.badge-light.text-dark.ms-2
+                          i(data-feather='music')
+                      button.btn.btn-warning.text-dark.d-flex.align-items-center(type='button')
+                        | 1.2 GB Used 
+                        span.badge.rounded-circle.btn-p-space.badge-light.text-dark.ms-2
+                          i(data-feather='alert-triangle')
+                      .code-box-copy
+                          button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#badge-as-part-btn', title='Copy')
+                            i.icofont.icofont-copy-alt
+                          pre
+                            code.language-html#badge-as-part-btn
+                              | &lt;!--You can use badge-* class with any icons used.(badge-icons/headings).--&gt;
+                              | &lt;div class="badge-spacing flex-column align-items-start"&gt;
+                              | &lt;button class="btn btn-primary d-flex align-items-center" type="button"&gt;Messages &lt;span class="badge rounded-circle btn-p-space badge-light text-dark ms-2"&gt;&lt;i data-feather="mail"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                              | &lt;button class="btn btn-secondary d-flex align-items-center" type="button"&gt;Notifications &lt;span class="badge rounded-circle btn-p-space badge-light text-dark ms-2"&gt;&lt;i data-feather="bell"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                              | &lt;button class="btn btn-success d-flex align-items-center" type="button"&gt;Update available &lt;span class="badge rounded-circle btn-p-space badge-light text-dark ms-2"&gt;&lt;i data-feather="settings"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                              | &lt;button class="btn btn-info d-flex align-items-center" type="button"&gt;Playing Now &lt;span class="badge rounded-circle btn-p-space badge-light text-dark ms-2"&gt;&lt;i data-feather="music"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                              | &lt;button class="btn btn-warning text-dark d-flex align-items-center" type="button"&gt;1.2 GB Used &lt;span class="badge rounded-circle btn-p-space badge-light text-dark ms-2"&gt;&lt;i data-feather="alert-triangle"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+          // Container-fluid Ends
+        include ../../components/footer
+      include ../../components/footer-files   

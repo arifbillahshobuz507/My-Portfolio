@@ -1,0 +1,141 @@
+/**=====================
+   2.27 Range-slider CSS Start
+==========================**/
+//Ion Range-slider 
+// flat slider
+.irs--flat {
+
+    .irs-from,
+    .irs-to,
+    .irs-single,
+    .irs-bar {
+        background-color: $primary-color;
+
+        &::before {
+            border-top-color: $primary-color ;
+        }
+    }
+
+    .irs-handle {
+        i {
+            &:first-child {
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+// rounded-slider
+.irs--round {
+    .irs-single {
+        background-color: $secondary-color;
+
+        &::before {
+            border-top-color: $secondary-color;
+        }
+    }
+
+    .irs-handle {
+        border: 4px solid $secondary-color;
+    }
+
+    .irs-bar {
+        background-color: $secondary-color;
+    }
+}
+
+// square slider
+.irs--square {
+    .irs-handle {
+        border: 3px solid $success-color;
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-bar {
+        background-color: $success-color;
+    }
+}
+
+// sharp slider
+.irs--sharp {
+
+    .irs-from,
+    .irs-to {
+        &::before {
+            border-top-color: $info-color;
+        }
+    }
+
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to,
+    .irs-bar {
+        background-color: $info-color;
+    }
+
+    .irs-line {
+        background-color: $gray-60;
+    }
+
+    .irs-handle {
+        background-color: $info-color;
+
+        i {
+            &:first-child {
+                border-top-color: $info-color;
+            }
+        }
+    }
+}
+
+// Big slider
+.irs--big {
+    .irs-bar {
+        border: 1px solid $warning-color;
+        background: $warning-color;
+        box-shadow: unset;
+    }
+
+    .irs-from,
+    .irs-to {
+        background-color: $warning-color;
+        background: unset;
+    }
+
+    .irs-handle {
+        background: $warning-color;
+    }
+
+    .irs-grid-pol {
+        background-color: $warning-color;
+    }
+
+    .irs-grid-text {
+        color: $warning-color;
+    }
+}
+
+// Modern slider
+.irs--modern {
+    .irs-single {
+        background-color: $danger-color;
+
+        &::before {
+            border-top-color: $danger-color;
+        }
+    }
+
+    .irs-bar {
+        background: $danger-color;
+    }
+
+    .irs-grid-text {
+        color: $danger-color;
+    }
+}
+
+/**=====================
+    2.27 Range-slider CSS Ends
+==========================**/
