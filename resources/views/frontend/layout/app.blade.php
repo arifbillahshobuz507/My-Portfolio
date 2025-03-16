@@ -8,7 +8,7 @@
     <meta name="description" content="" />
 
     <!-- Site Title -->
-    <title>Gerold - Personal Portfolio HTML5 Template</title>
+    <title>AR Billah Shobuz</title>
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="./assets/img/favicon.png" />

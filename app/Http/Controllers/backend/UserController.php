@@ -85,7 +85,8 @@ class UserController extends Controller
                 'title' => 'nullable|string',
                 'phone' => 'nullable|string|max:14|min:11',
             ]);
-            $password = $request->input('password');
+//            $password = Hash::make( $request->input('password'));
+            $password =  $request->input('password');
             User::create([
                 'title' => $request->input('title'),
                 'email' => $request->input('email'),
@@ -110,8 +111,9 @@ class UserController extends Controller
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
             ]);
-
+//            $password = Hash::make();
             $user = User::where('email', '=',  $request->input('email'))->where('password', '=', $request->input('password'))->select('id')->first();
+
             if ($user !== null) {
                 $token = JWTToken::CreateToken($request->input('email'), $user->id);
                 return response()->json(["status" => "success", "message" => "User Login successfully"], 200)->cookie('token',$token,60*60);

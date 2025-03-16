@@ -5,7 +5,7 @@ use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\HomeControlller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeControlller::class, 'home'])->name('home')->middleware('tokenverification');
+Route::get('/', [HomeControlller::class, 'home'])->name('home');
 Route::get('/dashbord', [HomeController::class, 'dashbord'])->name('home')->middleware('tokenverification');
 
 // user Routes

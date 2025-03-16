@@ -8,7 +8,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="hero-content-box">
-                    <span class="hero-sub-title">I am Gerold</span>
+                    <span class="hero-sub-title">I am Arif Billah Shobuz</span>
                     <h1 class="hero-title">Web Developer +<br />UX Designer</h1>
 
                     <div class="hero-image-box d-md-none text-center">
@@ -16,9 +16,13 @@
                     </div>
 
                     <p class="lead">
-                        I break down complex user experinece problems to create integritiy focussed solutions
-                        that
-                        connect billions of people
+                        I am Md. Arif Billah Shobuz, a passionate PHP Laravel Developer
+                        with hands-on experience in building web applications, eCommerce
+                        platforms, and dynamic websites. With a Diploma in Computer Science
+                        & Technology from Kushtia Polytechnic Institute and professional
+                        training from Kodeeo Limited, Ostad, and Webcoder-IT, I have honed
+                        my skills in Laravel, Git, Blade templates, JWT authentication,
+                        and project deployment
                     </p>
                     <div class="button-box d-flex flex-wrap align-items-center">
                         <a href="#" class="btn tj-btn-secondary">Download CV <i
