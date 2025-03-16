@@ -30,7 +30,7 @@ class JWTToken{
         ];
         return JWT::encode($payload, $key, 'HS256');
     }
-    public static function verifyToken($token):string|object
+    public static function verifyToken($token)
     {
         try{
             if($token==null){

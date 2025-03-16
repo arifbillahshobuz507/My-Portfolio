@@ -177,6 +177,7 @@ class UserController extends Controller
     public function userResetPassword(Request $request)
     {
         try {
+//            dd($request->header('email'));
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'

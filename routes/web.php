@@ -15,14 +15,14 @@ Route::post('/user-registration', [UserController::class, 'userRegistration']);
 Route::post('/user-login', [UserController::class, 'userLogin']);
 Route::post('/send-otp', [UserController::class, 'userSendOTP']);
 Route::post('/verify-otp', [UserController::class, 'userVerifyOTP']);
-Route::post('/reset-password', [UserController::class, 'userResetPassword'])->middleware('tokenverification');
+Route::post('/reset-password', [UserController::class, 'userResetPassword']);
 Route::post('/logout', [UserController::class, 'userLogout'])->middleware('tokenverification')->name('Logout');
 
 Route::get('/registration', [UserController::class, 'userRegistrationPage']);
 Route::get('/login', [UserController::class, 'userLoginPage']);
 Route::get('/send-otp', [UserController::class, 'userSendOTPPage']);
 Route::get('/verify-otp', [UserController::class, 'userVerifyOTPPage']);
-Route::get('/reset-password', [UserController::class, 'userResetPasswordPage'])->middleware('tokenverification');
+Route::get('/reset-password', [UserController::class, 'userResetPasswordPage']);
 
 
 
