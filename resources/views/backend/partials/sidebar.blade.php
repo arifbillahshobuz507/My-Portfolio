@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper" sidebar-layout="stroke-svg">
     <div>
-      <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light" src="../backend/assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../backend/assets/images/logo/logo_dark.png" alt=""></a>
+      <div class="logo-wrapper"><a href="index.html"><h3>{{ Str::words(config('app.name'), 2, '')}}</h3><img class="img-fluid for-dark" src="../backend/assets/images/logo/logo_dark.png" alt=""></a>
         <div class="back-btn"><i class="fa fa-angle-left"></i></div>
         <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
       </div>
@@ -54,6 +54,19 @@
               <ul class="sidebar-submenu">
                 <li><a href="projects.html">Project List</a></li>
                 <li><a href="projectcreate.html">Create new</a></li>
+              </ul>
+            </li>
+              <li class="sidebar-list"><i class="fa fa-thumb-tack">    </i>
+              <label class="badge badge-light-secondary">New</label><a class="sidebar-link sidebar-title" href="#">
+                <svg class="stroke-icon">
+                  <use href="../backend/assets/svg/icon-sprite.svg#stroke-project"></use>
+                </svg>
+                <svg class="fill-icon">
+                  <use href="../backend/assets/svg/icon-sprite.svg#fill-project"></use>
+                </svg><span>Services</span></a>
+              <ul class="sidebar-submenu">
+                <li><a href="{{route('service.index')}}">Services List</a></li>
+                <li><a href="{{route('service.create')}}">Create new</a></li>
               </ul>
             </li>
               <!-- Project End Group-->

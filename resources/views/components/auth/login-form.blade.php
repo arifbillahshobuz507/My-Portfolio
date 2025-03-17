@@ -29,9 +29,9 @@
         let password = document.getElementById('password').value;
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email.length === 0) {
-            errorToast("Email is Requred");
+            errorToast("Email is Required");
         } else if (password.length === 0) {
-            errorToast("Password is Requred");
+            errorToast("Password is Required");
         } else if (password.length < 8 || password.length > 300) {
             if (password.length < 8) {
                 errorToast('Password must be at least 8 characters long');

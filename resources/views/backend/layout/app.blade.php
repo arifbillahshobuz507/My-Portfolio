@@ -12,7 +12,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../backend/assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../backend/assets/images/favicon.png" type="image/x-icon">
-    <title>Cuba - Premium Admin Template</title>
+    <title>@yield('title', config('app.name', ' '))</title>
     @include('backend.partials.style')
 </head>
 
