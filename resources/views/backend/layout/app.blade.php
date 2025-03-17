@@ -18,16 +18,10 @@
 
 <body>
     <!-- loader starts-->
-    <div class="loader-wrapper">
-        <div class="loader-index"> <span></span></div>
-        <svg>
-            <defs></defs>
-            <filter id="goo">
-                <fegaussianblur in="SourceGraphic" stddeviation="11" result="blur"></fegaussianblur>
-                <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo">
-                </fecolormatrix>
-            </filter>
-        </svg>
+    <div id="loader" class="LoadingOverlay d-none">
+        <div class="Line-Progress">
+            <div class="indeterminate"></div>
+        </div>
     </div>
     <!-- loader ends-->
     <!-- tap on top starts-->
