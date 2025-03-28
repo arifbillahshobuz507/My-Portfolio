@@ -221,7 +221,7 @@ class UserController extends Controller
             return redirect()->back()->with('error', $exception->getMessage())->withInput();
         }
     }
-    public function userLogout(Request $request, $id)
+    public function userLogout(Request $request)
     {
         return redirect('login')->cookie('token','',-1);
     }

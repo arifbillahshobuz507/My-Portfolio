@@ -23,3 +23,7 @@
 <!-- Responsive css-->
 <link rel="stylesheet" type="text/css" href="{{asset('/backend/assets/css/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('/backend/assets/css/squre.css')}}">
+{{--<link href="{{ asset('auth/css/animate.min.css') }}" rel="stylesheet" />--}}
+{{--<link href="{{ asset('auth/css/fontawesome.css') }}" rel="stylesheet" />--}}
+{{--<link href="{{ asset('auth/css/style.css') }}" rel="stylesheet" />--}}
+{{--<link href="{{ asset('auth/css/toastify.min.css') }}" rel="stylesheet" />--}}

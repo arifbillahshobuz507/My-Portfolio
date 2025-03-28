@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <form class="row g-3 needs-validation">
+                                <div class="row g-3 needs-validation">
                                     <div class="col-md-12">
                                         <label class="form-label" for="title">Title</label>
                                         <input class="form-control" id="title" type="text" placeholder="Enter Your Title">
@@ -36,7 +36,7 @@
                                             <button class="btn btn-secondary" href="#">Cancel</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,31 +44,38 @@
             </div>
         </div>
     </div>
-@endsection
-<script>
-    async function submitService(){
-        let title = document.getElementById('title').value;
-        let description = document.getElementById('description').value;
-        let image = document.getElementById('image').value;
-        let icon = document.getElementById('icon').value;
-        if(title.length===0){
-            errorToast("Title is Required")
-        } else {
-            showLoader();
-            let result = await axios.post("service/store",{
-                title: title,
-                description: description,
-                image: image,
-                icon: icon
-            })
-            hideLoader();
-            if(result.data['status']==='success'){
-                successToast(result.data['message']);
-                window.location.route = 'services.index'
+    <script>
+        async function submitService(){
+            console.log("hello world");
+            let title = document.getElementById('title').value;
+            let description = document.getElementById('description').value;
+            let image = document.getElementById('image').files[0];
+            let icon = document.getElementById('icon').files[0];
+            if(title.length===0){
+                errorToast("Title is Required")
             } else {
-                errorToast(result.data['message']);
+                showLoader();
+                let formData = new FormData();
+                formData.append("title", title);
+                formData.append("description", description);
+                formData.append("image", image); // Make sure `image` is a File object
+                formData.append("icon", icon);
+
+                let result = await axios.post("/services/store", formData, {
+                    headers: { "Content-Type": "multipart/form-data" }
+                });
+                hideLoader();
+                if(result.data['status']==='success'){
+                    successToast(result.data['message']);
+                    setTimeout(function() {
+                        window.location.href = "/services"
+                    })
+                } else {
+                    errorToast(result.data['message']);
+                }
             }
         }
-    }
-</script>
+    </script>
+@endsection
+
 

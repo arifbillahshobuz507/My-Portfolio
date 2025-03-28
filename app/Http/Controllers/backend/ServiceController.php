@@ -15,6 +15,10 @@ class ServiceController extends Controller
     {
         return view('backend.content.service.service-list');
     }
+    public function list ()
+    {
+        return view('backend.content.service.service-add');
+    }
     public function create ()
     {
         return view('backend.content.service.service-add');

@@ -26,4 +26,6 @@
  <!-- Plugins JS Ends-->
  <!-- Theme js-->
  <script src="{{asset('/backend/assets/js/script.js')}}"></script>
- {{-- <script src="{{asset('/backend/assets/js/theme-customizer/customizer.js')}}"></script> --}}
+{{-- <script src="{{ asset('auth/js/toastify-js.js') }}"></script>--}}
+{{-- <script src="{{ asset('auth/js/axios.min.js') }}"></script>--}}
+{{-- <script src="{{ asset('auth/js/config.js') }}"></script>--}}

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-public function dashbord( Request $request){
+public function dashboard( Request $request){
 //    dd($request->header());
         return view('backend.home.index');
     }

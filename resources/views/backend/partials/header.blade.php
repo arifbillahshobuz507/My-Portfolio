@@ -66,7 +66,7 @@
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
                         <li><a href="#"><i data-feather="user"></i><span>Profile </span></a></li>
-                        <li><a href="#"><i data-feather="log-in"> </i><span>Log Out</span></a></li>
+                        <li><a href="{{route('Logout')}}"><i data-feather="log-in"> </i><span>Log Out</span></a></li>
                     </ul>
                 </li>
             </ul>
