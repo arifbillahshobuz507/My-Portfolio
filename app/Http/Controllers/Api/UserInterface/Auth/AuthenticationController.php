@@ -25,15 +25,6 @@ class AuthenticationController extends Controller
                 'password' => 'required|string|max:50|min:8',
                 'title' => 'nullable|string',
                 'phone' => 'nullable|string|max:14|min:11',
-            ], [
-                // Custom messages
-                'email.required' => 'The email address is required.',
-                'email.email' => 'Please provide a valid email address.',
-                'password.required' => 'Password cannot be empty.',
-                'password.min' => 'Password must be at least :min characters long.',
-                'password.max' => 'Password cannot exceed :max characters.',
-                'phone.min' => 'Phone number must be at least :min digits.',
-                'phone.max' => 'Phone number cannot exceed :max digits.',
             ]);
             $password = Hash::make($request->input('password'));
             $user = User::create([
