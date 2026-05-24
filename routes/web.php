@@ -11,12 +11,6 @@ Route::get('/', [HomeControlller::class, 'home'])->name('home');
 
 // user Routes
 
-// API Routes
-Route::post('/user-registration', [UserController::class, 'userRegistration']);
-Route::post('/user-login', [UserController::class, 'userLogin']);
-Route::post('/send-otp', [UserController::class, 'userSendOTP']);
-Route::post('/verify-otp', [UserController::class, 'userVerifyOTP']);
-Route::post('/reset-password', [UserController::class, 'userResetPassword']);
 
 
 Route::get('/registration', [UserController::class, 'userRegistrationPage']);

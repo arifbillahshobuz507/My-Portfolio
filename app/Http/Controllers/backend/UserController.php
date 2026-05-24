@@ -85,8 +85,7 @@ class UserController extends Controller
                 'title' => 'nullable|string',
                 'phone' => 'nullable|string|max:14|min:11',
             ]);
-//            $password = Hash::make( $request->input('password'));
-            $password =  $request->input('password');
+           $password = Hash::make( $request->input('password'));
             User::create([
                 'title' => $request->input('title'),
                 'email' => $request->input('email'),
@@ -97,7 +96,6 @@ class UserController extends Controller
             // return redirect()->route('name')->with(['success'=>"User Create Successfully"],200);
         } catch (ValidationException $validationException) {
             return response()->json(["status" => "Fail", "message" => $validationException->getMessage()], 200);
-            // return redirect()->back()->with('error', $validationException->getMessage())->withInput();
         } catch (Exception $exception) {
             return response()->json(["status" => "Fail", "message" => $exception->getMessage()], 200);
             // return redirect()->back()->with('error', $exception->getMessage())->withInput();
