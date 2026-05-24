@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 use App\Helper\ApiResponse;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class AuthenticationController extends Controller
 {
@@ -48,19 +49,21 @@ class AuthenticationController extends Controller
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
             ]);
-            //            $password = Hash::make();
-            $user = User::where('email', '=',  $request->input('email'))->where('password', '=', $request->input('password'))->select('id')->first();
-            dd($user);
-            if ($user !== null) {
+            //get user
+            $user = User::where('email', '=',  $request->input('email'))->first();
+            //check password
+            if ($user && Hash::check($request->input('password'), $user->password)) {
                 $token = JWTToken::CreateToken($request->input('email'), $user->id);
-                return response()->json(["status" => "success", "message" => "User Login successfully"], 200)->cookie('token', $token, 60 * 60);
+                 //using name parametar
+                return ApiResponse::success(message:'User Login successfully', data: $token)->cookie('token', $token, 60 * 60);
             } else {
-                return response()->json(["message" => "unauthorized"]);
+                 //using name parametar
+                return ApiResponse::error(message: 'Authentication failed', error_data: 'Invalid email or password',);
             }
         } catch (Exception $e) {
-            return response()->json(["status" => "fail", "message" => "unauthorized",], 200);
+            return ApiResponse::error(error_data: $e->getMessage());
         }
-    }
+    } 
     public function userSendOTP(Request $request)
     {
         try {

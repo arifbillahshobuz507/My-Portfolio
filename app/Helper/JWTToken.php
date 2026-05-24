@@ -8,7 +8,7 @@ use Firebase\JWT\Key;
 class JWTToken{
     public static function CreateToken($email, $userId):string
     {
-        $key = env('JWT_KEY');
+        $key = env('JWT_KEY' , 'ARifBIllahShobuz12#$^&Dead@#Already');
         $payload=[
             'iss'=>"Login-Token",
             'iat'=>time(),
@@ -36,7 +36,7 @@ class JWTToken{
             if($token==null){
                 return "unauthorized";
             }else{
-                $key = env('JWT_KEY');
+                $key = env('JWT_KEY','ARifBIllahShobuz12#$^&Dead@#Already');
                 $decode = JWT::decode($token, new Key($key, 'HS256'));
                 return $decode;
             }
