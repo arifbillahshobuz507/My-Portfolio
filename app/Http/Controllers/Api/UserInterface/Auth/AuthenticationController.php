@@ -18,6 +18,7 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 
 class AuthenticationController extends Controller
 {
+    //registration
     public function userRegistration(Request $request): JsonResponse
     {
         try {
@@ -40,7 +41,7 @@ class AuthenticationController extends Controller
             return ApiResponse::error(error_data: $exception->getMessage());
         }
     }
-
+    //login
     public function userLogin(Request $request)
     {
         try {
@@ -77,14 +78,12 @@ class AuthenticationController extends Controller
                 Mail::to($request->input('email'))->send(new SendOTP($otp));
                 //set Database otp
                 User::where('email', '=', $request->input('email'))->update(['otp' => $otp]);
-                return response()->json(["status" => "success", "message" => "Otp Send successfully"], 200);
+                return ApiResponse::success(message:'Otp Send successfully', data: $otp);
             } else {
-                return response()->json(["status" => "Fail", "message" => "unauthorized"], 200);
+                return ApiResponse::error(message: 'Email not found', error_data: 'No account exists with this email address');
             }
-        } catch (ValidationException $e) {
-            return response()->json(["status" => "fail", "message" => $e->getMessage()], 200);
         } catch (Exception $e) {
-            return response()->json(["status" => "fail", "message" => $e->getMessage()], 200);
+            return ApiResponse::error(error_data: $e->getMessage());
         }
     }
 
