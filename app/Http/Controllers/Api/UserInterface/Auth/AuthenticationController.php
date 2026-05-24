@@ -8,13 +8,10 @@ use App\Helper\JWTToken;
 use App\Mail\SendOTP;
 use Exception;
 use App\Models\User;
-use Firebase\JWT\JWT;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\ValidationException;
 use App\Helper\ApiResponse;
-use Illuminate\Testing\Fluent\Concerns\Has;
 
 class AuthenticationController extends Controller
 {
@@ -55,16 +52,17 @@ class AuthenticationController extends Controller
             //check password
             if ($user && Hash::check($request->input('password'), $user->password)) {
                 $token = JWTToken::CreateToken($request->input('email'), $user->id);
-                 //using name parametar
-                return ApiResponse::success(message:'User Login successfully', data: $token)->cookie('token', $token, 60 * 60);
+                //using name parametar
+                return ApiResponse::success(message: 'User Login successfully', data: $token)->cookie('token', $token, 60 * 60);
             } else {
-                 //using name parametar
+                //using name parametar
                 return ApiResponse::error(message: 'Authentication failed', error_data: 'Invalid email or password',);
             }
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
         }
-    } 
+    }
+    //send opt
     public function userSendOTP(Request $request)
     {
         try {
@@ -78,7 +76,7 @@ class AuthenticationController extends Controller
                 Mail::to($request->input('email'))->send(new SendOTP($otp));
                 //set Database otp
                 User::where('email', '=', $request->input('email'))->update(['otp' => $otp]);
-                return ApiResponse::success(message:'Otp Send successfully', data: $otp);
+                return ApiResponse::success(message: 'Otp Send successfully', data: $otp);
             } else {
                 return ApiResponse::error(message: 'Email not found', error_data: 'No account exists with this email address');
             }
@@ -96,19 +94,18 @@ class AuthenticationController extends Controller
             ]);
             $email = $request->input('email');
             $otp = $request->input('otp');
-            $count = User::where('email', '=', $email)->where('otp', '=', $otp)->count();
-            if ($count == 1) {
+            $user = User::where('email', '=', $email)->where('otp', '=', $otp)->first();              
+            if ($user !== null) {
                 // Update Database otp
                 User::where('email', '=', $email)->where('otp', '=', $otp)->update(['otp' => 0]);
                 //issu password reset token
-                $id = 0;
-                $resetToken = JWTToken::CreateTokenForResetPassword($email, $id);
-                return response()->json(["status" => "success", "message" => "Otp Verify successfully"], 200)->cookie('token', $resetToken, 60 * 60);
+                $resetToken = JWTToken::CreateTokenForResetPassword($email, $user->id);
+                return ApiResponse::success(message: 'Otp Verify successfully', data: $resetToken)->cookie('token', $resetToken, 60 * 60);
             } else {
-                return response()->json(["status" => "Fail", "message" => "unauthorized"], 200);
+                return ApiResponse::error(message: 'Invalid OTP', error_data: 'The OTP code you entered is incorrect or has expired');
             }
         } catch (Exception $e) {
-            return response()->json(["status" => "Fail", "message" => $e->getMessage()], 401);
+            return ApiResponse::error(error_data: $e->getMessage());
         }
     }
 

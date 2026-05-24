@@ -20,7 +20,7 @@ class JWTToken{
     }
     public static function CreateTokenForResetPassword($email,$userId):string
     {
-        $key = env('JWT_KEY');
+        $key = env('JWT_KEY','ARifBIllahShobuz12#$^&Dead@#Already');
         $payload=[
             'iss'=>"Login-Token",
             'iat'=>time(),
