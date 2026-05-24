@@ -107,13 +107,14 @@ class UserController extends Controller
     public function userLogin(Request $request)
     {
         try {
+            
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
-            ]);
+            ]);   
 //            $password = Hash::make();
             $user = User::where('email', '=',  $request->input('email'))->where('password', '=', $request->input('password'))->select('id')->first();
-
+         dd( $user );
             if ($user !== null) {
                 $token = JWTToken::CreateToken($request->input('email'), $user->id);
                 return response()->json(["status" => "success", "message" => "User Login successfully"], 200)->cookie('token',$token,60*60);
@@ -121,7 +122,7 @@ class UserController extends Controller
                 return response()->json(["message" => "unauthorized"]);
             }
         } catch (Exception $e) {
-            return response()->json(["status" => "fail", "message" =>"unauthorized"], 200);
+            return response()->json(["status" => "fail", "message" =>"unauthorized", 'error'=> $e->getMessage], 200);
         }
     }
     public function userSendOTP(Request $request)
