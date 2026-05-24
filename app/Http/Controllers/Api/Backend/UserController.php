@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Api\Backend;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Helper\JWTToken;
 use App\Mail\SendOTP;
 use Exception;
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Firebase\JWT\JWT;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +16,7 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    // Auth View
+        // Auth View
     public function userRegistrationPage(){
         return view('auth.content.registration-page');
     }

@@ -1,32 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Api\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Nette\Schema\ValidationException;
-use PHPUnit\Exception;
+
+
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function index ()
-    {
-        return view('backend.content.service.service-list');
-    }
-    public function list ()
-    {
-        return view('backend.content.service.service-add');
-    }
-    public function create ()
-    {
-        return view('backend.content.service.service-add');
-    }
-    public function store (Request $request): JsonResponse
+     public function store (Request $request): JsonResponse
     {
         try {
-//            dd($request->all());
             $validate=$request->validate([
                 "title" => "required|string",
                 "description" => "nullable|string",
@@ -59,6 +48,5 @@ class ServiceController extends Controller
             return response()->json(["status" => "Fail", "message" => $exception->getMessage()]);
         }
     }
-
 
 }

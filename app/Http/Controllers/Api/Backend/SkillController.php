@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Api\Backend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Skill;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Exception;
 
 class SkillController extends Controller
 {
-    /**
+     /**
      * Display the skill list view
      */
     public function index(): \Illuminate\View\View
