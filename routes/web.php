@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\backend\ServiceController;
-use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\Web\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Web\UserInterface\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,11 +11,11 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 
 
-Route::get('/registration', [UserController::class, 'userRegistrationPage']);
-Route::get('/login', [UserController::class, 'userLoginPage']);
-Route::get('/send-otp', [UserController::class, 'userSendOTPPage']);
-Route::get('/verify-otp', [UserController::class, 'userVerifyOTPPage']);
-Route::get('/reset-password', [UserController::class, 'userResetPasswordPage']);
+Route::get('/registration', [AuthenticationController::class, 'userRegistrationPage']);
+Route::get('/login', [AuthenticationController::class, 'userLoginPage']);
+Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage']);
+Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);
+Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
 
 
 

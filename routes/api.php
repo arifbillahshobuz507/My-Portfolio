@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
 
 
 /*
@@ -21,8 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // API Routes
-Route::post('/user-registration', [UserController::class, 'userRegistration']);
-Route::post('/user-login', [UserController::class, 'userLogin']);
-Route::post('/send-otp', [UserController::class, 'userSendOTP']);
-Route::post('/verify-otp', [UserController::class, 'userVerifyOTP']);
-Route::post('/reset-password', [UserController::class, 'userResetPassword']);
+Route::post('/user-registration', [AuthenticationController::class, 'userRegistration']);
+Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
+Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
+Route::post('/verify-otp', [AuthenticationController::class, 'userVerifyOTP']);
+Route::post('/reset-password', [AuthenticationController::class, 'userResetPassword']);
