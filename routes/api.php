@@ -24,5 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/user-registration', [AuthenticationController::class, 'userRegistration']);
 Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
 Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
-Route::post('/verify-otp', [AuthenticationController::class, 'userVerifyOTP']);
-Route::post('/reset-password', [AuthenticationController::class, 'userResetPassword']);
+
+Route::middleware(['tokenverification'])->group(function () {
+    Route::controller(AuthenticationController::class)->group(function () {
+        Route::post('/verify-otp', 'userVerifyOTP');
+        Route::post('/reset-password', 'userResetPassword');
+    });
+});

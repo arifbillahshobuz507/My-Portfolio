@@ -70,13 +70,16 @@ class AuthenticationController extends Controller
                 'email' => 'required|string|email'
             ]);
             $otp = rand(100000, 999999);
-            $user = User::where('email', '=', $request->input('email'))->count();
-            if ($user == 1) {
+            $email = $request->input('email');
+            $user = User::where('email', '=',  $email )->first();
+            if ($user) {
                 // send opp
-                Mail::to($request->input('email'))->send(new SendOTP($otp));
+                Mail::to($email)->send(new SendOTP($otp));
                 //set Database otp
-                User::where('email', '=', $request->input('email'))->update(['otp' => $otp]);
-                return ApiResponse::success(message: 'Otp Send successfully', data: $otp);
+                 $user->update(['otp' => $otp]);
+                //token create for reset password
+                $token = JWTToken::CreateToken($request->input('email'), $user->id);
+                return ApiResponse::success(message: 'Otp Send successfully', data: [$otp, $token])->cookie('token', $token, 60 * 60);
             } else {
                 return ApiResponse::error(message: 'Email not found', error_data: 'No account exists with this email address');
             }
@@ -87,7 +90,7 @@ class AuthenticationController extends Controller
 
     public function userVerifyOTP(Request $request)
     {
-        try {
+        try {            
             $request->validate([
                 'email' => 'required|string|email',
                 'otp' => 'required|string|max:10|min:6'
@@ -112,7 +115,6 @@ class AuthenticationController extends Controller
     public function userResetPassword(Request $request)
     {
         try {
-            //            dd($request->header('email'));
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
