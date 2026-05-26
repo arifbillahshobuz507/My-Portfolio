@@ -78,8 +78,8 @@ class AuthenticationController extends Controller
                 //set Database otp
                  $user->update(['otp' => $otp]);
                 //token create for reset password
-                $token = JWTToken::CreateToken($request->input('email'), $user->id);
-                return ApiResponse::success(message: 'Otp Send successfully', data: [$otp, $token])->cookie('token', $token, 60 * 60);
+                $token = JWTToken::CreateTokenForResetPassword($request->input('email'), $user->id);
+                return ApiResponse::success(message: 'Otp Send successfully', data: ['otp' => $otp, 'token' => $token]);
             } else {
                 return ApiResponse::error(message: 'Email not found', error_data: 'No account exists with this email address');
             }

@@ -37,7 +37,7 @@ class JWTToken
             $payload = [
                 'iss' => "Password-Reset-Token",
                 'iat' => time(),
-                'exp' => time() + 60 * 60,
+                'exp' => time() + 50 * 60, //for 5minutes
                 'email' => $email,
                 'userId' => $userId
             ];
@@ -59,7 +59,7 @@ class JWTToken
                     return JWT::decode($token, new Key($key, 'HS256'));
             }
         } catch (Exception $e) {
-              return 'JWT token decode failed' . ' ' . $e->getMessage();
+              return 'unauthorized';
         }
     }
 }
