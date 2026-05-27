@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Backend\DashboardController;
 use App\Http\Controllers\Web\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Web\UserInterface\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage']);
 Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);
 Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
 
-
+Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 
 
 
