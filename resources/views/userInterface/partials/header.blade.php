@@ -45,14 +45,14 @@
         <div class="row">
             <div class="col-12 d-flex flex-wrap align-items-center">
                 <div class="logo-box">
-                    <a href="index.html">
-                        <img src="assets/img/logo/logo.png" alt="" />
+                   <a href="#">
+                       <img style="border-radius: 60px 5px;" src="{{ asset('userInterface/assets/img/hero/me.png') }}" alt="" />
                     </a>
                 </div>
 
                 <div class="header-info-list d-none d-md-inline-block">
                     <ul class="ul-reset">
-                        <li><a href="mailto:mail@gerolddesign.com">mail@gerolddesign.com</a></li>
+                        <li><a href="mailto:arifbillahshobuz@gmail.com">arifbillahshobuz@gmail.com</a></li>
                     </ul>
                 </div>
 
