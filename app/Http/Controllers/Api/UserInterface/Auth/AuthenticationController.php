@@ -41,7 +41,6 @@ class AuthenticationController extends Controller
     public function userLogin(Request $request)
     {
         try {
-
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
