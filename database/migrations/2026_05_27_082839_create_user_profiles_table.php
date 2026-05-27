@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('user_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
-            $table->string('title',100);
             $table->text('description')->nullable();
-            $table->string('image',50)->nullable();
-            $table->string('icon',300)->nullable();
+            $table->string('cv', 50)->nullable();
+            $table->string('logo')->nullable();
+            $table->string('image')->nullable();
+            $table->string('key', 300)->nullable();
+            $table->string('value', 300)->nullable();
+            //  Relation User
+            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
+
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('user_profiles');
     }
 };
