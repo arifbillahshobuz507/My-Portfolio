@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title', 100);
+            $table->date('start_learn')->nullable();
+            $table->date('end_learn')->nullable();
+            $table->string('location', 100)->nullable();
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
