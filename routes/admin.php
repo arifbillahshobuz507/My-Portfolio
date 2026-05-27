@@ -16,5 +16,5 @@ use App\Http\Controllers\backend\ServiceController;
         Route::delete('delete/{id}', [ServiceController::class, 'delete'])->name('delete');
     });
 
-    Route::get('/logout', [UserController::class, 'userLogout'])->name('Logout');
+    
 

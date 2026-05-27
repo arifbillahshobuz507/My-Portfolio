@@ -30,5 +30,6 @@ Route::middleware(['tokenverification'])->group(function () {
     Route::controller(AuthenticationController::class)->group(function () {
         Route::post('/verify-otp', 'userVerifyOTP');
         Route::post('/reset-password', 'userResetPassword');
+        Route::post('/logout', [AuthenticationController::class, 'userLogout'])->name('Logout');
     });
 });

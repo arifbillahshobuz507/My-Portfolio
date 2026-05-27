@@ -85,7 +85,7 @@ class AuthenticationController extends Controller
             return ApiResponse::error(error_data: $e->getMessage());
         }
     }
-
+    // verify otp
     public function userVerifyOTP(Request $request)
     {
         try {            
@@ -108,7 +108,7 @@ class AuthenticationController extends Controller
             return ApiResponse::error(message: 'unauthorized', error_data: $e->getMessage(),status_code:401);
         }
     }
-
+    //reset password
     public function userResetPassword(Request $request)
     {
         try {
@@ -121,5 +121,10 @@ class AuthenticationController extends Controller
         } catch (Exception $e) {
             return ApiResponse::error(message: 'unauthorized', error_data: $e->getMessage(), );
         }
+    }
+    // logout
+    public function userLogout(Request $request)
+    {
+        return redirect('login')->cookie('token','',-1);
     }
 }
