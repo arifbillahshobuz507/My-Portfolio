@@ -2,4 +2,7 @@
 @section('content')
     @include('components.auth.reset-pass-form')
 @endsection
+@push('scripts')
+ 
+@endpush
 
