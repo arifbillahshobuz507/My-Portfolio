@@ -25,11 +25,10 @@ class AuthenticationController extends Controller
                 'title' => 'nullable|string',
                 'phone' => 'nullable|string|max:14|min:11',
             ]);
-            $password = Hash::make($request->input('password'));
             $user = User::create([
                 'title' => $request->input('title'),
                 'email' => $request->input('email'),
-                'password' => $password,
+                'password' => Hash::make($request->input('password')),
                 'phone' => $request->input('phone')
             ]);
             return ApiResponse::success(message: 'User Create Successfully', data: $user);
@@ -92,10 +91,9 @@ class AuthenticationController extends Controller
     {
         try {            
             $request->validate([
-                'email' => 'required|string|email',
                 'otp' => 'required|string|max:10|min:6'
             ]);
-            $email = $request->input('email');
+           $email = $request->header('email');
             $otp = $request->input('otp');
             $user = User::where('email', '=', $email)->where('otp', '=', $otp)->first();              
             if ($user !== null) {
@@ -108,7 +106,7 @@ class AuthenticationController extends Controller
                 return ApiResponse::error(message: 'Invalid OTP', error_data: 'The OTP code you entered is incorrect or has expired');
             }
         } catch (Exception $e) {
-            return ApiResponse::error(error_data: $e->getMessage());
+            return ApiResponse::error(message: 'unauthorized', error_data: $e->getMessage(),status_code:401);
         }
     }
 
@@ -116,15 +114,13 @@ class AuthenticationController extends Controller
     {
         try {
             $request->validate([
-                'email' => 'required|string|email',
                 'password' => 'required|string|max:50|min:8'
             ]);
             $email = $request->header('email');
-            $password = $request->input('password');
-            User::where('email', '=', $email)->update(["password" => $password]);
-            return response()->json(["status" => "success", "message" => "Password Set Successfully"], 200);
+            $user = User::where('email', '=', $email)->update(["password" => Hash::make($request->input('password'))]);
+            return ApiResponse::success(message:"Password Set Successfully", data: $user );
         } catch (Exception $e) {
-            return response()->json(["status" => "Fail", "message" => "unauthorized"], 200);
+            return ApiResponse::error(message: 'unauthorized', error_data: $e->getMessage(), );
         }
     }
 }
