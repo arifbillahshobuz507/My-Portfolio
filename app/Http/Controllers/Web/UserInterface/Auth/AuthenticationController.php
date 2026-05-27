@@ -7,21 +7,21 @@ use Illuminate\Http\Request;
 
 class AuthenticationController extends Controller
 {
-    // Auth View
+       // Auth View
     public function userRegistrationPage(){
-        return view('auth.content.registration-page');
+        return view('auth.pages.registration-page');
     }
     public function userLoginPage(){
-        return view('auth.content.login-page');
+        return view('auth.pages.login-page');
     }
     public function userSendOTPPage(){
-        return view('auth.content.send-otp-page');
+        return view('auth.pages.send-otp-page');
     }
     public function userVerifyOTPPage(){
-        return view('auth.content.verify-otp-page');
+        return view('auth.pages.verify-otp-page');
     }
     public function userResetPasswordPage(){
-        return view('auth.content.reset-pass-page');
+        return view('auth.pages.reset-pass-page');
     }
 
 }

@@ -19,6 +19,7 @@ Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']
 Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('/master', [AuthenticationController::class, 'master']);
 
 
 

@@ -1,4 +1,4 @@
-@extends('auth.layout.app')
+@extends('auth.layout.master')
 @section('content')
     @include('components.auth.send-otp-form')
 @endsection
