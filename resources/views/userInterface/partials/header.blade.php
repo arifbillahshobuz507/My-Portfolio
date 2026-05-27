@@ -4,7 +4,7 @@
             <div class="col-12 d-flex flex-wrap align-items-center">
                 <div class="logo-box">
                     <a href="index.html">
-                        <img src="assets/img/logo/logo.png" alt="" />
+                        <img src="userinterface/assets/img/logo/logo.png" alt="" />
                     </a>
                 </div>
 
