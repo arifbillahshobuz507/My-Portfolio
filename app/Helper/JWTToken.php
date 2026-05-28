@@ -18,7 +18,7 @@ class JWTToken
             $payload = [
                 'iss' => "Login-Token",
                 'iat' => time(),
-                'exp' => time() + 60 * 60,
+                'exp' => time() + (60 * 60 * 24 * 365),
                 'email' => $email,
                 'userId' => $userId
             ];
