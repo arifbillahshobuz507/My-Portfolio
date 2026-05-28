@@ -17,8 +17,12 @@ return new class extends Migration
             $table->string('cv', 50)->nullable();
             $table->string('logo')->nullable();
             $table->string('image')->nullable();
-            $table->string('key', 300)->nullable();
-            $table->string('value', 300)->nullable();
+            $table->string('facebook', 300)->nullable()->default('https://www.facebook.com/');
+            $table->string('instagram', 300)->nullable()->default('https://www.instagram.com/');
+            $table->string('linkedin', 300)->nullable()->default('https://www.linkedin.com/');
+            $table->string('github', 300)->nullable()->default('https://www.github.com/');
+            $table->string('twitter', 300)->nullable()->default('https://www.twitter.com/');
+
             //  Relation User
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
 
