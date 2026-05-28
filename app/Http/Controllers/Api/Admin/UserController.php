@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Backend;
+namespace App\Http\Controllers\Api\Admin;
 
 use App\Helper\ApiResponse;
 use App\Http\Controllers\Controller;

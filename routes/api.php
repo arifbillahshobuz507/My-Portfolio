@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\Backend\UserController;
+use App\Http\Controllers\Api\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
@@ -34,8 +34,8 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::post('/logout', [AuthenticationController::class, 'userLogout'])->name('Logout');
     });
     Route::controller(UserController::class)->prefix('users')->group(function () {
-        Route::put('/update', 'updateUser');
         Route::get('/', 'userList');
+        Route::put('/update', 'updateUser');
         Route::delete('/destroy', 'deleteUser');
     });
 });
