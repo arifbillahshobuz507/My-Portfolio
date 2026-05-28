@@ -31,7 +31,6 @@ class ServiceController extends Controller
                 $imageFile =  date('Ymdhis').'.'.$file->getClientOriginalExtension();
                 $file->move("service/", $imageFile);
             }
-//            dd($imageFile);
             $iconFile = null;
             if ($request->hasFile('icon')) {
                 $file = $request->file('icon');

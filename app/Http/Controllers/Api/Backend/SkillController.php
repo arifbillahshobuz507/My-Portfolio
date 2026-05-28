@@ -14,27 +14,7 @@ class SkillController extends Controller
      /**
      * Display the skill list view
      */
-    public function index(): \Illuminate\View\View
-    {
-        return view('backend.content.skill.skill-list');
-    }
-
-    /**
-     * Display the skill add form view
-     */
-    public function create(): \Illuminate\View\View
-    {
-        return view('backend.content.skill.skill-add');
-    }
-
-    /**
-     * Display the skill edit form view
-     */
-    public function edit($id): \Illuminate\View\View
-    {
-        $skill = Skill::findOrFail($id);
-        return view('backend.content.skill.skill-edit', compact('skill'));
-    }
+    
 
     /**
      * Store a newly created skill

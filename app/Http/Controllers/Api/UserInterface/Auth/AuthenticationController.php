@@ -15,28 +15,6 @@ use App\Helper\ApiResponse;
 
 class AuthenticationController extends Controller
 {
-    //registration
-    public function userRegistration(Request $request): JsonResponse
-    {
-        try {
-            $request->validate([
-                'email' => 'required|string|email',
-                'password' => 'required|string|max:50|min:8',
-                'title' => 'nullable|string',
-                'phone' => 'nullable|string|max:14|min:11',
-            ]);
-            $user = User::create([
-                'title' => $request->input('title'),
-                'email' => $request->input('email'),
-                'password' => Hash::make($request->input('password')),
-                'phone' => $request->input('phone')
-            ]);
-            return ApiResponse::success(message: 'User Create Successfully', data: $user);
-        } catch (Exception $exception) {
-            //using name parametar
-            return ApiResponse::error(error_data: $exception->getMessage());
-        }
-    }
     //login
     public function userLogin(Request $request)
     {

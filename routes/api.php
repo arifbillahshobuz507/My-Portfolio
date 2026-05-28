@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Backend\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
@@ -22,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // API Routes
-Route::post('/user-registration', [AuthenticationController::class, 'userRegistration']);
+Route::post('/user-registration', [UserController::class, 'userRegistration']);
 Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
 Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
 
@@ -31,5 +32,10 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::post('/verify-otp', 'userVerifyOTP');
         Route::post('/reset-password', 'userResetPassword');
         Route::post('/logout', [AuthenticationController::class, 'userLogout'])->name('Logout');
+    });
+    Route::controller(UserController::class)->prefix('users')->group(function () {
+        Route::put('/update', 'updateUser');
+        Route::get('/', 'userList');
+        Route::delete('/destroy', 'deleteUser');
     });
 });

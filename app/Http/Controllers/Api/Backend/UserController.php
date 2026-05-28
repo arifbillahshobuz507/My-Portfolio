@@ -2,95 +2,80 @@
 
 namespace App\Http\Controllers\Api\Backend;
 
+use App\Helper\ApiResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Helper\JWTToken;
-use App\Mail\SendOTP;
 use Exception;
 use App\Models\User;
-use Firebase\JWT\JWT;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-
-    public function index()
+    public function userList(): JsonResponse
+    {
+        $users = User::orderBy("id","desc")->get();
+         return ApiResponse::success(message: 'Users get Successfully', data: $users);
+    }
+    //store user
+    public function userRegistration(Request $request): JsonResponse
     {
         try {
-            $data = User::all();
-            return view('view', compact('data'));
+            $request->validate([
+                'title' => 'nullable|string',
+                "email" => "required|unique:users,email|email|max:255",
+                "password" => "required|string|min:8",
+                'phone' => 'nullable|string|max:14|min:11'
+            ]);
+            $user = User::create([
+                'title' => $request->input('title'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request->input('password')),
+                'phone' => $request->input('phone')
+            ]);
+            return ApiResponse::success(message: 'User Create Successfully', data: $user);
         } catch (Exception $exception) {
-            return redirect()->back()->with(['error' => $exception->getMessage()])->withInput();
+            //using name parametar
+            return ApiResponse::error(error_data: $exception->getMessage());
         }
     }
-
-    public function addUser()
+    //user update
+    public function updateUser(Request $request)
     {
         try {
-            return view("view");
+            $user = User::where('id', $request->input('user_id'))->first();
+            if ($user == null) {
+                return ApiResponse::error(error_data: 'User not found', status_code: 404);
+            }
+            // Validate the request
+            $request->validate([
+                'title' => 'nullable|string',
+                "email" => "required|email|max:255|unique:users,email," . $user->id,
+                "password" => "nullable|string|min:8",
+                'phone' => 'nullable|string|max:14|min:11'
+            ]);
+            $user->update([
+                'title' => $request->input('title'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request->input('password')),
+                'phone' => $request->input('phone')
+            ]);
+            //using name parametar
+            return ApiResponse::success(message: 'User Updated Successfully', data: $user);
         } catch (Exception $exception) {
-            return redirect()->back()->with(['error' => $exception->getMessage()])->withInput();
+            //using name parametar
+            return ApiResponse::error(error_data: $exception->getMessage());
         }
     }
-
-    public function editUser($id)
-    {
-        try {
-            $data = User::findOrFail($id);
-            return view("view", compact('data'));
-        } catch (Exception $exception) {
-            return redirect()->back()->with(['error' => $exception->getMessage()])->withInput();
-        }
-    }
-
+    //user delete
     public function deleteUser(Request $request)
     {
         try {
-            $data = User::findOrFail($request->id);
-            $data->delete();
-            return response()->json(['success' => true]);
+            $user = User::findOrFail($request->input('user_id'));
+            $user->delete();
+             return ApiResponse::success(message: 'User Delete Successfully');
         } catch (Exception $exception) {
-            return response()->json([
-                'status' => 'fail',
-                'message' => $exception->getMessage()
-            ]);
+            return ApiResponse::error(error_data: 'User not found', status_code: 404);
         }
     }
-
-
-
-    public function updateUser(Request $request, $id)
-    {
-        try {
-            $data = User::findOrFail($id);
-            $request->validate([
-                'from' => 'required'
-            ]);
-            $fileName = $data->image;
-            if ($request->hasFile('image')) {
-                $request->validate([
-                    'image' => 'required'
-                ]);
-                if (file_exists(public_path('image/' . $fileName))) {
-                    unlink(public_path('image/' . $fileName));
-                }
-                $file = $request->file('image');
-                $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-                $file->move("image/", $fileName);
-            }
-            $data->update([
-                'database' => $request->input('from'),
-                'image' => $fileName
-            ]);
-            return redirect()->route('name')->with(['success' => "demo Update Successfully"], 200);
-        } catch (ValidationException $validationException) {
-            return redirect()->back()->with('error', $validationException->getMessage())->withInput();
-        } catch (Exception $exception) {
-            return redirect()->back()->with('error', $exception->getMessage())->withInput();
-        }
-    }
-
 }
