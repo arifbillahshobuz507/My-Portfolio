@@ -35,7 +35,7 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::post('/logout', [AuthenticationController::class, 'userLogout'])->name('Logout');
     });
     Route::controller(UserController::class)->prefix('users')->group(function () {
-        Route::get('/', 'userList');
+        Route::get('/list', 'userList');
         Route::put('/update', 'updateUser');
         Route::delete('/destroy', 'deleteUser');
     });
@@ -44,7 +44,7 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::post('/store', 'store');
     });
     Route::controller(ServiceController::class)->prefix('services')->group(function () {
-        Route::get('/', 'userList');
+        Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
