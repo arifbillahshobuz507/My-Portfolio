@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
 {
+    //get user profile
     public function userProfile(Request $request): JsonResponse
     {
         try {
@@ -27,7 +28,7 @@ class UserProfileController extends Controller
             return ApiResponse::error(error_data: $exception->getMessage());
         }
     }
-    //store user
+    //store/update profile user
     public function store(Request $request): JsonResponse
     {
         try {
@@ -96,45 +97,6 @@ class UserProfileController extends Controller
             return ApiResponse::success(message: $message, data: $profile);
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: $exception->getMessage());
-        }
-    }
-    //user update
-    public function update(Request $request)
-    {
-        try {
-            $user = UserProfile::where('id', $request->input('user_id'))->first();
-            if ($user == null) {
-                return ApiResponse::error(error_data: 'UserProfile not found', status_code: 404);
-            }
-            // Validate the request
-            $request->validate([
-                'title' => 'nullable|string',
-                "email" => "required|email|max:255|unique:users,email," . $user->id,
-                "password" => "nullable|string|min:8",
-                'phone' => 'nullable|string|max:14|min:11'
-            ]);
-            $user->update([
-                'title' => $request->input('title'),
-                'email' => $request->input('email'),
-                'password' => Hash::make($request->input('password')),
-                'phone' => $request->input('phone')
-            ]);
-            //using name parametar
-            return ApiResponse::success(message: 'UserProfile Updated Successfully', data: $user);
-        } catch (Exception $exception) {
-            //using name parametar
-            return ApiResponse::error(error_data: $exception->getMessage());
-        }
-    }
-    //user delete
-    public function delete(Request $request)
-    {
-        try {
-            $user = UserProfile::findOrFail($request->input('user_id'));
-            $user->delete();
-            return ApiResponse::success(message: 'UserProfile Delete Successfully');
-        } catch (Exception $exception) {
-            return ApiResponse::error(error_data: 'UserProfile not found', status_code: 404);
         }
     }
 }

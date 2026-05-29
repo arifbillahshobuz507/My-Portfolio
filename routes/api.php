@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\Admin\UserProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
-use App\Http\Middleware\TokenVerificationMiddleware;
+use App\Http\Controllers\Api\Admin\ServiceController;
 
 
 /*
@@ -39,10 +39,14 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::put('/update', 'updateUser');
         Route::delete('/destroy', 'deleteUser');
     });
-       Route::controller(UserProfileController::class)->prefix('user-profile')->group(function () {
+    Route::controller(UserProfileController::class)->prefix('user-profile')->group(function () {
         Route::get('/', 'userProfile');
-         Route::post('/store', 'store');
-        Route::put('/update', 'updateUser');
+        Route::post('/store', 'store');
+    });
+    Route::controller(ServiceController::class)->prefix('services')->group(function () {
+        Route::get('/', 'userList');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
         Route::delete('/destroy', 'deleteUser');
     });
 });
