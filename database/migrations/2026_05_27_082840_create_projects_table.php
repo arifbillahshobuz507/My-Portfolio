@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image', 50)->nullable();
             $table->string('icone', 50)->nullable();
             // foregin key 
-            $table->unsignedBigInteger('service_id')->unique();
+            $table->unsignedBigInteger('service_id');
             // User Relation
             $table->foreign('service_id')->references('id')->on('services')->restrictOnDelete()->cascadeOnUpdate();
 

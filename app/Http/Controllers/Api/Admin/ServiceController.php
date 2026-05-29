@@ -138,6 +138,12 @@ class ServiceController extends Controller
         try {
             $service = Service::findOrFail($request->input('service_id'));
             $service->delete();
+              if ($service->image) {
+                FileHelper::deleteFile('admin/assets/img/service/' . $service->image);
+            }
+            if ($service->icon) {
+                FileHelper::deleteFile('admin/assets/img/service/' . $service->icon);
+            }  
             return ApiResponse::success(message: 'Service Delete Successfully');
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: 'Service not found', status_code: 404);

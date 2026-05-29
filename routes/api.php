@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\ProjectController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\Admin\UserProfileController;
 use Illuminate\Http\Request;
@@ -44,6 +45,12 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::post('/store', 'store');
     });
     Route::controller(ServiceController::class)->prefix('services')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+    Route::controller(ProjectController::class)->prefix('projects')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
