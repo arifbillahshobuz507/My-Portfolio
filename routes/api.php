@@ -47,6 +47,6 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::get('/', 'userList');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
-        Route::delete('/destroy', 'deleteUser');
+        Route::delete('/destroy', 'delete');
     });
 });
