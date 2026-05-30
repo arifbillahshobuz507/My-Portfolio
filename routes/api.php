@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\BlogController;
+use App\Http\Controllers\Api\Admin\ContactController;
 use App\Http\Controllers\Api\Admin\EducationController;
 use App\Http\Controllers\Api\Admin\ExperienceController;
+use App\Http\Controllers\Api\Admin\HeroController;
 use App\Http\Controllers\Api\Admin\ProjectController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\Admin\UserProfileController;
@@ -10,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Api\Admin\ServiceController;
 use App\Http\Controllers\Api\Admin\SkillController;
+use App\Http\Controllers\Api\Admin\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +76,30 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::delete('/destroy', 'delete');
     });
       Route::controller(SkillController::class)->prefix('skills')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+       Route::controller(TestimonialController::class)->prefix('testimonials')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+       Route::controller(BlogController::class)->prefix('blogs')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+       Route::controller(ContactController::class)->prefix('contacts')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+       Route::controller(HeroController::class)->prefix('heroes')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
