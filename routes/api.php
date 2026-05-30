@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Api\Admin\ServiceController;
-
+use App\Http\Controllers\Api\Admin\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +66,12 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::delete('/destroy', 'delete');
     });
       Route::controller(EducationController::class)->prefix('education')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+      Route::controller(SkillController::class)->prefix('skills')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
