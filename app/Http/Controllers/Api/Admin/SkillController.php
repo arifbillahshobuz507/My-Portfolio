@@ -123,7 +123,6 @@ class SkillController extends Controller
                 'description' => $request->filled('description') ? $request->input('description') : $skill->description,
                 'image' => $imageName,
             ]);
-
             return ApiResponse::success(message: "Skill Update Success!", data: $skill, status_code: 200);
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
@@ -133,15 +132,12 @@ class SkillController extends Controller
     public function delete(Request $request): JsonResponse
     {
         try {
-            $skill = Skill::findOrFail($request->input('skill_id'));
-            
+            $skill = Skill::findOrFail($request->input('skill_id'));            
             // Delete image file if exists
             if ($skill->image) {
                 FileHelper::deleteFile('admin/assets/img/skill/' . $skill->image);
-            }
-            
-            $skill->delete();
-            
+            }            
+            $skill->delete();            
             return ApiResponse::success(message: 'Skill Delete Successfully');
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: 'Skill not found', status_code: 404);

@@ -10,8 +10,8 @@ class Education extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'start_job',
-        'end_job',
+        'start_learn',
+        'end_learn',
         'location',
         'icone',  
     ];

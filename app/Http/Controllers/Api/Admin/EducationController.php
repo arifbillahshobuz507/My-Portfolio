@@ -87,11 +87,11 @@ class EducationController extends Controller
                 "start_learn" => "nullable|date",
                 "end_learn" => "nullable|date|after:start_learn",
                 "location" => "nullable|string|max:100",
-                "icon" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
+                "icone" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
             ]);
             $iconName = null;
-            if ($request->hasFile('icon')) {
-                $iconName = FileHelper::uploadFile($request->file("icon"), 'admin/assets/img/experience');
+            if ($request->hasFile('icone')) {
+                $iconName = FileHelper::uploadFile($request->file("icone"), 'admin/assets/img/experience');
             }
 
             $education = Education::create([
@@ -116,7 +116,7 @@ class EducationController extends Controller
                 "start_learn" => "nullable|date",
                 "end_learn" => "nullable|date|after:start_learn",
                 "location" => "nullable|string|max:100",
-                "icon" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
+                "icone" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
             ]);
 
             $education = Education::where('id', $request->input('education_id'))->first();
@@ -132,7 +132,7 @@ class EducationController extends Controller
                 if ($education->icone) {
                     FileHelper::deleteFile('admin/assets/img/experience/' . $education->icone);
                 }
-                $iconName = FileHelper::uploadFile($request->file("icon"), 'admin/assets/img/experience');
+                $iconName = FileHelper::uploadFile($request->file("icone"), 'admin/assets/img/experience');
             }
             $education->update([
                 'title' => $request->filled('title') ? $request->input('title') : $education->title,
