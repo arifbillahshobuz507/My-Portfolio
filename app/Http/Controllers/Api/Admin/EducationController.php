@@ -5,18 +5,18 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Helper\ApiResponse;
 use App\Helper\FileHelper;
 use App\Http\Controllers\Controller;
-use App\Models\Experience;
+use App\Models\Education;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Exception;
 
-class ExperienceController extends Controller
+class EducationController extends Controller
 {
     public function list(Request $request): JsonResponse
     {
         try {
-            $query = Experience::query();
-            
+            $query = Education::query();
+
             // 1. Search functionality (title, location)
             if ($request->filled('search')) {
                 $search = $request->input('search');
@@ -26,9 +26,9 @@ class ExperienceController extends Controller
                 });
             }
 
-            // 2. Filter by specific experience
-            if ($request->filled('experience_id')) {
-                $query->where('id', $request->input('experience_id'));
+            // 2. Filter by specific education
+            if ($request->filled('education_id')) {
+                $query->where('id', $request->input('education_id'));
             }
 
             // 3. Filter by title
@@ -41,39 +41,39 @@ class ExperienceController extends Controller
                 $query->where('location', $request->input('location'));
             }
 
-            // 5. Date range filter (based on start_job)
+            // 5. Date range filter (based on start_learn)
             if ($request->filled('from_date')) {
-                $query->whereDate('start_job', '>=', $request->input('from_date'));
+                $query->whereDate('start_learn', '>=', $request->input('from_date'));
             }
 
             if ($request->filled('to_date')) {
-                $query->whereDate('start_job', '<=', $request->input('to_date'));
+                $query->whereDate('start_learn', '<=', $request->input('to_date'));
             }
 
-            // 6. Filter by currently working (no end date)
+            // 6. Filter by currently studying (no end date)
             if ($request->filled('is_current')) {
                 if ($request->input('is_current') == true) {
-                    $query->whereNull('end_job');
+                    $query->whereNull('end_learn');
                 } else {
-                    $query->whereNotNull('end_job');
+                    $query->whereNotNull('end_learn');
                 }
             }
 
             // 7. Sorting (asc/desc)
-            $sortBy = $request->input('sort_by', 'start_job'); // default start_job diye sort
+            $sortBy = $request->input('sort_by', 'start_learn'); // default start_learn diye sort
             $sortOrder = $request->input('sort_order', 'desc'); // default descending
             $query->orderBy($sortBy, $sortOrder);
 
             // 8. Pagination (per page control)
             $perPage = $request->input('per_page', 10);
-            $experiences = $query->paginate($perPage);
+            $educations = $query->paginate($perPage);
 
             // Check if no data found
-            if ($experiences->isEmpty()) {
-                return ApiResponse::success(message: 'Experience not found', data: []);
+            if ($educations->isEmpty()) {
+                return ApiResponse::success(message: 'Education not found', data: []);
             }
 
-            return ApiResponse::success(message: 'Experiences retrieved successfully', data: $experiences);
+            return ApiResponse::success(message: 'Educations retrieved successfully', data: $educations);
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: $exception->getMessage());
         }
@@ -84,26 +84,24 @@ class ExperienceController extends Controller
         try {
             $request->validate([
                 "title" => "required|string|max:100",
-                "start_job" => "nullable|date",
-                "end_job" => "nullable|date|after:start_job",
+                "start_learn" => "nullable|date",
+                "end_learn" => "nullable|date|after:start_learn",
                 "location" => "nullable|string|max:100",
                 "icon" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
             ]);
-
             $iconName = null;
             if ($request->hasFile('icon')) {
                 $iconName = FileHelper::uploadFile($request->file("icon"), 'admin/assets/img/experience');
             }
 
-            $experience = Experience::create([
+            $education = Education::create([
                 "title" => $request->input('title'),
-                'start_job' => $request->input('start_job'),
-                'end_job' => $request->input('end_job'),
+                'start_learn' => $request->input('start_learn'),
+                'end_learn' => $request->input('end_learn'),
                 'location' => $request->input('location'),
-                'icone' => $iconName, 
+                'icone' => $iconName,
             ]);
-
-            return ApiResponse::success(message: "Experience Create Success!", data: $experience, status_code: 201);
+            return ApiResponse::success(message: "Education Create Success!", data: $education, status_code: 201);
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
         }
@@ -113,37 +111,37 @@ class ExperienceController extends Controller
     {
         try {
             $request->validate([
-                "experience_id" => "required|exists:experiences,id",
+                "education_id" => "required|exists:education,id",
                 "title" => "nullable|string|max:100",
-                "start_job" => "nullable|date",
-                "end_job" => "nullable|date|after:start_job",
+                "start_learn" => "nullable|date",
+                "end_learn" => "nullable|date|after:start_learn",
                 "location" => "nullable|string|max:100",
                 "icon" => "nullable|file|mimes:jpg,jpeg,png,svg|max:2048"
             ]);
-            $experience = Experience::where('id', $request->input('experience_id'))->first();            
-            if ($experience == null) {
-                return ApiResponse::error(message: "Experience not found", status_code: 404);
-            }
 
-            $iconName = $experience->icone;
+            $education = Education::where('id', $request->input('education_id'))->first();
+
+            if ($education == null) {
+                return ApiResponse::error(message: "Education not found", status_code: 404);
+            }
+            $iconName = $education->icone;
 
             // Handle icon upload
             if ($request->hasFile('icon')) {
                 // Delete old icon if exists
-                if ($experience->icone) {
-                    FileHelper::deleteFile('admin/assets/img/experience/' . $experience->icone);
+                if ($education->icone) {
+                    FileHelper::deleteFile('admin/assets/img/experience/' . $education->icone);
                 }
                 $iconName = FileHelper::uploadFile($request->file("icon"), 'admin/assets/img/experience');
             }
-
-            $experience->update([
-                'title' => $request->filled('title') ? $request->input('title') : $experience->title,
-                'start_job' => $request->filled('start_job') ? $request->input('start_job') : $experience->start_job,
-                'end_job' => $request->has('end_job') ? $request->input('end_job') : $experience->end_job,
-                'location' => $request->filled('location') ? $request->input('location') : $experience->location,
+            $education->update([
+                'title' => $request->filled('title') ? $request->input('title') : $education->title,
+                'start_learn' => $request->filled('start_learn') ? $request->input('start_learn') : $education->start_learn,
+                'end_learn' => $request->has('end_learn') ? $request->input('end_learn') : $education->end_learn,
+                'location' => $request->filled('location') ? $request->input('location') : $education->location,
                 'icone' => $iconName,
             ]);
-            return ApiResponse::success(message: "Experience Update Success!", data: $experience, status_code: 200);
+            return ApiResponse::success(message: "Education Update Success!", data: $education, status_code: 200);
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
         }
@@ -152,18 +150,15 @@ class ExperienceController extends Controller
     public function delete(Request $request): JsonResponse
     {
         try {
-            $experience = Experience::findOrFail($request->input('experience_id'));
-            
+            $education = Education::findOrFail($request->input('education_id'));
             // Delete icon file if exists
-            if ($experience->icone) {
-                FileHelper::deleteFile('admin/assets/img/experience/' . $experience->icone);
+            if ($education->icone) {
+                FileHelper::deleteFile('admin/assets/img/experience/' . $education->icone);
             }
-            
-            $experience->delete();
-            
-            return ApiResponse::success(message: 'Experience Delete Successfully');
+            $education->delete();
+            return ApiResponse::success(message: 'Education Delete Successfully');
         } catch (Exception $exception) {
-            return ApiResponse::error(error_data: 'Experience not found', status_code: 404);
+            return ApiResponse::error(error_data: 'Education not found', status_code: 404);
         }
     }
 }
