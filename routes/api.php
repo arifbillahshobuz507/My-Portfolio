@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\ExperienceController;
 use App\Http\Controllers\Api\Admin\ProjectController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\Admin\UserProfileController;
@@ -56,4 +57,12 @@ Route::middleware(['tokenverification'])->group(function () {
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
+    
+    Route::controller(ExperienceController::class)->prefix('experiences')->group(function () {
+        Route::get('/list', 'list');
+        Route::post('/store', 'store');
+        Route::put('/update', 'update');
+        Route::delete('/destroy', 'delete');
+    });
+    
 });
