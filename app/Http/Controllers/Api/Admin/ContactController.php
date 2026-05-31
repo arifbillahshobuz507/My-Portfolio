@@ -89,8 +89,7 @@ class ContactController extends Controller
                 "email" => "required|email",
                 "phone" => "required|string",
                 "description" => "nullable|string",
-                "service_id" => "required|exists:services,id",
-                "user_profile_id" => "required|exists:user_profiles,id",
+                "status" => "nullable|string",
             ]);
 
             $contact = Contact::create([
@@ -99,8 +98,7 @@ class ContactController extends Controller
                 'email' => $request->input('email'),
                 'phone' => $request->input('phone'),
                 'description' => $request->input('description'),
-                'service_id' => $request->input('service_id'),
-                'user_profile_id' => $request->input('user_profile_id'),
+                'status' => $request->input('status'),
             ]);
 
             return ApiResponse::success(message: "Contact Create Success!", data: $contact, status_code: 201);

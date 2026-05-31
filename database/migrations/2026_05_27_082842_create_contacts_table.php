@@ -18,14 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->text('description')->nullable();
-
-            // foregin key 
-            $table->unsignedBigInteger('service_id')->unique();
-            // User Relation
-            $table->foreign('service_id')->references('id')->on('services')->restrictOnDelete()->cascadeOnUpdate();
-            //  Relation User
-            $table->foreignId('user_profile_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
-
+            $table->enum('status',['pending','approved','rejected','inprocess']);       
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
