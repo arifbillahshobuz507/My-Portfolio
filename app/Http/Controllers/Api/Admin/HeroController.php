@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Helper\ApiResponse;
+use App\Helper\FileHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Hero;
 use Illuminate\Http\Request;
@@ -14,12 +15,16 @@ class HeroController extends Controller
     public function list(Request $request): JsonResponse
     {
         try {
-            $query = Hero::with(['user', 'userProfile', 'experience', 'project', 'testimonial']);
+            $query = Hero::query();
             
-            // 1. Search functionality (title)
+            // 1. Search functionality (title, sub_title, description)
             if ($request->filled('search')) {
                 $search = $request->input('search');
-                $query->where('title', 'LIKE', "%{$search}%");
+                $query->where(function ($q) use ($search) {
+                    $q->where('title', 'LIKE', "%{$search}%")
+                        ->orWhere('sub_title', 'LIKE', "%{$search}%")
+                        ->orWhere('description', 'LIKE', "%{$search}%");
+                });
             }
 
             // 2. Filter by specific hero
@@ -32,32 +37,12 @@ class HeroController extends Controller
                 $query->where('title', 'LIKE', "%{$request->input('title')}%");
             }
 
-            // 4. Filter by user_id
-            if ($request->filled('user_id')) {
-                $query->where('user_id', $request->input('user_id'));
+            // 4. Filter by sub_title
+            if ($request->filled('sub_title')) {
+                $query->where('sub_title', 'LIKE', "%{$request->input('sub_title')}%");
             }
 
-            // 5. Filter by user_profile_id
-            if ($request->filled('user_profile_id')) {
-                $query->where('user_profile_id', $request->input('user_profile_id'));
-            }
-
-            // 6. Filter by experience_id
-            if ($request->filled('experience_id')) {
-                $query->where('experience_id', $request->input('experience_id'));
-            }
-
-            // 7. Filter by project_id
-            if ($request->filled('project_id')) {
-                $query->where('project_id', $request->input('project_id'));
-            }
-
-            // 8. Filter by testimonial_id
-            if ($request->filled('testimonial_id')) {
-                $query->where('testimonial_id', $request->input('testimonial_id'));
-            }
-
-            // 9. Date range filter
+            // 5. Date range filter
             if ($request->filled('from_date')) {
                 $query->whereDate('created_at', '>=', $request->input('from_date'));
             }
@@ -66,12 +51,12 @@ class HeroController extends Controller
                 $query->whereDate('created_at', '<=', $request->input('to_date'));
             }
 
-            // 10. Sorting
+            // 6. Sorting
             $sortBy = $request->input('sort_by', 'id');
             $sortOrder = $request->input('sort_order', 'desc');
             $query->orderBy($sortBy, $sortOrder);
 
-            // 11. Pagination
+            // 7. Pagination
             $perPage = $request->input('per_page', 10);
             $heroes = $query->paginate($perPage);
 
@@ -90,20 +75,21 @@ class HeroController extends Controller
         try {
             $request->validate([
                 "title" => "nullable|string|max:100",
-                "user_id" => "required|exists:users,id|unique:heroes,user_id",
-                "user_profile_id" => "required|exists:user_profiles,id",
-                "experience_id" => "required|exists:experiences,id",
-                "project_id" => "required|exists:projects,id",
-                "testimonial_id" => "required|exists:testimonials,id",
+                "sub_title" => "nullable|string|max:100",
+                "description" => "nullable|string",
+                "image" => "nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
             ]);
+
+            $imageName = null;
+            if ($request->hasFile('image')) {
+                $imageName = FileHelper::uploadFile($request->file("image"), 'admin/assets/img/hero');
+            }
 
             $hero = Hero::create([
                 "title" => $request->input('title'),
-                'user_id' => $request->input('user_id'),
-                'user_profile_id' => $request->input('user_profile_id'),
-                'experience_id' => $request->input('experience_id'),
-                'project_id' => $request->input('project_id'),
-                'testimonial_id' => $request->input('testimonial_id'),
+                'sub_title' => $request->input('sub_title'),
+                'description' => $request->input('description'),
+                'image' => $imageName,
             ]);
 
             return ApiResponse::success(message: "Hero Create Success!", data: $hero, status_code: 201);
@@ -118,11 +104,9 @@ class HeroController extends Controller
             $request->validate([
                 "hero_id" => "required|exists:heroes,id",
                 "title" => "nullable|string|max:100",
-                "user_id" => "nullable|exists:users,id|unique:heroes,user_id," . $request->input('hero_id'),
-                "user_profile_id" => "nullable|exists:user_profiles,id",
-                "experience_id" => "nullable|exists:experiences,id",
-                "project_id" => "nullable|exists:projects,id",
-                "testimonial_id" => "nullable|exists:testimonials,id",
+                "sub_title" => "nullable|string|max:100",
+                "description" => "nullable|string",
+                "image" => "nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
             ]);
 
             $hero = Hero::where('id', $request->input('hero_id'))->first();
@@ -131,13 +115,22 @@ class HeroController extends Controller
                 return ApiResponse::error(message: "Hero data not found", status_code: 404);
             }
 
+            $imageName = $hero->image;
+
+            // Handle image upload
+            if ($request->hasFile('image')) {
+                // Delete old image if exists
+                if ($hero->image) {
+                    FileHelper::deleteFile('admin/assets/img/hero/' . $hero->image);
+                }
+                $imageName = FileHelper::uploadFile($request->file("image"), 'admin/assets/img/hero');
+            }
+
             $hero->update([
                 'title' => $request->filled('title') ? $request->input('title') : $hero->title,
-                'user_id' => $request->filled('user_id') ? $request->input('user_id') : $hero->user_id,
-                'user_profile_id' => $request->filled('user_profile_id') ? $request->input('user_profile_id') : $hero->user_profile_id,
-                'experience_id' => $request->filled('experience_id') ? $request->input('experience_id') : $hero->experience_id,
-                'project_id' => $request->filled('project_id') ? $request->input('project_id') : $hero->project_id,
-                'testimonial_id' => $request->filled('testimonial_id') ? $request->input('testimonial_id') : $hero->testimonial_id,
+                'sub_title' => $request->filled('sub_title') ? $request->input('sub_title') : $hero->sub_title,
+                'description' => $request->filled('description') ? $request->input('description') : $hero->description,
+                'image' => $imageName,
             ]);
 
             return ApiResponse::success(message: "Hero Update Success!", data: $hero, status_code: 200);
@@ -150,11 +143,54 @@ class HeroController extends Controller
     {
         try {
             $hero = Hero::findOrFail($request->input('hero_id'));
+            
+            // Delete image file if exists
+            if ($hero->image) {
+                FileHelper::deleteFile('admin/assets/img/hero/' . $hero->image);
+            }
+            
             $hero->delete();
             
             return ApiResponse::success(message: 'Hero Delete Successfully');
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: 'Hero data not found', status_code: 404);
+        }
+    }
+
+    // Get single hero by ID
+    public function show(Request $request): JsonResponse
+    {
+        try {
+            $request->validate([
+                "hero_id" => "required|exists:heroes,id"
+            ]);
+
+            $hero = Hero::find($request->input('hero_id'));
+            
+            if (!$hero) {
+                return ApiResponse::error(message: "Hero not found", status_code: 404);
+            }
+
+            return ApiResponse::success(message: "Hero retrieved successfully", data: $hero);
+        } catch (Exception $e) {
+            return ApiResponse::error(error_data: $e->getMessage());
+        }
+    }
+
+    // Get active hero for frontend
+    public function getActiveHero(): JsonResponse
+    {
+        try {
+            // Get latest hero or first hero
+            $hero = Hero::latest()->first();
+            
+            if (!$hero) {
+                return ApiResponse::success(message: 'No hero found', data: []);
+            }
+
+            return ApiResponse::success(message: 'Active hero retrieved successfully', data: $hero);
+        } catch (Exception $exception) {
+            return ApiResponse::error(error_data: $exception->getMessage());
         }
     }
 }

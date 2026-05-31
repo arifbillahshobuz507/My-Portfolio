@@ -14,7 +14,7 @@ class ContactController extends Controller
     public function list(Request $request): JsonResponse
     {
         try {
-            $query = Contact::with(['service', 'userProfile']);
+            $query = Contact::query();
             
             // 1. Search functionality (first_name, last_name, email, phone)
             if ($request->filled('search')) {
@@ -117,8 +117,7 @@ class ContactController extends Controller
                 "email" => "nullable|email",
                 "phone" => "nullable|string",
                 "description" => "nullable|string",
-                "service_id" => "nullable|exists:services,id",
-                "user_profile_id" => "nullable|exists:user_profiles,id",
+                "status" => "nullable|string",
             ]);
 
             $contact = Contact::where('id', $request->input('contact_id'))->first();
@@ -133,10 +132,8 @@ class ContactController extends Controller
                 'email' => $request->filled('email') ? $request->input('email') : $contact->email,
                 'phone' => $request->filled('phone') ? $request->input('phone') : $contact->phone,
                 'description' => $request->filled('description') ? $request->input('description') : $contact->description,
-                'service_id' => $request->filled('service_id') ? $request->input('service_id') : $contact->service_id,
-                'user_profile_id' => $request->filled('user_profile_id') ? $request->input('user_profile_id') : $contact->user_profile_id,
+                'status' => $request->filled('status') ? $request->input('status') : $contact->status,
             ]);
-
             return ApiResponse::success(message: "Contact Update Success!", data: $contact, status_code: 200);
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());

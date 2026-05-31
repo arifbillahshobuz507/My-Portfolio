@@ -20,8 +20,8 @@ class ContactSeeder extends Seeder
                 'status' => "pending",
                 'phone' => $faker->phoneNumber(),
                 'description' => $faker->optional(0.7)->paragraph(),
-                'created_at' => $faker->dateTimeBetween('-2 years', 'now'),
                 'updated_at' => now(),
+                'created_at' => now(),
             ]);
         }
     }
