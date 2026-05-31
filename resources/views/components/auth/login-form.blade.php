@@ -39,17 +39,7 @@
       <!-- /Logo -->
       <h4 class="mb-1">Adventure starts here 🚀</h4>
       <p class="mb-6">Make your app management easy and fun!</p>
-
-      <div class="mb-6">
-        <div class="mb-6 form-control-validation">
-          <label for="username" class="form-label">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            name=""
-            placeholder="Enter your username" />
-        </div>
+      
         <div class="mb-6 form-control-validation">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />

@@ -32,7 +32,7 @@ class AuthenticationController extends Controller
                 return ApiResponse::success(message: 'User Login successfully', data: $token)->cookie('token', $token, 60 * 60);
             } else {
                 //using name parametar
-                return ApiResponse::error(message: 'Authentication failed', error_data: 'Invalid email or password',);
+                return ApiResponse::error(message: 'Invalid email or password', error_data: 'Authentication failed',status_code:401);
             }
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());

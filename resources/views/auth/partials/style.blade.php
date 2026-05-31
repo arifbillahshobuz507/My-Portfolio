@@ -45,3 +45,6 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
 
     <script src="{{ asset('admin/assets/') }}/js/config.js"></script>
+    <script src="{{ asset('auth/') }}/css/progress.css"></script>
+    <link href="{{ asset('auth/css/style.css') }}" rel="stylesheet" />
+    

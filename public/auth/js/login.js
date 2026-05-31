@@ -1,35 +1,85 @@
 
 async function SubmitLogin() {
-    let email = document.getElementById('email').value;
+    let email = document.getElementById('email').value.trim();
     let password = document.getElementById('password').value;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (email.length === 0) {
         errorToast("Email is Required");
-    } else if (password.length === 0) {
-        errorToast("Password is Required sfasdfasfasdfdasfdasfasdfdsfasdfsadfasdfasd");
-    } else if (password.length < 8 || password.length > 300) {
-        if (password.length < 8) {
-            errorToast('Password must be at least 8 characters long');
-        } else {
-            errorToast('Password must not exceed 300 characters');
-        }
-    } else if (!emailRegex.test(email)) {
+        return;
+    }
+    if (!emailRegex.test(email)) {
         errorToast('Please enter a valid email address.');
-    } else {
-        showLoader();
-        let result = await axios.post("/user-login", {
+        return;
+    }
+    if (password.length === 0) {
+        errorToast("Password is Required");
+        return;
+    }
+    if (password.length < 8) {
+        errorToast('Password must be at least 8 characters long');
+        return;
+    }
+    if (password.length > 100) {
+        errorToast('Password must not exceed 100 characters');
+        return;
+    }
+
+    showLoader();
+    try {
+        let result = await axios.post("/api/user-login", {
             email: email,
             password: password
         });
         hideLoader();
+
+        // 200 OK Response
         if (result.data['status'] === 'success') {
             successToast(result.data['message']);
             setTimeout(function () {
-                window.location.href = "/"
-            }, 2000)
-        } else if (result.data['message'] === 'unauthorized') {
-            console.log(result.data['message']);
-            errorToast(result.data['message']);
+                window.location.href = "/";
+            }, 2000);
+        } else {
+            errorToast(result.data['message'] || 'Login failed');
+        }
+    } catch (error) {
+        hideLoader();
+        console.log("Full error object:", error);
+
+        if (error.response) {
+            const status = error.response.status;
+            const data = error.response.data;
+
+            console.log("Status:", status);
+            console.log("Response data:", data);
+
+            if (status === 500) {
+                if (data && data.message) {
+                    errorToast(data.message); // "Authentication failed"
+                } else if (data && data.error) {
+                    errorToast(data.error); // "Invalid email or password"
+                } else {
+                    errorToast("Server error. Please try again later.");
+                }
+            }
+            else if (status === 401) {
+                errorToast("Invalid email or password");
+            }
+            else if (status === 422) {
+                errorToast("Validation failed. Please check your input.");
+            }
+            else if (status === 404) {
+                errorToast("API endpoint not found");
+            }
+            else {
+                errorToast(data?.message || data?.error || "Something went wrong");
+            }
+        }
+        else if (error.request) {
+            errorToast("Network error. Please check your internet connection.");
+        }
+        else {
+            errorToast(error.message || "An unexpected error occurred");
         }
     }
 }
