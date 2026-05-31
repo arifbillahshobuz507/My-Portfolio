@@ -38,7 +38,7 @@ async function SubmitLogin() {
             successToast(result.data['message']);
             setTimeout(function () {
                 window.location.href = "/";
-            }, 2000);
+            }, 500);
         } else {
             errorToast(result.data['message'] || 'Login failed');
         }

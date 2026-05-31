@@ -40,20 +40,24 @@
             <h4 class="mb-1">Adventure starts here 🚀</h4>
             <p class="mb-6">Make your app management easy and fun!</p>
 
-            <form id="formAuthentication" class="mb-6" action="index.html" method="GET">
+            <div class="mb-6">
                 <div class="mb-6 form-control-validation">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="title" class="form-label">Title</label>
                     <input
                         type="text"
                         class="form-control"
-                        id="username"
-                        name="username"
-                        placeholder="Enter your username"
+                        id="title"
+                        name="title"
+                        placeholder="Enter your Title"
                         autofocus />
                 </div>
                 <div class="mb-6 form-control-validation">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                </div>
+                 <div class="mb-6 form-control-validation">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="number" class="form-control" id="number" name="number" placeholder="Enter Your Phone Number" />
                 </div>
                 <div class="mb-6 form-password-toggle form-control-validation">
                     <label class="form-label" for="password">Password</label>
@@ -77,8 +81,8 @@
                         </label>
                     </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
-            </form>
+                <button class="btn btn-primary d-grid w-100" onclick="onRegistration()">Sign up</button>
+            </div>
 
             <p class="text-center">
                 <span>Already have an account?</span>
@@ -90,77 +94,3 @@
     </div>
     <!-- Register Card -->
 </div>
-
-<!-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-10 center-screen">
-            <div class="card animated fadeIn w-100 p-3">
-                <div class="card-body">
-                    <h4>Sign Up</h4>
-                    <hr />
-                    <div class="container-fluid m-0 p-0">
-                        <div class="row m-0 p-0">
-                            <div class="col-md-6 p-2">
-                                <label>Email Address</label>
-                                <input id="email" placeholder="User Email" class="form-control" type="email" />
-                            </div>
-                            <div class="col-md-6 p-2">
-                                <label>Name</label>
-                                <input id="title" placeholder="Name" class="form-control" type="text" />
-                            </div>
-                            <div class="col-md-6 p-2">
-                                <label>Mobile Number</label>
-                                <input id="mobile" placeholder="Mobile" class="form-control" type="mobile" />
-                            </div>
-                            <div class="col-md-6 p-2">
-                                <label>Password</label>
-                                <input id="password" placeholder="User Password" class="form-control"
-                                    type="password" />
-                            </div>
-                        </div>
-                        <div class="row m-0 justify-content-md-center p-0">
-                            <div class="col-md-6 p-2">
-                                <button onclick="onRegistration()" class="btn mt-3 w-100  bg-gradient-primary ">Complete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-   async function onRegistration() {
-        let email = document.getElementById('email').value;
-        let title = document.getElementById('title').value;
-        let mobile = document.getElementById('mobile').value;
-        let password = document.getElementById('password').value;
-        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(email.length===0){
-            errorToast('Email is required');
-        } else if(password.length===0){
-            errorToast("Password is required");
-        } else if (password.length < 8 || password.length > 300) {
-            if (password.length < 8) {
-                errorToast('Password must be at least 8 characters long');
-            } else {
-                errorToast('Password must not exceed 300 characters');
-            }
-        }  else if (!emailRegex.test(email)) {
-            errorToast('Please enter a valid email address.');
-        }
-         else {
-            showLoader();
-            let result=await axios.post("/user-registration", {email:email,title:title, phone:mobile,password:password,});
-            hideLoader();
-            if(result.status===200 && result.data['status']==='success'){
-                successToast(result.data['message']);
-                setTimeout(function (){
-                    window.location.href="/login";
-                },2000)
-            }else{
-                errorToast(result.data['message']);
-            }
-        }
-    }
-</script> -->

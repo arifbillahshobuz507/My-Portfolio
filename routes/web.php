@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 
 
-Route::get('/registration', [AuthenticationController::class, 'userRegistrationPage']);
+Route::get('/registration', [AuthenticationController::class, 'userRegistrationPage'])->name('registration');
 Route::get('/login', [AuthenticationController::class, 'userLoginPage']);
 Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage']);
 Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);

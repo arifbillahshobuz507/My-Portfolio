@@ -3,5 +3,5 @@
     @include('components.auth.registration-form')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/pages-auth.js"></script>
+ <script src="{{ asset('auth/') }}/js/ragister.js"></script>
 @endpush
