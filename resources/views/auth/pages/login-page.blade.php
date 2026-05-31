@@ -3,6 +3,6 @@
     @include('components.auth.login-form')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/pages-auth.js"></script>
+ <script src="{{ asset('auth/') }}/js/login.js"></script>
 @endpush
 

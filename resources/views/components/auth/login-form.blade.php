@@ -33,23 +33,22 @@
               </svg>
             </span>
           </span>
-          <span class="app-brand-text demo text-heading fw-bold">Vuexy</span>
+          <span class="app-brand-text demo text-heading fw-bold">{{ env("APP_NAME") ? env("APP_NAME") : "arif"}}</span>
         </a>
       </div>
       <!-- /Logo -->
       <h4 class="mb-1">Adventure starts here 🚀</h4>
       <p class="mb-6">Make your app management easy and fun!</p>
 
-      <form id="formAuthentication" class="mb-6" action="index.html" method="GET">
+      <div class="mb-6">
         <div class="mb-6 form-control-validation">
           <label for="username" class="form-label">Username</label>
           <input
             type="text"
             class="form-control"
-            id="username"
-            name="username"
-            placeholder="Enter your username"
-            autofocus />
+            id=""
+            name=""
+            placeholder="Enter your username" />
         </div>
         <div class="mb-6 form-control-validation">
           <label for="email" class="form-label">Email</label>
@@ -77,20 +76,21 @@
             </label>
           </div>
         </div>
-        <button class="btn btn-primary d-grid w-100">Sign up</button>
-      </form>
+        <button class="btn btn-primary d-grid w-100" onclick="SubmitLogin()">Sign up</button>
+      </div>
 
       <p class="text-center">
         <span>Already have an account?</span>
         <a href="auth-login-basic.html">
           <span>Sign in instead</span>
         </a>
-      </p>      
-      </div>
+      </p>
     </div>
   </div>
-  <!-- Register Card -->
 </div>
+<!-- Register Card -->
+</div>
+
 
 
 <!-- <div class="container">

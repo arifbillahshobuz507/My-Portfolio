@@ -4,27 +4,164 @@ function showLoader() {
 function hideLoader() {
     document.getElementById('loader').classList.add('d-none')
 }
-
 function successToast(msg) {
-    Toastify({
-        gravity: "bottom", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        text: msg,
-        className: "mb-5",
-        style: {
-            background: "green",
-        }
-    }).showToast();
+    let toast = document.createElement('div');
+    toast.style.position = 'fixed';
+     toast.style.top = '20px';
+    toast.style.left = '87%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = 'green';
+    toast.style.color = 'white';
+    toast.style.borderRadius = '8px';
+    toast.style.zIndex = '999999';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    toast.style.minWidth = '280px';
+    toast.style.maxWidth = '450px';
+    toast.style.animation = 'slideInUp 0.3s ease';
+
+    let wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'space-between';
+    wrapper.style.padding = '12px 16px';
+    wrapper.style.gap = '15px';
+
+    let messageSpan = document.createElement('span');
+    messageSpan.innerHTML = msg;
+    messageSpan.style.fontSize = '14px';
+    messageSpan.style.fontWeight = '500';
+    messageSpan.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+    messageSpan.style.lineHeight = '1.4';
+    messageSpan.style.flex = '1';
+
+    let closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.fontSize = '20px';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.lineHeight = '1';
+    closeBtn.style.padding = '0 5px';
+    closeBtn.style.transition = 'opacity 0.2s';
+    closeBtn.style.color = 'white';
+    closeBtn.style.opacity = '0.8';
+    
+    closeBtn.onmouseenter = () => {
+        closeBtn.style.opacity = '1';
+        closeBtn.style.transform = 'scale(1.1)';
+    };
+    closeBtn.onmouseleave = () => {
+        closeBtn.style.opacity = '0.8';
+        closeBtn.style.transform = 'scale(1)';
+    };
+
+    closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        closeToast(toast);
+    };
+    
+    wrapper.appendChild(messageSpan);
+    wrapper.appendChild(closeBtn);
+    toast.appendChild(wrapper);
+    
+    document.body.appendChild(toast);
+    let timeout = setTimeout(() => {
+        closeToast(toast);
+    }, 3000);
+    
+    toast.onmouseenter = () => {
+        clearTimeout(timeout);
+    };
+    
+    toast.onmouseleave = () => {
+        timeout = setTimeout(() => {
+            closeToast(toast);
+        }, 3000);
+    };
 }
 
 function errorToast(msg) {
-    Toastify({
-        gravity: "bottom", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        text: msg,
-        className: "mb-5",
-        style: {
-            background: "red",
-        }
-    }).showToast();
+    let toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.top = '20px';
+    toast.style.left = '87%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = 'red';
+    toast.style.color = 'white';
+    toast.style.borderRadius = '8px';
+    toast.style.zIndex = '999999';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    toast.style.minWidth = '280px';
+    toast.style.maxWidth = '450px';
+    toast.style.animation = 'slideInUp 0.3s ease';
+    
+    let wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.justifyContent = 'space-between';
+    wrapper.style.padding = '12px 16px';
+    wrapper.style.gap = '15px';
+    
+    let messageSpan = document.createElement('span');
+    messageSpan.innerHTML = msg;
+    messageSpan.style.fontSize = '14px';
+    messageSpan.style.fontWeight = '500';
+    messageSpan.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+    messageSpan.style.lineHeight = '1.4';
+    messageSpan.style.flex = '1';
+    
+    let closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.fontSize = '20px';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.lineHeight = '1';
+    closeBtn.style.padding = '0 5px';
+    closeBtn.style.transition = 'all 0.2s';
+    closeBtn.style.color = 'white';
+    closeBtn.style.opacity = '0.8';
+    
+    closeBtn.onmouseenter = () => {
+        closeBtn.style.opacity = '1';
+        closeBtn.style.transform = 'scale(1.1)';
+    };
+    closeBtn.onmouseleave = () => {
+        closeBtn.style.opacity = '0.8';
+        closeBtn.style.transform = 'scale(1)';
+    };
+    
+    closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        closeToast(toast);
+    };
+    
+    wrapper.appendChild(messageSpan);
+    wrapper.appendChild(closeBtn);
+    toast.appendChild(wrapper);
+    
+    document.body.appendChild(toast);
+    
+    let timeout = setTimeout(() => {
+        closeToast(toast);
+    }, 3000);
+    
+    toast.onmouseenter = () => {
+        clearTimeout(timeout);
+    };
+    
+    toast.onmouseleave = () => {
+        timeout = setTimeout(() => {
+            closeToast(toast);
+        }, 3000);
+    };
 }
+
+function closeToast(toast) {
+    if (!toast || !toast.remove) return;
+    toast.style.animation = 'fadeOut 0.3s ease';
+    setTimeout(() => {
+        if (toast && toast.remove) {
+            toast.remove();
+        }
+    }, 300);
+}
+
