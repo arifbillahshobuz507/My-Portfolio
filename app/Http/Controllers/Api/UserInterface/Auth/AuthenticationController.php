@@ -55,7 +55,7 @@ class AuthenticationController extends Controller
                  $user->update(['otp' => $otp]);
                 //token create for reset password
                 $token = JWTToken::CreateTokenForResetPassword($request->input('email'), $user->id);
-                return ApiResponse::success(message: 'Otp Send successfully', data: ['otp' => $otp, 'token' => $token]);
+                return ApiResponse::success(message: 'Otp Send successfully', data: ['otp' => $otp, 'token' => $token])->cookie('send-otp-token', $token , 50*60);
             } else {
                 return ApiResponse::error(message: 'Email not found', error_data: 'No account exists with this email address');
             }

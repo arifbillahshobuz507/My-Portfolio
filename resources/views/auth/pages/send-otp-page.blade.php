@@ -3,7 +3,7 @@
     @include('components.auth.send-otp-form')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/pages-auth.js"></script>
+ <script src="{{ asset('auth/') }}/js/send-otp.js"></script>
 @endpush
 
 
