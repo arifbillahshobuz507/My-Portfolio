@@ -60,7 +60,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         const inputs = document.querySelectorAll('.numeral-mask');
 
-        // OTP আপডেট করার ফাংশন
         function updateOtpInput() {
             let otpValue = '';
             inputs.forEach(input => {
@@ -71,23 +70,17 @@
                 otpField.value = otpValue;
             }
         }
-
-        // প্রতিটি ইনপুটের জন্য ইভেন্ট লিসেনার
         inputs.forEach((input, index) => {
-            // টাইপ বা পেস্ট করার সময়
             input.addEventListener('input', function(e) {
                 let value = e.target.value;
 
-                // শুধু সংখ্যা অনুমোদন
                 value = value.replace(/\D/g, '');
 
                 if (value.length > 1) {
-                    // একসাথে একাধিক সংখ্যা এলে (পেস্ট বা সরাসরি টাইপ)
                     const numbers = value.split('');
                     for (let i = 0; i < numbers.length && index + i < inputs.length; i++) {
                         inputs[index + i].value = numbers[i];
                     }
-                    // কার্সর পরবর্তী ফিল্ডে নিয়ে যান
                     const nextIndex = index + numbers.length;
                     if (nextIndex < inputs.length) {
                         inputs[nextIndex].focus();
@@ -95,7 +88,6 @@
                         inputs[inputs.length - 1].focus();
                     }
                 } else if (value.length === 1) {
-                    // একটি সংখ্যা এলে পরবর্তী ফিল্ডে যান
                     input.value = value;
                     if (index < inputs.length - 1) {
                         inputs[index + 1].focus();
@@ -107,7 +99,6 @@
                 updateOtpInput();
             });
 
-            // ব্যাকস্পেস হ্যান্ডলিং
             input.addEventListener('keydown', function(e) {
                 if (e.key === 'Backspace') {
                     if (input.value === '' && index > 0) {
@@ -131,26 +122,21 @@
                 }
             });
 
-            // পেস্ট ইভেন্ট বিশেষ হ্যান্ডলিং
             input.addEventListener('paste', function(e) {
                 e.preventDefault();
                 const pasteData = (e.clipboardData || window.clipboardData).getData('text');
                 const numbers = pasteData.replace(/\D/g, '').split('');
 
-                // প্রথম ৬টি সংখ্যা নিন
                 const otpNumbers = numbers.slice(0, 6);
 
-                // সব ফিল্ড খালি করুন
                 for (let i = 0; i < inputs.length; i++) {
                     inputs[i].value = '';
                 }
 
-                // নতুন মান সেট করুন
                 for (let i = 0; i < otpNumbers.length && i < inputs.length; i++) {
                     inputs[i].value = otpNumbers[i];
                 }
 
-                // শেষ ফিল্ডে ফোকাস করুন অথবা পরবর্তী খালি ফিল্ডে
                 if (otpNumbers.length === 6) {
                     inputs[5].focus();
                 } else if (otpNumbers.length < 6) {
@@ -160,13 +146,11 @@
                 updateOtpInput();
             });
 
-            // ফোকাস লস্টে আপডেট নিশ্চিত করুন
             input.addEventListener('blur', function() {
                 updateOtpInput();
             });
         });
 
-        // প্রাথমিক OTP মান সেট করুন
         updateOtpInput();
     });
 
