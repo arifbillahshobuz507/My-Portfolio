@@ -3,6 +3,6 @@
     @include('components.auth.reset-pass-form')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/pages-auth.js"></script>
+ <script src="{{ asset('auth/') }}/js/set-new-password.js"></script>
 @endpush
 

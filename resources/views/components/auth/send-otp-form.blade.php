@@ -26,7 +26,7 @@
                 <button class="btn btn-primary d-grid w-100" onclick="sendOtp()">Send Otp</button>
             </div>
             <div class="text-center">
-                <a href="auth-login-basic.html" class="d-flex justify-content-center">
+                <a href="{{ route('login') }}" class="d-flex justify-content-center">
                     <i class="icon-base ti tabler-chevron-left scaleX-n1-rtl me-1_5"></i>
                     Back to login
                 </a>
