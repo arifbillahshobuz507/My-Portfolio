@@ -95,7 +95,10 @@ class AuthenticationController extends Controller
             ]);
             $email = $request->header('email');
             $user = User::where('email', '=', $email)->update(["password" => Hash::make($request->input('password'))]);
-            return ApiResponse::success(message:"Password Set Successfully", data: $user );
+            $token = $request->bearerToken()
+            ?? $request->cookie("token")
+            ?? $request->header("token");
+            return ApiResponse::success(message:"Password Set Successfully", data: $user )->withoutCookie('token');
         } catch (Exception $e) {
             return ApiResponse::error(message: 'unauthorized', error_data: $e->getMessage(), );
         }
