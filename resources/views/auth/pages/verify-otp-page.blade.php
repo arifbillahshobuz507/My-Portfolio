@@ -3,5 +3,5 @@
     @include('components.auth.verify-otp-form')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/pages-auth.js"></script>
+ <script src="{{ asset('auth/') }}/js/verify-otp.js"></script>
 @endpush
