@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Web\UserInterface\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\Admin\DashboardController;
+
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
@@ -16,9 +17,12 @@ Route::get('/registration', [AuthenticationController::class, 'userRegistrationP
 Route::get('/login', [AuthenticationController::class, 'userLoginPage'])->name('login');
 Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage'])->name('send-otp');
 Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);
-Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
 
-Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+Route::middleware(['tokenverification'])->group(function () {
+    Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
+    Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+});
 Route::get('/master', [AuthenticationController::class, 'master']);
 
 
