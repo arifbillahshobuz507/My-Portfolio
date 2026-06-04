@@ -4,7 +4,7 @@ use App\Http\Controllers\Web\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Web\UserInterface\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Admin\DashboardController;
-
+use App\Http\Controllers\Web\Admin\ProfileController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
@@ -22,6 +22,7 @@ Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']
 Route::middleware(['tokenverification'])->group(function () {
     Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
     Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('dashboard');
 });
 Route::get('/master', [AuthenticationController::class, 'master']);
 
