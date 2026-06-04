@@ -8,7 +8,7 @@ use Firebase\JWT\Key;
 
 class JWTToken
 {
-       public static function CreateToken($email, $userId): string
+    public static function CreateToken($email, $userId): string
     {
         try {
             $key = env('JWT_KEY');
@@ -24,7 +24,7 @@ class JWTToken
             ];
             return JWT::encode($payload, $key, 'HS256');
         } catch (Exception $e) {
-             return 'JWT token Creation failed' . ' ' . $e->getMessage() ;
+            return 'JWT token Creation failed' . ' ' . $e->getMessage();
         }
     }
     public static function CreateTokenForResetPassword($email, $userId): string
@@ -32,7 +32,7 @@ class JWTToken
         try {
             $key = env('JWT_KEY');
             if (!$key) {
-                  return 'JWT_KEY not configured';
+                return 'JWT_KEY not configured';
             }
             $payload = [
                 'iss' => "Password-Reset-Token",
@@ -41,12 +41,12 @@ class JWTToken
                 'email' => $email,
                 'userId' => $userId
             ];
-              return JWT::encode($payload, $key, 'HS256');
+            return JWT::encode($payload, $key, 'HS256');
         } catch (Exception $e) {
-            return 'JWT token Creation failed' . ' ' . $e->getMessage() ;
+            return 'JWT token Creation failed' . ' ' . $e->getMessage();
         }
     }
-    public static function verifyToken($token):string|object 
+    public static function verifyToken($token): string|object
     {
         try {
             if ($token == null) {
@@ -54,12 +54,12 @@ class JWTToken
             } else {
                 $key = env('JWT_KEY');
                 if (!$key) {
-                      return 'JWT_KEY not configured';
-                } 
-                    return JWT::decode($token, new Key($key, 'HS256'));
+                    return 'JWT_KEY not configured';
+                }
+                return JWT::decode($token, new Key($key, 'HS256'));
             }
         } catch (Exception $e) {
-              return 'unauthorized';
+            return 'unauthorized';
         }
     }
 }
