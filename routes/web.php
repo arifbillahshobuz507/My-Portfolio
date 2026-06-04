@@ -22,7 +22,7 @@ Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']
 Route::middleware(['tokenverification'])->group(function () {
     Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
     Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('dashboard');
+    Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('admin.profile');
 });
 Route::get('/master', [AuthenticationController::class, 'master']);
 
