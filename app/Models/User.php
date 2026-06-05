@@ -10,13 +10,6 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'title',
         'email',
@@ -24,20 +17,13 @@ class User extends Authenticatable
         'phone',
         'otp',
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
+    //PROFILE RELATION ONE TO ZERO OR ONE
+    public function profile(){
+        return $this->hasOne(UserProfile::class);
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
 }

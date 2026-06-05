@@ -18,16 +18,15 @@ class UserProfileController extends Controller
     public function userProfile(Request $request): JsonResponse
     {
         try {
-            $user = User::where("email", $request->header('email'))->first();
+            $email = $request->header('email');
+            if (!$email) {
+                return ApiResponse::success(message: 'Email header is required', data: [], status_code: 404);
+            }
+            $user = User::where("email", $email)->with('profile')->first();
             if (!$user) {
-                return ApiResponse::success(message: 'unauthorized', data: [], status_code: 401);
+                return ApiResponse::success(message: 'User not found', data: [], status_code: 404);
             }
-            $userProfile = UserProfile::where('user_id', $user->id)->first();
-            // Check if no data found
-            if (!$userProfile) {
-                return ApiResponse::success(message: 'user prodile not found', data: []);
-            }
-            return ApiResponse::success(message: 'Users profile retrieved successfully', data: $userProfile);
+            return ApiResponse::success(message: 'Users retrieved With Profile successfully', data: $user);
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: $exception->getMessage());
         }
