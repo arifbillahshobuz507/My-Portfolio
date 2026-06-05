@@ -106,6 +106,6 @@ class AuthenticationController extends Controller
     // logout
     public function userLogout(Request $request)
     {
-        return redirect('login')->cookie('token','',-1);
+        return redirect('login')->cookie('token','',-1)->withoutCookie('token');
     }
 }
