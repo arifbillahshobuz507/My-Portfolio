@@ -35,7 +35,7 @@ Route::post('/user-registration', [UserController::class, 'userRegistration']);
 Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
 Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
 
-Route::middleware(['tokenverification'])->group(function () {
+Route::middleware(['apiTokenverification'])->group(function () {
     Route::controller(AuthenticationController::class)->group(function () {
         Route::post('/verify-otp', 'userVerifyOTP');
         Route::post('/reset-password', 'userResetPassword');
