@@ -10,21 +10,16 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 
 // user Routes
-
-
-
 Route::get('/registration', [AuthenticationController::class, 'userRegistrationPage'])->name('registration');
 Route::get('/login', [AuthenticationController::class, 'userLoginPage'])->name('login');
 Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage'])->name('send-otp');
 Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);
-
-
+//login after routes
 Route::middleware(['webTokenverification'])->group(function () {
     Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
     Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('admin.profile');
 });
-Route::get('/master', [AuthenticationController::class, 'master']);
 
 
 

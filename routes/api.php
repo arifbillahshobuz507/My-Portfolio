@@ -25,85 +25,90 @@ use App\Http\Controllers\Api\Admin\TestimonialController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 // API Routes
 Route::post('/user-registration', [UserController::class, 'userRegistration']);
 Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
 Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
 
 Route::middleware(['apiTokenverification'])->group(function () {
+    //AUTH ROUTES
     Route::controller(AuthenticationController::class)->group(function () {
         Route::post('/verify-otp', 'userVerifyOTP');
         Route::post('/reset-password', 'userResetPassword');
         Route::post('/logout', [AuthenticationController::class, 'userLogout'])->name('Logout');
     });
+    //USER ROUTES
     Route::controller(UserController::class)->prefix('users')->group(function () {
         Route::get('/list', 'userList');
         Route::put('/update', 'updateUser');
         Route::delete('/destroy', 'deleteUser');
     });
+    //USER PROFILE ROUTES
     Route::controller(UserProfileController::class)->prefix('user-profile')->group(function () {
         Route::get('/', 'userProfile');
         Route::post('/store', 'store');
     });
+    //SERVICE ROUTES
     Route::controller(ServiceController::class)->prefix('services')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
+    //PROJECT ROUTES
     Route::controller(ProjectController::class)->prefix('projects')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-    
+    //EXPERIENCE ROUTES
     Route::controller(ExperienceController::class)->prefix('experiences')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-      Route::controller(EducationController::class)->prefix('education')->group(function () {
+    //EDUCATIONS ROUTES
+    Route::controller(EducationController::class)->prefix('education')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-      Route::controller(SkillController::class)->prefix('skills')->group(function () {
+    //SKILL ROUTES
+    Route::controller(SkillController::class)->prefix('skills')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-       Route::controller(TestimonialController::class)->prefix('testimonials')->group(function () {
+    //TESTIMONIAL ROUTES
+    Route::controller(TestimonialController::class)->prefix('testimonials')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-       Route::controller(BlogController::class)->prefix('blogs')->group(function () {
+    //BLOG ROUTES
+    Route::controller(BlogController::class)->prefix('blogs')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-       Route::controller(ContactController::class)->prefix('contacts')->group(function () {
+    //CONTACT ROUTES
+    Route::controller(ContactController::class)->prefix('contacts')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-       Route::controller(HeroController::class)->prefix('heroes')->group(function () {
+    //HERO ROUTES
+    Route::controller(HeroController::class)->prefix('heroes')->group(function () {
         Route::get('/list', 'list');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
     });
-    
 });
