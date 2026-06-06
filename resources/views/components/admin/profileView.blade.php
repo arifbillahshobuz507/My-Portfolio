@@ -96,14 +96,14 @@
                     <ul class="list-unstyled my-3 py-1">
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-phone-call icon-lg"></i><span class="fw-medium mx-2">Contact:</span>
-                            <span>(123) 456-7890</span>
+                            <span id="userPhone">(123) 456-7890</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-messages icon-lg"></i><span class="fw-medium mx-2">Skype:</span> <span>john.doe</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-mail icon-lg"></i><span class="fw-medium mx-2">Email:</span>
-                            <span>john.doe@example.com</span>
+                            <span id="userEmail">john.doe@example.com</span>
                         </li>
                     </ul>
                     <p class="card-text text-uppercase text-body-secondary small mb-0">Teams</p>
