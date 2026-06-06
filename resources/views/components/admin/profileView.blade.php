@@ -1,147 +1,145 @@
-  <div class="content-wrapper">
-      <!-- Content -->
-      <div class="container-xxl flex-grow-1 container-p-y">
-          <!-- Header -->
-          <div class="row">
-              <div class="col-12">
-                  <div class="card mb-6">
-                      <div class="user-profile-header-banner">
-                          <img src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
-                      </div>
-                      <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
-                          <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
-                              <img
-                                  src="{{ asset('admin/assets/') }}/img/avatars/1.png"
-                                  alt="user image"
-                                  class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
-                          </div>
-                          <div class="flex-grow-1 mt-3 mt-lg-5">
-                              <div
-                                  class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-5 flex-md-row flex-column gap-4">
-                                  <div class="user-profile-info">
-                                      <h4 class="mb-2 mt-lg-6">John Doe</h4>
-                                      <ul
-                                          class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 my-2">
-                                          <li class="list-inline-item d-flex gap-2 align-items-center">
-                                              <i class="icon-base ti tabler-palette icon-lg"></i><span class="fw-medium">UX Designer</span>
-                                          </li>
-                                          <li class="list-inline-item d-flex gap-2 align-items-center">
-                                              <i class="icon-base ti tabler-map-pin  icon-lg"></i><span class="fw-medium">Vatican City</span>
-                                          </li>
-                                          <li class="list-inline-item d-flex gap-2 align-items-center">
-                                              <i class="icon-base ti tabler-calendar  icon-lg"></i><span class="fw-medium"> Joined April 2021</span>
-                                          </li>
-                                      </ul>
-                                  </div>
-                                  <a href="javascript:void(0)" class="btn btn-primary mb-1">
-                                      <i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!--/ Header -->
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-6">
+                <div class="user-profile-header-banner">
+                    <img src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                </div>
+                <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
+                    <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
+                        <img
+                            src="{{ asset('admin/assets/') }}/img/avatars/1.png"
+                            alt="user image"
+                            class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
+                    </div>
+                    <div class="flex-grow-1 mt-3 mt-lg-5">
+                        <div
+                            class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-5 flex-md-row flex-column gap-4">
+                            <div class="user-profile-info">
+                                <h4 class="mb-2 mt-lg-6" id="userName">John Doe</h4>
+                                <ul
+                                    class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 my-2">
+                                    <li class="list-inline-item d-flex gap-2 align-items-center">
+                                        <i class="icon-base ti tabler-palette icon-lg"></i><span class="fw-medium">UX Designer</span>
+                                    </li>
+                                    <li class="list-inline-item d-flex gap-2 align-items-center">
+                                        <i class="icon-base ti tabler-map-pin  icon-lg"></i><span class="fw-medium">Vatican City</span>
+                                    </li>
+                                    <li class="list-inline-item d-flex gap-2 align-items-center">
+                                        <i class="icon-base ti tabler-calendar  icon-lg"></i><span class="fw-medium"> Joined April 2021</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="javascript:void(0)" class="btn btn-primary mb-1">
+                                <i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Header -->
 
-          <!-- Navbar pills -->
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="nav-align-top">
-                      <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
-                          <li class="nav-item">
-                              <a class="nav-link active" href="javascript:void(0);"><i class="icon-base ti tabler-user-check icon-sm me-1_5"></i> Profile</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="pages-profile-teams.html"><i class="icon-base ti tabler-users icon-sm me-1_5"></i> Teams</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="pages-profile-projects.html"><i class="icon-base ti tabler-layout-grid icon-sm me-1_5"></i> Projects</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="pages-profile-connections.html"><i class="icon-base ti tabler-link icon-sm me-1_5"></i> Connections</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <!--/ Navbar pills -->
+    <!-- Navbar pills -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="nav-align-top">
+                <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="javascript:void(0);"><i class="icon-base ti tabler-user-check icon-sm me-1_5"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages-profile-teams.html"><i class="icon-base ti tabler-users icon-sm me-1_5"></i> Teams</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages-profile-projects.html"><i class="icon-base ti tabler-layout-grid icon-sm me-1_5"></i> Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages-profile-connections.html"><i class="icon-base ti tabler-link icon-sm me-1_5"></i> Connections</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/ Navbar pills -->
 
-          <!-- User Profile Content -->
-          <div class="row">
-              <div class="col-xl-4 col-lg-5 col-md-5">
-                  <!-- About User -->
-                  <div class="card mb-6">
-                      <div class="card-body">
-                          <p class="card-text text-uppercase text-body-secondary small mb-0">About</p>
-                          <ul class="list-unstyled my-3 py-1">
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-user icon-lg"></i><span class="fw-medium mx-2">Full Name:</span> <span>John Doe</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-check icon-lg"></i><span class="fw-medium mx-2">Status:</span>
-                                  <span>Active</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-crown icon-lg"></i><span class="fw-medium mx-2">Role:</span>
-                                  <span>Developer</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-flag icon-lg"></i><span class="fw-medium mx-2">Country:</span>
-                                  <span>USA</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-2">
-                                  <i class="icon-base ti tabler-language icon-lg"></i><span class="fw-medium mx-2">Languages:</span> <span>English</span>
-                              </li>
-                          </ul>
-                          <p class="card-text text-uppercase text-body-secondary small mb-0">Contacts</p>
-                          <ul class="list-unstyled my-3 py-1">
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-phone-call icon-lg"></i><span class="fw-medium mx-2">Contact:</span>
-                                  <span>(123) 456-7890</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-messages icon-lg"></i><span class="fw-medium mx-2">Skype:</span> <span>john.doe</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-mail icon-lg"></i><span class="fw-medium mx-2">Email:</span>
-                                  <span>john.doe@example.com</span>
-                              </li>
-                          </ul>
-                          <p class="card-text text-uppercase text-body-secondary small mb-0">Teams</p>
-                          <ul class="list-unstyled mb-0 mt-3 pt-1">
-                              <li class="d-flex flex-wrap mb-4">
-                                  <span class="fw-medium me-2">Backend Developer</span><span>(126 Members)</span>
-                              </li>
-                              <li class="d-flex flex-wrap">
-                                  <span class="fw-medium me-2">React Developer</span><span>(98 Members)</span>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-                  <!--/ About User -->
-                  <!-- Profile Overview -->
-                  <div class="card mb-6">
-                      <div class="card-body">
-                          <p class="card-text text-uppercase text-body-secondary small">Overview</p>
-                          <ul class="list-unstyled mb-0">
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-check icon-lg"></i><span class="fw-medium mx-2">Task Compiled:</span> <span>13.5k</span>
-                              </li>
-                              <li class="d-flex align-items-center mb-4">
-                                  <i class="icon-base ti tabler-layout-grid icon-lg"></i><span class="fw-medium mx-2">Projects Compiled:</span> <span>146</span>
-                              </li>
-                              <li class="d-flex align-items-center">
-                                  <i class="icon-base ti tabler-users icon-lg"></i><span class="fw-medium mx-2">Connections:</span> <span>897</span>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-                  <!--/ Profile Overview -->
-              </div>
-              <div class="col-xl-8 col-lg-7 col-md-7">
-                  <!-- Activity Timeline -->
-                  <div class="card card-action mb-6">
+    <!-- User Profile Content -->
+    <div class="row">
+        <div class="col-xl-4 col-lg-5 col-md-5">
+            <!-- About User -->
+            <div class="card mb-6">
+                <div class="card-body">
+                    <p class="card-text text-uppercase text-body-secondary small mb-0">About</p>
+                    <ul class="list-unstyled my-3 py-1">
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-user icon-lg"></i><span class="fw-medium mx-2">Full Name:</span> <span id="userFullName">John Doe</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-check icon-lg"></i><span class="fw-medium mx-2">Status:</span>
+                            <span>Active</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-crown icon-lg"></i><span class="fw-medium mx-2">Role:</span>
+                            <span>Developer</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-flag icon-lg"></i><span class="fw-medium mx-2">Country:</span>
+                            <span>USA</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="icon-base ti tabler-language icon-lg"></i><span class="fw-medium mx-2">Languages:</span> <span>English</span>
+                        </li>
+                    </ul>
+                    <p class="card-text text-uppercase text-body-secondary small mb-0">Contacts</p>
+                    <ul class="list-unstyled my-3 py-1">
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-phone-call icon-lg"></i><span class="fw-medium mx-2">Contact:</span>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-messages icon-lg"></i><span class="fw-medium mx-2">Skype:</span> <span>john.doe</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-mail icon-lg"></i><span class="fw-medium mx-2">Email:</span>
+                            <span>john.doe@example.com</span>
+                        </li>
+                    </ul>
+                    <p class="card-text text-uppercase text-body-secondary small mb-0">Teams</p>
+                    <ul class="list-unstyled mb-0 mt-3 pt-1">
+                        <li class="d-flex flex-wrap mb-4">
+                            <span class="fw-medium me-2">Backend Developer</span><span>(126 Members)</span>
+                        </li>
+                        <li class="d-flex flex-wrap">
+                            <span class="fw-medium me-2">React Developer</span><span>(98 Members)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/ About User -->
+            <!-- Profile Overview -->
+            <!-- <div class="card mb-6">
+                <div class="card-body">
+                    <p class="card-text text-uppercase text-body-secondary small">Overview</p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-check icon-lg"></i><span class="fw-medium mx-2">Task Compiled:</span> <span>13.5k</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-4">
+                            <i class="icon-base ti tabler-layout-grid icon-lg"></i><span class="fw-medium mx-2">Projects Compiled:</span> <span>146</span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="icon-base ti tabler-users icon-lg"></i><span class="fw-medium mx-2">Connections:</span> <span>897</span>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <!--/ Profile Overview -->
+        </div>
+        <div class="col-xl-8 col-lg-7 col-md-7">
+            <!-- Activity Timeline -->
+            <!-- <div class="card card-action mb-6">
                       <div class="card-header align-items-center">
                           <h5 class="card-action-title mb-0">
                               <i class="icon-base ti tabler-chart-bar-popular icon-lg me-4"></i>Activity Timeline
@@ -255,11 +253,11 @@
                               </li>
                           </ul>
                       </div>
-                  </div>
-                  <!--/ Activity Timeline -->
-                  <div class="row">
-                      <!-- Connections -->
-                      <div class="col-lg-12 col-xl-6">
+                  </div> -->
+            <!--/ Activity Timeline -->
+            <div class="row">
+                <!-- Connections -->
+                <!-- <div class="col-lg-12 col-xl-6">
                           <div class="card card-action mb-6">
                               <div class="card-header align-items-center">
                                   <h5 class="card-action-title mb-0">Connections</h5>
@@ -382,10 +380,10 @@
                                   </ul>
                               </div>
                           </div>
-                      </div>
-                      <!--/ Connections -->
-                      <!-- Teams -->
-                      <div class="col-lg-12 col-xl-6">
+                      </div> -->
+                <!--/ Connections -->
+                <!-- Teams -->
+                <!-- <div class="col-lg-12 col-xl-6">
                           <div class="card card-action mb-6">
                               <div class="card-header align-items-center">
                                   <h5 class="card-action-title mb-0">Teams</h5>
@@ -512,61 +510,29 @@
                                   </ul>
                               </div>
                           </div>
-                      </div>
-                      <!--/ Teams -->
-                  </div>
-                  <!-- Projects table -->
-                  <div class="card mb-6">
-                      <div class="mb-4">
-                          <table class="table datatable-project">
-                              <thead class="border-top">
-                                  <tr>
-                                      <th></th>
-                                      <th></th>
-                                      <th>Project</th>
-                                      <th>Leader</th>
-                                      <th>Team</th>
-                                      <th class="w-px-200">Progress</th>
-                                      <th>Action</th>
-                                  </tr>
-                              </thead>
-                          </table>
-                      </div>
-                  </div>
-                  <!--/ Projects table -->
-              </div>
-          </div>
-          <!--/ User Profile Content -->
-      </div>
-      <!-- / Content -->
-
-      <!-- Footer -->
-      <footer class="content-footer footer bg-footer-theme">
-          <div class="container-xxl">
-              <div
-                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                  <div class="text-body">
-                      &#169;
-                      <script>
-                          document.write(new Date().getFullYear());
-                      </script>
-                      , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="footer-link">Pixinvent</a>
-                  </div>
-                  <div class="d-none d-lg-inline-block">
-                      <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank">License</a>
-                      <a href="https://themeforest.net/user/pixinvent/portfolio" target="_blank" class="footer-link me-4">More Themes</a>
-
-                      <a
-                          href="https://demos.pixinvent.com/vuexy-html-admin-template/documentation/"
-                          target="_blank"
-                          class="footer-link me-4">Documentation</a>
-
-                      <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
-                  </div>
-              </div>
-          </div>
-      </footer>
-      <!-- / Footer -->
-
-      <div class="content-backdrop fade"></div>
-  </div>
+                      </div> -->
+                <!--/ Teams -->
+            </div>
+            <!-- Projects table -->
+            <div class="card mb-6">
+                <div class="mb-4">
+                    <table class="table datatable-project">
+                        <thead class="border-top">
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Project</th>
+                                <th>Leader</th>
+                                <th>Team</th>
+                                <th class="w-px-200">Progress</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <!--/ Projects table -->
+        </div>
+    </div>
+    <!--/ User Profile Content -->
+</div>
