@@ -13,7 +13,7 @@ async function profileData() {
         
         // Set the values from the API response
         if (userName && userData) {
-            userName.innerHTML = userData.title;
+            userName.textContent = userData.title;
         }
         if (userFullName && userData) {
             userFullName.textContent = userData.title; 
