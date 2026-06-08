@@ -4,13 +4,14 @@
         <div class="col-12">
             <div class="card mb-6">
                 <div class="user-profile-header-banner">
-                    <img src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                    <img id="userLogo" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
                 </div>
                 <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
                     <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
                         <img
                             src="{{ asset('admin/assets/') }}/img/avatars/1.png"
                             alt="user image"
+                            id="userImage"
                             class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
                     </div>
                     <div class="flex-grow-1 mt-3 mt-lg-5">
@@ -77,16 +78,8 @@
                             <i class="icon-base ti tabler-user icon-lg"></i><span class="fw-medium mx-2">Full Name:</span> <span id="userFullName">John Doe</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
-                            <i class="icon-base ti tabler-check icon-lg"></i><span class="fw-medium mx-2">Status:</span>
-                            <span>Active</span>
-                        </li>
-                        <li class="d-flex align-items-center mb-4">
-                            <i class="icon-base ti tabler-crown icon-lg"></i><span class="fw-medium mx-2">Role:</span>
-                            <span>Developer</span>
-                        </li>
-                        <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-flag icon-lg"></i><span class="fw-medium mx-2">Country:</span>
-                            <span>USA</span>
+                            <span>Bangladesh</span>
                         </li>
                         <li class="d-flex align-items-center mb-2">
                             <i class="icon-base ti tabler-language icon-lg"></i><span class="fw-medium mx-2">Languages:</span> <span>English</span>
@@ -99,22 +92,10 @@
                             <span id="userPhone">(123) 456-7890</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
-                            <i class="icon-base ti tabler-messages icon-lg"></i><span class="fw-medium mx-2">Skype:</span> <span>john.doe</span>
-                        </li>
-                        <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-mail icon-lg"></i><span class="fw-medium mx-2">Email:</span>
                             <span id="userEmail">john.doe@example.com</span>
                         </li>
-                    </ul>
-                    <p class="card-text text-uppercase text-body-secondary small mb-0">Teams</p>
-                    <ul class="list-unstyled mb-0 mt-3 pt-1">
-                        <li class="d-flex flex-wrap mb-4">
-                            <span class="fw-medium me-2">Backend Developer</span><span>(126 Members)</span>
-                        </li>
-                        <li class="d-flex flex-wrap">
-                            <span class="fw-medium me-2">React Developer</span><span>(98 Members)</span>
-                        </li>
-                    </ul>
+                    </ul>                    
                 </div>
             </div>
             <!--/ About User -->
