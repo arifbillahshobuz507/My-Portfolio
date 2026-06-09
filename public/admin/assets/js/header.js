@@ -1,16 +1,13 @@
-async function profileData() {
+async function header() {
     const userFullName = document.getElementById("userFullName");
     const userEmail = document.getElementById("userEmail");
     const userImage = document.getElementById("userImage");
     const userLogo = document.getElementById("userLogo");
     try {
         const result = await axios.get('/api/user-profile');
-        console.log("result", result);
         // The user data is in result.data.data based on your response
         const userData = result.data.data;
         const userProfile = result.data.data.profile;
-        console.log('user_data', userData);
-        console.log('user_profile_data', userProfile);
         if (!userData && userProfile !== null) {
             const image = userProfile.image;
             const logo = userProfile.logo;
@@ -33,7 +30,6 @@ async function profileData() {
         if (error.response) {
             const status = error.response.status;
             const data = error.response.data;
-
             console.log("Status:", status);
             console.log("Response data:", data);
 
@@ -68,4 +64,4 @@ async function profileData() {
     }
 }
 
-profileData();
+header();
