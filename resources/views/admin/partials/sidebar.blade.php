@@ -43,7 +43,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboards -->            
             <li class="menu-item active open">
-              <a href="{{ route('dashboard') }}" class="menu-link">
+              <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon icon-base ti tabler-smart-home"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>

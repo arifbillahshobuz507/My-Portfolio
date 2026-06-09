@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function profile(){
-    return view('admin.pages.profile.view');
+    // PROFILE VIEW
+    public function profile()
+    {
+        return view('admin.pages.profile.view');
+    }
+    public function profileUpdate()
+    {
+        return view('admin.pages.profile.update');
     }
 }

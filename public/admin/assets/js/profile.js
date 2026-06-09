@@ -7,13 +7,13 @@ async function profileData() {
     const userLogo = document.getElementById("userLogo");
 
     try {
-        const result = await axios.get('api/user-profile');
-        console.log(result);
-
+        const result = await axios.get('/api/user-profile');
+        console.log("result", result);
         // The user data is in result.data.data based on your response
         const userData = result.data.data;
         const userProfile = result.data.data.profile;
-        console.log(userProfile);
+        console.log('user_data', userData);
+        console.log('user_profile_data', userProfile);
         if (!userData && userProfile !== null) {
             const image = userProfile.image;
             const logo = userProfile.logo;

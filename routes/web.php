@@ -17,8 +17,12 @@ Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']
 //login after routes
 Route::middleware(['webTokenverification'])->group(function () {
     Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);
-    Route::get('/admin-dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('admin.profile');
+
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+        Route::get('/profile-update', [ProfileController::class, 'profileUpdate'])->name('profile.update');
+    });
 });
 
 

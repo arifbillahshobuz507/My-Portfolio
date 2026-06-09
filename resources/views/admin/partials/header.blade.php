@@ -425,7 +425,7 @@
                          </a>
                      </li>
                      <li>
-                         <a class="dropdown-item" href="pages-account-settings-account.html">
+                         <a class="dropdown-item" href="{{route('admin.profile.update')}}">
                              <i class="icon-base ti tabler-settings me-3 icon-md"></i><span class="align-middle">Settings</span>
                          </a>
                      </li>
