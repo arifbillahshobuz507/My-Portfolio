@@ -397,21 +397,21 @@
                      href="javascript:void(0);"
                      data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                         <img src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
+                         <img id="userLogo" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
                      <li>
-                         <a class="dropdown-item mt-0" href="{{ route('admin.profile') }}">
+                         <a class="dropdown-item mt-0" href="{{ route('admin.profile.update') }}">
                              <div class="d-flex align-items-center">
                                  <div class="flex-shrink-0 me-2">
                                      <div class="avatar avatar-online">
-                                         <img src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
+                                         <img id="userImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
-                                     <h6 class="mb-0">John Doe</h6>
-                                     <small class="text-body-secondary">Admin</small>
+                                     <h6 class="mb-0" id="userFullName">John Doe</h6>
+                                     <small class="text-body-secondary" id="userEmail">Admin</small>
                                  </div>
                              </div>
                          </a>
@@ -428,28 +428,7 @@
                          <a class="dropdown-item" href="{{route('admin.profile.update')}}">
                              <i class="icon-base ti tabler-settings me-3 icon-md"></i><span class="align-middle">Settings</span>
                          </a>
-                     </li>
-                     <li>
-                         <a class="dropdown-item" href="pages-account-settings-billing.html">
-                             <span class="d-flex align-items-center align-middle">
-                                 <i class="flex-shrink-0 icon-base ti tabler-file-dollar me-3 icon-md"></i><span class="flex-grow-1 align-middle">Billing</span>
-                                 <span class="flex-shrink-0 badge bg-danger d-flex align-items-center justify-content-center">4</span>
-                             </span>
-                         </a>
-                     </li>
-                     <li>
-                         <div class="dropdown-divider my-1 mx-n2"></div>
-                     </li>
-                     <li>
-                         <a class="dropdown-item" href="pages-pricing.html">
-                             <i class="icon-base ti tabler-currency-dollar me-3 icon-md"></i><span class="align-middle">Pricing</span>
-                         </a>
-                     </li>
-                     <li>
-                         <a class="dropdown-item" href="pages-faq.html">
-                             <i class="icon-base ti tabler-question-mark me-3 icon-md"></i><span class="align-middle">FAQ</span>
-                         </a>
-                     </li>
+                     </li>     
                      <li>
                          <div class="d-grid px-2 pt-2 pb-1">
                              <form action="{{ url('api/logout') }}" method="POST" id="logout-form">

@@ -19,5 +19,6 @@
 
  <!-- Page JS -->
  <script src="{{ asset('admin/assets/') }}/js/dashboards-analytics.js"></script>
+  <script src="{{ asset('admin/assets/') }}/js/header.js"></script>
  <script src="{{ asset('auth/') }}/js/config.js"></script>
     <script src="{{ asset('auth/') }}/js/axios.min.js"></script>
