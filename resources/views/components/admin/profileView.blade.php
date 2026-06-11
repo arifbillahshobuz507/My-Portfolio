@@ -18,7 +18,7 @@
                         <div
                             class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-5 flex-md-row flex-column gap-4">
                             <div class="user-profile-info">
-                                <h4 class="mb-2 mt-lg-6" id="userName">John Doe</h4>
+                                <h4 class="mb-2 mt-lg-6 user-name">John Doe</h4>
                                 <ul
                                     class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 my-2">
                                     <li class="list-inline-item d-flex gap-2 align-items-center">
@@ -75,7 +75,7 @@
                     <p class="card-text text-uppercase text-body-secondary small mb-0">About</p>
                     <ul class="list-unstyled my-3 py-1">
                         <li class="d-flex align-items-center mb-4">
-                            <i class="icon-base ti tabler-user icon-lg"></i><span class="fw-medium mx-2">Full Name:</span> <span id="userFullName">John Doe</span>
+                            <i class="icon-base ti tabler-user icon-lg"></i><span class="fw-medium mx-2">Full Name:</span> <span class="user-name">John Doe</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-flag icon-lg"></i><span class="fw-medium mx-2">Country:</span>
