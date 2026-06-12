@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('organization')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
+            $table->string('country')->nullable();
             $table->string('state')->nullable();
             $table->string('language')->nullable();
             $table->string('image')->nullable();
@@ -27,10 +28,8 @@ return new class extends Migration
             $table->string('linkedin', 300)->nullable()->default('https://www.linkedin.com/');
             $table->string('github', 300)->nullable()->default('https://www.github.com/');
             $table->string('twitter', 300)->nullable()->default('https://www.twitter.com/');
-
             //  Relation User
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
-
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

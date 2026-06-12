@@ -26,4 +26,5 @@ class UserProfile extends Model
         'language',
         'country'
     ];
+    
 }
