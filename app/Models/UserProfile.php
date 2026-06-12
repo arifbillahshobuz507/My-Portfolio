@@ -19,5 +19,11 @@ class UserProfile extends Model
         'linkedin',
         'github',
         'twitter',
+        'organization',
+        'address',
+        'city',
+        'state',
+        'language',
+        'country'
     ];
 }

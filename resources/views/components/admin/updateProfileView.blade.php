@@ -53,7 +53,7 @@
                         <form id="formAccountSettings" method="GET" onsubmit="return false">
                             <div class="row gy-4 gx-6 mb-6">
                                 <div class="col-md-6 form-control-validation">
-                                    <label for="firstName" class="form-label">First Name</label>
+                                    <label for="firstName" class="form-label">Full Name</label>
                                     <input
                                         class="form-control"
                                         type="text"
@@ -154,41 +154,8 @@
                                         <option value="de">German</option>
                                         <option value="pt">Portuguese</option>
                                     </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="timeZones" class="form-label">Timezone</label>
-                                    <select id="timeZones" class="select2 form-select">
-                                        <option value="">Select Timezone</option>
-                                        <option value="-12">(GMT-12:00) International Date Line West</option>
-                                        <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
-                                        <option value="-10">(GMT-10:00) Hawaii</option>
-                                        <option value="-9">(GMT-09:00) Alaska</option>
-                                        <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
-                                        <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
-                                        <option value="-7">(GMT-07:00) Arizona</option>
-                                        <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-                                        <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
-                                        <option value="-6">(GMT-06:00) Central America</option>
-                                        <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
-                                        <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-                                        <option value="-6">(GMT-06:00) Saskatchewan</option>
-                                        <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-                                        <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
-                                        <option value="-5">(GMT-05:00) Indiana (East)</option>
-                                        <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
-                                        <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="currency" class="form-label">Currency</label>
-                                    <select id="currency" class="select2 form-select">
-                                        <option value="">Select Currency</option>
-                                        <option value="usd">USD</option>
-                                        <option value="euro">Euro</option>
-                                        <option value="pound">Pound</option>
-                                        <option value="bitcoin">Bitcoin</option>
-                                    </select>
-                                </div>
+                                </div>                                
+                                
                             </div>
                             <div class="mt-2">
                                 <button type="submit" class="btn btn-primary me-3">Save changes</button>

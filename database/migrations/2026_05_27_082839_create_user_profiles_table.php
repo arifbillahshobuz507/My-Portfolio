@@ -16,6 +16,11 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('cv', 50)->nullable();
             $table->string('logo')->nullable();
+            $table->string('organization')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('language')->nullable();
             $table->string('image')->nullable();
             $table->string('facebook', 300)->nullable()->default('https://www.facebook.com/');
             $table->string('instagram', 300)->nullable()->default('https://www.instagram.com/');
