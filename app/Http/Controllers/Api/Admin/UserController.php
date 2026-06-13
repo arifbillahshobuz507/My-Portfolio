@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Helper\ApiResponse;
+use App\Helper\FileHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Exception;
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 
@@ -95,23 +97,76 @@ class UserController extends Controller
     public function updateUser(Request $request)
     {
         try {
-            $user = User::where('id', $request->input('user_id'))->first();
+            $userId = $request->header('user_id');
+            $user = User::where('id', $userId)->with('profile')->first();
             if ($user == null) {
                 return ApiResponse::error(error_data: 'User not found', status_code: 404);
             }
+            // return response()->json($user);
             // Validate the request
             $request->validate([
                 'title' => 'nullable|string',
                 "email" => "required|email|max:255|unique:users,email," . $user->id,
                 "password" => "nullable|string|min:8",
-                'phone' => 'nullable|string|max:14|min:11'
+                'phone' => 'nullable|string|max:14|min:11',
+                'name' => 'nullable|string|max:255',
+                'description' => 'nullable|string',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+                'cv' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
+                'facebook' => 'nullable|url|max:300',
+                'instagram' => 'nullable|url|max:300',
+                'linkedin' => 'nullable|url|max:300',
+                'github' => 'nullable|url|max:300',
+                'twitter' => 'nullable|url|max:300',
             ]);
+            // Update user basic info
             $user->update([
                 'title' => $request->input('title'),
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password')),
                 'phone' => $request->input('phone')
             ]);
+
+            // Handle file uploads with old file deletion
+            $existingProfile = $user->profile;
+            $imageName = $existingProfile ? $existingProfile->image : null;
+            if ($request->hasFile('image')) {
+                if ($existingProfile && $existingProfile->image) {
+                    FileHelper::deleteFile($existingProfile->image, 'admin/assets/img/profile');
+                }
+                $imageName = FileHelper::uploadFile($request->file('image'), 'admin/assets/img/profile');
+            }
+            $logoName = $existingProfile ? $existingProfile->logo : null;
+            if ($request->hasFile('logo')) {
+                if ($existingProfile && $existingProfile->logo) {
+                    FileHelper::deleteFile($existingProfile->logo, 'admin/assets/img/profile');
+                }
+                $logoName = FileHelper::uploadFile($request->file('logo'), 'admin/assets/img/profile');
+            }
+            $cvName = $existingProfile ? $existingProfile->cv : null;
+            if ($request->hasFile('cv')) {
+                if ($existingProfile && $existingProfile->cv) {
+                    FileHelper::deleteFile($existingProfile->cv, 'admin/assets/img/profile');
+                }
+                $cvName = FileHelper::uploadFile($request->file('cv'), 'admin/assets/img/profile');
+            }
+            // Create or Update profile
+            $profile = UserProfile::updateOrCreate(
+                ['user_id' => $userId],
+                [
+                    'description' => $request->input('description'),
+                    'cv' => $cvName,
+                    'logo' => $logoName,
+                    'image' => $imageName,
+                    'facebook' => $request->input('facebook', 'https://www.facebook.com/'),
+                    'instagram' => $request->input('instagram', 'https://www.instagram.com/'),
+                    'linkedin' => $request->input('linkedin', 'https://www.linkedin.com/'),
+                    'github' => $request->input('github', 'https://www.github.com/'),
+                    'twitter' => $request->input('twitter', 'https://www.twitter.com/'),
+                ]
+            );
+            $message = $profile->wasRecentlyCreated ? 'Profile Created Successfully' : 'Profile Updated Successfully';
             //using name parametar
             return ApiResponse::success(message: 'User Updated Successfully', data: $user);
         } catch (Exception $exception) {

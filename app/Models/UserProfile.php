@@ -24,7 +24,7 @@ class UserProfile extends Model
         'city',
         'state',
         'language',
-        'country'
+        'country',
+        'zip'
     ];
-    
 }

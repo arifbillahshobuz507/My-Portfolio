@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('state')->nullable();
+            $table->string('zip')->nullable();
             $table->string('language')->nullable();
             $table->string('image')->nullable();
             $table->string('facebook', 300)->nullable()->default('https://www.facebook.com/');
