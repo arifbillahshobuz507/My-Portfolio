@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helper;
+namespace App\Helpers;
 
 use Exception;
 use Firebase\JWT\JWT;

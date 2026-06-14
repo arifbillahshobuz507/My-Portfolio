@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Helper\ApiResponse;
-use App\Helper\JWTToken;
+use App\Helpers\ApiResponse;
+use App\Helpers\JWTToken;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

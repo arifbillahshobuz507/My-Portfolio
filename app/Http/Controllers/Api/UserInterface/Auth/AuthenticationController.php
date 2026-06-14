@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Api\UserInterface\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Helper\JWTToken;
+use App\Helpers\JWTToken;
 use App\Mail\SendOTP;
 use Exception;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use App\Helper\ApiResponse;
+use App\Helpers\ApiResponse;
 
 class AuthenticationController extends Controller
 {

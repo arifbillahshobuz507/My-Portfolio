@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
-use App\Helper\ApiResponse;
-use App\Helper\FileHelper;
+use App\Helpers\ApiResponse;
+use App\Helpers\FileHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Experience;
 use Illuminate\Http\Request;
