@@ -35,31 +35,46 @@ async function header() {
             if (status === 500) {
                 if (data && data.message) {
                     errorToast(data.message);
+                    window.location.href = '/login';
                 } else if (data && data.error) {
                     errorToast(data.error);
+                    setTimeout(() => {
+                        window.location.href = '/login';
+                    }, 2000);
                 } else {
                     errorToast("Server error. Please try again later.");
                 }
             }
             else if (status === 401) {
                 errorToast("Invalid email or password");
-            }
-            else if (status === 422) {
-                errorToast("Validation failed. Please check your input.");
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 2000);
             }
             else if (status === 404) {
                 errorToast("API endpoint not found");
-               window.location.href = '/login'; 
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 2000);
             }
             else {
                 errorToast(data?.message || data?.error || "Something went wrong");
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 2000);
             }
         }
         else if (error.request) {
             errorToast("Network error. Please check your internet connection.");
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 2000);
         }
         else {
             errorToast(error.message || "An unexpected error occurred");
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 2000);
         }
     }
 }
