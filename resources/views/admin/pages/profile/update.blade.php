@@ -6,5 +6,5 @@
 @include('components.admin.updateProfileView')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/update-profile.js"></script>
+ <script src="{{ asset('admin/assets/') }}/js/profile-update.js"></script>
 @endpush
