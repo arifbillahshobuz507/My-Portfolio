@@ -10,11 +10,10 @@ async function header() {
         const userProfile = result.data.data.profile;
         if (!userData && userProfile !== null) {
             const image = userProfile.image;
-            const logo = userProfile.logo;
             if (userProfile && image) {
                 userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
             }
-            if (userProfile && logo) {
+            if (userProfile && image) {
                 userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
             }
         }
@@ -50,6 +49,7 @@ async function header() {
             }
             else if (status === 404) {
                 errorToast("API endpoint not found");
+               window.location.href = '/login'; 
             }
             else {
                 errorToast(data?.message || data?.error || "Something went wrong");
