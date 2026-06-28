@@ -1,5 +1,5 @@
-// Function to fetch and populate form data
-async function profileData() {    
+// FETCH USER DATA SCRIPT
+async function profileData() {
     // Form input fields
     const fullNameInput = document.getElementById("fullName");
     const emailInput = document.getElementById("email");
@@ -16,32 +16,31 @@ async function profileData() {
     const githubInput = document.getElementById("github");
     const twitterInput = document.getElementById("twitter");
     const descriptionInput = document.getElementById("description");
-    const userLogoInput = document.getElementById("profileLogo");
     const profileCvInput = document.getElementById("profileCv");
-    const profileProfileImageInput = document.getElementById("profileProfileImage");
+    const profileProfileImageInput = document.getElementById("profileImage");
 
     try {
         const result = await axios.get('/api/user-profile');
         // console.log("result", result);        
         const userData = result.data.data;
-        if(userData){            
+        if (userData) {
             // full name 
             if (userData.title && fullNameInput) {
-               fullNameInput.value = userData.title || '';
+                fullNameInput.value = userData.title || '';
             }
             // email
             if (userData.email && emailInput) {
                 emailInput.value = userData.email || '';
             }
-             // phone number
+            // phone number
             if (userData.phone && phoneNumberInput) {
-               phoneNumberInput.value = userData.phone || '';
-            }        
+                phoneNumberInput.value = userData.phone || '';
+            }
         }
         // Populate profile information
         const userProfile = result.data.data.profile;
-        if(userProfile){
-            if ( userProfile.organization && organizationInput) {
+        if (userProfile) {
+            if (userProfile.organization && organizationInput) {
                 organizationInput.value = userProfile.organization || '';
             }
             if (userProfile.address && addressInput) {
@@ -78,10 +77,10 @@ async function profileData() {
             if (userProfile.twitter && twitterInput) {
                 twitterInput.value = userProfile.twitter || '';
             }
-             // Set images
+            // Set images
             const image = userProfile.image;
             const logo = userProfile.logo;
-            
+
             if (userImage && image) {
                 userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
             }
@@ -96,228 +95,225 @@ async function profileData() {
 }
 profileData();
 
-// // Function to update User information
-// async function updateUserData(userId, formData) {
-//     try {        
-//         const updateData = {
-//             user_id: userId,
-//             title: formData.title,
-//             email: formData.email,
-//             phone: formData.phone,
-//             password: formData.password || null
-//         };
 
-//         const response = await axios.put('/api/users/update', updateData);
-        
-//         if (response.data.status === 'success') {
-//             // Update display elements
-//             const userName = document.querySelectorAll(".user-name");
-//             const userPhone = document.getElementById("userPhone");
-//             const userEmail = document.getElementById("userEmail");
-            
-//             if (userName) {
-//                 userName.forEach(element => {
-//                     element.textContent = formData.title;
-//                 });
-//             }
-//             if (userPhone) userPhone.textContent = formData.phone;
-//             if (userEmail) userEmail.textContent = formData.email;
-            
-//              successToast('User information updated successfully!');
-//             return true;
-//         } else {
-//            errorToast(response.data.message || 'Failed to update user');
-//             return false;
-//         }
-//     } catch (error) {
-//         if (error.response && error.response.data) {
-//            errorToast(error.response.data.message || 'Error updating user');
-//         } else {
-//             errorToast('Network error occurred');
-//         }
-//         return false;
-//     }
-// }
+//USER UPDATE SCRIPT
+async function updateUserData() {
+    // Get form data
+    const formData = new FormData();
 
-// // Function to update User Profile information
-// async function updateUserProfile(userId, formData, files = null) {
-//     try {
-//         // Create FormData object for file uploads
-//         const profileFormData = new FormData();
-//         profileFormData.append('user_id', userId);
-//         profileFormData.append('title', formData.title || '');
-//         profileFormData.append('name', formData.organization || '');
-//         profileFormData.append('description', formData.description || '');
-//         profileFormData.append('facebook', formData.facebook || '');
-//         profileFormData.append('instagram', formData.instagram || '');
-//         profileFormData.append('linkedin', formData.linkedin || '');
-//         profileFormData.append('github', formData.github || '');
-//         profileFormData.append('twitter', formData.twitter || '');
-        
-//         // Add address fields if they exist in your profile model
-//         if (formData.address) profileFormData.append('address', formData.address);
-//         if (formData.state) profileFormData.append('state', formData.state);
-//         if (formData.zip_code) profileFormData.append('zip_code', formData.zip_code);
-//         if (formData.country) profileFormData.append('country', formData.country);
-//         if (formData.language) profileFormData.append('language', formData.language);
-        
-//         // Append files if they exist
-//         if (files && files.image) {
-//             profileFormData.append('image', files.image);
-//         }
-//         if (files && files.logo) {
-//             profileFormData.append('logo', files.logo);
-//         }
-//         if (files && files.cv) {
-//             profileFormData.append('cv', files.cv);
-//         }
-        
-//         const response = await axios.post('/api/user-profile/store', profileFormData, {
-//             headers: {
-//                 'Content-Type': 'multipart/form-data'
-//             }
-//         });
-        
-//         if (response.data.status === 'success') {
-//             toastr.success(response.data.message || 'Profile updated successfully!');
-            
-//             // Update images if new ones were uploaded
-//             if (files && (files.image || files.logo)) {
-//                 const userImage = document.getElementById("userImage");
-//                 const userLogo = document.getElementById("userLogo");
-                
-//                 if (files.image && userImage && response.data.data.image) {
-//                     userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${response.data.data.image}`;
-//                 }
-//                 if (files.logo && userLogo && response.data.data.logo) {
-//                     userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${response.data.data.logo}`;
-//                 }
-//             }
-//             return true;
-//         } else {
-//             toastr.error(response.data.message || 'Failed to update profile');
-//             return false;
-//         }
-//     } catch (error) {
-//         console.error('Error updating profile:', error);
-//         if (error.response && error.response.data) {
-//             toastr.error(error.response.data.message || 'Error updating profile');
-//         } else {
-//             toastr.error('Network error occurred');
-//         }
-//         return false;
-//     }
-// }
+    // Get all input values
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const organization = document.getElementById("organization").value;
+    const address = document.getElementById("address").value;
+    const state = document.getElementById("state").value;
+    const zipCode = document.getElementById("zipCode").value;
+    const country = document.getElementById("country").value;
+    const language = document.getElementById("language").value;
+    const facebook = document.getElementById("facebook").value;
+    const instagram = document.getElementById("instagram").value;
+    const linkedin = document.getElementById("linkedin").value;
+    const github = document.getElementById("github").value;
+    const twitter = document.getElementById("twitter").value;
+    const description = document.getElementById("description").value;
 
-// // Function to handle form submission (Save changes button)
-// async function saveAllChanges() {
-//     // Get user ID from somewhere (store it in a hidden field or get from API response)
-//     const userId = document.getElementById("userId") ? document.getElementById("userId").value : 1; // Replace with actual user ID
-    
-//     // Collect form data
-//     const formData = {
-//         title: document.getElementById("firstName")?.value || '',
-//         email: document.getElementById("email")?.value || '',
-//         phone: document.getElementById("phoneNumber")?.value || '',
-//         password: document.getElementById("password")?.value || null,
-//         organization: document.getElementById("organization")?.value || '',
-//         description: document.getElementById("description")?.value || '',
-//         facebook: document.getElementById("facebook")?.value || '',
-//         instagram: document.getElementById("instagram")?.value || '',
-//         linkedin: document.getElementById("linkedin")?.value || '',
-//         github: document.getElementById("github")?.value || '',
-//         twitter: document.getElementById("twitter")?.value || '',
-//         address: document.getElementById("address")?.value || '',
-//         state: document.getElementById("state")?.value || '',
-//         zip_code: document.getElementById("zipCode")?.value || '',
-//         country: document.getElementById("country")?.value || '',
-//         language: document.getElementById("language")?.value || ''
-//     };
-    
-//     // Collect files if any
-//     const imageFile = document.getElementById("profileImage")?.files[0];
-//     const logoFile = document.getElementById("profileLogo")?.files[0];
-//     const cvFile = document.getElementById("profileCv")?.files[0];
-    
-//     const files = {
-//         image: imageFile,
-//         logo: logoFile,
-//         cv: cvFile
-//     };
-    
-//     // Show loading state
-//     const saveButton = document.querySelector('button[type="submit"]');
-//     const originalText = saveButton.textContent;
-//     saveButton.disabled = true;
-//     saveButton.textContent = 'Saving...';
-    
-//     try {
-//         // Update user information
-//         const userUpdateSuccess = await updateUserData(userId, formData);
-        
-//         // Update profile information
-//         const profileUpdateSuccess = await updateUserProfile(userId, formData, files);
-        
-//         if (userUpdateSuccess && profileUpdateSuccess) {
-//             toastr.success('All changes saved successfully!');
-//             // Reload data to reflect changes
-//             await profileData();
-//         } else if (userUpdateSuccess || profileUpdateSuccess) {
-//             toastr.warning('Partial update completed. Some information may not have been saved.');
-//         } else {
-//             toastr.error('Failed to save changes. Please try again.');
-//         }
-//     } catch (error) {
-//         console.error('Error saving changes:', error);
-//         toastr.error('An error occurred while saving changes');
-//     } finally {
-//         // Reset button state
-//         saveButton.disabled = false;
-//         saveButton.textContent = originalText;
-//     }
-// }
+    // Get file inputs
+    const profileImage = document.getElementById("profileProfileImage").files[0];
+    const profileLogo = document.getElementById("profileLogo").files[0];
+    const profileCv = document.getElementById("profileCv").files[0];
+    // Basic validation
+    if (!email) {
+        errorToast('Email is required');
+        return false;
+    }
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errorToast('Please enter a valid email address.');
+        return false;
+    }
 
-// // Function to handle image preview before upload
-// function previewImage(input, previewElementId) {
-//     if (input.files && input.files[0]) {
-//         const reader = new FileReader();
-//         reader.onload = function(e) {
-//             const preview = document.getElementById(previewElementId);
-//             if (preview) {
-//                 preview.src = e.target.result;
-//             }
-//         };
-//         reader.readAsDataURL(input.files[0]);
-//     }
-// }
+    // Append all data to FormData
+    formData.append('fullName', fullName);
+    formData.append('email', email);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('organization', organization);
+    formData.append('address', address);
+    formData.append('state', state);
+    formData.append('zipCode', zipCode);
+    formData.append('country', country);
+    formData.append('language', language);
+    formData.append('facebook', facebook);
+    formData.append('instagram', instagram);
+    formData.append('linkedin', linkedin);
+    formData.append('github', github);
+    formData.append('twitter', twitter);
+    formData.append('description', description);
 
-// // Add event listeners when DOM is loaded
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Load initial data
-//     profileData();
-    
-//     // Add event listener for save button
-//     const saveButton = document.querySelector('button[type="submit"]');
-//     if (saveButton) {
-//         saveButton.addEventListener('click', function(e) {
-//             e.preventDefault();
-//             saveAllChanges();
-//         });
-//     }
-    
-//     // Add image preview listeners if image inputs exist
-//     const profileImageInput = document.getElementById('profileImage');
-//     const profileLogoInput = document.getElementById('profileLogo');
-    
-//     if (profileImageInput) {
-//         profileImageInput.addEventListener('change', function() {
-//             previewImage(this, 'userImage');
-//         });
-//     }
-    
-//     if (profileLogoInput) {
-//         profileLogoInput.addEventListener('change', function() {
-//             previewImage(this, 'userLogo');
-//         });
-//     }
-// });
+    // Append files if they exist
+    if (profileImage) {
+        formData.append('profileImage', profileImage);
+    }
+    if (profileLogo) {
+        formData.append('profileLogo', profileLogo);
+    }
+    if (profileCv) {
+        formData.append('profileCv', profileCv);
+    }
+
+    try {
+        // Show loading state
+        const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Saving...';
+        submitBtn.disabled = true;
+
+        // Send update request
+        const response = await axios({
+            method: 'post', // or 'put'
+            url: '/api/user-profile/update', // Update this URL to match your route
+            data: formData,
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                // Add authorization header if needed
+                // 'Authorization': `Bearer ${token}`
+            }
+        });
+
+        // Handle success
+        if (response.data.status === 'success' || response.status === 200) {
+            showAlert('success', 'Profile updated successfully!');
+
+            // Update the UI with new data
+            const data = response.data.data;
+            if (data) {
+                // Update profile images if new ones were uploaded
+                const userImage = document.getElementById('uploadedAvatar');
+                const userLogo = document.getElementById('profileLogoPreview'); // You may need to add this element
+
+                if (data.profile && data.profile.image && userImage) {
+                    userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${data.profile.image}?t=${new Date().getTime()}`;
+                }
+                if (data.profile && data.profile.logo && userLogo) {
+                    userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${data.profile.logo}?t=${new Date().getTime()}`;
+                }
+            }
+        } else {
+            showAlert('error', response.data.message || 'Failed to update profile');
+        }
+
+    } catch (error) {
+        console.error('Error updating profile:', error);
+
+        // Handle validation errors
+        if (error.response && error.response.status === 422) {
+            const errors = error.response.data.errors;
+            let errorMessage = 'Please fix the following errors:\n';
+            for (let key in errors) {
+                if (errors.hasOwnProperty(key)) {
+                    errorMessage += `- ${errors[key].join(', ')}\n`;
+                }
+            }
+            showAlert('error', errorMessage);
+        } else if (error.response && error.response.data && error.response.data.message) {
+            showAlert('error', error.response.data.message);
+        } else {
+            showAlert('error', 'An error occurred while updating profile. Please try again.');
+        }
+
+        return false;
+    } finally {
+        // Reset button state
+        const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
+        if (submitBtn) {
+            submitBtn.innerHTML = 'Save changes';
+            submitBtn.disabled = false;
+        }
+    }
+}
+
+// Helper function to show alerts
+function showAlert(type, message) {
+    // Remove existing alerts
+    const existingAlerts = document.querySelectorAll('.custom-alert');
+    existingAlerts.forEach(alert => alert.remove());
+
+    // Create alert element
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `custom-alert alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = 'alert';
+    alertDiv.innerHTML = `
+        <strong>${type === 'success' ? 'Success!' : 'Error!'}</strong> ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+
+    // Insert alert at the top of the card
+    const cardBody = document.querySelector('.card-body');
+    if (cardBody) {
+        cardBody.insertBefore(alertDiv, cardBody.firstChild);
+    }
+
+    // Auto-remove alert after 5 seconds
+    setTimeout(() => {
+        if (alertDiv && alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
+
+// Preview image when file is selected
+document.addEventListener('DOMContentLoaded', function () {
+    // Profile image preview
+    const profileImageInput = document.getElementById('profileProfileImage');
+    if (profileImageInput) {
+        profileImageInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const avatar = document.getElementById('uploadedAvatar');
+                    if (avatar) {
+                        avatar.src = event.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // Logo image preview (optional - you can add a preview element for logo)
+    const logoInput = document.getElementById('profileLogo');
+    if (logoInput) {
+        logoInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    // Create or update logo preview
+                    let logoPreview = document.getElementById('profileLogoPreview');
+                    if (!logoPreview) {
+                        logoPreview = document.createElement('img');
+                        logoPreview.id = 'profileLogoPreview';
+                        logoPreview.className = 'mt-2 d-block w-px-100 h-px-100 rounded';
+                        logoInput.parentNode.appendChild(logoPreview);
+                    }
+                    logoPreview.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+});
+
+// Reset image functionality
+document.querySelector('.account-image-reset')?.addEventListener('click', function () {
+    const avatar = document.getElementById('uploadedAvatar');
+    if (avatar) {
+        avatar.src = '{{ asset("admin/assets/img/avatars/1.png") }}';
+    }
+    const fileInput = document.getElementById('profileProfileImage');
+    if (fileInput) {
+        fileInput.value = '';
+    }
+});
