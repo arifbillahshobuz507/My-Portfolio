@@ -1,45 +1,26 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
         <div class="col-md-12">
-            <div class="nav-align-top">
-                <ul class="nav nav-pills flex-column flex-md-row mb-6 gap-md-0 gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0);"><i class="icon-base ti tabler-users icon-sm me-1_5"></i> Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-account-settings-security.html"><i class="icon-base ti tabler-lock icon-sm me-1_5"></i> Security</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-account-settings-billing.html"><i class="icon-base ti tabler-bookmark icon-sm me-1_5"></i> Billing & Plans</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-account-settings-notifications.html"><i class="icon-base ti tabler-bell icon-sm me-1_5"></i> Notifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages-account-settings-connections.html"><i class="icon-base ti tabler-link icon-sm me-1_5"></i> Connections</a>
-                    </li>
-                </ul>
-            </div>
             <div class="card mb-6">
-                <!-- Account -->              
+                <!-- Account -->
                 <div class="card-body">
-                      <div class="d-flex align-items-start align-items-sm-center gap-6">
-                        <img  id="profileImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar">
+                    <div class="d-flex align-items-start align-items-sm-center gap-6">
+                        <img id="profileImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar">
                         <div class="button-wrapper">
-                          <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
-                            <span class="d-none d-sm-block">Upload new photo</span>
-                            <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                            <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
-                          </label>
-                          <button type="button" class="btn btn-label-secondary account-image-reset mb-4 waves-effect">
-                            <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Reset</span>
-                          </button>
+                            <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                <span class="d-none d-sm-block">Upload new photo</span>
+                                <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
+                                <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                            </label>
+                            <button type="button" class="btn btn-label-secondary account-image-reset mb-4 waves-effect">
+                                <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Reset</span>
+                            </button>
 
-                          <div>Allowed JPG, GIF or PNG. Max size of 800K</div>
+                            <div>Allowed JPG, GIF or PNG. Max size of 800K</div>
                         </div>
-                      </div>
                     </div>
+                </div>
                 <div class="card-body pt-4">
                     <div class="row gy-4 gx-6 mb-6">
                         <div class="col-md-6 form-control-validation">
