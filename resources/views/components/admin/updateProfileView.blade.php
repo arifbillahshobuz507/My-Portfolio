@@ -10,7 +10,7 @@
                             <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photo</span>
                                 <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                <input type="file" id="ProfileImage" class="account-file-input" hidden="" accept="image/png, image/jpeg">
                             </label>
                             <button type="button" class="btn btn-label-secondary account-image-reset mb-4 waves-effect">
                                 <i class="icon-base ti tabler-reset d-block d-sm-none"></i>

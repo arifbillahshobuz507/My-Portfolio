@@ -1,81 +1,80 @@
 // FETCH USER DATA SCRIPT
 async function profileData() {
-    // Form input fields
-    const fullNameInput = document.getElementById("fullName");
-    const emailInput = document.getElementById("email");
-    const phoneNumberInput = document.getElementById("phoneNumber");
-    const organizationInput = document.getElementById("organization");
-    const addressInput = document.getElementById("address");
-    const stateInput = document.getElementById("state");
-    const zipCodeInput = document.getElementById("zipCode");
-    const countrySelect = document.getElementById("country");
-    const languageSelect = document.getElementById("language");
-    const facebookInput = document.getElementById("facebook");
-    const instagramInput = document.getElementById("instagram");
-    const linkedinInput = document.getElementById("linkedin");
-    const githubInput = document.getElementById("github");
-    const twitterInput = document.getElementById("twitter");
-    const descriptionInput = document.getElementById("description");
-    const profileCvInput = document.getElementById("profileCv");
-    const profileProfileImageInput = document.getElementById("profileImage");
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const phoneNumber = document.getElementById("phoneNumber");
+    const organization = document.getElementById("organization");
+    const address = document.getElementById("address");
+    const state = document.getElementById("state");
+    const zipCode = document.getElementById("zipCode");
+    const country = document.getElementById("country");
+    const language = document.getElementById("language");
+    const facebook = document.getElementById("facebook");
+    const instagram = document.getElementById("instagram");
+    const linkedin = document.getElementById("linkedin");
+    const github = document.getElementById("github");
+    const twitter = document.getElementById("twitter");
+    const description = document.getElementById("description");
+    const profileCv = document.getElementById("profileCv");
+    const profileImage = document.getElementById("profileImage");
 
     try {
         const result = await axios.get('/api/user-profile');
-        // console.log("result", result);        
+        console.log("result", result);        
         const userData = result.data.data;
         if (userData) {
             // full name 
-            if (userData.title && fullNameInput) {
-                fullNameInput.value = userData.title || '';
+            if (userData.title && fullName) {
+                fullName.value = userData.title || '';
             }
             // email
-            if (userData.email && emailInput) {
-                emailInput.value = userData.email || '';
+            if (userData.email && email) {
+                email.value = userData.email || '';
             }
             // phone number
-            if (userData.phone && phoneNumberInput) {
-                phoneNumberInput.value = userData.phone || '';
+            if (userData.phone && phoneNumber) {
+                phoneNumber.value = userData.phone || '';
             }
         }
         // Populate profile information
         const userProfile = result.data.data.profile;
         if (userProfile) {
-            if (userProfile.organization && organizationInput) {
-                organizationInput.value = userProfile.organization || '';
+            if (userProfile.organization && organization) {
+                organization.value = userProfile.organization || '';
             }
-            if (userProfile.address && addressInput) {
-                addressInput.value = userProfile.address || '';
+            if (userProfile.address && address) {
+                address.value = userProfile.address || '';
             }
-            if (userProfile.state && stateInput) {
-                stateInput.value = userProfile.state || '';
+            if (userProfile.state && state) {
+                state.value = userProfile.state || '';
             }
-            if (userProfile.zip && zipCodeInput) {
-                zipCodeInput.value = userProfile.zip || '';
+            if (userProfile.zip && zipCode) {
+                zipCode.value = userProfile.zip || '';
             }
-            if (userProfile.country && countrySelect) {
-                countrySelect.value = userProfile.country;
+            if (userProfile.country && country) {
+                country.value = userProfile.country;
             }
-            if (userProfile.language && languageSelect) {
-                languageSelect.value = userProfile.language;
+            if (userProfile.language && language) {
+                language.value = userProfile.language;
             }
-            if (userProfile.description && descriptionInput) {
-                descriptionInput.value = userProfile.description || '';
+            if (userProfile.description && description) {
+                description.value = userProfile.description || '';
             }
             // Social media links
-            if (userProfile.facebook && facebookInput) {
-                facebookInput.value = userProfile.facebook || '';
+            if (userProfile.facebook && facebook) {
+                facebook.value = userProfile.facebook || '';
             }
-            if (userProfile.instagram && instagramInput) {
-                instagramInput.value = userProfile.instagram || '';
+            if (userProfile.instagram && instagram) {
+                instagram.value = userProfile.instagram || '';
             }
-            if (userProfile.linkedin && linkedinInput) {
-                linkedinInput.value = userProfile.linkedin || '';
+            if (userProfile.linkedin && linkedin) {
+                linkedin.value = userProfile.linkedin || '';
             }
-            if (userProfile.github && githubInput) {
-                githubInput.value = userProfile.github || '';
+            if (userProfile.github && github) {
+                github.value = userProfile.github || '';
             }
-            if (userProfile.twitter && twitterInput) {
-                twitterInput.value = userProfile.twitter || '';
+            if (userProfile.twitter && twitter) {
+                twitter.value = userProfile.twitter || '';
             }
             // Set images
             const image = userProfile.image;
@@ -102,88 +101,86 @@ async function updateUserData() {
     const formData = new FormData();
 
     // Get all input values
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phoneNumber = document.getElementById("phoneNumber").value;
-    const organization = document.getElementById("organization").value;
-    const address = document.getElementById("address").value;
-    const state = document.getElementById("state").value;
-    const zipCode = document.getElementById("zipCode").value;
-    const country = document.getElementById("country").value;
-    const language = document.getElementById("language").value;
-    const facebook = document.getElementById("facebook").value;
-    const instagram = document.getElementById("instagram").value;
-    const linkedin = document.getElementById("linkedin").value;
-    const github = document.getElementById("github").value;
-    const twitter = document.getElementById("twitter").value;
-    const description = document.getElementById("description").value;
+    const fullNameInput = document.getElementById("fullName").value;
+    const emailInput = document.getElementById("email").value;
+    const phoneNumberInput = document.getElementById("phoneNumber").value;
+    const organizationInput = document.getElementById("organization").value;
+    const addressInput = document.getElementById("address").value;
+    const stateInput = document.getElementById("state").value;
+    const zipCodeInput = document.getElementById("zipCode").value;
+    const countryInput = document.getElementById("country").value;
+    const languageInput = document.getElementById("language").value;
+    const facebookInput = document.getElementById("facebook").value;
+    const instagramInput = document.getElementById("instagram").value;
+    const linkedinInput = document.getElementById("linkedin").value;
+    const githubInput = document.getElementById("github").value;
+    const twitterInput = document.getElementById("twitter").value;
+    const descriptionInput = document.getElementById("description").value;
 
     // Get file inputs
-    const profileImage = document.getElementById("profileProfileImage").files[0];
-    const profileLogo = document.getElementById("profileLogo").files[0];
-    const profileCv = document.getElementById("profileCv").files[0];
+    const profileImageInput = document.getElementById("ProfileImage").files[0];
+    const profileLogoInput = document.getElementById("profileLogo").files[0];
+    const profileCvInput = document.getElementById("profileCv").files[0];
     // Basic validation
-    if (!email) {
+    if (!emailInput) {
         errorToast('Email is required');
         return false;
     }
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(emailInput)) {
         errorToast('Please enter a valid email address.');
         return false;
     }
 
     // Append all data to FormData
-    formData.append('fullName', fullName);
-    formData.append('email', email);
-    formData.append('phoneNumber', phoneNumber);
-    formData.append('organization', organization);
-    formData.append('address', address);
-    formData.append('state', state);
-    formData.append('zipCode', zipCode);
-    formData.append('country', country);
-    formData.append('language', language);
-    formData.append('facebook', facebook);
-    formData.append('instagram', instagram);
-    formData.append('linkedin', linkedin);
-    formData.append('github', github);
-    formData.append('twitter', twitter);
-    formData.append('description', description);
+    formData.append('fullName', fullNameInput);
+    formData.append('email', emailInput);
+    formData.append('phoneNumber', phoneNumberInput);
+    formData.append('organization', organizationInput);
+    formData.append('address', addressInput);
+    formData.append('state', stateInput);
+    formData.append('zipCode', zipCodeInput);
+    formData.append('country', countryInput);
+    formData.append('language', languageInput);
+    formData.append('facebook', facebookInput);
+    formData.append('instagram', instagramInput);
+    formData.append('linkedin', linkedinInput);
+    formData.append('github', githubInput);
+    formData.append('twitter', twitterInput);
+    formData.append('description', descriptionInput);
 
     // Append files if they exist
-    if (profileImage) {
-        formData.append('profileImage', profileImage);
+    if (profileImageInput) {
+        formData.append('profileImage', profileImageInput);
     }
-    if (profileLogo) {
-        formData.append('profileLogo', profileLogo);
+    if (profileLogoInput) {
+        formData.append('profileLogo', profileLogoInput);
     }
-    if (profileCv) {
-        formData.append('profileCv', profileCv);
+    if (profileCvInput) {
+        formData.append('profileCv', profileCvInput);
     }
 
     try {
         // Show loading state
-        const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Saving...';
-        submitBtn.disabled = true;
+        // const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
+        // const originalText = submitBtn.innerHTML;
+        // submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Saving...';
+        // submitBtn.disabled = true;
 
         // Send update request
         const response = await axios({
             method: 'post', // or 'put'
-            url: '/api/user-profile/update', // Update this URL to match your route
+            url: '/api/user-profile/update',
             data: formData,
             headers: {
-                'Content-Type': 'multipart/form-data',
-                // Add authorization header if needed
-                // 'Authorization': `Bearer ${token}`
+                'Content-Type': 'multipart/form-data'
             }
         });
 
         // Handle success
         if (response.data.status === 'success' || response.status === 200) {
-            showAlert('success', 'Profile updated successfully!');
+            successToast(response.data.message);
 
             // Update the UI with new data
             const data = response.data.data;
@@ -204,62 +201,45 @@ async function updateUserData() {
         }
 
     } catch (error) {
-        console.error('Error updating profile:', error);
+        hideLoader();
+        console.log("Full error object:", error);
 
-        // Handle validation errors
-        if (error.response && error.response.status === 422) {
-            const errors = error.response.data.errors;
-            let errorMessage = 'Please fix the following errors:\n';
-            for (let key in errors) {
-                if (errors.hasOwnProperty(key)) {
-                    errorMessage += `- ${errors[key].join(', ')}\n`;
+        if (error.response) {
+            const status = error.response.status;
+            const data = error.response.data;
+
+            console.log("Status:", status);
+            console.log("Response data:", data);
+
+            if (status === 500) {
+                if (data && data.message) {
+                    errorToast(data.message); // "Authentication failed"
+                } else if (data && data.error) {
+                    errorToast(data.error); // "Invalid email or password"
+                } else {
+                    errorToast("Server error. Please try again later.");
                 }
             }
-            showAlert('error', errorMessage);
-        } else if (error.response && error.response.data && error.response.data.message) {
-            showAlert('error', error.response.data.message);
-        } else {
-            showAlert('error', 'An error occurred while updating profile. Please try again.');
+            else if (status === 401) {
+                errorToast("Invalid email or password");
+            }
+            else if (status === 422) {
+                errorToast("Validation failed. Please check your input.");
+            }
+            else if (status === 404) {
+                errorToast("API endpoint not found");
+            }
+            else {
+                errorToast(data?.message || data?.error || "Something went wrong");
+            }
         }
-
-        return false;
-    } finally {
-        // Reset button state
-        const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
-        if (submitBtn) {
-            submitBtn.innerHTML = 'Save changes';
-            submitBtn.disabled = false;
+        else if (error.request) {
+            errorToast("Network error. Please check your internet connection.");
+        }
+        else {
+            errorToast(error.message || "An unexpected error occurred");
         }
     }
-}
-
-// Helper function to show alerts
-function showAlert(type, message) {
-    // Remove existing alerts
-    const existingAlerts = document.querySelectorAll('.custom-alert');
-    existingAlerts.forEach(alert => alert.remove());
-
-    // Create alert element
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `custom-alert alert alert-${type} alert-dismissible fade show`;
-    alertDiv.role = 'alert';
-    alertDiv.innerHTML = `
-        <strong>${type === 'success' ? 'Success!' : 'Error!'}</strong> ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-
-    // Insert alert at the top of the card
-    const cardBody = document.querySelector('.card-body');
-    if (cardBody) {
-        cardBody.insertBefore(alertDiv, cardBody.firstChild);
-    }
-
-    // Auto-remove alert after 5 seconds
-    setTimeout(() => {
-        if (alertDiv && alertDiv.parentNode) {
-            alertDiv.remove();
-        }
-    }, 5000);
 }
 
 // Preview image when file is selected

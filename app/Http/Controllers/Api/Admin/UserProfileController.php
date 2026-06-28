@@ -32,7 +32,7 @@ class UserProfileController extends Controller
         }
     }
     //store/update profile user
-    public function store(Request $request): JsonResponse
+    public function update(Request $request): JsonResponse
     {
         try {
             $request->validate([
@@ -49,13 +49,13 @@ class UserProfileController extends Controller
                 'twitter' => 'nullable|url|max:300',
             ]);
             // Update user basic info
-            $user = User::find($request->input('user_id'));
+            $user = User::where('id', $request->header('user_id'))->first();
             if ($user == null) {
                 return ApiResponse::success(message: 'user not found', data: []);
             }
 
             // Handle file uploads with old file deletion
-            $existingProfile = UserProfile::where('user_id', $request->input('user_id'))->first();
+            $existingProfile = UserProfile::where('user_id', $user->id)->first();
 
             $imageName = $existingProfile ? $existingProfile->image : null;
 
@@ -83,7 +83,7 @@ class UserProfileController extends Controller
             }
             // Create or Update profile
             $profile = UserProfile::updateOrCreate(
-                ['user_id' => $request->input('user_id')],
+                ['user_id' => $user->id],
                 [
                     'description' => $request->input('description'),
                     'cv' => $cvName,

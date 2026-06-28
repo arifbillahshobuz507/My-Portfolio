@@ -22,6 +22,11 @@
 </head>
 
 <body>
+  <div id="loader" class="LoadingOverlay d-none">
+    <div class="Line-Progress">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar  ">
     <div class="layout-container">

@@ -46,7 +46,7 @@ Route::middleware(['apiTokenverification'])->group(function () {
     //USER PROFILE ROUTES
     Route::controller(UserProfileController::class)->prefix('user-profile')->group(function () {
         Route::get('/', 'userProfile');
-        Route::post('/store', 'store');
+        Route::post('/update', 'update');
     });
     //SERVICE ROUTES
     Route::controller(ServiceController::class)->prefix('services')->group(function () {
