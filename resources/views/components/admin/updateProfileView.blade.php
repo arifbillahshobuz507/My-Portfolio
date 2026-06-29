@@ -10,7 +10,7 @@
                             <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
                                 <span class="d-none d-sm-block">Upload new photo</span>
                                 <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                <input type="file" id="ProfileImage" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
                             </label>
                             <button type="button" class="btn btn-label-secondary account-image-reset mb-4 waves-effect">
                                 <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
@@ -38,7 +38,7 @@
                                 class="form-control"
                                 type="text"
                                 id="email"
-                                placeholder="john.doe@example.com" />
+                                placeholder="john.doe@example.com" disabled />
                         </div>
                         <div class="col-md-6">
                             <label for="organization" class="form-label">Organization</label>
@@ -54,7 +54,7 @@
                                 <span class="input-group-text">+88 </span>
                                 <input
                                     type="text"
-                                    id="phoneNumber"
+                                    id="phone"
                                     class="form-control"
                                     placeholder="01900000000" />
                             </div>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="profileCv" class="form-label">CV/Resume</label>
-                            <input type="file" class="form-control" id="profileCv" accept=".pdf,.doc,.docx" />
+                            <input type="file" class="form-control" id="cv" accept=".pdf,.doc,.docx" />
                         </div>
 
                     </div>

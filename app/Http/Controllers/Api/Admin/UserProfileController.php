@@ -39,9 +39,7 @@ class UserProfileController extends Controller
                 'title' => 'nullable|string',
                 'name' => 'nullable|string|max:255',
                 'description' => 'nullable|string',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-                'cv' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
+                'cv' => 'nullable|mimes:pdf,doc,docx|max:5120',
                 'facebook' => 'nullable|url|max:300',
                 'instagram' => 'nullable|url|max:300',
                 'linkedin' => 'nullable|url|max:300',
@@ -53,6 +51,10 @@ class UserProfileController extends Controller
             if ($user == null) {
                 return ApiResponse::success(message: 'user not found', data: []);
             }
+            $user->update([
+                'title' => $request->input('title'),
+                'phone' => $request->input('phone')
+            ]);
 
             // Handle file uploads with old file deletion
             $existingProfile = UserProfile::where('user_id', $user->id)->first();
@@ -85,15 +87,21 @@ class UserProfileController extends Controller
             $profile = UserProfile::updateOrCreate(
                 ['user_id' => $user->id],
                 [
+                    'organization' => $request->input('organization'),
+                    'address' => $request->input('address'),
+                    'state' => $request->input('state'),
+                    'zip' => $request->input('zip'),
+                    'country' => $request->input('country'),
+                    'language' => $request->input('language'),
                     'description' => $request->input('description'),
-                    'cv' => $cvName,
-                    'logo' => $logoName,
-                    'image' => $imageName,
                     'facebook' => $request->input('facebook', 'https://www.facebook.com/'),
                     'instagram' => $request->input('instagram', 'https://www.instagram.com/'),
                     'linkedin' => $request->input('linkedin', 'https://www.linkedin.com/'),
                     'github' => $request->input('github', 'https://www.github.com/'),
                     'twitter' => $request->input('twitter', 'https://www.twitter.com/'),
+                    'cv' => $cvName ?? $profile->cv ?? null,
+                    'logo' => $logoName ?? $profile->logo ?? null,
+                    'image' => $imageName ?? $profile->image ?? null,
                 ]
             );
             $message = $profile->wasRecentlyCreated ? 'Profile Created Successfully' : 'Profile Updated Successfully';

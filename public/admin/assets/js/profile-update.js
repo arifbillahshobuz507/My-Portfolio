@@ -102,9 +102,8 @@ async function updateUserData() {
 
     // Get all input values
     const fullNameInput = document.getElementById("fullName").value;
-    const emailInput = document.getElementById("email").value;
-    const phoneNumberInput = document.getElementById("phoneNumber").value;
     const organizationInput = document.getElementById("organization").value;
+    const phoneNumber = document.getElementById("phone").value;
     const addressInput = document.getElementById("address").value;
     const stateInput = document.getElementById("state").value;
     const zipCodeInput = document.getElementById("zipCode").value;
@@ -118,29 +117,17 @@ async function updateUserData() {
     const descriptionInput = document.getElementById("description").value;
 
     // Get file inputs
-    const profileImageInput = document.getElementById("ProfileImage").files[0];
+    const profileImageInput = document.getElementById("upload").files[0];
     const profileLogoInput = document.getElementById("profileLogo").files[0];
-    const profileCvInput = document.getElementById("profileCv").files[0];
-    // Basic validation
-    if (!emailInput) {
-        errorToast('Email is required');
-        return false;
-    }
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput)) {
-        errorToast('Please enter a valid email address.');
-        return false;
-    }
+    const profileCvInput = document.getElementById("cv").files[0];  
 
     // Append all data to FormData
-    formData.append('fullName', fullNameInput);
-    formData.append('email', emailInput);
-    formData.append('phoneNumber', phoneNumberInput);
+    formData.append('title', fullNameInput);
     formData.append('organization', organizationInput);
+    formData.append('phone', phoneNumber);
     formData.append('address', addressInput);
     formData.append('state', stateInput);
-    formData.append('zipCode', zipCodeInput);
+    formData.append('zip', zipCodeInput);
     formData.append('country', countryInput);
     formData.append('language', languageInput);
     formData.append('facebook', facebookInput);
@@ -152,13 +139,13 @@ async function updateUserData() {
 
     // Append files if they exist
     if (profileImageInput) {
-        formData.append('profileImage', profileImageInput);
+        formData.append('logo',profileLogoInput );
     }
     if (profileLogoInput) {
-        formData.append('profileLogo', profileLogoInput);
+        formData.append('image', profileImageInput);
     }
     if (profileCvInput) {
-        formData.append('profileCv', profileCvInput);
+        formData.append('cv', profileCvInput);
     }
 
     try {
