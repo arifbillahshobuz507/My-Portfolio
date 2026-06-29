@@ -16,11 +16,13 @@ async function profileData() {
     const twitter = document.getElementById("twitter");
     const description = document.getElementById("description");
     const profileCv = document.getElementById("profileCv");
-    const profileImage = document.getElementById("profileImage");
+    const profileLogo = document.getElementById("profileImage");
+    const profileImage = document.getElementById("upload");
+
 
     try {
         const result = await axios.get('/api/user-profile');
-        console.log("result", result);        
+        console.log("result", result);
         const userData = result.data.data;
         if (userData) {
             // full name 
@@ -79,12 +81,13 @@ async function profileData() {
             // Set images
             const image = userProfile.image;
             const logo = userProfile.logo;
+            const baseUrl = "{{ asset('admin/assets/img/profile') }}";
 
+            if (profileImage && logo) {
+                profileImage.src = `${baseUrl}/${logo}`;
+            }
             if (userImage && image) {
                 userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
-            }
-            if (userLogo && logo) {
-                userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
             }
         }
     } catch (error) {
@@ -118,8 +121,9 @@ async function updateUserData() {
 
     // Get file inputs
     const profileImageInput = document.getElementById("upload").files[0];
+    console.log(profileImageInput);
     const profileLogoInput = document.getElementById("profileLogo").files[0];
-    const profileCvInput = document.getElementById("cv").files[0];  
+    const profileCvInput = document.getElementById("cv").files[0];
 
     // Append all data to FormData
     formData.append('title', fullNameInput);
@@ -139,7 +143,7 @@ async function updateUserData() {
 
     // Append files if they exist
     if (profileImageInput) {
-        formData.append('logo',profileLogoInput );
+        formData.append('logo', profileImageInput);
     }
     if (profileLogoInput) {
         formData.append('image', profileImageInput);
