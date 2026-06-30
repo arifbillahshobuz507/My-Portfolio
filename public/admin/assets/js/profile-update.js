@@ -16,7 +16,7 @@ async function profileData() {
     const twitter = document.getElementById("twitter");
     const description = document.getElementById("description");
     const profileCv = document.getElementById("profileCv");
-    const profileLogo = document.getElementById("profileImage");
+    const profileImageView = document.getElementById("profileImage");
     const profileImage = document.getElementById("upload");
 
 
@@ -83,8 +83,8 @@ async function profileData() {
             const logo = userProfile.logo;
             const baseUrl = "{{ asset('admin/assets/img/profile') }}";
 
-            if (profileImage && logo) {
-                profileImage.src = `${baseUrl}/${logo}`;
+            if (profileImageView && logo) {
+                profileImageView.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
             }
             if (userImage && image) {
                 userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
