@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('description')->nullable();
             $table->string('cv', 50)->nullable();
-            $table->string('logo')->nullable();
+            $table->string('logo')->nullable()->comment('profile image');
             $table->string('organization')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
             $table->string('language')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->nullable()->comment('cover image');
             $table->string('facebook', 300)->nullable()->default('https://www.facebook.com/');
             $table->string('instagram', 300)->nullable()->default('https://www.instagram.com/');
             $table->string('linkedin', 300)->nullable()->default('https://www.linkedin.com/');

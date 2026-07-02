@@ -236,40 +236,17 @@ async function updateUserData() {
 // Preview image when file is selected
 document.addEventListener('DOMContentLoaded', function () {
     // Profile image preview
-    const profileImageInput = document.getElementById('profileProfileImage');
+    const profileImageInput = document.getElementById('upload');
     if (profileImageInput) {
         profileImageInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (event) {
-                    const avatar = document.getElementById('uploadedAvatar');
+                    const avatar = document.getElementById('profileImage');
                     if (avatar) {
                         avatar.src = event.target.result;
                     }
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    }
-
-    // Logo image preview (optional - you can add a preview element for logo)
-    const logoInput = document.getElementById('profileLogo');
-    if (logoInput) {
-        logoInput.addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    // Create or update logo preview
-                    let logoPreview = document.getElementById('profileLogoPreview');
-                    if (!logoPreview) {
-                        logoPreview = document.createElement('img');
-                        logoPreview.id = 'profileLogoPreview';
-                        logoPreview.className = 'mt-2 d-block w-px-100 h-px-100 rounded';
-                        logoInput.parentNode.appendChild(logoPreview);
-                    }
-                    logoPreview.src = event.target.result;
                 };
                 reader.readAsDataURL(file);
             }
