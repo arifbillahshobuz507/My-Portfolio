@@ -157,11 +157,6 @@ async function updateUserData() {
     }
 
     try {
-        // Show loading state
-        // const submitBtn = document.querySelector('.btn-primary[onclick="updateUserData()"]');
-        // const originalText = submitBtn.innerHTML;
-        // submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Saving...';
-        // submitBtn.disabled = true;
 
         // Send update request
         const response = await axios({
@@ -172,26 +167,14 @@ async function updateUserData() {
                 'Content-Type': 'multipart/form-data'
             }
         });
-
+        showLoader();
         // Handle success
         if (response.data.status === 'success' || response.status === 200) {
+            hideLoader();
             successToast(response.data.message);
-
-            // Update the UI with new data
-            const data = response.data.data;
-            if (data) {
-                // Update profile images if new ones were uploaded
-                const userImage = document.getElementById('uploadedAvatar');
-                const userLogo = document.getElementById('profileLogoPreview'); // You may need to add this element
-
-                if (data.profile && data.profile.image && userImage) {
-                    userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${data.profile.image}?t=${new Date().getTime()}`;
-                }
-                if (data.profile && data.profile.logo && userLogo) {
-                    userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${data.profile.logo}?t=${new Date().getTime()}`;
-                }
-            }
+            window.location.reload();
         } else {
+            hideLoader();
             showAlert('error', response.data.message || 'Failed to update profile');
         }
 
@@ -257,72 +240,67 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-const companyLogoPreviewInput = document.getElementById('companyLogoInput');
-if (companyLogoPreviewInput) {
-    companyLogoPreviewInput.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                const avatar = document.getElementById('companyLogoPreview');
-                if (avatar) {
-                    avatar.src = event.target.result;
-                }
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const removeLogoPriview = document.querySelector('.companyLogoReset');
+    const companyLogoPreviewInput = document.getElementById('companyLogoInput');
+    const avatar = document.getElementById('companyLogoPreview');
+    if (companyLogoPreviewInput) {
+        companyLogoPreviewInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    if (avatar) {
+                        avatar.src = event.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    if (removeLogoPriview) {
+        removeLogoPriview.addEventListener('click', function () {
+            avatar.src = 'http://127.0.0.1:8000/admin/assets/img/avatars/1.png';
+            companyLogoPreviewInput.value = '';
+        });
+    }
+});
 document.addEventListener("DOMContentLoaded", function () {
-
     const cvInput = document.getElementById("userCVInput");
     const cvPreview = document.getElementById("userCVPreview");
     const resetBtn = document.querySelector(".userCVReset");
-
     if (cvInput) {
-
         cvInput.addEventListener("change", function (e) {
-
             const file = e.target.files[0];
-
             if (!file) return;
-
             if (file.type !== "application/pdf") {
                 alert("Please upload a PDF file only.");
                 cvInput.value = "";
                 cvPreview.src = "";
                 return;
             }
-
             const pdfURL = URL.createObjectURL(file);
             cvPreview.src = pdfURL;
-
         });
-
     }
-
     if (resetBtn) {
-
         resetBtn.addEventListener("click", function () {
-
             cvInput.value = "";
             cvPreview.src = "";
-
         });
-
     }
 
 });
 
 
 // // Reset image functionality
-// document.querySelector('.account-image-reset')?.addEventListener('click', function () {
-//     const avatar = document.getElementById('uploadedAvatar');
-//     if (avatar) {
-//         avatar.src = '{{ asset("admin/assets/img/avatars/1.png") }}';
-//     }
-//     const fileInput = document.getElementById('profileProfileImage');
-//     if (fileInput) {
-//         fileInput.value = '';
-//     }
-// });
+document.querySelector('.profile-reset')?.addEventListener('click', function () {
+    const avatar = document.getElementById('profileImage');
+    if (avatar) {
+        avatar.src = "http://127.0.0.1:8000/admin/assets/img/avatars/1.png";
+    }
+    const fileInput = document.getElementById('profileProfileImage');
+    if (fileInput) {
+        fileInput.value = '';
+    }
+});
