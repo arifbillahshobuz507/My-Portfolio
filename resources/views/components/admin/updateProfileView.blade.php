@@ -2,24 +2,60 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-6">
-                <!-- Account -->
-                <div class="card-body">
-                    <div class="d-flex align-items-start align-items-sm-center gap-6">
-                        <img id="profileImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded">
-                        <div class="button-wrapper">
-                            <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
-                                <span class="d-none d-sm-block">Upload new photo</span>
-                                <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg">
-                            </label>
-                            <button type="button" class="btn btn-label-secondary profile-reset mb-4 waves-effect">
-                                <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
-                                <span class="d-none d-sm-block">Reset</span>
-                            </button>
-                            <div>Allowed JPG, GIF or PNG. Max size of 800K</div>
+                <div class="row mt-5">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Company Profile</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-start align-items-sm-center gap-6">
+                                    <img id="profileImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded">
+                                    <div class="button-wrapper">
+                                        <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
+                                            <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg">
+                                        </label>
+                                        <button type="button" class="btn btn-label-secondary profile-reset mb-4 waves-effect">
+                                            <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Reset</span>
+                                        </button>
+                                        <div>Allowed JPG, GIF or PNG. Max size of 800K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Logo Upload Section -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Company Logo</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-start align-items-sm-center gap-6">
+                                    <img id="companyLogoPreview" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="Company Logo" class="d-block w-px-100 h-px-100 rounded" style="object-fit: cover;">
+                                    <div class="button-wrapper">
+                                        <label for="companyLogoInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload Logo</span>
+                                            <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
+                                            <input type="file" id="companyLogoInput" class="account-file-input" hidden accept="image/png, image/jpeg, image/jpg">
+                                        </label>
+                                        <button type="button" class="btn btn-label-secondary companyLogoReset mb-4 waves-effect">
+                                            <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Reset</span>
+                                        </button>
+                                        <div class="text-muted small">Allowed JPG, PNG. Max size: 800KB</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Account -->
+
 
                 <div class="card-body pt-4">
                     <div class="row gy-4 gx-6 mb-6">
@@ -122,72 +158,46 @@
 
                     <!-- Logo and CV Upload Section -->
                     <div class="row mt-5">
-                        <!-- Logo Upload Section -->
-                        <div class="col-md-6 mb-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Company Logo</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex align-items-start align-items-sm-center gap-6">
-                                        <img id="companyLogoPreview" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="Company Logo" class="d-block w-px-100 h-px-100 rounded" style="object-fit: cover;">
-                                        <div class="button-wrapper">
-                                            <label for="companyLogoInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
-                                                <span class="d-none d-sm-block">Upload Logo</span>
-                                                <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                                <input type="file" id="companyLogoInput" class="account-file-input" hidden accept="image/png, image/jpeg, image/jpg">
-                                            </label>
-                                            <button type="button" class="btn btn-label-secondary companyLogoReset mb-4 waves-effect">
-                                                <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
-                                                <span class="d-none d-sm-block">Reset</span>
-                                            </button>
-                                            <div class="text-muted small">Allowed JPG, PNG. Max size: 800KB</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
 
                         <!-- CV Upload Section -->
-                        <div class="col-md-6 mb-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">CV / Resume</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex align-items-start align-items-sm-center gap-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">CV / Resume</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-start align-items-sm-center gap-6">
 
-                                        <iframe
-                                            id="userCVPreview"
-                                            src=""
-                                            width="120"
-                                            height="150"
-                                            style="border:1px solid #ddd; border-radius:8px;">
-                                        </iframe>
+                                    <iframe
+                                        id="userCVPreview"
+                                        src=""
+                                        width="1050"
+                                        height="500"
+                                        style="border:1px solid #ddd; border-radius:8px;">
+                                    </iframe>
 
-                                        <div class="button-wrapper">
-                                            <label for="userCVInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
-                                                <span class="d-none d-sm-block">Upload CV</span>
-                                                <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
+                                    <div class="button-wrapper">
+                                        <label for="userCVInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload CV</span>
+                                            <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
 
-                                                <input
-                                                    type="file"
-                                                    id="userCVInput"
-                                                    hidden
-                                                    accept="application/pdf">
-                                            </label>
+                                            <input
+                                                type="file"
+                                                id="userCVInput"
+                                                hidden
+                                                accept="application/pdf">
+                                        </label>
 
-                                            <button type="button" class="btn btn-label-secondary userCVReset mb-4 waves-effect">
-                                                <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
-                                                <span class="d-none d-sm-block">Reset</span>
-                                            </button>
+                                        <button type="button" class="btn btn-label-secondary userCVReset mb-4 waves-effect">
+                                            <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Reset</span>
+                                        </button>
 
-                                            <div class="text-muted small">
-                                                Allowed PDF only. Max size: 2MB
-                                            </div>
+                                        <div class="text-muted small">
+                                            Allowed PDF only. Max size: 2MB
                                         </div>
-
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -201,7 +211,7 @@
                 <!-- /Account -->
             </div>
 
-            <div class="card">
+            <!-- <div class="card">
                 <h5 class="card-header">Delete Account</h5>
                 <div class="card-body">
                     <div class="mb-6 col-12 mb-0">
@@ -220,7 +230,7 @@
                         </button>
                     </form>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
