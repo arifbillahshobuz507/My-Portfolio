@@ -156,19 +156,37 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex align-items-start align-items-sm-center gap-6">
-                                        <img id="userCVPreview" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="CV" class="d-block w-px-100 h-px-100 rounded" style="object-fit: cover;">
+
+                                        <iframe
+                                            id="userCVPreview"
+                                            src=""
+                                            width="120"
+                                            height="150"
+                                            style="border:1px solid #ddd; border-radius:8px;">
+                                        </iframe>
+
                                         <div class="button-wrapper">
                                             <label for="userCVInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
                                                 <span class="d-none d-sm-block">Upload CV</span>
                                                 <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                                <input type="file" id="userCVInput" class="account-file-input" hidden accept=".pdf,.doc,.docx,image/png,image/jpeg">
+
+                                                <input
+                                                    type="file"
+                                                    id="userCVInput"
+                                                    hidden
+                                                    accept="application/pdf">
                                             </label>
+
                                             <button type="button" class="btn btn-label-secondary userCVReset mb-4 waves-effect">
                                                 <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
                                                 <span class="d-none d-sm-block">Reset</span>
                                             </button>
-                                            <div class="text-muted small">Allowed PDF, DOC, DOCX, JPG, PNG. Max size: 2MB</div>
+
+                                            <div class="text-muted small">
+                                                Allowed PDF only. Max size: 2MB
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

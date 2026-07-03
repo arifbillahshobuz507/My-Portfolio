@@ -15,9 +15,9 @@ async function profileData() {
     const github = document.getElementById("github");
     const twitter = document.getElementById("twitter");
     const description = document.getElementById("description");
-    const profileCv = document.getElementById("profileCv");
     const profileImageView = document.getElementById("profileImage");
-    const profileImage = document.getElementById("upload");
+    const profileLogo = document.getElementById("companyLogoPreview");
+    const profileCv = document.getElementById("userCVPreview");
 
 
     try {
@@ -81,13 +81,17 @@ async function profileData() {
             // Set images
             const image = userProfile.image;
             const logo = userProfile.logo;
+            const cv = userProfile.cv;
             const baseUrl = "{{ asset('admin/assets/img/profile') }}";
 
             if (profileImageView && logo) {
-                profileImageView.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
+                profileImageView.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
             }
-            if (userImage && image) {
-                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+            if (profileLogo && image) {
+                profileLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
+            }
+            if (profileCv && cv) {
+                profileCv.src = `http://127.0.0.1:8000/admin/assets/img/profile/${cv}`;
             }
         }
     } catch (error) {
@@ -122,8 +126,8 @@ async function updateUserData() {
     // Get file inputs
     const profileImageInput = document.getElementById("upload").files[0];
     console.log(profileImageInput);
-    const profileLogoInput = document.getElementById("profileLogo").files[0];
-    const profileCvInput = document.getElementById("cv").files[0];
+    const profileLogoInput = document.getElementById("companyLogoInput").files[0];
+    const profileCvInput = document.getElementById("userCVInput").files[0];
 
     // Append all data to FormData
     formData.append('title', fullNameInput);
@@ -143,7 +147,7 @@ async function updateUserData() {
 
     // Append files if they exist
     if (profileImageInput) {
-        formData.append('logo', profileImageInput);
+        formData.append('logo', profileLogoInput);
     }
     if (profileLogoInput) {
         formData.append('image', profileImageInput);
@@ -253,15 +257,72 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+const companyLogoPreviewInput = document.getElementById('companyLogoInput');
+if (companyLogoPreviewInput) {
+    companyLogoPreviewInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const avatar = document.getElementById('companyLogoPreview');
+                if (avatar) {
+                    avatar.src = event.target.result;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+document.addEventListener("DOMContentLoaded", function () {
 
-// Reset image functionality
-document.querySelector('.account-image-reset')?.addEventListener('click', function () {
-    const avatar = document.getElementById('uploadedAvatar');
-    if (avatar) {
-        avatar.src = '{{ asset("admin/assets/img/avatars/1.png") }}';
+    const cvInput = document.getElementById("userCVInput");
+    const cvPreview = document.getElementById("userCVPreview");
+    const resetBtn = document.querySelector(".userCVReset");
+
+    if (cvInput) {
+
+        cvInput.addEventListener("change", function (e) {
+
+            const file = e.target.files[0];
+
+            if (!file) return;
+
+            if (file.type !== "application/pdf") {
+                alert("Please upload a PDF file only.");
+                cvInput.value = "";
+                cvPreview.src = "";
+                return;
+            }
+
+            const pdfURL = URL.createObjectURL(file);
+            cvPreview.src = pdfURL;
+
+        });
+
     }
-    const fileInput = document.getElementById('profileProfileImage');
-    if (fileInput) {
-        fileInput.value = '';
+
+    if (resetBtn) {
+
+        resetBtn.addEventListener("click", function () {
+
+            cvInput.value = "";
+            cvPreview.src = "";
+
+        });
+
     }
+
 });
+
+
+// // Reset image functionality
+// document.querySelector('.account-image-reset')?.addEventListener('click', function () {
+//     const avatar = document.getElementById('uploadedAvatar');
+//     if (avatar) {
+//         avatar.src = '{{ asset("admin/assets/img/avatars/1.png") }}';
+//     }
+//     const fileInput = document.getElementById('profileProfileImage');
+//     if (fileInput) {
+//         fileInput.value = '';
+//     }
+// });

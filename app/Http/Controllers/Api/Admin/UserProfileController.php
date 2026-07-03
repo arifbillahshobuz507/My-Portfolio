@@ -35,6 +35,7 @@ class UserProfileController extends Controller
     public function update(Request $request): JsonResponse
     {
         try {
+            // dd($request->all());
             $request->validate([
                 'title' => 'nullable|string',
                 'name' => 'nullable|string|max:255',
