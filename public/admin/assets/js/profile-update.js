@@ -172,7 +172,9 @@ async function updateUserData() {
         if (response.data.status === 'success' || response.status === 200) {
             hideLoader();
             successToast(response.data.message);
-            window.location.reload();
+            setTimeout(function(){
+                window.location.reload();
+            },500);
         } else {
             hideLoader();
             showAlert('error', response.data.message || 'Failed to update profile');
