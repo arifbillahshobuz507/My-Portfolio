@@ -22,7 +22,7 @@ async function profileData() {
 
     try {
         const result = await axios.get('/api/user-profile');
-        console.log("result", result);
+        // console.log("result", result);
         const userData = result.data.data;
         if (userData) {
             // full name 
@@ -95,7 +95,7 @@ async function profileData() {
             }
         }
     } catch (error) {
-        console.log("Full error object:", error);
+        // console.log("Full error object:", error);
         console.error('Error fetching profile data:', error);
     }
 }
@@ -125,7 +125,7 @@ async function updateUserData() {
 
     // Get file inputs
     const profileImageInput = document.getElementById("upload").files[0];
-    console.log(profileImageInput);
+    // console.log(profileImageInput);
     const profileLogoInput = document.getElementById("companyLogoInput").files[0];
     const profileCvInput = document.getElementById("userCVInput").files[0];
 
@@ -182,14 +182,14 @@ async function updateUserData() {
 
     } catch (error) {
         hideLoader();
-        console.log("Full error object:", error);
+        // console.log("Full error object:", error);
 
         if (error.response) {
             const status = error.response.status;
             const data = error.response.data;
 
-            console.log("Status:", status);
-            console.log("Response data:", data);
+            // console.log("Status:", status);
+            // console.log("Response data:", data);
 
             if (status === 500) {
                 if (data && data.message) {

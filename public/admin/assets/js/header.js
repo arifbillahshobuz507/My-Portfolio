@@ -1,20 +1,23 @@
 async function header() {
     const userFullName = document.getElementById("userFullName");
     const userEmail = document.getElementById("userEmail");
-    const userImage = document.getElementById("userImage");
     const userLogo = document.getElementById("userLogo");
+    const userImage = document.getElementById("userImage");
     try {
         const result = await axios.get('/api/user-profile');
         // The user data is in result.data.data based on your response
         const userData = result.data.data;
         const userProfile = result.data.data.profile;
-        if (!userData && userProfile !== null) {
-            const image = userProfile.image;
-            if (userProfile && image) {
-                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
-            }
-            if (userProfile && image) {
-                userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+        if (userData && userProfile !== null) {
+            const logo = userProfile.logo;
+            if (userProfile) {
+                if (logo) {
+                    userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
+                }
+                if (userImage) {
+                    userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
+
+                }
             }
         }
         // Set the values from the API response
@@ -25,12 +28,12 @@ async function header() {
             userEmail.textContent = userData.email;
         }
     } catch (error) {
-        console.log("Full error object:", error);
+        // console.log("Full error object:", error);
         if (error.response) {
             const status = error.response.status;
             const data = error.response.data;
-            console.log("Status:", status);
-            console.log("Response data:", data);
+            // console.log("Status:", status);
+            // console.log("Response data:", data);
 
             if (status === 500) {
                 if (data && data.message) {

@@ -44,14 +44,14 @@ async function SubmitLogin() {
         }
     } catch (error) {
         hideLoader();
-        console.log("Full error object:", error);
+        // console.log("Full error object:", error);
 
         if (error.response) {
             const status = error.response.status;
             const data = error.response.data;
 
-            console.log("Status:", status);
-            console.log("Response data:", data);
+            // console.log("Status:", status);
+            // console.log("Response data:", data);
 
             if (status === 500) {
                 if (data && data.message) {
