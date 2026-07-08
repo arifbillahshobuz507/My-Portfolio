@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card mb-6">
                 <div class="user-profile-header-banner">
-                    <img id="userLogo" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                    <img id="backgroundImage" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
                 </div>
                 <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
                     <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
@@ -79,17 +79,17 @@
                         </li>
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-flag icon-lg"></i><span class="fw-medium mx-2">Country:</span>
-                            <span>Bangladesh</span>
+                            <span id="country">Bangladesh</span>
                         </li>
                         <li class="d-flex align-items-center mb-2">
-                            <i class="icon-base ti tabler-language icon-lg"></i><span class="fw-medium mx-2">Languages:</span> <span>English</span>
+                            <i class="icon-base ti tabler-language icon-lg"></i><span class="fw-medium mx-2">Languages:</span> <span id="language">English</span>
                         </li>
                     </ul>
                     <p class="card-text text-uppercase text-body-secondary small mb-0">Contacts</p>
                     <ul class="list-unstyled my-3 py-1">
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-phone-call icon-lg"></i><span class="fw-medium mx-2">Contact:</span>
-                            <span id="userPhone">(123) 456-7890</span>
+                            <span id="phone">(123) 456-7890</span>
                         </li>
                         <li class="d-flex align-items-center mb-4">
                             <i class="icon-base ti tabler-mail icon-lg"></i><span class="fw-medium mx-2">Email:</span>
