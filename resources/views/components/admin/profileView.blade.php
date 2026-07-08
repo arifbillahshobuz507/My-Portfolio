@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card mb-6">
                 <div class="user-profile-header-banner">
-                    <img id="backgroundImage" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                    <img id="backgroundImage" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" height="350" width="100%" alt="Banner image" class="rounded-top" />
                 </div>
                 <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
                     <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
