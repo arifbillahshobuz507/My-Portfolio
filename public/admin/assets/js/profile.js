@@ -1,11 +1,11 @@
 async function profileData() {
+    const userCoverImage = document.getElementById("coverImage");
+    const userImage = document.getElementById("image");
     const userName = document.querySelectorAll(".user-name");
-    const userEmail = document.getElementById("userEmail");
-    const userImage = document.getElementById("userImage");
-    const backgroundImage = document.getElementById("backgroundImage");
     const country = document.getElementById("country");
     const language = document.getElementById("language");
-    const phoneNumber = document.getElementById("phone");
+    const userPhoneNumber = document.getElementById("phone");
+    const userEmail = document.getElementById("userEmail");
 
     try {
         const result = await axios.get('/api/user-profile');
@@ -18,45 +18,38 @@ async function profileData() {
         // console.log('user_profile_data', userProfile);
 
         if (userData && userProfile !== null) {
-            if (userProfile) {
-                const image = userProfile.image;
-                const logo = userProfile.logo;
-                const countryData = userProfile.country;
-                const languageData = userProfile.language;
-                const phoneData = userProfile.phone;
-                if (country && countryData) {
-                    country.textContent = countryData;
-                }
-                if (phoneNumber && phoneData) {
-                    phoneNumber.textContent = phoneData;
-                }
-                if (language && languageData) {
-                    language.textContent = languageData;
-                }
-                if (backgroundImage && image) {
-                    backgroundImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
-                }
-                if (logo) {
-                    userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
-                }
+            const coverImage = userProfile.cover_image;
+            const image = userProfile.image;
+            const countryData = userProfile.country;
+            const languageData = userProfile.language;
+            const phoneData = userProfile.phone;
+            const email = userData.email;
+            if (userCoverImage && coverImage) {
+                userCoverImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
             }
+            if (userImage && image) {
+                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+            }
+             if (userName) {
+                userName.forEach(element => {
+                    element.textContent = userData.title;
+                });
+            }
+            if (country && countryData) {
+                country.textContent = countryData;
+            }
+             if (language && languageData) {
+                language.textContent = languageData;
+            }
+            if (userPhoneNumber && phoneData) {
+                userPhoneNumber.textContent = phoneData;
+            }           
+            if (userEmail && email) {
+                userEmail.textContent = email;
+            }
+           
         }
 
-        if (userName && userData) {
-            userName.forEach(element => {
-                element.textContent = userData.title;
-            });
-        } else {
-            // console.log('userName element not found or userData missing');
-        }
-
-        if (userPhone && userData) {
-            userPhone.textContent = userData.phone;
-        }
-
-        if (userEmail && userData) {
-            userEmail.textContent = userData.email;
-        }
 
     } catch (error) {
         // console.log("Full error object:", error);

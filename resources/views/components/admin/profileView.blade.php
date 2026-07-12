@@ -4,15 +4,16 @@
         <div class="col-12">
             <div class="card mb-6">
                 <div class="user-profile-header-banner">
-                    <img id="backgroundImage" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" height="350" width="100%" alt="Banner image" class="rounded-top" />
+                    <img id="coverImage" src="{{ asset('admin/assets/') }}/img/pages/profile-banner.png" height="350" width="100%" alt="Banner image" class="rounded-top" />
                 </div>
                 <div class="user-profile-header d-flex flex-column flex-lg-row text-sm-start text-center mb-5">
                     <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
                         <img
                             src="{{ asset('admin/assets/') }}/img/avatars/1.png"
                             alt="user image"
-                            id="userImage"
-                            class="d-block h-auto ms-0 ms-sm-6 rounded user-profile-img" />
+                            id="image"
+                            height="150" width="150"
+                            class="d-block ms-0 ms-sm-6 rounded user-profile-img" />
                     </div>
                     <div class="flex-grow-1 mt-3 mt-lg-5">
                         <div
