@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
         for ($i = 1; $i <= 500; $i++) {
             $randomUsers[] = [
                 'title' => $this->getRandomTitle(),
-                'email' => 'user' . $i . '_' . rand(100, 999) . '@example.com',
+                'email' => 'user' . $i  . '@arifbillahshobuz.com',
                 'password' => Hash::make('12345678'),
                 'phone' => $this->generateRandomPhone(),
                 'otp' => 0,
@@ -60,9 +60,6 @@ class UserSeeder extends Seeder
         
         // Bulk Insert 
         User::insert($randomUsers);
-        
-        $this->command->info('500 random users created successfully!');
-        $this->command->info('Total users: ' . User::count());
     }
     private function getRandomTitle(): string
     {
@@ -77,8 +74,8 @@ class UserSeeder extends Seeder
    
     private function generateRandomName(): string
     {
-        $firstNames = ['John', 'Jane', 'Michael', 'Sarah', 'David', 'Emma', 'James', 'Lisa', 'Robert', 'Maria'];
-        $lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez'];
+        $firstNames = ['Arif', 'Billah', 'Shobuz', 'Atiar'];
+        $lastNames = ['Rahaman', 'Ali', 'Hossen', 'shobuz'];
         
         return $firstNames[array_rand($firstNames)] . ' ' . $lastNames[array_rand($lastNames)];
     }
