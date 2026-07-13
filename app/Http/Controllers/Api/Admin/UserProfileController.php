@@ -69,12 +69,12 @@ class UserProfileController extends Controller
                 $imageName = FileHelper::uploadFile($request->file('image'), 'admin/assets/img/profile');
             }
 
-            $logoName = $existingProfile ? $existingProfile->logo : null;
-            if ($request->hasFile('logo')) {
-                if ($existingProfile && $existingProfile->logo) {
-                    FileHelper::deleteFile($existingProfile->logo, 'admin/assets/img/profile');
+            $cover_image = $existingProfile ? $existingProfile->cover_image : null;
+            if ($request->hasFile('cover_image')) {
+                if ($existingProfile && $existingProfile->cover_image) {
+                    FileHelper::deleteFile($existingProfile->cover_image, 'admin/assets/img/profile');
                 }
-                $logoName = FileHelper::uploadFile($request->file('logo'), 'admin/assets/img/profile');
+                $cover_image = FileHelper::uploadFile($request->file('cover_image'), 'admin/assets/img/profile');
             }
 
             $cvName = $existingProfile ? $existingProfile->cv : null;
@@ -89,6 +89,7 @@ class UserProfileController extends Controller
                 ['user_id' => $user->id],
                 [
                     'organization' => $request->input('organization'),
+                    'designation' => $request->input('designation'),
                     'address' => $request->input('address'),
                     'state' => $request->input('state'),
                     'zip' => $request->input('zip'),
@@ -101,7 +102,7 @@ class UserProfileController extends Controller
                     'github' => $request->input('github', 'https://www.github.com/'),
                     'twitter' => $request->input('twitter', 'https://www.twitter.com/'),
                     'cv' => $cvName ?? $profile->cv ?? null,
-                    'logo' => $logoName ?? $profile->logo ?? null,
+                    'cover_image' => $cover_image ?? $profile->cover_image ?? null,
                     'image' => $imageName ?? $profile->image ?? null,
                 ]
             );

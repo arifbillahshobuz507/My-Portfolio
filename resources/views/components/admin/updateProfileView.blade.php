@@ -10,12 +10,12 @@
                             </div>
                             <div class="card-body">
                                 <div class="d-flex align-items-start align-items-sm-center gap-6">
-                                    <img id="profileImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded">
+                                    <img id="image" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded">
                                     <div class="button-wrapper">
-                                        <label for="upload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                        <label for="imageUpload" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
                                             <span class="d-none d-sm-block">Upload new photo</span>
                                             <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                            <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg">
+                                            <input type="file" id="imageUpload" class="account-file-input" hidden accept="image/png, image/jpeg">
                                         </label>
                                         <button type="button" class="btn btn-label-secondary profile-reset mb-4 waves-effect">
                                             <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
@@ -32,16 +32,16 @@
                     <div class="col-md-6 mb-4">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="mb-0">Company Logo</h5>
+                                <h5 class="mb-0">Company Background Logo</h5>
                             </div>
                             <div class="card-body">
                                 <div class="d-flex align-items-start align-items-sm-center gap-6">
-                                    <img id="companyLogoPreview" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="Company Logo" class="d-block w-px-100 h-px-100 rounded" style="object-fit: cover;">
+                                    <img id="coverImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt="Company Logo" class="d-block w-px-100 h-px-100 rounded" style="object-fit: cover;">
                                     <div class="button-wrapper">
-                                        <label for="companyLogoInput" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
+                                        <label for="coverImageUpdate" class="btn btn-primary me-3 mb-4 waves-effect waves-light" tabindex="0">
                                             <span class="d-none d-sm-block">Upload Logo</span>
                                             <i class="icon-base ti tabler-upload d-block d-sm-none"></i>
-                                            <input type="file" id="companyLogoInput" class="account-file-input" hidden accept="image/png, image/jpeg, image/jpg">
+                                            <input type="file" id="coverImageUpdate" class="account-file-input" hidden accept="image/png, image/jpeg, image/jpg">
                                         </label>
                                         <button type="button" class="btn btn-label-secondary companyLogoReset mb-4 waves-effect">
                                             <i class="icon-base ti tabler-reset d-block d-sm-none"></i>
@@ -68,6 +68,10 @@
                             <input class="form-control" type="text" id="email" placeholder="john.doe@example.com" disabled />
                         </div>
                         <div class="col-md-6">
+                            <label for="designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="designation" placeholder="designation" />
+                        </div>
+                        <div class="col-md-6">
                             <label for="organization" class="form-label">Organization</label>
                             <input type="text" class="form-control" id="organization" placeholder="Organization" />
                         </div>
@@ -81,6 +85,10 @@
                         <div class="col-md-6">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" class="form-control" id="address" placeholder="Address" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State</label>
+                            <input class="form-control" type="text" id="state" placeholder="California" />
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State</label>
@@ -124,10 +132,10 @@
                             <label for="language" class="form-label">Language</label>
                             <select id="language" class="select2 form-select">
                                 <option value="">Select Language</option>
-                                <option value="en">English</option>
-                                <option value="fr">French</option>
-                                <option value="de">German</option>
-                                <option value="pt">Portuguese</option>
+                                <option value="English">English</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                                <option value="Portuguese">Portuguese</option>
                             </select>
                         </div>
                         <div class="col-md-6">

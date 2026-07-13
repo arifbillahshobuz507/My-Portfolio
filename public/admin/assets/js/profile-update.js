@@ -1,9 +1,12 @@
 // FETCH USER DATA SCRIPT
 async function profileData() {
+    const userImage = document.getElementById("image");
+    const userCoverImagePrivew = document.getElementById("coverImage");
     const fullName = document.getElementById("fullName");
     const email = document.getElementById("email");
     const phoneNumber = document.getElementById("phoneNumber");
     const organization = document.getElementById("organization");
+    const designation = document.getElementById("designation");
     const address = document.getElementById("address");
     const state = document.getElementById("state");
     const zipCode = document.getElementById("zipCode");
@@ -15,8 +18,6 @@ async function profileData() {
     const github = document.getElementById("github");
     const twitter = document.getElementById("twitter");
     const description = document.getElementById("description");
-    const profileImageView = document.getElementById("profileImage");
-    const profileLogo = document.getElementById("companyLogoPreview");
     const profileCv = document.getElementById("userCVPreview");
 
 
@@ -41,6 +42,19 @@ async function profileData() {
         // Populate profile information
         const userProfile = result.data.data.profile;
         if (userProfile) {
+            // Get images
+            const image = userProfile.image;
+            const coverImage = userProfile.cover_image;
+            console.log(userProfile);
+            if (userImage && image) {
+                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+            }
+            if (userCoverImagePrivew && coverImage) {
+                userCoverImagePrivew.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
+            }
+            if (userProfile.designation && designation) {
+                designation.value = userProfile.designation || '';
+            }
             if (userProfile.organization && organization) {
                 organization.value = userProfile.organization || '';
             }
@@ -78,25 +92,52 @@ async function profileData() {
             if (userProfile.twitter && twitter) {
                 twitter.value = userProfile.twitter || '';
             }
-            // Set images
-            const image = userProfile.image;
-            const logo = userProfile.logo;
             const cv = userProfile.cv;
             const baseUrl = "{{ asset('admin/assets/img/profile') }}";
 
-            if (profileImageView && logo) {
-                profileImageView.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
-            }
-            if (profileLogo && image) {
-                profileLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
-            }
+
+
             if (profileCv && cv) {
                 profileCv.src = `http://127.0.0.1:8000/admin/assets/img/profile/${cv}`;
             }
         }
     } catch (error) {
         // console.log("Full error object:", error);
-        console.error('Error fetching profile data:', error);
+        if (error.response) {
+            const status = error.response.status;
+            const data = error.response.data;
+
+            // console.log("Status:", status);
+            // console.log("Response data:", data);
+
+            if (status === 500) {
+                if (data && data.message) {
+                    errorToast(data.message); // "Authentication failed"
+                } else if (data && data.error) {
+                    errorToast(data.error); // "Invalid email or password"
+                } else {
+                    errorToast("Server error. Please try again later.");
+                }
+            }
+            else if (status === 401) {
+                errorToast("Invalid email or password");
+            }
+            else if (status === 422) {
+                errorToast("Validation failed. Please check your input.");
+            }
+            else if (status === 404) {
+                errorToast("API endpoint not found");
+            }
+            else {
+                errorToast(data?.message || data?.error || "Something went wrong");
+            }
+        }
+        else if (error.request) {
+            errorToast("Network error. Please check your internet connection.");
+        }
+        else {
+            errorToast(error.message || "An unexpected error occurred");
+        }
     }
 }
 profileData();
@@ -108,7 +149,10 @@ async function updateUserData() {
     const formData = new FormData();
 
     // Get all input values
+    const profileImageInput = document.getElementById("imageUpload").files[0];
+    const coverImageInput = document.getElementById("coverImageUpdate").files[0];
     const fullNameInput = document.getElementById("fullName").value;
+    const designationInput = document.getElementById("designation").value;
     const organizationInput = document.getElementById("organization").value;
     const phoneNumber = document.getElementById("phone").value;
     const addressInput = document.getElementById("address").value;
@@ -124,14 +168,19 @@ async function updateUserData() {
     const descriptionInput = document.getElementById("description").value;
 
     // Get file inputs
-    const profileImageInput = document.getElementById("upload").files[0];
     // console.log(profileImageInput);
-    const profileLogoInput = document.getElementById("companyLogoInput").files[0];
     const profileCvInput = document.getElementById("userCVInput").files[0];
 
     // Append all data to FormData
+    if (profileImageInput) {
+        formData.append('image', profileImageInput);
+    }
+    if (coverImageInput) {
+        formData.append('cover_image', coverImageInput);
+    }
     formData.append('title', fullNameInput);
     formData.append('organization', organizationInput);
+    formData.append('designation', designationInput);
     formData.append('phone', phoneNumber);
     formData.append('address', addressInput);
     formData.append('state', stateInput);
@@ -144,20 +193,11 @@ async function updateUserData() {
     formData.append('github', githubInput);
     formData.append('twitter', twitterInput);
     formData.append('description', descriptionInput);
-
-    // Append files if they exist
-    if (profileImageInput) {
-        formData.append('logo', profileLogoInput);
-    }
-    if (profileLogoInput) {
-        formData.append('image', profileImageInput);
-    }
     if (profileCvInput) {
         formData.append('cv', profileCvInput);
     }
-
     try {
-
+        showLoader();
         // Send update request
         const response = await axios({
             method: 'post', // or 'put'
@@ -167,16 +207,14 @@ async function updateUserData() {
                 'Content-Type': 'multipart/form-data'
             }
         });
-        showLoader();
+        hideLoader();
         // Handle success
         if (response.data.status === 'success' || response.status === 200) {
-            hideLoader();
             successToast(response.data.message);
-            setTimeout(function(){
+            setTimeout(function () {
                 window.location.reload();
-            },500);
+            }, 500);
         } else {
-            hideLoader();
             showAlert('error', response.data.message || 'Failed to update profile');
         }
 
@@ -225,14 +263,14 @@ async function updateUserData() {
 // Preview image when file is selected
 document.addEventListener('DOMContentLoaded', function () {
     // Profile image preview
-    const profileImageInput = document.getElementById('upload');
+    const profileImageInput = document.getElementById('imageUpload');
     if (profileImageInput) {
         profileImageInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (event) {
-                    const avatar = document.getElementById('profileImage');
+                    const avatar = document.getElementById('image');
                     if (avatar) {
                         avatar.src = event.target.result;
                     }
@@ -242,10 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+//preview cover image
 document.addEventListener('DOMContentLoaded', function () {
     const removeLogoPriview = document.querySelector('.companyLogoReset');
-    const companyLogoPreviewInput = document.getElementById('companyLogoInput');
-    const avatar = document.getElementById('companyLogoPreview');
+    const companyLogoPreviewInput = document.getElementById('coverImageUpdate');
+    const avatar = document.getElementById('coverImage');
     if (companyLogoPreviewInput) {
         companyLogoPreviewInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
