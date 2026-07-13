@@ -23,19 +23,16 @@
                                 <ul
                                     class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 my-2">
                                     <li class="list-inline-item d-flex gap-2 align-items-center">
-                                        <i class="icon-base ti tabler-palette icon-lg"></i><span class="fw-medium">UX Designer</span>
+                                        <i class="icon-base ti tabler-palette icon-lg"></i><span class="fw-medium" id="designation">UX Designer</span>
                                     </li>
                                     <li class="list-inline-item d-flex gap-2 align-items-center">
-                                        <i class="icon-base ti tabler-map-pin  icon-lg"></i><span class="fw-medium">Vatican City</span>
+                                        <i class="icon-base ti tabler-map-pin  icon-lg"></i><span class="fw-medium" id="city">Vatican City</span>
                                     </li>
                                     <li class="list-inline-item d-flex gap-2 align-items-center">
-                                        <i class="icon-base ti tabler-calendar  icon-lg"></i><span class="fw-medium"> Joined April 2021</span>
+                                        <i class="icon-base ti tabler-calendar  icon-lg"></i><span class="fw-medium" id="created_at"> Joined 7 April mone day 2021</span>
                                     </li>
                                 </ul>
                             </div>
-                            <a href="javascript:void(0)" class="btn btn-primary mb-1">
-                                <i class="icon-base ti tabler-user-check icon-xs me-2"></i>Connected
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +42,7 @@
     <!--/ Header -->
 
     <!-- Navbar pills -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <div class="nav-align-top">
                 <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
@@ -64,7 +61,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--/ Navbar pills -->
 
     <!-- User Profile Content -->

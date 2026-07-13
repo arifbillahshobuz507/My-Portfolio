@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('twitter', 100)->nullable()->default('https://www.twitter.com/');
             $table->string('key', 30)->nullable();
             $table->text('value')->nullable();
+            $table->string('designation', 100)->nullable();
             //Relation User
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();

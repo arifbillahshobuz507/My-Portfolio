@@ -2,6 +2,9 @@ async function profileData() {
     const userCoverImage = document.getElementById("coverImage");
     const userImage = document.getElementById("image");
     const userName = document.querySelectorAll(".user-name");
+    const userDesignation = document.getElementById("designation");
+    const userCity = document.getElementById("city");
+    const userCreatedAt = document.getElementById("created_at");
     const country = document.getElementById("country");
     const language = document.getElementById("language");
     const userPhoneNumber = document.getElementById("phone");
@@ -21,33 +24,52 @@ async function profileData() {
             const coverImage = userProfile.cover_image;
             const image = userProfile.image;
             const countryData = userProfile.country;
+            const designationData = userProfile.designation;
+            const cityData = userProfile.city;
+            const createdAtData = userProfile.created_at;
             const languageData = userProfile.language;
             const phoneData = userProfile.phone;
             const email = userData.email;
+            const createdAt = new Date(createdAtData);
+
+            const day = createdAt.getDate();
+            const month = createdAt.toLocaleString("en-US", { month: "long" });
+            const weekday = createdAt.toLocaleString("en-US", { weekday: "long" });
+            const year = createdAt.getFullYear();           
+
             if (userCoverImage && coverImage) {
                 userCoverImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
             }
             if (userImage && image) {
                 userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
             }
-             if (userName) {
+            if (userName) {
                 userName.forEach(element => {
                     element.textContent = userData.title;
                 });
             }
+            if (userDesignation && designationData) {
+                userDesignation.textContent = designationData;
+            }
+            if (userCity && cityData) {
+                userCity.textContent = cityData;
+            }
+            if (userCreatedAt && createdAtData) {
+                userCreatedAt.textContent = `Joined ${day} ${month} ${weekday} ${year}`;
+            }
             if (country && countryData) {
                 country.textContent = countryData;
             }
-             if (language && languageData) {
+            if (language && languageData) {
                 language.textContent = languageData;
             }
             if (userPhoneNumber && phoneData) {
                 userPhoneNumber.textContent = phoneData;
-            }           
+            }
             if (userEmail && email) {
                 userEmail.textContent = email;
             }
-           
+
         }
 
 

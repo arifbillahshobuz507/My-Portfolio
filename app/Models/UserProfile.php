@@ -27,6 +27,7 @@ class UserProfile extends Model
         'twitter',
         'key',
         'value',
+        'designation',
         'user_id'
     ];
 }
