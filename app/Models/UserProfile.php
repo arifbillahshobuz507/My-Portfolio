@@ -16,6 +16,7 @@ class UserProfile extends Model
         'organization',
         'address',
         'city',
+        'district',
         'state',
         'country',
         'zip',

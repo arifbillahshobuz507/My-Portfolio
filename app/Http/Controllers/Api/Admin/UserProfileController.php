@@ -92,6 +92,8 @@ class UserProfileController extends Controller
                     'designation' => $request->input('designation'),
                     'address' => $request->input('address'),
                     'state' => $request->input('state'),
+                    'city' => $request->input('city'),
+                    'district' => $request->input('district'),
                     'zip' => $request->input('zip'),
                     'country' => $request->input('country'),
                     'language' => $request->input('language'),

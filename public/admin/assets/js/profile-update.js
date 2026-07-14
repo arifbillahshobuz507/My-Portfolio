@@ -4,11 +4,13 @@ async function profileData() {
     const userCoverImagePrivew = document.getElementById("coverImage");
     const fullName = document.getElementById("fullName");
     const email = document.getElementById("email");
-    const phoneNumber = document.getElementById("phoneNumber");
+    const phoneNumber = document.getElementById("phone");
     const organization = document.getElementById("organization");
     const designation = document.getElementById("designation");
     const address = document.getElementById("address");
     const state = document.getElementById("state");
+    const city = document.getElementById("city");
+    const district = document.getElementById("district");
     const zipCode = document.getElementById("zipCode");
     const country = document.getElementById("country");
     const language = document.getElementById("language");
@@ -28,15 +30,15 @@ async function profileData() {
         if (userData) {
             // full name 
             if (userData.title && fullName) {
-                fullName.value = userData.title || '';
+                fullName.value = userData.title || 'N/A';
             }
             // email
             if (userData.email && email) {
-                email.value = userData.email || '';
+                email.value = userData.email || 'N/A';
             }
             // phone number
             if (userData.phone && phoneNumber) {
-                phoneNumber.value = userData.phone || '';
+                phoneNumber.value = userData.phone || 'N/A';
             }
         }
         // Populate profile information
@@ -53,50 +55,52 @@ async function profileData() {
                 userCoverImagePrivew.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
             }
             if (userProfile.designation && designation) {
-                designation.value = userProfile.designation || '';
+                designation.value = userProfile.designation || 'N/A';
             }
             if (userProfile.organization && organization) {
-                organization.value = userProfile.organization || '';
+                organization.value = userProfile.organization || 'N/A';
             }
             if (userProfile.address && address) {
-                address.value = userProfile.address || '';
+                address.value = userProfile.address || 'N/A';
             }
             if (userProfile.state && state) {
-                state.value = userProfile.state || '';
+                state.value = userProfile.state || 'N/A';
+            }
+            if (userProfile.district && district) {
+                district.value = userProfile.district || 'N/A';
+            }
+            if (userProfile.city && city) {
+                city.value = userProfile.city || 'N/A';
             }
             if (userProfile.zip && zipCode) {
-                zipCode.value = userProfile.zip || '';
+                zipCode.value = userProfile.zip || 'N/A';
             }
             if (userProfile.country && country) {
-                country.value = userProfile.country;
+                country.value = userProfile.country || 'N/A';
             }
             if (userProfile.language && language) {
-                language.value = userProfile.language;
+                language.value = userProfile.language || 'N/A';
             }
             if (userProfile.description && description) {
-                description.value = userProfile.description || '';
+                description.value = userProfile.description || 'N/A';
             }
             // Social media links
             if (userProfile.facebook && facebook) {
-                facebook.value = userProfile.facebook || '';
+                facebook.value = userProfile.facebook || 'N/A';
             }
             if (userProfile.instagram && instagram) {
-                instagram.value = userProfile.instagram || '';
+                instagram.value = userProfile.instagram || 'N/A';
             }
             if (userProfile.linkedin && linkedin) {
-                linkedin.value = userProfile.linkedin || '';
+                linkedin.value = userProfile.linkedin || 'N/A';
             }
             if (userProfile.github && github) {
-                github.value = userProfile.github || '';
+                github.value = userProfile.github || 'N/A';
             }
             if (userProfile.twitter && twitter) {
-                twitter.value = userProfile.twitter || '';
+                twitter.value = userProfile.twitter || 'N/A';
             }
             const cv = userProfile.cv;
-            const baseUrl = "{{ asset('admin/assets/img/profile') }}";
-
-
-
             if (profileCv && cv) {
                 profileCv.src = `http://127.0.0.1:8000/admin/assets/img/profile/${cv}`;
             }
@@ -157,6 +161,8 @@ async function updateUserData() {
     const phoneNumber = document.getElementById("phone").value;
     const addressInput = document.getElementById("address").value;
     const stateInput = document.getElementById("state").value;
+    const cityInput = document.getElementById("city").value;
+    const districtInput = document.getElementById("district").value;
     const zipCodeInput = document.getElementById("zipCode").value;
     const countryInput = document.getElementById("country").value;
     const languageInput = document.getElementById("language").value;
@@ -184,6 +190,8 @@ async function updateUserData() {
     formData.append('phone', phoneNumber);
     formData.append('address', addressInput);
     formData.append('state', stateInput);
+    formData.append('city', cityInput);
+    formData.append('district', districtInput);
     formData.append('zip', zipCodeInput);
     formData.append('country', countryInput);
     formData.append('language', languageInput);

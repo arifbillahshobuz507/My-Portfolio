@@ -76,7 +76,7 @@
                             <input type="text" class="form-control" id="organization" placeholder="Organization" />
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
+                            <label class="form-label" for="phone">Phone Number</label>
                             <div class="input-group input-group-merge">
                                 <span class="input-group-text">+88 </span>
                                 <input type="text" id="phone" class="form-control" placeholder="01900000000" />
@@ -87,12 +87,16 @@
                             <input type="text" class="form-control" id="address" placeholder="Address" />
                         </div>
                         <div class="col-md-6">
-                            <label for="state" class="form-label">State</label>
-                            <input class="form-control" type="text" id="state" placeholder="California" />
+                            <label for="city" class="form-label">city</label>
+                            <input class="form-control" type="text" id="city" placeholder="Dhaka" />
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State</label>
                             <input class="form-control" type="text" id="state" placeholder="California" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="district" class="form-label">District</label>
+                            <input class="form-control" type="text" id="district" placeholder="Kushtia" />
                         </div>
                         <div class="col-md-6">
                             <label for="zipCode" class="form-label">Zip Code</label>
