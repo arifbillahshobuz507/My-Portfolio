@@ -397,7 +397,7 @@
                      href="javascript:void(0);"
                      data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                         <img id="userLogo" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
+                         <img class="image" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -406,7 +406,7 @@
                              <div class="d-flex align-items-center">
                                  <div class="flex-shrink-0 me-2">
                                      <div class="avatar avatar-online">
-                                         <img id="userImage" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
+                                         <img class="image" src="{{ asset('admin/assets/') }}/img/avatars/1.png" alt class="rounded-circle" />
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -428,7 +428,7 @@
                          <a class="dropdown-item" href="{{route('admin.profile.update')}}">
                              <i class="icon-base ti tabler-settings me-3 icon-md"></i><span class="align-middle">Settings</span>
                          </a>
-                     </li>     
+                     </li>
                      <li>
                          <div class="d-grid px-2 pt-2 pb-1">
                              <form action="{{ url('api/logout') }}" method="POST" id="logout-form">

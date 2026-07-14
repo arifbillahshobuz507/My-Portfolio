@@ -1,23 +1,19 @@
 async function header() {
     const userFullName = document.getElementById("userFullName");
     const userEmail = document.getElementById("userEmail");
-    const userLogo = document.getElementById("userLogo");
-    const userImage = document.getElementById("userImage");
+    const userImage = document.querySelectorAll(".image");
+
     try {
         const result = await axios.get('/api/user-profile');
         // The user data is in result.data.data based on your response
         const userData = result.data.data;
         const userProfile = result.data.data.profile;
         if (userData && userProfile !== null) {
-            const logo = userProfile.logo;
-            if (userProfile) {
-                if (logo) {
-                    userLogo.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
-                }
-                if (userImage) {
-                    userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${logo}`;
-
-                }
+            const image = userProfile.image;
+            if (userImage && image) {
+                    userImage.forEach(element => {
+                        element.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+                    });
             }
         }
         // Set the values from the API response
