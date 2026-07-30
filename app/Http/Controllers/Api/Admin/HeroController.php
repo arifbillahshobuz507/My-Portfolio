@@ -6,9 +6,12 @@ use App\Helpers\ApiResponse;
 use App\Helpers\FileHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Hero;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Exception;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class HeroController extends Controller
 {
@@ -16,7 +19,7 @@ class HeroController extends Controller
     {
         try {
             $query = Hero::query();
-            
+
             // 1. Search functionality (title, sub_title, description)
             if ($request->filled('search')) {
                 $search = $request->input('search');
@@ -79,24 +82,70 @@ class HeroController extends Controller
                 "description" => "nullable|string",
                 "image" => "nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
             ]);
-
+            $email = $request->header('email');
+            if (!$email) {
+                return ApiResponse::error(message: 'Email header is required', status_code: 422);
+            }
+            // Email format validation
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return ApiResponse::error(
+                    message: 'Invalid email format',
+                    status_code: 422
+                );
+            }
+            $userId = User::where('email', $email)->value('id');
+            if (!$userId) {
+                return ApiResponse::error(message: 'User not found', status_code: 404);
+            }
+            //UPLOAD IMAGE
             $imageName = null;
             if ($request->hasFile('image')) {
                 $imageName = FileHelper::uploadFile($request->file("image"), 'admin/assets/img/hero');
+                if (!$imageName) {
+                    return ApiResponse::error(
+                        message: 'Image upload failed. Please try again.',
+                        status_code: 422
+                    );
+                }
             }
-
-            $hero = Hero::create([
-                "title" => $request->input('title'),
-                'sub_title' => $request->input('sub_title'),
-                'description' => $request->input('description'),
-                'image' => $imageName,
-            ]);
-
-            return ApiResponse::success(message: "Hero Create Success!", data: $hero, status_code: 201);
+            DB::beginTransaction();
+            //STORE HERO 
+            try {
+                $hero = Hero::create([
+                    "user_id" =>  $userId,
+                    "title" => $request->input('title'),
+                    'sub_title' => $request->input('sub_title'),
+                    'description' => $request->input('description'),
+                    'image' => $imageName,
+                ]);
+                DB::commit();
+                Log::info('Hero created successfully', [
+                    'hero_id' => $hero->id,
+                    'user_id' => $userId
+                ]);
+                return ApiResponse::success(message: "Hero Create Success!", data: $hero, status_code: 201);
+            } catch (Exception $e) {
+                DB::rollBack();
+                //DELETE SAVE IMAGE
+                if ($imageName) {
+                    $fullPath = public_path('admin/assets/img/hero/' . $imageName);
+                    if (file_exists($fullPath)) {
+                        unlink($fullPath);
+                    }
+                }
+                Log::error('Hero creation failed', [
+                    'error' => $e->getMessage(),
+                    'user_id' => $userId,
+                    'trace' => $e->getTraceAsString()
+                ]);
+                return ApiResponse::error(message: 'somthing went wrong', error_data: $e->getMessage(), status_code: 500);
+            }
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
         }
     }
+
+
 
     public function update(Request $request): JsonResponse
     {
@@ -110,7 +159,7 @@ class HeroController extends Controller
             ]);
 
             $hero = Hero::where('id', $request->input('hero_id'))->first();
-            
+
             if ($hero == null) {
                 return ApiResponse::error(message: "Hero data not found", status_code: 404);
             }
@@ -143,14 +192,14 @@ class HeroController extends Controller
     {
         try {
             $hero = Hero::findOrFail($request->input('hero_id'));
-            
+
             // Delete image file if exists
             if ($hero->image) {
                 FileHelper::deleteFile('admin/assets/img/hero/' . $hero->image);
             }
-            
+
             $hero->delete();
-            
+
             return ApiResponse::success(message: 'Hero Delete Successfully');
         } catch (Exception $exception) {
             return ApiResponse::error(error_data: 'Hero data not found', status_code: 404);
@@ -166,7 +215,7 @@ class HeroController extends Controller
             ]);
 
             $hero = Hero::find($request->input('hero_id'));
-            
+
             if (!$hero) {
                 return ApiResponse::error(message: "Hero not found", status_code: 404);
             }
@@ -183,7 +232,7 @@ class HeroController extends Controller
         try {
             // Get latest hero or first hero
             $hero = Hero::latest()->first();
-            
+
             if (!$hero) {
                 return ApiResponse::success(message: 'No hero found', data: []);
             }

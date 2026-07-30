@@ -20,7 +20,7 @@ class UserProfileController extends Controller
         try {
             $email = $request->header('email');
             if (!$email) {
-                return ApiResponse::success(message: 'Email header is required', data: [], status_code: 404);
+                return ApiResponse::success(message: 'Email header is required', data: [], status_code: 422);
             }
             $user = User::where("email", $email)->with('profile')->first();
             if (!$user) {
