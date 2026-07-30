@@ -1,8 +1,7 @@
 <!-- CSS here -->
 <link rel="stylesheet" href="{{ asset('userInterface/assets/css/animate.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('userInterface/assets/css/bootstrap.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('userInterface/assets/css/font-awesome-pro.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('userInterface/assets/css/flaticon_gerold.css') }}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <link rel="stylesheet" href="{{ asset('userInterface/assets/css/nice-select.css') }}" />
 <link rel="stylesheet" href="{{ asset('userInterface/assets/css/backToTop.css') }}" />
 <link rel="stylesheet" href="{{ asset('userInterface/assets/css/owl.carousel.min.css') }}" />

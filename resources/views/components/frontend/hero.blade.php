@@ -12,7 +12,7 @@
                     <h1 class="hero-title">Web Developer +<br />UX Designer</h1>
 
                     <div class="hero-image-box d-md-none text-center">
-                        <img src="userInterface/assets/img/hero/me.png" alt="" />
+                        <img src="{{ asset('userInterface/assets/img/hero/me.png') }}" alt="" />
                     </div>
 
                     <p class="lead">
@@ -24,7 +24,7 @@
                         my skills in Laravel, Git, Blade templates, JWT authentication,
                         and project deployment
                     </p>
-                    <div class="button-box d-flex flex-wrap align-items-center">
+                    <!-- <div class="button-box d-flex flex-wrap align-items-center">
                         <a href="#" class="btn tj-btn-secondary">Download CV <i
                                 class="flaticon-download"></i></a>
                         <ul class="ul-reset social-icons">
@@ -32,7 +32,7 @@
                                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa-light fa-basketball"></i></a>
+                                <a href="#"><i class="fas fa-basketball-ball"></i></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -41,12 +41,22 @@
                                 <a href="#"><i class="fa-brands fa-github"></i></a>
                             </li>
                         </ul>
+                    </div> -->
+                    <div class="button-box d-flex flex-wrap align-items-center">
+                        <a href="#" class="btn tj-btn-secondary wow fadeInLeft" data-wow-delay="1.5s">Download
+                            CV</a>
+                        <ul class="ul-reset social-icons wow fadeInLeft" data-wow-delay="1.6s">
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fas fa-basketball-ball"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
                 <div class="hero-image-box text-center">
-                    <img src="userInterface/assets/img/hero/me.png" alt="" />
+                    <img src="{{ asset('userInterface/assets/img/hero/me.png') }}" alt="" />
                 </div>
             </div>
         </div>

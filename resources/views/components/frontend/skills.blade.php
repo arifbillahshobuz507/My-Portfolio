@@ -19,7 +19,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".3s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/figma.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/figma.svg') }}" alt="" />
                             </div>
                             <div class="number">92%</div>
                         </div>
@@ -28,7 +28,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".4s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/sketch.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/sketch.svg') }}" alt="" />
                             </div>
                             <div class="number">80%</div>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".5s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/xd.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/xd.svg') }}" alt="" />
                             </div>
                             <div class="number">85%</div>
                         </div>
@@ -46,7 +46,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".6s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/wp.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/wp.svg') }}" alt="" />
                             </div>
                             <div class="number">99%</div>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".7s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/react.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/react.svg') }}" alt="" />
                             </div>
                             <div class="number">89%</div>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="skill-item wow fadeInUp" data-wow-delay=".8s">
                         <div class="skill-inner">
                             <div class="icon-box">
-                                <img src="frontend/assets/img/icons/js.svg" alt="" />
+                                <img src="{{ asset('userInterface/assets/img/icons/js.svg') }}" alt="" />
                             </div>
                             <div class="number">93%</div>
                         </div>

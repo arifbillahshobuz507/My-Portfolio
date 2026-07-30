@@ -29,7 +29,7 @@
                                 connect billions of people
                             </p>
                         </div>
-                        <i class="flaticon-up-right-arrow"></i>
+                        <i class="fas fa-arrow-right"></i>
                         <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
                     </div>
                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp"
@@ -45,7 +45,7 @@
                                 connect billions of people
                             </p>
                         </div>
-                        <i class="flaticon-up-right-arrow"></i>
+                        <i class="fas fa-arrow-right"></i>
                         <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
                     </div>
                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp"
@@ -61,7 +61,7 @@
                                 connect billions of people
                             </p>
                         </div>
-                        <i class="flaticon-up-right-arrow"></i>
+                        <i class="fas fa-arrow-right"></i>
                         <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
                     </div>
                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp"
@@ -77,7 +77,7 @@
                                 connect billions of people
                             </p>
                         </div>
-                        <i class="flaticon-up-right-arrow"></i>
+                        <i class="fas fa-arrow-right"></i>
                         <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
                     </div>
                     <div class="active-bg wow fadeInUp" data-wow-delay=".5s"></div>

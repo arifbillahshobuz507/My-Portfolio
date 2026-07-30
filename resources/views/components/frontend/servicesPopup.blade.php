@@ -1,6 +1,6 @@
 <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
     <div class="popup_modal_img">
-        <img src="./frontend/assets/img/services/modal-img.jpg" alt="" />
+        <img src="{{ asset('userInterface/assets/img/services/modal-img.jpg') }}" alt="" />
     </div>
 
     <div class="popup_modal_content">
@@ -71,31 +71,31 @@
                             <ul>
                                 <li class="active">
                                     <button>
-                                        <i class="flaticon-design"></i>
+                                        <i class="fas fa-paint-brush"></i>
                                         Branding Design
                                     </button>
                                 </li>
                                 <li>
                                     <button>
-                                        <i class="flaticon-3d-movie"></i>
+                                        <i class="fas fa-film"></i>
                                         3D Animation
                                     </button>
                                 </li>
                                 <li>
                                     <button>
-                                        <i class="flaticon-ux-design"></i>
+                                        <i class="fas fa-drafting-compass"></i>
                                         UI/UX Design
                                     </button>
                                 </li>
                                 <li>
                                     <button>
-                                        <i class="flaticon-web-design"></i>
+                                        <i class="fas fa-laptop-code"></i>
                                         Web Design
                                     </button>
                                 </li>
                                 <li>
                                     <button>
-                                        <i class="flaticon-ui-design"></i>
+                                        <i class="fas fa-mobile-alt"></i>
                                         App Design
                                     </button>
                                 </li>

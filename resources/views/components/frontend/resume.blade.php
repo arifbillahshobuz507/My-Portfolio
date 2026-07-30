@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="section-header wow fadeInUp" data-wow-delay=".3s">
-                    <h2 class="section-title"><i class="flaticon-recommendation"></i> My Experience</h2>
+                    <h2 class="section-title"><i class="fas fa-thumbs-up"></i> My Experience</h2>
                 </div>
 
                 <div class="resume-widget">
@@ -32,7 +32,7 @@
 
             <div class="col-md-6">
                 <div class="section-header wow fadeInUp" data-wow-delay=".4s">
-                    <h2 class="section-title"><i class="flaticon-graduation-cap"></i> My Education</h2>
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> My Education</h2>
                 </div>
 
                 <div class="resume-widget">

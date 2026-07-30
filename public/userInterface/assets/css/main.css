@@ -1396,6 +1396,7 @@ body.loaded {
 	width: 48%;
 }
 .portfolio-box .portfolio-item {
+	position: relative;
 	background-color: var(--tj-theme-accent-2);
 	margin-bottom: 4%;
 	padding: 36px 36px 0 36px;
@@ -2962,7 +2963,7 @@ blockquote cite::before {
 	top: 0;
 	left: 0;
 	text-align: center;
-	line-height: 60px;
+	line-height: 50px;
 	font-size: 20px;
 }
 .contact-info-list .text-box p {

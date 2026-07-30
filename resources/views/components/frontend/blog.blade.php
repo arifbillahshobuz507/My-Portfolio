@@ -17,7 +17,7 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="frontend/assets/img/blog/1.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/blog/1.jpg') }}" alt="" />
                         </a>
                         <a href="#" class="category">Tutorial</a>
                     </div>
@@ -25,8 +25,8 @@
                     <div class="blog-content">
                         <div class="blog-meta">
                             <ul class="ul-reset">
-                                <li><i class="fa-light fa-calendar-days"></i> Oct 01, 2022</li>
-                                <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a>
+                                <li><i class="fas fa-calendar-alt"></i> Oct 01, 2022</li>
+                                <li><i class="fas fa-comments"></i> <a href="#">Comment (0)</a>
                                 </li>
                             </ul>
                         </div>
@@ -38,15 +38,15 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="frontend/assets/img/blog/2.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/blog/2.jpg') }}" alt="" />
                         </a>
                         <a href="#" class="category">TIPS</a>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <ul class="ul-reset">
-                                <li><i class="fa-light fa-calendar-days"></i> Nov 01, 2022</li>
-                                <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a>
+                                <li><i class="fas fa-calendar-alt"></i> Nov 01, 2022</li>
+                                <li><i class="fas fa-comments"></i> <a href="#">Comment (0)</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,15 +58,15 @@
                 <div class="blog-item wow fadeInUp" data-wow-delay=".7s">
                     <div class="blog-thumb">
                         <a href="blog-details.html">
-                            <img src="frontend/assets/img/blog/3.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/blog/3.jpg') }}" alt="" />
                         </a>
                         <a href="#" class="category">FREEBIES</a>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <ul class="ul-reset">
-                                <li><i class="fa-light fa-calendar-days"></i> Dec 01, 2022</li>
-                                <li><i class="fa-light fa-comments"></i> <a href="#">Comment (0)</a>
+                                <li><i class="fas fa-calendar-alt"></i> Dec 01, 2022</li>
+                                <li><i class="fas fa-comments"></i> <a href="#">Comment (0)</a>
                                 </li>
                             </ul>
                         </div>

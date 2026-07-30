@@ -1,6 +1,6 @@
 <div id="portfolio-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
     <div class="popup_modal_img">
-        <img src="./frontend/assets/img/portfolio/modal-img.jpg" alt="" />
+        <img src="{{ asset('userInterface/assets/img/portfolio/modal-img.jpg') }}" alt="" />
     </div>
 
     <div class="popup_modal_content">
@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 <a href="#" class="btn tj-btn-primary">live preview <i
-                        class="fal fa-arrow-right"></i></a>
+                        class="fas fa-arrow-right"></i></a>
             </div>
             <div class="portfolio_info_items">
                 <div class="info_item">
@@ -40,16 +40,16 @@
 
         <div class="portfolio_gallery owl-carousel">
             <div class="gallery_item">
-                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-1.jpg" alt="" />
+                <img src="{{ asset('userInterface/assets/img/portfolio-gallery/p-gallery-1.jpg') }}" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-2.jpg" alt="" />
+                <img src="{{ asset('userInterface/assets/img/portfolio-gallery/p-gallery-2.jpg') }}" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-3.jpg" alt="" />
+                <img src="{{ asset('userInterface/assets/img/portfolio-gallery/p-gallery-3.jpg') }}" alt="" />
             </div>
             <div class="gallery_item">
-                <img src="./frontend/assets/img/portfolio-gallery/p-gallery-4.jpg" alt="" />
+                <img src="{{ asset('userInterface/assets/img/portfolio-gallery/p-gallery-4.jpg') }}" alt="" />
             </div>
         </div>
 
@@ -131,7 +131,7 @@
         <div class="portfolio_navigation">
             <div class="navigation_item prev-project">
                 <a href="#" class="project">
-                    <i class="fal fa-arrow-left"></i>
+                    <i class="fas fa-arrow-left"></i>
                     <div class="nav_project">
                         <div class="label">Previous Project</div>
                         <h3 class="title">Sebastian</h3>
@@ -145,7 +145,7 @@
                         <div class="label">Next Project</div>
                         <h3 class="title">Qwillo</h3>
                     </div>
-                    <i class="fal fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>

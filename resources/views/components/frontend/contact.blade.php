@@ -70,7 +70,7 @@
                         <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight"
                             data-wow-delay=".4s">
                             <div class="icon-box">
-                                <i class="flaticon-phone-call"></i>
+                                <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="text-box">
                                 <p>Phone</p>
@@ -80,7 +80,7 @@
                         <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight"
                             data-wow-delay=".5s">
                             <div class="icon-box">
-                                <i class="flaticon-mail-inbox-app"></i>
+                                <i class="fas fa-envelope"></i>
                             </div>
                             <div class="text-box">
                                 <p>Email</p>
@@ -90,7 +90,7 @@
                         <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight"
                             data-wow-delay=".6s">
                             <div class="icon-box">
-                                <i class="flaticon-location"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="text-box">
                                 <p>Address</p>

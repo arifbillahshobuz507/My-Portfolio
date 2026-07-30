@@ -15,10 +15,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/1.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/1.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/1.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/1.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">
@@ -60,10 +60,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/2.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/2.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/2.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/2.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">
@@ -105,10 +105,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/1.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/1.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/1.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/1.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">
@@ -150,10 +150,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/2.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/2.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/2.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/2.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">
@@ -195,10 +195,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/1.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/1.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/1.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/1.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">
@@ -240,10 +240,10 @@
                         <div class="testimonial-item">
                             <div class="top-area d-flex flex-wrap justify-content-between">
                                 <div class="logo-box">
-                                    <img src="frontend/assets/img/testimonials/logo/2.png" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/logo/2.png') }}" alt="" />
                                 </div>
                                 <div class="image-box">
-                                    <img src="frontend/assets/img/testimonials/user/2.jpg" alt="" />
+                                    <img src="{{ asset('userInterface/assets/img/testimonials/user/2.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="icon-box">

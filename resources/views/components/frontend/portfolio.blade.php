@@ -30,48 +30,48 @@
                     <div class="gutter-sizer"></div>
                     <div class="portfolio-item branding">
                         <div class="image-box">
-                            <img src="frontend/assets/img/portfolio/2.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/portfolio/2.jpg') }}" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Deloitte</h3>
                             <p>Project was about precision and information.</p>
-                            <i class="flaticon-up-right-arrow"></i>
+                            <i class="fas fa-arrow-right"></i>
                             <button data-mfp-src="#portfolio-wrapper"
                                 class="portfolio-link modal-popup"></button>
                         </div>
                     </div>
                     <div class="portfolio-item uxui">
                         <div class="image-box">
-                            <img src="frontend/assets/img/portfolio/1.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/portfolio/1.jpg') }}" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">New Age</h3>
                             <p>Project was about precision and information.</p>
-                            <i class="flaticon-up-right-arrow"></i>
+                            <i class="fas fa-arrow-right"></i>
                             <button data-mfp-src="#portfolio-wrapper"
                                 class="portfolio-link modal-popup"></button>
                         </div>
                     </div>
                     <div class="portfolio-item mobile-app">
                         <div class="image-box">
-                            <img src="frontend/assets/img/portfolio/3.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/portfolio/3.jpg') }}" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Sebastian</h3>
                             <p>Project was about precision and information.</p>
-                            <i class="flaticon-up-right-arrow"></i>
+                            <i class="fas fa-arrow-right"></i>
                             <button data-mfp-src="#portfolio-wrapper"
                                 class="portfolio-link modal-popup"></button>
                         </div>
                     </div>
                     <div class="portfolio-item branding">
                         <div class="image-box">
-                            <img src="frontend/assets/img/portfolio/4.jpg" alt="" />
+                            <img src="{{ asset('userInterface/assets/img/portfolio/4.jpg') }}" alt="" />
                         </div>
                         <div class="content-box">
                             <h3 class="portfolio-title">Mochnix</h3>
                             <p>Project was about precision and information.</p>
-                            <i class="flaticon-up-right-arrow"></i>
+                            <i class="fas fa-arrow-right"></i>
                             <button data-mfp-src="#portfolio-wrapper"
                                 class="portfolio-link modal-popup"></button>
                         </div>
