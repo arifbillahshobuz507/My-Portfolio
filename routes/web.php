@@ -4,6 +4,7 @@ use App\Http\Controllers\Web\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Web\UserInterface\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Admin\DashboardController;
+use App\Http\Controllers\Web\Admin\HeroController;
 use App\Http\Controllers\Web\Admin\ProfileController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -22,6 +23,11 @@ Route::middleware(['webTokenverification'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
         Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
         Route::get('/profile-update', [ProfileController::class, 'profileUpdate'])->name('profile.update');
+        Route::controller(HeroController::class)->prefix('hero')->as('hero.')->group(function () {
+            Route::get('/', 'index')->name('list');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/update', 'update')->name('update');
+        });
     });
 });
 

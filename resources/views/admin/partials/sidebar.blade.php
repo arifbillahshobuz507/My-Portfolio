@@ -1,5 +1,5 @@
   <aside id="layout-menu" class="layout-menu menu-vertical menu">
-  <div class="app-brand demo ">
+    <div class="app-brand demo ">
       <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
         <span class="app-brand-logo demo">
           <span class="text-primary">
@@ -45,35 +45,18 @@
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon icon-base ti tabler-shopping-cart"></i>
-          <div data-i18n="eCommerce">eCommerce</div>
+          <div data-i18n="Hero Management">Hero Management</div>
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="app-ecommerce-dashboard.html" class="menu-link">
-              <div data-i18n="Dashboard">Dashboard</div>
+            <a href="{{ route('admin.hero.list') }}" class="menu-link">
+              <div data-i18n="List">List</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <div data-i18n="Products">Products</div>
+            <a href="{{ route('admin.hero.create') }}" class="menu-link">
+              <div data-i18n="Create">Create</div>
             </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="app-ecommerce-product-list.html" class="menu-link">
-                  <div data-i18n="Product List">Product List</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="app-ecommerce-product-add.html" class="menu-link">
-                  <div data-i18n="Add Product">Add Product</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="app-ecommerce-category-list.html" class="menu-link">
-                  <div data-i18n="Category List">Category List</div>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </li>
