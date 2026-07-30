@@ -10,11 +10,10 @@ class Hero extends Model
     use HasFactory;
         protected $fillable = [
         'title',
+        'sub_title',
+        'description',
+        'image',
         'user_id',
-        'user_profile_id',
-        'experience_id',
-        'project_id',
-        'testimonial_id',
     ];
     
     public function user()
