@@ -43,9 +43,17 @@
                         </ul>
                     </div> -->
                     <div class="button-box d-flex flex-wrap align-items-center">
-                        <a href="#" class="btn tj-btn-secondary wow fadeInLeft" data-wow-delay="1.5s">Download
-                            CV</a>
+                        <a href="{{ route('cv.download') }}"
+                            class="btn tj-btn-secondary wow fadeInLeft"
+                            data-wow-delay="1.5s">
+                            Download CV
+                        </a>
                         <ul class="ul-reset social-icons wow fadeInLeft" data-wow-delay="1.6s">
+                            <li>
+                                <a href="https://www.facebook.com/arif.billah.shobuz" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
                             <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/arif-billah-shobuz"><i class="fa-brands fa-linkedin-in"></i></a></li>
                             <li><a href="https://github.com/arifbillahshobuz"><i class="fa-brands fa-github"></i></a></li>

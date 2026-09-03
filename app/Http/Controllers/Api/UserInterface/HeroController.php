@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api\UserInterface;
 
+use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Hero;
+use Exception;
 use Illuminate\Http\Request;
 
 class HeroController extends Controller
@@ -16,7 +18,7 @@ class HeroController extends Controller
         // 1. Check CV from heroes table
         if ($hero && !empty($hero->cv)) {
 
-            $cvPath = public_path('cv/' . $hero->cv);
+            $cvPath = public_path('userInterface/assets/cv/' . $hero->cv);
 
             if (file_exists($cvPath)) {
                 return response()->download(
@@ -25,9 +27,9 @@ class HeroController extends Controller
                 );
             }
         }
-
         // 2. If Hero CV not found, use default CV
-        $defaultCv = public_path('assets/pdf/default-cv.pdf');
+        $defaultCv = public_path('userInterface/assets/cv/arif_billah_shobuz.pdf');
+        // dd($defaultCv);
 
         if (file_exists($defaultCv)) {
             return response()->download(
