@@ -28,13 +28,13 @@
 
         <div class="preloader-heading">
             <div class="load-text">
+                <span>W</span>
+                <span>E</span>
                 <span>L</span>
-                <span>o</span>
-                <span>a</span>
-                <span>d</span>
-                <span>i</span>
-                <span>n</span>
-                <span>g</span>
+                <span>C</span>
+                <span>O</span>
+                <span>M</span>
+                <span>E</span>
             </div>
         </div>
     </div>

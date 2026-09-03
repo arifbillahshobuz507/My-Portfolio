@@ -18,7 +18,11 @@ class HeroController extends Controller
     public function list(Request $request): JsonResponse
     {
         try {
-            $query = Hero::query();
+            $userId = $request->header('user_id');
+            if (!$userId) {
+                return ApiResponse::error(message: 'User not found', status_code: 404);
+            }
+            $query = Hero::where('user_id', $userId);
 
             // 1. Search functionality (title, sub_title, description)
             if ($request->filled('search')) {
@@ -97,6 +101,14 @@ class HeroController extends Controller
             if (!$userId) {
                 return ApiResponse::error(message: 'User not found', status_code: 404);
             }
+
+            $existingHero = Hero::where('user_id', $userId)->first();
+            if ($existingHero) {
+                return ApiResponse::error(
+                    message: 'You already have a hero. Please update your existing hero instead.',
+                    status_code: 409
+                );
+            }
             //UPLOAD IMAGE
             $imageName = null;
             if ($request->hasFile('image')) {
@@ -158,7 +170,9 @@ class HeroController extends Controller
                 "image" => "nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
             ]);
 
-            $hero = Hero::where('id', $request->input('hero_id'))->first();
+            $hero = Hero::where('id', $request->input('hero_id'))
+                ->where('user_id', $request->header('user_id'))
+                ->first();
 
             if ($hero == null) {
                 return ApiResponse::error(message: "Hero data not found", status_code: 404);
@@ -191,7 +205,13 @@ class HeroController extends Controller
     public function delete(Request $request): JsonResponse
     {
         try {
-            $hero = Hero::findOrFail($request->input('hero_id'));
+            $hero = Hero::where('id', $request->input('hero_id'))
+                ->where('user_id', $request->header('user_id'))
+                ->first();
+
+            if (!$hero) {
+                return ApiResponse::error(message: 'Hero data not found', status_code: 404);
+            }
 
             // Delete image file if exists
             if ($hero->image) {
@@ -214,7 +234,9 @@ class HeroController extends Controller
                 "hero_id" => "required|exists:heroes,id"
             ]);
 
-            $hero = Hero::find($request->input('hero_id'));
+            $hero = Hero::where('id', $request->input('hero_id'))
+                ->where('user_id', $request->header('user_id'))
+                ->first();
 
             if (!$hero) {
                 return ApiResponse::error(message: "Hero not found", status_code: 404);
