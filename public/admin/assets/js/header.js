@@ -11,9 +11,9 @@ async function header() {
         if (userData && userProfile !== null) {
             const image = userProfile.image;
             if (userImage && image) {
-                    userImage.forEach(element => {
-                        element.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
-                    });
+                userImage.forEach(element => {
+                    element.src = `${window.location.origin}/admin/assets/img/profile/${image}`;
+                });
             }
         }
         // Set the values from the API response

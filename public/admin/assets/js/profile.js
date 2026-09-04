@@ -38,10 +38,10 @@ async function profileData() {
             const year = createdAt.getFullYear();           
 
             if (userCoverImage && coverImage) {
-                userCoverImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
+                userCoverImage.src = `${window.location.origin}/admin/assets/img/profile/${coverImage}`;
             }
             if (userImage && image) {
-                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+                userImage.src = `${window.location.origin}/admin/assets/img/profile/${image}`;
             }
             if (userName) {
                 userName.forEach(element => {

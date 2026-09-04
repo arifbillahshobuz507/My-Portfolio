@@ -49,10 +49,10 @@ async function profileData() {
             const coverImage = userProfile.cover_image;
             console.log(userProfile);
             if (userImage && image) {
-                userImage.src = `http://127.0.0.1:8000/admin/assets/img/profile/${image}`;
+                userImage.src = `${window.location.origin}/admin/assets/img/profile/${image}`;
             }
             if (userCoverImagePrivew && coverImage) {
-                userCoverImagePrivew.src = `http://127.0.0.1:8000/admin/assets/img/profile/${coverImage}`;
+                userCoverImagePrivew.src = `${window.location.origin}/admin/assets/img/profile/${coverImage}`;
             }
             if (userProfile.designation && designation) {
                 designation.value = userProfile.designation || 'N/A';
@@ -102,7 +102,7 @@ async function profileData() {
             }
             const cv = userProfile.cv;
             if (profileCv && cv) {
-                profileCv.src = `http://127.0.0.1:8000/admin/assets/img/profile/${cv}`;
+                profileCv.src = `${window.location.origin}/admin/assets/img/profile/${cv}`;
             }
         }
     } catch (error) {
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (removeLogoPriview) {
         removeLogoPriview.addEventListener('click', function () {
-            avatar.src = 'http://127.0.0.1:8000/admin/assets/img/avatars/1.png';
+            avatar.src = '${window.location.origin}/admin/assets/img/avatars/1.png';
             companyLogoPreviewInput.value = '';
         });
     }
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector('.profile-reset')?.addEventListener('click', function () {
     const avatar = document.getElementById('profileImage');
     if (avatar) {
-        avatar.src = "http://127.0.0.1:8000/admin/assets/img/avatars/1.png";
+        avatar.src = "${window.location.origin}/admin/assets/img/avatars/1.png";
     }
     const fileInput = document.getElementById('profileProfileImage');
     if (fileInput) {
