@@ -1,10 +1,12 @@
 // HERO CREATE/UPDATE SCRIPT
 function submitHero() {
-    const heroId = $('#heroId').val() || '';
-    const title = $('#heroTitle').val();
-    const subTitle = $('#heroSubTitle').val();
-    const description = $('#heroDescription').val();
-    const image = $('#heroImage')[0].files[0];
+    alert('test hero function');
+    die();
+    const heroId = $('#hero-id').val() || '';
+    const title = $('#hero-title').val();
+    const subTitle = $('#hero-sub-title').val();
+    const description = $('#hero-description').val();
+    const image = $('#hero-image')[0].files[0];
 
     if (title.length === 0) {
         errorToast("Title is required");
@@ -65,12 +67,12 @@ function loadHero() {
         if (result.status === 'success' && result.data.data && result.data.data.length > 0) {
             const hero = result.data.data[0];
             window.HERO_DATA = hero;
-            $('#heroId').val(hero.id);
-            $('#heroTitle').val(hero.title || '');
-            $('#heroSubTitle').val(hero.sub_title || '');
-            $('#heroDescription').val(hero.description || '');
+            $('#hero-id').val(hero.id);
+            $('#hero-title').val(hero.title || '');
+            $('#hero-sub-title').val(hero.sub_title || '');
+            $('#hero-description').val(hero.description || '');
             if (hero.image) {
-                $('#heroImagePreview').attr('src', '/admin/assets/img/hero/' + hero.image);
+                $('#hero-image-preview').attr('src', '/admin/assets/img/hero/' + hero.image);
             }
             $('#heroPageTitle').text('Update Hero');
             $('#heroPageSubtitle').text('Edit the hero section shown on the frontend');
@@ -85,9 +87,9 @@ function loadHero() {
 $(function () {
     loadHero();
 
-    const $heroImageInput = $('#heroImage');
-    const $heroImagePreview = $('#heroImagePreview');
-    const $heroImageReset = $('#heroImageReset');
+    const $heroImageInput = $('#hero-image');
+    const $heroImagePreview = $('#hero-image-preview');
+    const $heroImageReset = $('#hero-image-reset');
 
     $heroImageInput.on('change', function (e) {
         const file = e.target.files[0];

@@ -41,26 +41,14 @@
       <li class="menu-header small">
         <span class="menu-header-text" data-i18n="Apps & Pages">Apps &amp; Pages</span>
       </li>
-      <!-- e-commerce-app menu start -->
+      <!--Hero management section start -->
       <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <a href="{{ route('admin.hero.create') }}" class="menu-link">
           <i class="menu-icon icon-base ti tabler-shopping-cart"></i>
           <div data-i18n="Hero Management">Hero Management</div>
         </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{ route('admin.hero.list') }}" class="menu-link">
-              <div data-i18n="List">List</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="{{ route('admin.hero.create') }}" class="menu-link">
-              <div data-i18n="Create">Create</div>
-            </a>
-          </li>
-        </ul>
       </li>
-      <!-- e-commerce-app menu end -->
+      <!--Hero management section end -->
 
 
       <!-- Components -->
