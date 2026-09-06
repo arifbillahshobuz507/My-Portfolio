@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\UserInterface\Auth\AuthenticationController;
 use App\Http\Controllers\Api\Admin\ServiceController;
 use App\Http\Controllers\Api\Admin\SkillController;
 use App\Http\Controllers\Api\Admin\TestimonialController;
+use App\Http\Controllers\Api\UserInterface\HeroController as UserInterfaceHeroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ use App\Http\Controllers\Api\Admin\TestimonialController;
 Route::post('/user-registration', [UserController::class, 'userRegistration']);
 Route::post('/user-login', [AuthenticationController::class, 'userLogin']);
 Route::post('/send-otp', [AuthenticationController::class, 'userSendOTP']);
+Route::get('/hero', [UserInterfaceHeroController::class, 'hero']);
+Route::get('/download-cv', [UserInterfaceHeroController::class, 'downloadCV'])->name('cv.download');
+
+
 
 Route::middleware(['apiTokenverification'])->group(function () {
     //AUTH ROUTES

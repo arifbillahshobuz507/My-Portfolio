@@ -13,7 +13,6 @@ class Hero extends Model
         'sub_title',
         'description',
         'image',
-        'user_id',
     ];
     
     public function user()

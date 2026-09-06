@@ -16,7 +16,6 @@ Route::get('/registration', [AuthenticationController::class, 'userRegistrationP
 Route::get('/login', [AuthenticationController::class, 'userLoginPage'])->name('login');
 Route::get('/send-otp', [AuthenticationController::class, 'userSendOTPPage'])->name('send-otp');
 Route::get('/verify-otp', [AuthenticationController::class, 'userVerifyOTPPage']);
-Route::get('/download-cv', [UserInterfaceHeroController::class, 'downloadCV'])->name('cv.download');
 //login after routes
 Route::middleware(['webTokenverification'])->group(function () {
     Route::get('/reset-password', [AuthenticationController::class, 'userResetPasswordPage']);

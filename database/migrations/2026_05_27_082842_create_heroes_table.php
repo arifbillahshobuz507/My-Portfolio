@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('sub_title', 100)->nullable();
             $table->text('description')->nullable();
             $table->string('image', 255)->nullable();
-            //Relation User
-            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
