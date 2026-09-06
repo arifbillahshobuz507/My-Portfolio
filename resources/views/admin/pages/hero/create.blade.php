@@ -6,5 +6,6 @@
 @include('components.admin.hero.create')
 @endsection
 @push('scripts')
- <script src="{{ asset('admin/assets/') }}/js/heroCreate.js"></script>
+<script src="{{ asset('assets/') }}/js/common-get-and-set-data.js"></script>
+<script src="{{ asset('admin/assets/') }}/js/heroCreate.js"></script>
 @endpush

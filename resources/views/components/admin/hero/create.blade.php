@@ -8,7 +8,7 @@
          <p class="mb-0 text-body-secondary" id="heroPageSubtitle">Create or update the hero section shown on the frontend</p>
        </div>
        <div class="d-flex align-content-center flex-wrap gap-4">
-         <button type="button" class="btn btn-primary" id="heroSubmitBtn" onclick="submitHero()">Create Hero</button>
+         <button type="button" id="heroSubmitBtn" class="btn btn-primary" id="heroSubmitBtn" onclick="submitHero()">Create Hero</button>
        </div>
      </div>
      <div class="row">

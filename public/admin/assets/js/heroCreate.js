@@ -1,3 +1,17 @@
+
+fetchAndSetData('/api/hero/list', {
+    id: 'hero-id',
+    title: 'hero-title',
+    sub_title: 'hero-sub-title',
+    description: 'hero-description',
+
+    image: {
+        id: 'hero-image-preview',
+        type: 'image',
+        path: 'admin/assets/img/hero'
+    }
+});
+
 // HERO CREATE/UPDATE SCRIPT
 function submitHero() {
     alert('test hero function');
@@ -28,7 +42,7 @@ function submitHero() {
     }
 
     $.ajax({
-        url: isUpdate ? '/api/heroes/update' : '/api/heroes/store',
+        url: isUpdate ? '/api/hero/update' : '/api/hero/store',
         type: isUpdate ? 'PUT' : 'POST',
         data: formData,
         processData: false,
@@ -61,59 +75,34 @@ function submitHero() {
     });
 }
 
-// Load existing hero (one hero per user) and populate the form
-function loadHero() {
-    $.get('/api/heroes/list?per_page=1', function (result) {
-        if (result.status === 'success' && result.data.data && result.data.data.length > 0) {
-            const hero = result.data.data[0];
-            window.HERO_DATA = hero;
-            $('#hero-id').val(hero.id);
-            $('#hero-title').val(hero.title || '');
-            $('#hero-sub-title').val(hero.sub_title || '');
-            $('#hero-description').val(hero.description || '');
-            if (hero.image) {
-                $('#hero-image-preview').attr('src', '/admin/assets/img/hero/' + hero.image);
+// Preview image when file is selected
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Hero image preview
+    const heroImageInput = document.getElementById('hero-image');
+
+    if (heroImageInput) {
+
+        heroImageInput.addEventListener('change', function (e) {
+
+            const file = e.target.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+
+                    const heroImagePreview = document.getElementById('hero-image-preview');
+
+                    if (heroImagePreview) {
+                        heroImagePreview.src = event.target.result;
+                    }
+
+                };
+
+                reader.readAsDataURL(file);
             }
-            $('#heroPageTitle').text('Update Hero');
-            $('#heroPageSubtitle').text('Edit the hero section shown on the frontend');
-            $('#heroSubmitBtn').text('Update Hero');
-        }
-    }).fail(function (xhr) {
-        errorToast(xhr.responseJSON?.message || 'Something went wrong');
-    });
-}
-
-// Preview image when a file is selected
-$(function () {
-    loadHero();
-
-    const $heroImageInput = $('#hero-image');
-    const $heroImagePreview = $('#hero-image-preview');
-    const $heroImageReset = $('#hero-image-reset');
-
-    $heroImageInput.on('change', function (e) {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/svg+xml', 'image/webp'];
-        if (!allowedTypes.includes(file.type)) {
-            errorToast("Please select a valid image (JPG, JPEG, PNG, SVG or WebP).");
-            this.value = '';
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            $heroImagePreview.attr('src', event.target.result);
-        };
-        reader.readAsDataURL(file);
-    });
-
-    $heroImageReset.on('click', function () {
-        $heroImageInput.val('');
-        const data = window.HERO_DATA || {};
-        $heroImagePreview.attr('src', data.image
-            ? '/admin/assets/img/hero/' + data.image
-            : '/admin/assets/img/avatars/1.png');
-    });
+        });
+    }
 });

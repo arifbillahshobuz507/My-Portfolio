@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Log;
 
 class HeroController extends Controller
 {
+    public function index()
+    {
+        try {
+            $existingHero = Hero::select('id', 'title', 'sub_title', 'description', 'image')->orderBy('id', 'desc')->first();
+            return ApiResponse::success(message: "Hero Data Get Successfully!", data: $existingHero);
+        } catch (Exception $e) {
+            return ApiResponse::error(message: "Failed to get hero data.", error_data: $e->getMessage());
+        }
+    }
     public function store(Request $request): JsonResponse
     {
         try {
@@ -35,18 +44,6 @@ class HeroController extends Controller
                     status_code: 422
                 );
             }
-            $userId = User::where('email', $email)->value('id');
-            if (!$userId) {
-                return ApiResponse::error(message: 'User not found', status_code: 404);
-            }
-
-            $existingHero = Hero::where('user_id', $userId)->first();
-            if ($existingHero) {
-                return ApiResponse::error(
-                    message: 'You already have a hero. Please update your existing hero instead.',
-                    status_code: 409
-                );
-            }
             //UPLOAD IMAGE
             $imageName = null;
             if ($request->hasFile('image')) {
@@ -58,7 +55,7 @@ class HeroController extends Controller
                     );
                 }
             }
-               $hero = Hero::where('id', $request->input('hero_id'))
+            $hero = Hero::where('id', $request->input('hero_id'))
                 ->where('user_id', $request->header('user_id'))
                 ->first();
 
@@ -101,5 +98,5 @@ class HeroController extends Controller
         } catch (Exception $e) {
             return ApiResponse::error(error_data: $e->getMessage());
         }
-    } 
+    }
 }

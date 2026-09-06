@@ -110,8 +110,8 @@ Route::middleware(['apiTokenverification'])->group(function () {
         Route::delete('/destroy', 'delete');
     });
     //HERO ROUTES
-    Route::controller(HeroController::class)->prefix('heroes')->group(function () {
-        Route::get('/list', 'list');
+    Route::controller(HeroController::class)->prefix('hero')->group(function () {
+        Route::get('/list', 'index');
         Route::post('/store', 'store');
         Route::put('/update', 'update');
         Route::delete('/destroy', 'delete');
