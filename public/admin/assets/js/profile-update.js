@@ -150,7 +150,7 @@ profileData();
 //USER UPDATE SCRIPT
 async function updateUserData() {
     // Get form data
-    const formData = new FormData();
+    const formData = new FormData();  
 
     // Get all input values
     const profileImageInput = document.getElementById("imageUpload").files[0];

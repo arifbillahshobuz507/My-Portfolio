@@ -13,9 +13,10 @@ fetchAndSetData('/api/hero/list', {
 });
 
 // HERO CREATE/UPDATE SCRIPT
-function submitHero() {
-    alert('test hero function');
-    die();
+async function submitHero() {
+    const formData = new FormData();
+
+    // die();
     const heroId = $('#hero-id').val() || '';
     const title = $('#hero-title').val();
     const subTitle = $('#hero-sub-title').val();
@@ -26,53 +27,42 @@ function submitHero() {
         errorToast("Title is required");
         return;
     }
+    if (subTitle.length === 0) {
+        errorToast("Sub Title is required");
+        return;
+    }
+    if (description.length === 0) {
+        errorToast("description is required");
+        return;
+    }
+    if (!image) {
+        errorToast("image is required");
+        return;
+    }
 
     const isUpdate = heroId.length > 0;
 
     showLoader();
-    const formData = new FormData();
     formData.append('title', title);
     formData.append('sub_title', subTitle);
     formData.append('description', description);
+    console.log(formData)
     if (image) {
         formData.append('image', image);
     }
     if (isUpdate) {
         formData.append('hero_id', heroId);
     }
-
-    $.ajax({
-        url: isUpdate ? '/api/hero/update' : '/api/hero/store',
-        type: isUpdate ? 'PUT' : 'POST',
+    const response = await axios({
+        method:'post' ,
+        url: '/api/hero/store',
         data: formData,
-        processData: false,
-        contentType: false,
-        success: function (result) {
-            hideLoader();
-            if (result.status === 'success') {
-                successToast(result.message);
-                setTimeout(function () {
-                    window.location.href = '/admin/hero';
-                }, 1000);
-            } else {
-                errorToast(result.message);
-            }
-        },
-        error: function (xhr) {
-            hideLoader();
-            const status = xhr.status;
-            const data = xhr.responseJSON;
-            if (status === 422) {
-                errorToast(data?.message || "Validation failed. Please check your input.");
-            } else if (status === 409) {
-                errorToast(data?.message || "You already have a hero. Please update your existing hero.");
-            } else if (status === 401) {
-                errorToast("Unauthorized. Please login again.");
-            } else {
-                errorToast(data?.message || data?.error || "Something went wrong");
-            }
+        Headers: {
+            'Content-Type': 'multipart/form-data',
         }
     });
+    console.log(response.data.status);
+    if
 }
 
 // Preview image when file is selected

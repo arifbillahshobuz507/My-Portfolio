@@ -27,23 +27,14 @@ class HeroController extends Controller
     public function store(Request $request): JsonResponse
     {
         try {
+            // dd($request->input('hero_id'));
+
             $request->validate([
-                "title" => "nullable|string|max:100",
-                "sub_title" => "nullable|string|max:100",
-                "description" => "nullable|string",
-                "image" => "nullable|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
+                "title" => "required|string|max:100",
+                "sub_title" => "required|string|max:100",
+                "description" => "required|string",
+                "image" => "required|file|mimes:jpg,jpeg,png,svg,webp|max:2048"
             ]);
-            $email = $request->header('email');
-            if (!$email) {
-                return ApiResponse::error(message: 'Email header is required', status_code: 422);
-            }
-            // Email format validation
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                return ApiResponse::error(
-                    message: 'Invalid email format',
-                    status_code: 422
-                );
-            }
             //UPLOAD IMAGE
             $imageName = null;
             if ($request->hasFile('image')) {
@@ -55,28 +46,23 @@ class HeroController extends Controller
                     );
                 }
             }
-            $hero = Hero::where('id', $request->input('hero_id'))
-                ->where('user_id', $request->header('user_id'))
-                ->first();
-
-            if (!$hero) {
-                return ApiResponse::error(message: "Hero not found", status_code: 404);
-            }
-
             DB::beginTransaction();
             //STORE HERO 
             try {
-                $hero = Hero::create([
-                    "user_id" =>  $userId,
-                    "title" => $request->input('title'),
-                    'sub_title' => $request->input('sub_title'),
-                    'description' => $request->input('description'),
-                    'image' => $imageName,
-                ]);
+                $hero = Hero::updateOrCreate(
+                    [
+                        'id'=> $request->input('hero_id')
+                    ],
+                    [
+                        "title" => $request->input('title'),
+                        'sub_title' => $request->input('sub_title'),
+                        'description' => $request->input('description'),
+                        'image' => $imageName,
+                    ]
+                );
                 DB::commit();
                 Log::info('Hero created successfully', [
                     'hero_id' => $hero->id,
-                    'user_id' => $userId
                 ]);
                 return ApiResponse::success(message: "Hero Create Success!", data: $hero, status_code: 201);
             } catch (Exception $e) {
